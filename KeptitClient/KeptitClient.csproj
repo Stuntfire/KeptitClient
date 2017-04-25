@@ -141,9 +141,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Handlers\" />
     <Folder Include="Images\" />
-    <Folder Include="Model\" />
-    <Folder Include="ViewModel\" />
+    <Folder Include="Models\" />
+    <Folder Include="Persistency\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
