@@ -25,6 +25,8 @@ namespace KeptitClient.View
         public Admin()
         {
             this.InitializeComponent();
+
+            
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
