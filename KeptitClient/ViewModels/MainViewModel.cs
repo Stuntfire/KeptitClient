@@ -12,10 +12,10 @@ using System.Windows.Input;
 
 namespace KeptitClient.ViewModels
 {
-    public class MainViewModel 
+    public class MainViewModel
     {
         //Handlers 
-        #region
+        #region 
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
         #endregion
 
@@ -72,12 +72,35 @@ namespace KeptitClient.ViewModels
             set { _subArea = value; OnPropertyChanged(nameof(SubArea)); }
         }
 
-        private ObservableCollection<Task> _taskCollection;
-        public ObservableCollection<Task> TaskCollection
+        private ObservableCollection<FinishedTask> _taskCollection;
+        public ObservableCollection<FinishedTask> TaskCollection
         {
             get { return _taskCollection; }
             set { _taskCollection = value; }
         }
+
+        private Area selectedArea;
+        public Area SelectedArea
+        {
+            get { return selectedArea; }
+            set { selectedArea = value; }
+        }
+
+        private SubArea selectedSubArea;
+        public SubArea SelectedSubArea
+        {
+            get { return selectedSubArea; }
+            set { selectedSubArea = value; }
+        }
+
+        private GreenKeeper selectedGreenKeeper;
+        public GreenKeeper SelectedGreenKeeper
+        {
+            get { return selectedGreenKeeper; }
+            set { selectedGreenKeeper = value; }
+        }
+
+
         #endregion
 
         // Constructor
@@ -85,7 +108,7 @@ namespace KeptitClient.ViewModels
         public MainViewModel()
         {
             FinishedTaskHandler = new FinishedTaskHandler(this);
-            TaskCollection = new ObservableCollection<Task>();
+            TaskCollection = new ObservableCollection<FinishedTask>();
 
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.CreateTask, null);
         }
