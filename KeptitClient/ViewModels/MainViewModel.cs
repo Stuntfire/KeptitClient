@@ -14,39 +14,41 @@ namespace KeptitClient.ViewModels
 {
     public class MainViewModel 
     {
-
         //Handlers 
+        #region
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
-         
+        #endregion
+
         // ICommands
+        #region
         public Common.ICommand AddTaskCommand { get; set; }
         //public Common.ICommand DeleteTaskCommand { get; set; }
         //public Common.ICommand SelectTaskCommand { get; set; }
         //public Common.ICommand EditTaskCommand { get; set; }
-
+        #endregion
 
         //Properties
-
+        #region
         //Hours
         private int _taskHour;
-        public int taskHour
+        public int TaskHour
         {
             get { return _taskHour; }
-            set { _taskHour = value; OnPropertyChanged(nameof(taskHour)); }
+            set { _taskHour = value; OnPropertyChanged(nameof(TaskHour)); }
         }
 
         //Minutes
         private int _taskMinutes;
-        public int taskMinutes
+        public int TaskMinutes
         {
             get { return _taskMinutes; }
-            set { _taskMinutes = value; OnPropertyChanged(nameof(taskMinutes)); }
+            set { _taskMinutes = value; OnPropertyChanged(nameof(TaskMinutes)); }
         }
 
 
         //Note
         private int _taskNotes;
-        public int taskNotes
+        public int TaskNotes
         {
             get { return _taskNotes; }
             set { _taskNotes = value; OnPropertyChanged(nameof(taskNotes)); }
@@ -55,34 +57,35 @@ namespace KeptitClient.ViewModels
 
         //Area
         private Area _taskArea;
-        public Area taskArea
+        public Area TaskArea
         {
             get { return _taskArea; }
-            set { _taskArea = value; OnPropertyChanged(nameof(taskArea)); }
+            set { _taskArea = value; OnPropertyChanged(nameof(TaskArea)); }
         }
 
         //SubArea
 
-        private SubArea _SubArea;
+        private SubArea _subArea;
         public SubArea SubArea
         {
-            get { return _SubArea; }
-            set { _SubArea = value; OnPropertyChanged(nameof(SubArea)); }
+            get { return _subArea; }
+            set { _subArea = value; OnPropertyChanged(nameof(SubArea)); }
         }
 
         private ObservableCollection<Task> _taskCollection;
-        public ObservableCollection<Task> taskCollection
+        public ObservableCollection<Task> TaskCollection
         {
             get { return _taskCollection; }
             set { _taskCollection = value; }
         }
-
+        #endregion
 
         // Constructor
+        #region
         public MainViewModel()
         {
             FinishedTaskHandler = new FinishedTaskHandler(this);
-            taskCollection = new ObservableCollection<Task>();
+            TaskCollection = new ObservableCollection<Task>();
 
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.CreateTask, null);
         }
@@ -91,5 +94,7 @@ namespace KeptitClient.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        #endregion
     }
+
 }
