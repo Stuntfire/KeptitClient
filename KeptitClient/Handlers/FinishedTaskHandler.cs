@@ -4,14 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using KeptitClient.Persistency;
+using KeptitClient.ViewModels;
 
 namespace KeptitClient.Handlers
 {
-   public class TaskHandler
+   public class FinishedTaskHandler
     {
-        public TaskHandler()
+        private MainViewModel Mwm { get; set; }
+
+        public FinishedTaskHandler(MainViewModel mvm)
         {
             //skal modtage en kopi af view modellen.
+            this.Mwm = mvm;
         }
 
         public void CreateTask()
