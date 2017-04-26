@@ -16,7 +16,7 @@ namespace KeptitClient.ViewModels
     {
 
         //Handlers 
-        public FinishedTaskHandler TaskHandler { get; set; }
+        public FinishedTaskHandler FinishedTaskHandler { get; set; }
          
         // ICommands
         public Common.ICommand AddTaskCommand { get; set; }
@@ -70,13 +70,21 @@ namespace KeptitClient.ViewModels
             set { _SubArea = value; OnPropertyChanged(nameof(SubArea)); }
         }
 
+        private ObservableCollection<Task> _taskCollection;
+        public ObservableCollection<Task> taskCollection
+        {
+            get { return _taskCollection; }
+            set { _taskCollection = value; }
+        }
+
 
         // Constructor
         public MainViewModel()
         {
             FinishedTaskHandler = new FinishedTaskHandler(this);
-            AddTaskCommand = new RelayCommand(TaskHandler.CreateTask, null);
-  
+            taskCollection = new ObservableCollection<Task>();
+
+            AddTaskCommand = new RelayCommand(FinishedTaskHandler.CreateTask, null);
         }
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
