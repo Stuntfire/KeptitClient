@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KeptitClient.ViewModels
+namespace KeptitClient.Handlers
 {
-    public class MainViewModel
+   public class TaskHandler
     {
-        public MainViewModel()
+        public TaskHandler()
         {
 
         }
