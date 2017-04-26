@@ -104,7 +104,6 @@
     <Compile Include="Models\FinishedTask.cs" />
     <Compile Include="Models\GreenKeeper.cs" />
     <Compile Include="Models\SubArea.cs" />
-    <Compile Include="Models\Task.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
