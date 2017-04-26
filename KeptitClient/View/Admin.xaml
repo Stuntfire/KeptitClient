@@ -81,8 +81,7 @@
 
                     <Border Name="border" BorderBrush="Black" BorderThickness="1"
           Padding="5" Margin="5">
-                        <Grid Height="Auto" Width="420
-                                  " HorizontalAlignment="Left">
+                        <Grid Height="Auto" Width="388" HorizontalAlignment="Left">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
@@ -109,7 +108,11 @@
 
                             <ListView HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="1" ></ListView>
 
+                            <TextBlock x:Name="GreenkeeperNameTextBlock"></TextBlock>
+                            <ListBox x:Name="GreenkeeperListBox"></ListBox>
                         </Grid>
+                        
+                        
                     </Border>
 
 
