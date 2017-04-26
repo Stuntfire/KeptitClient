@@ -102,6 +102,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Area.cs" />
+    <Compile Include="Models\FinishedTask.cs" />
     <Compile Include="Models\GreenKeeper.cs" />
     <Compile Include="Models\SubArea.cs" />
     <Compile Include="Models\Task.cs" />
