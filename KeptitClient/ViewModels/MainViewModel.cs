@@ -16,7 +16,7 @@ namespace KeptitClient.ViewModels
     {
 
         //Handlers 
-        public TaskHandler TaskHandler { get; set; }
+        public FinishedTaskHandler TaskHandler { get; set; }
          
         // ICommands
         public Common.ICommand AddTaskCommand { get; set; }
@@ -27,21 +27,61 @@ namespace KeptitClient.ViewModels
 
         //Properties
 
-            //Hours
-            //Minutes
-            //Note
-            //Area
-            //SubArea
-            
+        //Hours
+        private int _taskHour;
+        public int taskHour
+        {
+            get { return _taskHour; }
+            set { _taskHour = value; OnPropertyChanged(nameof(taskHour)); }
+        }
+
+        //Minutes
+        private int _taskMinutes;
+        public int taskMinutes
+        {
+            get { return _taskMinutes; }
+            set { _taskMinutes = value; OnPropertyChanged(nameof(taskMinutes)); }
+        }
+
+
+        //Note
+        private int _taskNotes;
+        public int taskNotes
+        {
+            get { return _taskNotes; }
+            set { _taskNotes = value; OnPropertyChanged(nameof(taskNotes)); }
+        }
+
+
+        //Area
+        private Area _taskArea;
+        public Area taskArea
+        {
+            get { return _taskArea; }
+            set { _taskArea = value; OnPropertyChanged(nameof(taskArea)); }
+        }
+
+        //SubArea
+
+        private SubArea _SubArea;
+        public SubArea SubArea
+        {
+            get { return _SubArea; }
+            set { _SubArea = value; OnPropertyChanged(nameof(SubArea)); }
+        }
 
 
         // Constructor
         public MainViewModel()
         {
-            TaskHandler = new TaskHandler(this);
+            FinishedTaskHandler = new FinishedTaskHandler(this);
             AddTaskCommand = new RelayCommand(TaskHandler.CreateTask, null);
   
         }
         public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
