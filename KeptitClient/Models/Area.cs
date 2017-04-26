@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace KeptitClient.Models
 {
-    class Area
+    public class Area
     {
+        public int AreaID { get; set; }
+        public string AreaTitle { get; set; }
+
+        public Area(int in_areaid, string in_areatitle)
+        {
+            this.AreaID = in_areaid;
+            this.AreaTitle = in_areatitle;
+        }
     }
 }

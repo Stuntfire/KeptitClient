@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KeptitClient.Models
+namespace KeptitClient.Handlers
 {
-   public class Task
+    class AreaHandler
     {
-
     }
 }
