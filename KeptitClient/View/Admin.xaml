@@ -1,11 +1,16 @@
 ﻿<Page
-    x:Class="KeptitClient.View.Admin"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:KeptitClient.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModels="using:KeptitClient.ViewModels"
+    x:Class="KeptitClient.View.Admin"
     mc:Ignorable="d">
+
+    <Page.DataContext>
+        <ViewModels:MainViewModel/>
+    </Page.DataContext>
 
     <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
                CompactPaneLength="50" OpenPaneLength="160">
@@ -18,9 +23,7 @@
                     Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click" Margin="0,0,0,0"/>
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="MenuButton1" Content="G" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="30"
-                            Width="50" Height="50" Background="Transparent" Margin="0">
-                   
-                    </Button>
+                            Width="50" Height="50" Background="Transparent" Margin="0"/>
 
 
                     <TextBlock Text="Greenkeeper" FontSize="18" VerticalAlignment="Center" />
@@ -28,9 +31,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="MenuButton2" Content="A" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                            Width="50" Height="50" Background="Transparent" FontSize="30">
-                     
-                    </Button>
+                            Width="50" Height="50" Background="Transparent" FontSize="30"/>
 
                     <TextBlock Text="Admin" FontSize="18" VerticalAlignment="Center" />
 
@@ -79,10 +80,9 @@
                 </PivotItem>
                 <PivotItem Header="Greenkeeper">
 
-                    <Border Name="border" BorderBrush="Black" BorderThickness="1"
+                    <Border x:Name="border" BorderBrush="Black" BorderThickness="1"
           Padding="5" Margin="5">
-                        <Grid Height="Auto" Width="420
-                                  " HorizontalAlignment="Left">
+                        <Grid Height="Auto" Width="420                                   " HorizontalAlignment="Left">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
@@ -107,7 +107,7 @@
                             <TextBlock Grid.Row="4" Grid.Column="0" Text="" Grid.ColumnSpan="2" Margin="0,0,235,0"/>
                             <Button x:Name="gembtn" Grid.Row="4" Grid.Column="1" Content="Gem" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="147"/>
 
-                            <ListView HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="1" ></ListView>
+                            <ListView HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="1" />
 
                         </Grid>
                     </Border>

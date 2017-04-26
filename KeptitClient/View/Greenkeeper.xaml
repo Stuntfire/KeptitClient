@@ -5,8 +5,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:ViewModels="using:KeptitClient.ViewModels"
     x:Class="KeptitClient.View.Greenkeeper"
     mc:Ignorable="d">
+    <Page.DataContext>
+        <ViewModels:MainViewModel/>
+    </Page.DataContext>
     <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
                CompactPaneLength="50" OpenPaneLength="160">
 
