@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace KeptitClient.Models
 {
-    class GreenKeeper
+
+    public class GreenKeeper
     {
+        public int GreenkeeperID { get; set; }
+        public string GreenkeeperName { get; set; }
+
+        public GreenKeeper(int inID, string ingreenkeeperid)
+        {
+            this.GreenkeeperID = inID;
+            this.GreenkeeperName = ingreenkeeperid;
+        }
     }
 }
