@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace KeptitClient.Models
 {
-    public class SubArea
+    public class FinishedTask
     {
+        public FinishedTask()
+        {
 
+        }
     }
 }
