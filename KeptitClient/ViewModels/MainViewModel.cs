@@ -51,7 +51,7 @@ namespace KeptitClient.ViewModels
         public int TaskNotes
         {
             get { return _taskNotes; }
-            set { _taskNotes = value; OnPropertyChanged(nameof(taskNotes)); }
+            set { _taskNotes = value; OnPropertyChanged(nameof(TaskNotes)); }
         }
 
 
