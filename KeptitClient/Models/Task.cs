@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KeptitClient.ViewModels
+namespace KeptitClient.Models
 {
-    public class MainViewModel
+   public class Task
     {
-        public MainViewModel()
-        {
-          
-        }
+
     }
 }
