@@ -15,22 +15,20 @@ namespace KeptitClient.ViewModels
 {
     public class MainViewModel
     {
-        //Handlers 
-        #region 
+        #region Handlers
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
+
         #endregion
 
-        // ICommands
-        #region
+        #region RelayCommands
         public Common.ICommand AddTaskCommand { get; set; }
         //public Common.ICommand DeleteTaskCommand { get; set; }
         //public Common.ICommand SelectTaskCommand { get; set; }
         //public Common.ICommand EditTaskCommand { get; set; }
         #endregion
 
-        //Properties
-        #region
-        //Hours
+        #region Properties
+
         private int _taskHour;
         public int TaskHour
         {
@@ -38,7 +36,6 @@ namespace KeptitClient.ViewModels
             set { _taskHour = value; OnPropertyChanged(nameof(TaskHour)); }
         }
 
-        //Minutes
         private int _taskMinutes;
         public int TaskMinutes
         {
@@ -46,8 +43,6 @@ namespace KeptitClient.ViewModels
             set { _taskMinutes = value; OnPropertyChanged(nameof(TaskMinutes)); }
         }
 
-
-        //Note
         private int _taskNotes;
         public int TaskNotes
         {
@@ -55,22 +50,14 @@ namespace KeptitClient.ViewModels
             set { _taskNotes = value; OnPropertyChanged(nameof(TaskNotes)); }
         }
 
-
-        //Area
         private ObservableCollection<Area> _areacollection;
-
         public ObservableCollection<Area> AreaCollection
         {
             get { return _areacollection; }
             set { _areacollection = value; }
         }
 
-
-
-        //SubArea
-
         private ObservableCollection<SubArea> _subareacollection;
-
         public ObservableCollection<SubArea> SubAreaCollection
         {
             get { return _subareacollection; }
@@ -84,32 +71,36 @@ namespace KeptitClient.ViewModels
             set { _taskCollection = value; }
         }
 
-        private Area selectedArea;
+        private ObservableCollection<GreenKeeper> _greenKeeperCollection;
+        public ObservableCollection<GreenKeeper> GreenKeeperCollection
+        {
+            get { return _greenKeeperCollection; }
+            set { _greenKeeperCollection = value; }
+        }
+
+        private Area _selectedArea;
         public Area SelectedArea
         {
-            get { return selectedArea; }
-            set { selectedArea = value; }
+            get { return _selectedArea; }
+            set { _selectedArea = value; }
         }
 
-        private SubArea selectedSubArea;
+        private SubArea _selectedSubArea;
         public SubArea SelectedSubArea
         {
-            get { return selectedSubArea; }
-            set { selectedSubArea = value; }
+            get { return _selectedSubArea; }
+            set { _selectedSubArea = value; }
         }
 
-        private GreenKeeper selectedGreenKeeper;
+        private GreenKeeper _selectedGreenKeeper;
         public GreenKeeper SelectedGreenKeeper
         {
-            get { return selectedGreenKeeper; }
-            set { selectedGreenKeeper = value; }
+            get { return _selectedGreenKeeper; }
+            set { _selectedGreenKeeper = value; }
         }
-
 
         #endregion
 
-        // Constructor
-        #region
         public MainViewModel()
         {
             AreaCollection = PersistencyService.LoadAreasAsync();
@@ -119,8 +110,7 @@ namespace KeptitClient.ViewModels
             //AddTaskCommand = new RelayCommand(FinishedTaskHandler.CreateTask, null);
         }
 
-        
-
+        #region INotify
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {

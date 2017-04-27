@@ -18,8 +18,6 @@ namespace KeptitClient.Persistency
         //const string til serverenx
         const string serverUrl = "http://keptit.azurewebsites.net";
 
-
-
         //Tilføj en udført opgave.
         //public static void PostAsJsonTask(FinishedTask TaskToPost)
         //{

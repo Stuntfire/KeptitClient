@@ -9,9 +9,11 @@ namespace KeptitClient.Common
 {
     public class RelayCommand : ICommand
     {
+        #region Properties
         private Action methodToExecute = null;
         private Func<bool> methodToDetectCanExecute = null;
         private DispatcherTimer canExecuteChangedEventTimer = null;
+        #endregion
 
         public RelayCommand(Action methodToExecute, Func<bool> methodToDetectCanExecute)
         {
@@ -24,6 +26,7 @@ namespace KeptitClient.Common
             this.canExecuteChangedEventTimer.Start();
         }
 
+        #region Methods
         public void Execute(object parameter)
         {
             this.methodToExecute();
@@ -50,7 +53,7 @@ namespace KeptitClient.Common
                 this.CanExecuteChanged(this, EventArgs.Empty);
             }
         }
-
+        #endregion
     }
 
     public interface ICommand
