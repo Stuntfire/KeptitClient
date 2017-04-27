@@ -113,10 +113,10 @@ namespace KeptitClient.ViewModels
         public MainViewModel()
         {
             AreaCollection = PersistencyService.LoadAreasAsync();
-            SubAreaCollection = PersistencyService.LoadSubAreasAsync();
-            FinishedTaskHandler = new FinishedTaskHandler(this);
-            TaskCollection = new ObservableCollection<FinishedTask>();
-            AddTaskCommand = new RelayCommand(FinishedTaskHandler.CreateTask, null);
+            //SubAreaCollection = PersistencyService.LoadSubAreasAsync();
+            //FinishedTaskHandler = new FinishedTaskHandler(this);
+            //TaskCollection = new ObservableCollection<FinishedTask>();
+            //AddTaskCommand = new RelayCommand(FinishedTaskHandler.CreateTask, null);
         }
 
         
