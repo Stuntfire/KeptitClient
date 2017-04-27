@@ -17,6 +17,11 @@ namespace KeptitClient.Models
             this.SubAreaID = inSubaAreaId;
             this.SubAreaTitle = inSubAreaTitle;
         }
+
+        public override string ToString()
+        {
+            return string.Format("Nr {0}. {1}.", SubAreaID, SubAreaTitle);
+        }
     }
 }
 

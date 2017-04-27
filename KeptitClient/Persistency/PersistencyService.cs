@@ -50,6 +50,25 @@ namespace KeptitClient.Persistency
         //    }
         //}
 
+        // Henter alle Greenkeeper fra tabellen Greenkeepers
+        public static ObservableCollection<GreenKeeper> LoadGreenkeeperAsync()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                string urlString = "api/greenkeepers";
+
+                HttpResponseMessage response = client.GetAsync(urlString).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    var greenkeeperliste = response.Content.ReadAsAsync<ObservableCollection<GreenKeeper>>().Result;
+                    return greenkeeperliste;
+                }
+                return null;
+            }
+        }
+
         // Henter alle Area fra tabellen Areas
         ////hvis async Task:
         //public static async Task<ObservableCollection<Area>> LoadAreasAsync()

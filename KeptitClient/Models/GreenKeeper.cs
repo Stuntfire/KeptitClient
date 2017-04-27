@@ -16,5 +16,10 @@ namespace KeptitClient.Models
             this.GreenkeeperID = inID;
             this.GreenkeeperName = ingreenkeeperid;
         }
+
+        public override string ToString()
+        {
+            return string.Format("Nr {0}. {1}.", GreenkeeperID, GreenkeeperName);
+        }
     }
 }
