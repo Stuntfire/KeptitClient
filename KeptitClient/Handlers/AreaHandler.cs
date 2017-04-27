@@ -26,9 +26,8 @@ namespace KeptitClient.Handlers
         {
             this.AreasCollection = await Persistency.PersistencyService.LoadAreasAsync();
 
-            //Brug foreach hvis GetAsJsonTask() i PersistencyService kodes som async:
-            //public static async Task<ObservableCollection<Area>> GetAsJsonTask()
-            foreach (var item in await Persistency.PersistencyService.GetAsJsonTask())
+            //Brug foreach hvis LoadAreasAsync() i PersistencyService kodes som async:
+            foreach (var item in await Persistency.PersistencyService.LoadAreasAsync())
             {
                 this.AreasCollection.Add(item);
             }

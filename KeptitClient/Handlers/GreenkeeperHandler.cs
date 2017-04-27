@@ -24,13 +24,12 @@ namespace KeptitClient.Handlers
         ////Gets all Greenkeepers from Database via PersistencyService
         //public async Task GetGreenkeepers()
         //{
-        //    this.GreenkeepersCollection = await Persistency.PersistencyService.GetAsJsonTask();
+        //    this.GreenkeepersCollection = await Persistency.PersistencyService.LoadGreenkeepersAsync();
 
-        //    //Brug foreach hvis GetAsJsonTask() i PersistencyService kodes som async:
-        //    //public static async Task<ObservableCollection<Area>> GetAsJsonTask()
-        //    foreach (var item in await Persistency.PersistencyService.GetAsJsonTask())
+        //    //Brug foreach hvis LoadGreenkeepersAsync() i PersistencyService kodes som async:
+        //    foreach (var item in await Persistency.PersistencyService.LoadGreenkeepersAsync())
         //    {
-        //        this.AreasCollection.Add(item);
+        //        this.GreenkeepersCollection.Add(item);
         //    }
         //}
 

@@ -62,7 +62,7 @@ namespace KeptitClient.Persistency
                 client.DefaultRequestHeaders.Clear();
                 string urlString = "api/areas";
 
-                ////hvis asyn Task: 
+                ////hvis async Task: 
                 //HttpResponseMessage response = await client.GetAsync(urlString);
                 HttpResponseMessage response = client.GetAsync(urlString).Result;
                 if (response.IsSuccessStatusCode)
