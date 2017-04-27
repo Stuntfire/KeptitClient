@@ -19,11 +19,10 @@ namespace KeptitClient.Handlers
             this.Mwm = mvm;
         }
 
-        public void CreateTask()
-        {
-            var temp_FinishedTask = new FinishedTask();
-            per
-            //PersistencyService.PostAsJsonFinishedTask();        
-        }
+        //public void CreateTask()
+        //{
+        //    var temp_FinishedTask = new FinishedTask();
+        //    PersistencyService.PostAsJsonFinishedTask();        
+        //}
     }
 }
