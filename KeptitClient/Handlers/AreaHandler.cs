@@ -1,5 +1,6 @@
 ﻿using KeptitClient.Models;
 using KeptitClient.ViewModels;
+using KeptitClient.Persistency;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,22 +23,22 @@ namespace KeptitClient.Handlers
         }
 
         //Gets all Areas from Database via PersistencyService
-        public async Task GetAreas()
-        {
-            this.AreasCollection = await Persistency.PersistencyService.LoadAreasAsync();
+        //public async Task GetAreas()
+        //{
+        //    this.AreasCollection = await PersistencyService.LoadAreasAsync();
 
-            //Brug foreach hvis LoadAreasAsync() i PersistencyService kodes som async:
-            foreach (var item in await Persistency.PersistencyService.LoadAreasAsync())
-            {
-                this.AreasCollection.Add(item);
-            }
-        }
+        //    //Brug foreach hvis LoadAreasAsync() i PersistencyService kodes som async:
+        //    foreach (var item in await PersistencyService.LoadAreasAsync())
+        //    {
+        //        this.AreasCollection.Add(item);
+        //    }
+        //}
 
-        ////Create et nyt Area
+        ////Creates a new Area
         //public void CreateArea()
         //{
         //    Area temp_Area = new Area(Mwm.SelectedArea.AreaID, Mwm.SelectedArea.AreaTitle);
-        //    Persistency.PersistencyService.PostAsJsonTask(temp_Area);
+        //    PersistencyService.PostAsJsonTask(temp_Area);
         //}
     }
 }

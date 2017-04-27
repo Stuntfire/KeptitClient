@@ -22,6 +22,7 @@ namespace KeptitClient.Handlers
         public void CreateTask()
         {
             var temp_FinishedTask = new FinishedTask();
+            per
             //PersistencyService.PostAsJsonFinishedTask();        
         }
     }

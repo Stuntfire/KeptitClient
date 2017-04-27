@@ -1,5 +1,6 @@
 ﻿using KeptitClient.Models;
 using KeptitClient.ViewModels;
+using KeptitClient.Persistency;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,20 +25,20 @@ namespace KeptitClient.Handlers
         ////Gets all Greenkeepers from Database via PersistencyService
         //public async Task GetGreenkeepers()
         //{
-        //    this.GreenkeepersCollection = await Persistency.PersistencyService.LoadGreenkeepersAsync();
+        //    this.GreenkeepersCollection = await PersistencyService.LoadGreenkeepersAsync();
 
         //    //Brug foreach hvis LoadGreenkeepersAsync() i PersistencyService kodes som async:
-        //    foreach (var item in await Persistency.PersistencyService.LoadGreenkeepersAsync())
+        //    foreach (var item in await PersistencyService.LoadGreenkeepersAsync())
         //    {
         //        this.GreenkeepersCollection.Add(item);
         //    }
         //}
 
-        ////Create et nyt Area
-        //public void CreateArea()
+        ////Creates a new Greenkeeper
+        //public void CreateGreenkeeper()
         //{
-        //    Area temp_Area = new Area(Mwm.SelectedArea.AreaID, Mwm.SelectedArea.AreaTitle);
-        //    Persistency.PersistencyService.PostAsJsonTask(temp_Area);
+        //    GreenKeeper tempGreenkeeper = new GreenKeeper(Mwm.SelectedGreenKeeper.GreenkeeperID, Mwm.SelectedGreenKeeper.GreenkeeperName);
+        //    PersistencyService.PostGreenkeeperAsJsonAsync(tempGreenkeeper);
         //}
     }
 }
