@@ -1,18 +1,91 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
+using Windows.UI.Popups;
+using KeptitClient.Common;
+using KeptitClient.Models;
+using Task = System.Threading.Tasks.Task;
 
 namespace KeptitClient.Persistency
 {
     public class PersistencyService
     {
-        //const string til serveren
+        //const string til serverenx
+        const string serverUrl = "http://keptitwebservice.azurewebsites.net";
 
-        public static void PostAsJsonTask(Task TaskToPost)
+
+
+        //Tilføj en udført opgave.
+        //public static void PostAsJsonTask(FinishedTask TaskToPost)
+        //{
+        //    using (var client = new HttpClient())
+        //    {
+        //        client.BaseAddress = new Uri(serverUrl);
+        //        client.DefaultRequestHeaders.Clear();
+        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+        //        try
+        //        {
+        //            var response = client.PostAsJsonAsync<FinishedTask>("api/finishedtasks", TaskToPost).Result;
+
+        //            if (response.IsSuccessStatusCode)
+        //            {
+        //                MessageDialogHelper.Show("Udført opgave blev gemt", TaskToPost.FinishedTasksID.ToString());
+        //            }
+        //            else
+        //            {
+        //                MessageDialogHelper.Show("Udført opgave blev ikke gemt", TaskToPost.FinishedTasksID.ToString());
+        //            }
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            MessageDialogHelper.Show("Fejl ", TaskToPost.FinishedTasksID.ToString());
+        //        }
+
+        //    }
+        //}
+
+        // Henter alle Area fra tabellen Areas
+        public static ObservableCollection<Area> LoadAreasAsync()
         {
 
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                string urlString = "api/areas";
+
+                HttpResponseMessage response = client.GetAsync(urlString).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    var arealiste = response.Content.ReadAsAsync<ObservableCollection<Area>>().Result;
+                    return arealiste;
+                }
+                return null;
+            }
+        }
+
+        // Henter alle SubArea fra tabellen SubAreas
+        public static ObservableCollection<SubArea> LoadSubAreasAsync()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                string urlString = "api/subareas";
+
+                HttpResponseMessage response = client.GetAsync(urlString).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    var subarealiste = response.Content.ReadAsAsync<ObservableCollection<SubArea>>().Result;
+                    return subarealiste;
+                }
+                return null;
+            }
         }
 
 
