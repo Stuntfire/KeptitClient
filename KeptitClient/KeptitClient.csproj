@@ -99,6 +99,9 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Handlers\AreaHandler.cs" />
     <Compile Include="Handlers\FinishedTaskHandler.cs" />
+    <Compile Include="Handlers\GreenkeeperHandler.cs" />
+    <Compile Include="Handlers\SubAreaHandler.cs" />
+    <Compile Include="Handlers\TaskHandler.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

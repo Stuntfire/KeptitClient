@@ -66,7 +66,12 @@
             </SplitView>
             <TextBlock Text="SplitView Basic" FontSize="54" Foreground="White"
                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+            
+            <StackPanel Margin="80,114,850,471">
+                <ComboBox x:Name="comboBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding AreaCollection, Mode=TwoWay}"/>
+            </StackPanel>
+            
+            
 
 
             <SplitView Height="46" Background="#00412e"  Margin="0,0,0,0" VerticalAlignment="Bottom">

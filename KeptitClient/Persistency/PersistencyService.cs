@@ -9,6 +9,7 @@ using Windows.UI.Popups;
 using KeptitClient.Common;
 using KeptitClient.Models;
 using Task = System.Threading.Tasks.Task;
+using System.Threading.Tasks;
 
 namespace KeptitClient.Persistency
 {
@@ -50,6 +51,8 @@ namespace KeptitClient.Persistency
         //}
 
         // Henter alle Area fra tabellen Areas
+        ////hvis async Task:
+        //public static async Task<ObservableCollection<Area>> LoadAreasAsync()
         public static ObservableCollection<Area> LoadAreasAsync()
         {
 
@@ -59,9 +62,14 @@ namespace KeptitClient.Persistency
                 client.DefaultRequestHeaders.Clear();
                 string urlString = "api/areas";
 
+                ////hvis async Task: 
+                //HttpResponseMessage response = await client.GetAsync(urlString);
                 HttpResponseMessage response = client.GetAsync(urlString).Result;
                 if (response.IsSuccessStatusCode)
                 {
+                    ////hvis async Task:
+                    //var arealiste = await getResponse.Content.ReadAsAsync<ObservableCollection<Area>>();
+                    //return arealiste;
                     var arealiste = response.Content.ReadAsAsync<ObservableCollection<Area>>().Result;
                     return arealiste;
                 }
