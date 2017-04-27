@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using Windows.UI.Popups;
+using KeptitClient.Common;
 using KeptitClient.Models;
 using Task = System.Threading.Tasks.Task;
 
@@ -16,6 +17,7 @@ namespace KeptitClient.Persistency
         //const string til serverenx
         const string serverURL = "http://keptitwebservice.azurewebsites.net";
 
+        
 
         //Tilføj en udført opgave.
         public static void PostAsJsonTask(FinishedTask TaskToPost)
@@ -28,26 +30,20 @@ namespace KeptitClient.Persistency
 
                 try
                 {
-                    var response = client.PostAsJsonAsync<FinishedTask>("api/finishedtask", TaskToPost).Result;
+                    var response = client.PostAsJsonAsync<FinishedTask>("api/finishedtasks", TaskToPost).Result;
 
                     if (response.IsSuccessStatusCode)
                     {
-                        MessageDialog taskAdded = new MessageDialog("Task has been added");
-                        taskAdded.Commands.Add(new UICommand { Label = "Ok" });
-                        taskAdded.ShowAsync().AsTask();
+                        MessageDialogHelper.Show("Udført opgave blev gemt", TaskToPost.FinishedTasksID.ToString());
                     }
                     else
                     {
-                        MessageDialog Error = new MessageDialog("Error");
-                        Error.Commands.Add(new UICommand { Label = "Ok" });
-                        Error.ShowAsync().AsTask();
+                        MessageDialogHelper.Show("Udført opgave blev ikke gemt", TaskToPost.FinishedTasksID.ToString());
                     }
                 }
                 catch (Exception e)
                 {
-                    MessageDialog Error = new MessageDialog("Error : " + e);
-                    Error.Commands.Add(new UICommand { Label = "Ok" });
-                    Error.ShowAsync().AsTask();
+                    MessageDialogHelper.Show("Fejl ", TaskToPost.FinishedTasksID.ToString());
                 }
 
             }

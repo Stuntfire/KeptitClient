@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using KeptitClient.Persistency;
 
 namespace KeptitClient.ViewModels
 {
@@ -109,9 +110,15 @@ namespace KeptitClient.ViewModels
         {
             FinishedTaskHandler = new FinishedTaskHandler(this);
             TaskCollection = new ObservableCollection<FinishedTask>();
-
+            LoadArea();
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.CreateTask, null);
         }
+
+        public void LoadArea()
+        {
+            PersistencyService.GetArea();
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {
