@@ -15,7 +15,7 @@ namespace KeptitClient.Persistency
     public class PersistencyService
     {
         //const string til serverenx
-        const string serverUrl = "http://keptitwebservice.azurewebsites.net";
+        const string serverUrl = "http://keptit.azurewebsites.net";
 
 
 
