@@ -30,7 +30,7 @@ namespace KeptitClient.Handlers
         //    this.SubAreasCollection = PersistencyService.LoadSubAreasAsync();
 
         //    //hvis async Task
-        //    foreach (SubArea item in /*await*/ PersistencyService.LoadSubAreasAsync())
+        //    foreach (var item in await PersistencyService.LoadSubAreasAsync())
         //    {
         //        this.SubAreasCollection.Add(item);
         //    }
