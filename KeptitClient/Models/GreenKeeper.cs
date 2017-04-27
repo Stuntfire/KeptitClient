@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace KeptitClient.Models
 {
-
     public class GreenKeeper
     {
         public int GreenkeeperID { get; set; }

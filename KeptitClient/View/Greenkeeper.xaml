@@ -79,6 +79,7 @@
                 </Grid>
             </SplitView>
             <Image HorizontalAlignment="Right" Source="\images\ledreborg_logo.png" Height="120" VerticalAlignment="Top" Width="auto" Margin="0,0,7,0"/>
+            <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="325,224,0,0" VerticalAlignment="Top"/>
 
         </Grid>
     </SplitView>

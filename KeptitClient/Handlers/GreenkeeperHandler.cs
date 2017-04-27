@@ -9,22 +9,22 @@ using System.Threading.Tasks;
 
 namespace KeptitClient.Handlers
 {
-    public class AreaHandler
+    public class GreenkeeperHandler
     {
         private MainViewModel Mwm { get; set; }
 
-        public ObservableCollection<Area> AreasCollection { get; set; }
+        public ObservableCollection<GreenKeeper> GreenkeepersCollection { get; set; }
 
         //Constructor
-        public AreaHandler(MainViewModel mvm)
+        public GreenkeeperHandler(MainViewModel mwm)
         {
-            this.Mwm = mvm;
+            this.Mwm = mwm;
         }
 
-        ////Gets all Areas from Database via PersistencyService
-        //public async Task GetAreas()
+        ////Gets all Greenkeepers from Database via PersistencyService
+        //public async Task GetGreenkeepers()
         //{
-        //    this.AreasCollection = await Persistency.PersistencyService.GetAsJsonTask();
+        //    this.GreenkeepersCollection = await Persistency.PersistencyService.GetAsJsonTask();
 
         //    //Brug foreach hvis GetAsJsonTask() i PersistencyService kodes som async:
         //    //public static async Task<ObservableCollection<Area>> GetAsJsonTask()

@@ -13,7 +13,7 @@
         <ViewModels:MainViewModel/>
     </Page.DataContext>
 
-    <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
+    <SplitView x:Name="MySplitView" DisplayMode="CompactInline"  IsPaneOpen="False" 
                CompactPaneLength="50" OpenPaneLength="160">
 
         <SplitView.Pane>
