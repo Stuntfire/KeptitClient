@@ -21,18 +21,18 @@ namespace KeptitClient.Handlers
             this.Mwm = mvm;
         }
 
-        ////Gets all Areas from Database via PersistencyService
-        //public async Task GetAreas()
-        //{
-        //    this.AreasCollection = await Persistency.PersistencyService.GetAsJsonTask();
+        //Gets all Areas from Database via PersistencyService
+        public async Task GetAreas()
+        {
+            this.AreasCollection = await Persistency.PersistencyService.LoadAreasAsync();
 
-        //    //Brug foreach hvis GetAsJsonTask() i PersistencyService kodes som async:
-        //    //public static async Task<ObservableCollection<Area>> GetAsJsonTask()
-        //    foreach (var item in await Persistency.PersistencyService.GetAsJsonTask())
-        //    {
-        //        this.AreasCollection.Add(item);
-        //    }
-        //}
+            //Brug foreach hvis GetAsJsonTask() i PersistencyService kodes som async:
+            //public static async Task<ObservableCollection<Area>> GetAsJsonTask()
+            foreach (var item in await Persistency.PersistencyService.GetAsJsonTask())
+            {
+                this.AreasCollection.Add(item);
+            }
+        }
 
         ////Create et nyt Area
         //public void CreateArea()
