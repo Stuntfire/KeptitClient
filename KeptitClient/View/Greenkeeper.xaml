@@ -66,7 +66,12 @@
             </SplitView>
             <TextBlock Text="SplitView Basic" FontSize="54" Foreground="White"
                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+            
+            <StackPanel Margin="80,114,850,471">
+                <ComboBox x:Name="comboBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding AreaCollection, Mode=TwoWay}"/>
+            </StackPanel>
+            
+            
 
 
             <SplitView Height="46" Background="#00412e"  Margin="0,0,0,0" VerticalAlignment="Bottom">
@@ -79,7 +84,6 @@
                 </Grid>
             </SplitView>
             <Image HorizontalAlignment="Right" Source="\images\ledreborg_logo.png" Height="120" VerticalAlignment="Top" Width="auto" Margin="0,0,7,0"/>
-            <ComboBox x:Name="comboBoxArea" HorizontalAlignment="Left" Margin="114,180,0,0" VerticalAlignment="Top" Width="120"/>
 
         </Grid>
     </SplitView>

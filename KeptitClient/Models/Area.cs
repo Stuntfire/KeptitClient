@@ -16,5 +16,10 @@ namespace KeptitClient.Models
             this.AreaID = in_areaid;
             this.AreaTitle = in_areatitle;
         }
+
+        public override string ToString()
+        {
+            return $"{AreaTitle}";
+        }
     }
 }
