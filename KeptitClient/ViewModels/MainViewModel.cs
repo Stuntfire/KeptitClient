@@ -57,20 +57,24 @@ namespace KeptitClient.ViewModels
 
 
         //Area
-        private Area _taskArea;
-        public Area TaskArea
+        private ObservableCollection<Area> _areacollection;
+
+        public ObservableCollection<Area> AreaCollection
         {
-            get { return _taskArea; }
-            set { _taskArea = value; OnPropertyChanged(nameof(TaskArea)); }
+            get { return _areacollection; }
+            set { _areacollection = value; }
         }
+
+
 
         //SubArea
 
-        private SubArea _subArea;
-        public SubArea SubArea
+        private ObservableCollection<SubArea> _subareacollection;
+
+        public ObservableCollection<SubArea> SubAreaCollection
         {
-            get { return _subArea; }
-            set { _subArea = value; OnPropertyChanged(nameof(SubArea)); }
+            get { return _subareacollection; }
+            set { _subareacollection = value; }
         }
 
         private ObservableCollection<FinishedTask> _taskCollection;
@@ -108,16 +112,14 @@ namespace KeptitClient.ViewModels
         #region
         public MainViewModel()
         {
+            AreaCollection = PersistencyService.LoadAreasAsync();
+            SubAreaCollection = PersistencyService.LoadSubAreasAsync();
             FinishedTaskHandler = new FinishedTaskHandler(this);
             TaskCollection = new ObservableCollection<FinishedTask>();
-            LoadArea();
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.CreateTask, null);
         }
 
-        public void LoadArea()
-        {
-            PersistencyService.GetArea();
-        }
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
