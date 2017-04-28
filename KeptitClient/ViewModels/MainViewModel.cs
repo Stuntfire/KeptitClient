@@ -9,27 +9,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using KeptitClient.Persistency;
 
 namespace KeptitClient.ViewModels
 {
-    public class MainViewModel 
+    public class MainViewModel
     {
-        //Handlers 
-        #region
+        #region Handlers
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
+
         #endregion
 
-        //ICommands
-        #region
+        #region RelayCommands
         public Common.ICommand AddTaskCommand { get; set; }
         //public Common.ICommand DeleteTaskCommand { get; set; }
         //public Common.ICommand SelectTaskCommand { get; set; }
         //public Common.ICommand EditTaskCommand { get; set; }
         #endregion
 
-        //Properties
-        #region
-        //Hours
+        #region Properties
+
         private int _taskHour;
         public int TaskHour
         {
@@ -37,7 +36,6 @@ namespace KeptitClient.ViewModels
             set { _taskHour = value; OnPropertyChanged(nameof(TaskHour)); }
         }
 
-        //Minutes
         private int _taskMinutes;
         public int TaskMinutes
         {
@@ -45,50 +43,74 @@ namespace KeptitClient.ViewModels
             set { _taskMinutes = value; OnPropertyChanged(nameof(TaskMinutes)); }
         }
 
-
-        //Note
         private int _taskNotes;
         public int TaskNotes
         {
             get { return _taskNotes; }
-            set { _taskNotes = value; OnPropertyChanged(nameof(taskNotes)); }
+            set { _taskNotes = value; OnPropertyChanged(nameof(TaskNotes)); }
         }
 
-
-        //Area
-        private Area _taskArea;
-        public Area TaskArea
+        private ObservableCollection<Area> _areacollection;
+        public ObservableCollection<Area> AreaCollection
         {
-            get { return _taskArea; }
-            set { _taskArea = value; OnPropertyChanged(nameof(TaskArea)); }
+            get { return _areacollection; }
+            set { _areacollection = value; }
         }
 
-        //SubArea
-
-        private SubArea _subArea;
-        public SubArea SubArea
+        private ObservableCollection<SubArea> _subareacollection;
+        public ObservableCollection<SubArea> SubAreaCollection
         {
-            get { return _subArea; }
-            set { _subArea = value; OnPropertyChanged(nameof(SubArea)); }
+            get { return _subareacollection; }
+            set { _subareacollection = value; }
         }
 
-        private ObservableCollection<Task> _taskCollection;
-        public ObservableCollection<Task> TaskCollection
+        private ObservableCollection<FinishedTask> _taskCollection;
+        public ObservableCollection<FinishedTask> TaskCollection
         {
             get { return _taskCollection; }
             set { _taskCollection = value; }
         }
+
+        private ObservableCollection<GreenKeeper> _greenKeeperCollection;
+        public ObservableCollection<GreenKeeper> GreenKeeperCollection
+        {
+            get { return _greenKeeperCollection; }
+            set { _greenKeeperCollection = value; }
+        }
+
+        private Area _selectedArea;
+        public Area SelectedArea
+        {
+            get { return _selectedArea; }
+            set { _selectedArea = value; }
+        }
+
+        private SubArea _selectedSubArea;
+        public SubArea SelectedSubArea
+        {
+            get { return _selectedSubArea; }
+            set { _selectedSubArea = value; }
+        }
+
+        private GreenKeeper _selectedGreenKeeper;
+        public GreenKeeper SelectedGreenKeeper
+        {
+            get { return _selectedGreenKeeper; }
+            set { _selectedGreenKeeper = value; }
+        }
+
         #endregion
 
-        //Constructor og OnPropertyChanged
-        #region
         public MainViewModel()
         {
-            FinishedTaskHandler = new FinishedTaskHandler(this);
-            TaskCollection = new ObservableCollection<Task>();
-
-            AddTaskCommand = new RelayCommand(FinishedTaskHandler.CreateTask, null);
+            AreaCollection = PersistencyService.LoadAreasAsync();
+            //SubAreaCollection = PersistencyService.LoadSubAreasAsync();
+            //FinishedTaskHandler = new FinishedTaskHandler(this);
+            //TaskCollection = new ObservableCollection<FinishedTask>();
+            //AddTaskCommand = new RelayCommand(FinishedTaskHandler.CreateTask, null);
         }
+
+        #region INotify
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {

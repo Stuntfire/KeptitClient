@@ -12,7 +12,7 @@ namespace KeptitClient.Models
 
         public int AreaID { get; set; }
 
-        public int? TaskID { get; set; }
+        public int? GreenTaskID { get; set; }
 
         public int SubAreaID { get; set; }
 
@@ -27,6 +27,11 @@ namespace KeptitClient.Models
         public FinishedTask()
         {
 
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Nr {0}. {1}. {2}. {3}. {4}. {5}. {6}. {7}.", FinishedTasksID, AreaID, GreenTaskID,SubAreaID,GreenkeeperID,Date,Hours,Minutes);
         }
     }
 }

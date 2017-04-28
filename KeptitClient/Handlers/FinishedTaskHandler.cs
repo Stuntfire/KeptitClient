@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using KeptitClient.Persistency;
 using KeptitClient.ViewModels;
+using KeptitClient.Models;
 
 namespace KeptitClient.Handlers
 {
@@ -18,10 +19,10 @@ namespace KeptitClient.Handlers
             this.Mwm = mvm;
         }
 
-        public void CreateTask()
-        {
-            //var temp_Task = new Task();
-            //PersistencyService.PostAsJsonTask();        
-        }
+        //public void CreateTask()
+        //{
+        //    var temp_FinishedTask = new FinishedTask();
+        //    PersistencyService.PostAsJsonFinishedTask();        
+        //}
     }
 }
