@@ -19,7 +19,7 @@ namespace KeptitClient.ViewModels
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
         #endregion
 
-        // ICommands
+        //ICommands
         #region
         public Common.ICommand AddTaskCommand { get; set; }
         //public Common.ICommand DeleteTaskCommand { get; set; }
@@ -80,7 +80,7 @@ namespace KeptitClient.ViewModels
         }
         #endregion
 
-        // Constructor
+        //Constructor og OnPropertyChanged
         #region
         public MainViewModel()
         {
