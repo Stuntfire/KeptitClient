@@ -11,79 +11,98 @@
     <Page.DataContext>
         <ViewModels:MainViewModel/>
     </Page.DataContext>
-    <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
-               CompactPaneLength="50" OpenPaneLength="160">
+    <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="True" 
+               CompactPaneLength="50" OpenPaneLength="160" PaneBackground="{x:Null}">
 
         <SplitView.Pane>
 
-            <StackPanel Background="#d8ad50">
+            <StackPanel Background="#00412e" Margin="0,53,0,0">
 
-                <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
-                    Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click" Margin="0,0,0,0"/>
-                <StackPanel Orientation="Horizontal">
+
+                <StackPanel Orientation="Horizontal" Background="#d6af55">
                     <Button x:Name="MenuButton1" Content="G" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="30"
-                            Width="50" Height="50" Background="Transparent" Margin="0">
+                            Width="50" Height="50" Background="Transparent" Margin="0" Foreground="White">
 
                         <Interactivity:Interaction.Behaviors>
                             <Core:EventTriggerBehavior EventName="Click">
-                                <Core:NavigateToPageAction TargetPage="KeptitClient.View.Greenkeeper"/>
+
                             </Core:EventTriggerBehavior>
                         </Interactivity:Interaction.Behaviors>
 
                     </Button>
 
 
-                    <TextBlock Text="Greenkeeper" FontSize="18" VerticalAlignment="Center" />
+                    <TextBlock Text="Greenkeeper" FontSize="18" VerticalAlignment="Center" Foreground="White" />
 
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="MenuButton2" Content="A" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                            Width="50" Height="50" Background="Transparent" FontSize="30">
-                        <Interactivity:Interaction.Behaviors>
-                            <Core:EventTriggerBehavior EventName="Click">
-                                <Core:NavigateToPageAction TargetPage="KeptitClient.View.Admin"/>
-                            </Core:EventTriggerBehavior>
-                        </Interactivity:Interaction.Behaviors>
+                            Width="50" Height="50" Background="Transparent" FontSize="30" Foreground="White">
+                        <!--<Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="Green"/>
+                                
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Red"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>-->
+
                     </Button>
 
-                    <TextBlock Text="Admin" FontSize="18" VerticalAlignment="Center" />
+                    <TextBlock Text="Admin" FontSize="18" VerticalAlignment="Center" Foreground="White" />
 
                 </StackPanel>
+                <Image x:Name="image" Height="119" Source="Icons\Logo.png" Margin="0,350,3,3"/>
             </StackPanel>
         </SplitView.Pane>
 
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="19*"/>
+                <ColumnDefinition Width="186*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
 
-            <SplitView Height="46" Background="#00412e"  Margin="0,0,0,0" VerticalAlignment="Top">
+                <RowDefinition Height="47*"/>
+                <RowDefinition Height="673*"/>
+            </Grid.RowDefinitions>
 
-                <SplitView.Pane>
-                    <Grid/>
 
-                </SplitView.Pane>
-                <Grid>
-                    <TextBlock HorizontalAlignment="Left" Margin="51,-1,0,0" TextWrapping="Wrap" Text="Greenkeeper siden" VerticalAlignment="Top" FontSize="35"  Foreground="White"/>
-                </Grid>
-            </SplitView>
-            <TextBlock Text="SplitView Basic" FontSize="54" Foreground="White"
-                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            
-            <StackPanel Margin="80,114,850,471">
-                <ComboBox x:Name="comboBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding AreaCollection, Mode=TwoWay}"/>
+            <StackPanel Margin="48,134,846,385" Grid.Row="1" Grid.Column="1">
+                <ComboBox x:Name="comboBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding AreaCollection, Mode=TwoWay}" Width="423" Height="45" Margin="0,0,-200,0" IsDropDownOpen="True"/>
             </StackPanel>
-            
-            
-
-
-            <SplitView Height="46" Background="#00412e"  Margin="0,0,0,0" VerticalAlignment="Bottom">
+            <Image HorizontalAlignment="Right" Source="\images\ledreborg_logo.png" Height="120" VerticalAlignment="Top" Width="0" Margin="0,0,7,0" Grid.RowSpan="2" Grid.Column="1"/>
+            <SplitView Height="53" Background="#00412e" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="-49,-2,0,0" Grid.RowSpan="2" PaneBackground="#FF00412E">
 
                 <SplitView.Pane>
                     <Grid/>
+
+                  
                 </SplitView.Pane>
-                <Grid>
-                    <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="KeptIT" VerticalAlignment="Center" Foreground="White"/>
-                </Grid>
+
+                <!--<TextBlock Padding="1,2,0,30" x:Name="textBlock" FontSize="30"  HorizontalAlignment="Left" Height="53" TextWrapping="Wrap" Text="Keptit Greenkeeper CMS" VerticalAlignment="Top" Width="1279" FocusVisualPrimaryBrush="White" Foreground="White"/>-->
+
+
             </SplitView>
-            <Image HorizontalAlignment="Right" Source="\images\ledreborg_logo.png" Height="120" VerticalAlignment="Top" Width="auto" Margin="0,0,7,0"/>
+            <TextBlock x:Name="textBlock1" Grid.Column="1" HorizontalAlignment="Left" Margin="48,98,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Vælg dit navn:" FontSize="25" VerticalAlignment="Top" Width="203"/>
+            <!--<TextBlock x:Name="textBlock2" Grid.Column="1" HorizontalAlignment="Left" Margin="48,19,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Greenkeeper indtast udført opgave:" VerticalAlignment="Top" Height="63" Width="1032" FocusVisualPrimaryBrush="White" FontSize="50"/>-->
+            <TextBlock x:Name="textBlock3" Grid.Column="1" HorizontalAlignment="Left" Margin="548,96,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Opgave udført den:" FontSize="25" VerticalAlignment="Top"/>
+            <CalendarDatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="548,134,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="461"/>
+            <TextBlock x:Name="textBlock4" FontSize="25" Grid.Column="1" HorizontalAlignment="Left" Margin="55,187,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Vælg et hul:" VerticalAlignment="Top" Height="37" Width="369"/>
+            <ComboBox x:Name="comboBox1" Grid.Column="1" HorizontalAlignment="Left" Margin="48,229,0,0" Grid.Row="1" VerticalAlignment="Top" Width="423" Height="45"/>
+            <TextBlock x:Name="textBlock5" Grid.Column="1" HorizontalAlignment="Left" Margin="48,293,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Vælg en opgave:" VerticalAlignment="Top" FontSize="25" Height="37" Width="203"/>
+            <ComboBox x:Name="comboBox2" Grid.Column="1" HorizontalAlignment="Left" Margin="48,330,0,0" Grid.Row="1" VerticalAlignment="Top" Width="423" Height="45"/>
+            <TextBlock x:Name="textBlock6" Grid.Column="1" HorizontalAlignment="Left" Margin="55,396,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Vælg en opgave-detalje:" VerticalAlignment="Top" Height="35" Width="328" FontSize="25"/>
+            <ComboBox x:Name="comboBox3" Grid.Column="1" HorizontalAlignment="Left" Margin="48,436,0,0" Grid.Row="1" VerticalAlignment="Top" Width="423" Height="45"/>
+            <TextBlock x:Name="textBlock7" Grid.Column="1" HorizontalAlignment="Left" Margin="55,524,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Indtast antal timer og minutter brugt:"  FontSize="25" VerticalAlignment="Top" Height="34" Width="416"/>
+            <TextBox x:Name="textBox" Grid.Column="1" HorizontalAlignment="Left" Margin="55,563,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Timer" VerticalAlignment="Top" Height="47" Width="113"/>
+            <TextBox x:Name="textBox1" Grid.Column="1" HorizontalAlignment="Left" Margin="215,563,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Minutter" VerticalAlignment="Top" Height="47" Width="117"/>
+            <TextBlock x:Name="textBlock8" Grid.Column="1" HorizontalAlignment="Left" Margin="548,187,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Tilføj evt. en note til opgaven:" VerticalAlignment="Top"  FontSize="25" Height="37" Width="351"/>
+            <TextBox x:Name="textBox2" Grid.Column="1" HorizontalAlignment="Left" Margin="548,229,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Height="252" Width="461"/>
+            <Button x:Name="button" Content="Gem udførte opgave" Grid.Column="1" HorizontalAlignment="Left" Margin="749,563,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="25" Height="47" Width="260" Background="#FF777777"/>
 
         </Grid>
     </SplitView>
