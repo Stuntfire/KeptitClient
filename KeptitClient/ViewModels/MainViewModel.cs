@@ -50,33 +50,44 @@ namespace KeptitClient.ViewModels
             set { _taskNotes = value; OnPropertyChanged(nameof(TaskNotes)); }
         }
 
-        private ObservableCollection<Area> _areacollection;
-        public ObservableCollection<Area> AreaCollection
-        {
-            get { return _areacollection; }
-            set { _areacollection = value; }
-        }
-
-        private ObservableCollection<SubArea> _subareacollection;
-        public ObservableCollection<SubArea> SubAreaCollection
-        {
-            get { return _subareacollection; }
-            set { _subareacollection = value; }
-        }
-
-        private ObservableCollection<FinishedTask> _taskCollection;
-        public ObservableCollection<FinishedTask> TaskCollection
-        {
-            get { return _taskCollection; }
-            set { _taskCollection = value; }
-        }
-
         private ObservableCollection<GreenKeeper> _greenKeeperCollection;
         public ObservableCollection<GreenKeeper> GreenKeeperCollection
         {
             get { return _greenKeeperCollection; }
             set { _greenKeeperCollection = value; }
         }
+
+        private ObservableCollection<Area> _areaCollection;
+        public ObservableCollection<Area> AreaCollection
+        {
+            get { return _areaCollection; }
+            set { _areaCollection = value; }
+        }
+
+        private ObservableCollection<SubArea> _subAreaCollection;
+        public ObservableCollection<SubArea> SubAreaCollection
+        {
+            get { return _subAreaCollection; }
+            set { _subAreaCollection = value; }
+        }
+
+        private ObservableCollection<GreenTask> _greenTaskCollektion;
+
+        public ObservableCollection<GreenTask> GreenTaskCollection
+        {
+            get { return _greenTaskCollektion; }
+            set { _greenTaskCollektion = value; }
+        }
+
+
+        private ObservableCollection<FinishedTask> _finishedTaskCollection;
+        public ObservableCollection<FinishedTask> FinishedTaskCollection
+        {
+            get { return _finishedTaskCollection; }
+            set { _finishedTaskCollection = value; }
+        }
+
+        
 
         private Area _selectedArea;
         public Area SelectedArea
