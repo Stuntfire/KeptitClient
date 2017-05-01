@@ -28,5 +28,10 @@ namespace KeptitClient.Models
         public DateTime Date { get; set; }
 
         public string Notes { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("Nr {0}. {1}. {2}. {3}. {4}. {5}. {6}. {7}.", GreenkeeperName , AreaTitle, SubAreaTitle, GreenTaskTitle, Hours, Minutes, Date, Notes);
+        }
     }
 }
