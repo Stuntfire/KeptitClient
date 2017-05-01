@@ -20,6 +20,8 @@ namespace KeptitClient.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
+    /// 
+    // Laver en lille ændring for at være i stand til at pushe
     public sealed partial class Greenkeeper : Page
     {
         public Greenkeeper()
