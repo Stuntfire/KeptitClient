@@ -116,7 +116,7 @@ namespace KeptitClient.ViewModels
         public MainViewModel()
         {
             GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
-            var gkh = new GreenkeeperHandler(this).GetGreenkeeperCollection();
+            var gkh = new GreenkeeperHandler(this).GetGreenkeepers();
 
             AreaCollection = new ObservableCollection<Area>();
             var ah = new AreaHandler(this).GetAreaCollection();
@@ -125,7 +125,7 @@ namespace KeptitClient.ViewModels
             var sah = new SubAreaHandler(this).GetSubAreaCollection();
 
             FinishedTaskCollection = new ObservableCollection<FinishedTask>();
-            var fth = new FinishedTaskHandler(this).GetFinishedTaskCollection();
+            var fth = new FinishedTaskHandler(this);
 
             GreenTaskCollection = new ObservableCollection<GreenTask>();
             var gth = new GreenTaskHandler(this).GetGreenTaskCollection();
