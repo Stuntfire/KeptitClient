@@ -71,12 +71,11 @@ namespace KeptitClient.Persistency
         // public static async Task<ObservableCollection<Area>> LoadAreasAsync()
         public static async Task<ObservableCollection<Area>> LoadAreasAsync()
         {
-
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(serverUrl);
                 client.DefaultRequestHeaders.Clear();
-                string urlString = "api/area";
+                string urlString = "api/areas";
 
                 HttpResponseMessage response = await client.GetAsync(urlString);
                 if (response.IsSuccessStatusCode)
@@ -95,7 +94,7 @@ namespace KeptitClient.Persistency
             {
                 client.BaseAddress = new Uri(serverUrl);
                 client.DefaultRequestHeaders.Clear();
-                string urlString = "api/subarea";
+                string urlString = "api/subareas";
 
                 HttpResponseMessage response = await client.GetAsync(urlString);
                 if (response.IsSuccessStatusCode)
@@ -108,20 +107,19 @@ namespace KeptitClient.Persistency
         }
 
         // Henter alle task fra tabellen task
-        public static async Task<ObservableCollection<Area>> LoadTaskAsync()
+        public static async Task<ObservableCollection<GreenTask>> LoadGreenTaskAsync()
         {
-
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(serverUrl);
                 client.DefaultRequestHeaders.Clear();
-                string urlString = "api/task";
+                string urlString = "api/greentasks";
 
                 HttpResponseMessage response = await client.GetAsync(urlString);
                 if (response.IsSuccessStatusCode)
                 {
-                    var taskliste = response.Content.ReadAsAsync<ObservableCollection<Area>>().Result;
-                    return taskliste;
+                    var greentaskliste = response.Content.ReadAsAsync<ObservableCollection<GreenTask>>().Result;
+                    return greentaskliste;
                 }
                 return null;
             }
@@ -130,12 +128,11 @@ namespace KeptitClient.Persistency
         // Henter alle finishedtask fra tabellen finishedtask
         public static async Task<ObservableCollection<FinishedTask>> LoadFinishedtaskAsync()
         {
-
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(serverUrl);
                 client.DefaultRequestHeaders.Clear();
-                string urlString = "api/finishedtask";
+                string urlString = "api/finishedtasks";
 
                 HttpResponseMessage response = await client.GetAsync(urlString);
                 if (response.IsSuccessStatusCode)
