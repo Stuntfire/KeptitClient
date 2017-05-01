@@ -85,7 +85,7 @@
 
 
             </SplitView>
-            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="42,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Navn:" FontSize="18" VerticalAlignment="Top" Width="171" Grid.ColumnSpan="2" SelectionChanged="textBlock1_SelectionChanged"/>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="42,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Navn:" FontSize="18" VerticalAlignment="Top" Width="171" Grid.ColumnSpan="2"/>
 
             <!--<TextBlock x:Name="textBlock2" Grid.Column="1" HorizontalAlignment="Left" Margin="48,19,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Greenkeeper indtast udført opgave:" VerticalAlignment="Top" Height="63" Width="1032" FocusVisualPrimaryBrush="White" FontSize="50"/>-->
 
