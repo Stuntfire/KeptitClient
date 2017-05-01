@@ -21,7 +21,7 @@ namespace KeptitClient.Handlers
         }
 
         //Gets all Greenkeepers from Database via PersistencyService
-        public async Task GetGreenkeepers()
+        public async Task GetGreenkeeperCollection()
         {
             //Brug foreach hvis LoadGreenkeepersAsync() i PersistencyService kodes som async:
             foreach (var item in await PersistencyService.LoadGreenkeeperAsync())

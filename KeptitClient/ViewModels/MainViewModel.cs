@@ -116,8 +116,8 @@ namespace KeptitClient.ViewModels
         public MainViewModel()
         {
             GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
-            var gkh = new GreenkeeperHandler(this).GetGreenkeepers();
-            //gkh.GetGreenkeepers();
+            var gkh = new GreenkeeperHandler(this).GetGreenkeeperCollection();
+            //gkh.GetGreenkeeperCollection();
 
             //AreaCollection = PersistencyService.LoadAreasAsync();
             //SubAreaCollection = PersistencyService.LoadSubAreasAsync();
