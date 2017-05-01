@@ -67,8 +67,8 @@ namespace KeptitClient.Persistency
         }
 
         // Henter alle Area fra tabellen Areas
-        ////hvis async Task:
-        //public static async Task<ObservableCollection<Area>> LoadAreasAsync()
+        // hvis async Task:
+        // public static async Task<ObservableCollection<Area>> LoadAreasAsync()
         public static async Task<ObservableCollection<Area>> LoadAreasAsync()
         {
 
@@ -127,6 +127,25 @@ namespace KeptitClient.Persistency
             }
         }
 
+        // Henter alle finishedtask fra tabellen finishedtask
+        public static async Task<ObservableCollection<FinishedTask>> LoadFinishedtaskAsync()
+        {
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                string urlString = "api/finishedtask";
+
+                HttpResponseMessage response = await client.GetAsync(urlString);
+                if (response.IsSuccessStatusCode)
+                {
+                    var finishedtaskliste = response.Content.ReadAsAsync<ObservableCollection<FinishedTask>>().Result;
+                    return finishedtaskliste;
+                }
+                return null;
+            }
+        }
 
     }
 }
