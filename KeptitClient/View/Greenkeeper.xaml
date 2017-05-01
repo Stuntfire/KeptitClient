@@ -58,7 +58,7 @@
             </StackPanel>
         </SplitView.Pane>
 
-        <Grid>
+        <Grid Background="White">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="19*"/>
                 <ColumnDefinition Width="186*"/>
@@ -85,7 +85,7 @@
 
 
             </SplitView>
-            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="35,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Vælg dit navn:" FontSize="18" VerticalAlignment="Top" Width="171" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="42,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Navn:" FontSize="18" VerticalAlignment="Top" Width="171" Grid.ColumnSpan="2" SelectionChanged="textBlock1_SelectionChanged"/>
 
             <!--<TextBlock x:Name="textBlock2" Grid.Column="1" HorizontalAlignment="Left" Margin="48,19,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Greenkeeper indtast udført opgave:" VerticalAlignment="Top" Height="63" Width="1032" FocusVisualPrimaryBrush="White" FontSize="50"/>-->
 
@@ -96,15 +96,15 @@
 
             <TextBlock x:Name="textBlock3" Grid.Column="1" HorizontalAlignment="Left" Margin="325,107,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Opgave udført den:" FontSize="18" VerticalAlignment="Top" Width="160"/>
             <CalendarDatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="325,134,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="189"/>
-            <TextBlock x:Name="textBlock4" FontSize="18" HorizontalAlignment="Left" Margin="41,202,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Vælg et hul:" VerticalAlignment="Top" Height="30" Width="311" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="textBlock4" FontSize="18" HorizontalAlignment="Left" Margin="41,202,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Område:" VerticalAlignment="Top" Height="30" Width="311" Grid.ColumnSpan="2"/>
             <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="41,230,0,0" Grid.Row="1" VerticalAlignment="Top" Width="351" Height="43" Grid.ColumnSpan="2" ItemsSource="{Binding AreaCollection, Mode=TwoWay}"/>
-            <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="41,303,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Vælg en opgave:" VerticalAlignment="Top" FontSize="18" Height="27" Width="171" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="41,303,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Under område:" VerticalAlignment="Top" FontSize="18" Height="27" Width="171" Grid.ColumnSpan="2"/>
             <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="41,330,0,0" Grid.Row="1" VerticalAlignment="Top" Width="351" Height="45" Grid.ColumnSpan="2"/>
-            <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Margin="41,411,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Vælg en opgave-detalje:" VerticalAlignment="Top" Height="26" Width="277" FontSize="18" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Margin="41,411,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Opgave:" VerticalAlignment="Top" Height="26" Width="277" FontSize="18" Grid.ColumnSpan="2"/>
             <ComboBox x:Name="comboBox3" HorizontalAlignment="Left" Margin="41,437,0,0" Grid.Row="1" VerticalAlignment="Top" Width="351" Height="43" Grid.ColumnSpan="2"/>
             <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Margin="41,529,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Indtast antal timer og minutter brugt:"  FontSize="18" VerticalAlignment="Top" Height="29" Width="351" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="41,563,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Timer" VerticalAlignment="Top" Height="47" Width="95" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="textBox1" Grid.Column="1" HorizontalAlignment="Left" Margin="72,563,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Minutter" VerticalAlignment="Top" Height="47" Width="99"/>
+            <TextBox x:Name="timer" HorizontalAlignment="Left" Margin="41,563,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="47" Width="95" Grid.ColumnSpan="2" PlaceholderText="Timer"/>
+            <TextBox x:Name="minutter" Grid.Column="1" HorizontalAlignment="Left" Margin="72,563,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="47" Width="99" PlaceholderText="Minutter"/>
             <TextBlock x:Name="textBlock8" Grid.Column="1" HorizontalAlignment="Left" Margin="325,195,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Tilføj evt. en note til opgaven:" VerticalAlignment="Top"  FontSize="18" Height="37" Width="334"/>
             <TextBox x:Name="textBox2" Grid.Column="1" HorizontalAlignment="Left" Margin="325,229,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Height="252" Width="334"/>
             <Button x:Name="button" Content="Gem udførte opgave" Grid.Column="1" HorizontalAlignment="Left" Margin="401,563,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Height="47" Width="258" Background="#cccccc"/>
