@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Common\MessageDialogHelper.cs" />
     <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Converter\DateTimeConverter.cs" />
     <Compile Include="Handlers\AreaHandler.cs" />
     <Compile Include="Handlers\FinishedTaskHandler.cs" />
     <Compile Include="Handlers\GreenkeeperHandler.cs" />
