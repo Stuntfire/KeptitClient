@@ -17,6 +17,7 @@ namespace KeptitClient.ViewModels
     {
         #region Handlers
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
+        //public GreenkeeperHandler GreenkeeperHandler { get; set; }
 
         #endregion
 
@@ -114,7 +115,11 @@ namespace KeptitClient.ViewModels
 
         public MainViewModel()
         {
-            AreaCollection = PersistencyService.LoadAreasAsync();
+            GreenKeeperCollection = new ObservableCollection<GreenKeeper>();
+            var gk = new GreenkeeperHandler(this);
+            gk.GetGreenkeepers();
+
+            //AreaCollection = PersistencyService.LoadAreasAsync();
             //SubAreaCollection = PersistencyService.LoadSubAreasAsync();
             //FinishedTaskHandler = new FinishedTaskHandler(this);
             //TaskCollection = new ObservableCollection<FinishedTask>();
