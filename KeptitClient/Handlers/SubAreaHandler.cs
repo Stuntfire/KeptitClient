@@ -25,9 +25,9 @@ namespace KeptitClient.Handlers
         public async Task GetSubAreaCollection()
         {
             //Brug foreach hvis LoadSubAreaAsync() i PersistencyService kodes som async:
-            foreach (var item in await PersistencyService.LoadGreenkeeperAsync())
+            foreach (var item in await PersistencyService.LoadSubAreasAsync())
             {
-             //Mwm.SubAreaCollection.Add(item);
+             Mwm.SubAreaCollection.Add(item);
             }
         }
     }

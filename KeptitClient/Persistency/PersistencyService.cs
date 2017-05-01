@@ -126,7 +126,5 @@ namespace KeptitClient.Persistency
                 return null;
             }
         }
-
-
     }
 }

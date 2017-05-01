@@ -122,7 +122,7 @@ namespace KeptitClient.ViewModels
             var ah = new AreaHandler(this).GetAreaCollection();
 
             SubAreaCollection = new ObservableCollection<SubArea>();
-            var sah = new SubAreaHandler(this);
+            var sah = new SubAreaHandler(this).GetSubAreaCollection();
 
             FinishedTaskCollection = new ObservableCollection<FinishedTask>();
             var fth = new FinishedTaskHandler(this);

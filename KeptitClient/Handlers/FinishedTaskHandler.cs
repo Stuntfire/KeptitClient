@@ -19,10 +19,13 @@ namespace KeptitClient.Handlers
             this.Mwm = mvm;
         }
 
-        //public void CreateTask()
-        //{
-        //    var temp_FinishedTask = new FinishedTask();
-        //    PersistencyService.PostAsJsonFinishedTask();        
-        //}
+        public async Task GetFinishedTaskCollection()
+        {
+            //Brug foreach hvis LoadSubAreaAsync() i PersistencyService kodes som async:
+            foreach (var item in await PersistencyService.LoadGreenkeeperAsync())
+            {
+                Mwm.FinishedTaskCollection.Add(item);
+            }
+        }
     }
 }
