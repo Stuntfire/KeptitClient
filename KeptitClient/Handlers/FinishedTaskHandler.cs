@@ -22,7 +22,7 @@ namespace KeptitClient.Handlers
         public async Task GetFinishedTaskCollection()
         {
             //Brug foreach hvis LoadSubAreaAsync() i PersistencyService kodes som async:
-            foreach (var item in await PersistencyService.LoadGreenkeeperAsync())
+            foreach (var item in await PersistencyService.LoadFinishedtaskAsync())
             {
                 Mwm.FinishedTaskCollection.Add(item);
             }
