@@ -51,8 +51,8 @@ namespace KeptitClient.ViewModels
             set { _taskNotes = value; OnPropertyChanged(nameof(TaskNotes)); }
         }
 
-        private ObservableCollection<GreenKeeper> _greenKeeperCollection;
-        public ObservableCollection<GreenKeeper> GreenKeeperCollection
+        private ObservableCollection<Greenkeeper> _greenKeeperCollection;
+        public ObservableCollection<Greenkeeper> GreenKeeperCollection
         {
             get { return _greenKeeperCollection; }
             set { _greenKeeperCollection = value; }
@@ -104,8 +104,8 @@ namespace KeptitClient.ViewModels
             set { _selectedSubArea = value; }
         }
 
-        private GreenKeeper _selectedGreenKeeper;
-        public GreenKeeper SelectedGreenKeeper
+        private Greenkeeper _selectedGreenKeeper;
+        public Greenkeeper SelectedGreenKeeper
         {
             get { return _selectedGreenKeeper; }
             set { _selectedGreenKeeper = value; }
@@ -115,9 +115,9 @@ namespace KeptitClient.ViewModels
 
         public MainViewModel()
         {
-            GreenKeeperCollection = new ObservableCollection<GreenKeeper>();
-            var gk = new GreenkeeperHandler(this);
-            gk.GetGreenkeepers();
+            GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
+            var gkh = new GreenkeeperHandler(this).GetGreenkeepers();
+            //gkh.GetGreenkeepers();
 
             //AreaCollection = PersistencyService.LoadAreasAsync();
             //SubAreaCollection = PersistencyService.LoadSubAreasAsync();

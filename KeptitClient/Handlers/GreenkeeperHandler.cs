@@ -27,7 +27,6 @@ namespace KeptitClient.Handlers
             foreach (var item in await PersistencyService.LoadGreenkeeperAsync())
             {
                 Mwm.GreenKeeperCollection.Add(item);
-                //this.GreenkeepersCollection.Add(item);
             }
         }
 

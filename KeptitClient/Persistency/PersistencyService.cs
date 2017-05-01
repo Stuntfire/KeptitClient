@@ -48,7 +48,7 @@ namespace KeptitClient.Persistency
         //}
 
         // Henter alle Greenkeeper fra tabellen Greenkeepers
-        public static async Task<ObservableCollection<GreenKeeper>> LoadGreenkeeperAsync()
+        public static async Task<ObservableCollection<Greenkeeper>> LoadGreenkeeperAsync()
         {
             using (var client = new HttpClient())
             {
@@ -59,7 +59,7 @@ namespace KeptitClient.Persistency
                 HttpResponseMessage response = await client.GetAsync(urlString);
                 if (response.IsSuccessStatusCode)
                 {
-                    var greenkeeperliste = response.Content.ReadAsAsync<ObservableCollection<GreenKeeper>>().Result;
+                    var greenkeeperliste = response.Content.ReadAsAsync<ObservableCollection<Greenkeeper>>().Result;
                     return greenkeeperliste;
                 }
                 return null;
