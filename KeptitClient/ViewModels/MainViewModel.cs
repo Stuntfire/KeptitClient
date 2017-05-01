@@ -127,6 +127,9 @@ namespace KeptitClient.ViewModels
             FinishedTaskCollection = new ObservableCollection<FinishedTask>();
             var fth = new FinishedTaskHandler(this);
 
+            GreenTaskCollection = new ObservableCollection<GreenTask>();
+            var gth = new GreenTaskHandler(this).GetGreenTaskCollection();
+
             //FinishedTaskHandler = new FinishedTaskHandler(this);
             //TaskCollection = new ObservableCollection<FinishedTask>();
             //AddTaskCommand = new RelayCommand(FinishedTaskHandler.CreateTask, null);

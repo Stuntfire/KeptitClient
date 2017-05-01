@@ -101,13 +101,14 @@
     <Compile Include="Handlers\FinishedTaskHandler.cs" />
     <Compile Include="Handlers\GreenkeeperHandler.cs" />
     <Compile Include="Handlers\SubAreaHandler.cs" />
-    <Compile Include="Handlers\TaskHandler.cs" />
+    <Compile Include="Handlers\GreenTaskHandler.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Area.cs" />
     <Compile Include="Models\FinishedTask.cs" />
     <Compile Include="Models\Greenkeeper.cs" />
+    <Compile Include="Models\GreenkeeperInfo.cs" />
     <Compile Include="Models\GreenTask.cs" />
     <Compile Include="Models\SubArea.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
