@@ -69,23 +69,18 @@ namespace KeptitClient.Persistency
         // Henter alle Area fra tabellen Areas
         ////hvis async Task:
         //public static async Task<ObservableCollection<Area>> LoadAreasAsync()
-        public static ObservableCollection<Area> LoadAreasAsync()
+        public static async Task<ObservableCollection<Area>> LoadAreasAsync()
         {
 
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(serverUrl);
                 client.DefaultRequestHeaders.Clear();
-                string urlString = "api/areas";
+                string urlString = "api/area";
 
-                ////hvis async Task: 
-                //HttpResponseMessage response = await client.GetAsync(urlString);
-                HttpResponseMessage response = client.GetAsync(urlString).Result;
+                HttpResponseMessage response = await client.GetAsync(urlString);
                 if (response.IsSuccessStatusCode)
                 {
-                    ////hvis async Task:
-                    //var arealiste = await getResponse.Content.ReadAsAsync<ObservableCollection<Area>>();
-                    //return arealiste;
                     var arealiste = response.Content.ReadAsAsync<ObservableCollection<Area>>().Result;
                     return arealiste;
                 }
@@ -94,19 +89,39 @@ namespace KeptitClient.Persistency
         }
 
         // Henter alle SubArea fra tabellen SubAreas
-        public static ObservableCollection<SubArea> LoadSubAreasAsync()
+        public static async Task<ObservableCollection<SubArea>> LoadSubAreasAsync()
         {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(serverUrl);
                 client.DefaultRequestHeaders.Clear();
-                string urlString = "api/subareas";
+                string urlString = "api/subarea";
 
-                HttpResponseMessage response = client.GetAsync(urlString).Result;
+                HttpResponseMessage response = await client.GetAsync(urlString);
                 if (response.IsSuccessStatusCode)
                 {
                     var subarealiste = response.Content.ReadAsAsync<ObservableCollection<SubArea>>().Result;
                     return subarealiste;
+                }
+                return null;
+            }
+        }
+
+        // Henter alle task fra tabellen task
+        public static async Task<ObservableCollection<Area>> LoadTaskAsync()
+        {
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                string urlString = "api/task";
+
+                HttpResponseMessage response = await client.GetAsync(urlString);
+                if (response.IsSuccessStatusCode)
+                {
+                    var taskliste = response.Content.ReadAsAsync<ObservableCollection<Area>>().Result;
+                    return taskliste;
                 }
                 return null;
             }
