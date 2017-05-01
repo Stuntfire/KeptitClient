@@ -44,7 +44,6 @@ namespace KeptitClient.Persistency
         //        {
         //            MessageDialogHelper.Show("Fejl ", TaskToPost.FinishedTasksID.ToString());
         //        }
-
         //    }
         //}
 
