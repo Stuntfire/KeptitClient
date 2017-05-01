@@ -122,7 +122,7 @@ namespace KeptitClient.ViewModels
         private void LoadAllCollections()
         {
             GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
-            var gkh = new GreenkeeperHandler(this).GetGreenkeepers();
+            var gkh = new GreenkeeperHandler(this).GetGreenkeeperCollection();
 
             AreaCollection = new ObservableCollection<Area>();
             var ah = new AreaHandler(this).GetAreaCollection();
