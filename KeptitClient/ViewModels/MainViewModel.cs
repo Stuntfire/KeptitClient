@@ -88,8 +88,6 @@ namespace KeptitClient.ViewModels
             set { _finishedTaskCollection = value; }
         }
 
-
-
         private Area _selectedArea;
         public Area SelectedArea
         {
@@ -111,12 +109,26 @@ namespace KeptitClient.ViewModels
             set { _selectedGreenKeeper = value; }
         }
 
+        private GreenTask _selectedGreenTask;
+
+        public GreenTask SelectedGreenTask
+        {
+            get { return _selectedGreenTask; }
+            set
+            {
+                _selectedGreenTask = value;
+                OnPropertyChanged(nameof(SelectedGreenTask));
+
+            }
+        }
+
+
         #endregion
 
         public MainViewModel()
         {
             LoadAllCollections();
-            
+
         }
 
         private void LoadAllCollections()
