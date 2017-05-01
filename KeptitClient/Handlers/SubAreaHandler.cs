@@ -14,8 +14,6 @@ namespace KeptitClient.Handlers
     {
         private MainViewModel Mwm { get; set; }
 
-        public ObservableCollection<SubArea> SubAreasCollection { get; set; }
-
         //Constructor
         public SubAreaHandler(MainViewModel mwm)
         {
@@ -27,7 +25,7 @@ namespace KeptitClient.Handlers
             //Brug foreach hvis LoadSubAreaAsync() i PersistencyService kodes som async:
             foreach (var item in await PersistencyService.LoadSubAreasAsync())
             {
-             Mwm.SubAreaCollection.Add(item);
+                Mwm.SubAreaCollection.Add(item);
             }
         }
     }

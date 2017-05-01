@@ -125,7 +125,7 @@ namespace KeptitClient.ViewModels
             var sah = new SubAreaHandler(this).GetSubAreaCollection();
 
             FinishedTaskCollection = new ObservableCollection<FinishedTask>();
-            var fth = new FinishedTaskHandler(this);
+            var fth = new FinishedTaskHandler(this).GetFinishedTaskCollection();
 
             //FinishedTaskHandler = new FinishedTaskHandler(this);
             //TaskCollection = new ObservableCollection<FinishedTask>();
