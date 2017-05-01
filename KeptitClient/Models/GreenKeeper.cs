@@ -19,7 +19,7 @@ namespace KeptitClient.Models
 
         public override string ToString()
         {
-            return string.Format("{0}.", GreenkeeperName);
+            return string.Format("{0}", GreenkeeperName);
         }
     }
 }
