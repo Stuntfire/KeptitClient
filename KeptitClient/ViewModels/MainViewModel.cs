@@ -88,8 +88,9 @@ namespace KeptitClient.ViewModels
             set { _finishedTaskCollection = value; }
         }
 
-        private DateTime _selectedDate;
-        public DateTime selectedDate
+        private DateTimeOffset _selectedDate;
+
+        public DateTimeOffset SelectedDate
         {
             get { return _selectedDate; }
             set { _selectedDate = value; }
@@ -117,12 +118,29 @@ namespace KeptitClient.ViewModels
             set { _selectedGreenKeeper = value; }
         }
 
+        private GreenTask _selectedGreenTask;
+
+        public GreenTask SelectedGreenTask
+        {
+            get { return _selectedGreenTask; }
+            set
+            {
+                _selectedGreenTask = value;
+                OnPropertyChanged(nameof(SelectedGreenTask));
+
+            }
+        }
+
+
         #endregion
 
         public MainViewModel()
         {
+            DateTime dt = DateTime.Now;
+            _selectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+
             LoadAllCollections();
-            
+
         }
 
         private void LoadAllCollections()

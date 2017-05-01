@@ -27,5 +27,12 @@ namespace KeptitClient.Handlers
                 Mwm.FinishedTaskCollection.Add(item);
             }
         }
+
+        public void PostFinishedTask()
+        {
+
+            //FinishedTask temp_task = new FinishedTask(Mwm.SelectedArea.AreaID, Mwm.SelectedGreenTask.GreenTaskID, Mwm.SelectedSubArea.SubAreaID, Mwm.SelectedGreenKeeper.GreenkeeperID, Mwm.sel) 
+                
+        }
     }
 }
