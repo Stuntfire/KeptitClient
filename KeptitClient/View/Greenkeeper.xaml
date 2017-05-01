@@ -109,7 +109,7 @@
             <TextBox x:Name="textBox2" Grid.Column="1" HorizontalAlignment="Left" Margin="325,229,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Height="252" Width="334"/>
             <Button x:Name="button" Content="Gem udførte opgave" Grid.Column="1" HorizontalAlignment="Left" Margin="401,563,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Height="47" Width="258" Background="#cccccc"/>
             <TextBlock x:Name="textBlock2" Grid.Column="1" HorizontalAlignment="Left" Margin="48,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Greenkeeper indtast udført opgave:" VerticalAlignment="Top" FontSize="50" Height="81" Width="1032"/>
-            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="41,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="351" Height="46" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="41,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="351" Height="46" Grid.ColumnSpan="2" ItemsSource="{Binding GreenKeeperCollection, Mode=TwoWay}"/>
             <ListView x:Name="listView" Background="#f1f1f1" Grid.Column="1" HorizontalAlignment="Left" Height="474" Margin="715,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="275"/>
             <TextBlock x:Name="textBlock9" Grid.Column="1" HorizontalAlignment="Left" Margin="715,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Dato og tid brugt på udførte opgaver" VerticalAlignment="Top" Height="33" Width="256" FontSize="18"/>
 
