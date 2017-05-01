@@ -88,7 +88,7 @@ namespace KeptitClient.ViewModels
             set { _finishedTaskCollection = value; }
         }
 
-        
+
 
         private Area _selectedArea;
         public Area SelectedArea
@@ -116,11 +116,17 @@ namespace KeptitClient.ViewModels
         public MainViewModel()
         {
             GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
-            var gkh = new GreenkeeperHandler(this).GetGreenkeeperCollection();
-            //gkh.GetGreenkeeperCollection();
+            var gkh = new GreenkeeperHandler(this).GetGreenkeepers();
 
-            //AreaCollection = PersistencyService.LoadAreasAsync();
-            //SubAreaCollection = PersistencyService.LoadSubAreasAsync();
+            AreaCollection = new ObservableCollection<Area>();
+            var ah = new AreaHandler(this).GetAreaCollection();
+
+            SubAreaCollection = new ObservableCollection<SubArea>();
+            var sah = new SubAreaHandler(this).GetSubAreaCollection();
+
+            FinishedTaskCollection = new ObservableCollection<FinishedTask>();
+            var fth = new FinishedTaskHandler(this);
+
             //FinishedTaskHandler = new FinishedTaskHandler(this);
             //TaskCollection = new ObservableCollection<FinishedTask>();
             //AddTaskCommand = new RelayCommand(FinishedTaskHandler.CreateTask, null);

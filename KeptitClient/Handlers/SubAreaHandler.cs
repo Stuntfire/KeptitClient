@@ -22,18 +22,13 @@ namespace KeptitClient.Handlers
             this.Mwm = mwm;
         }
 
-        ////Gets all SubAreas from Database via PersistencyService
-        //public async Task GetSubAreas()
-        //{
-        //    ////hvis async Task
-        //    //this.SubAreasCollection = await PersistencyService.LoadSubAreasAsync(); 
-        //    this.SubAreasCollection = PersistencyService.LoadSubAreasAsync();
-
-        //    //hvis async Task
-        //    foreach (var item in await PersistencyService.LoadSubAreasAsync())
-        //    {
-        //        this.SubAreasCollection.Add(item);
-        //    }
-        //}
+        public async Task GetSubAreaCollection()
+        {
+            //Brug foreach hvis LoadSubAreaAsync() i PersistencyService kodes som async:
+            foreach (var item in await PersistencyService.LoadSubAreasAsync())
+            {
+             Mwm.SubAreaCollection.Add(item);
+            }
+        }
     }
 }
