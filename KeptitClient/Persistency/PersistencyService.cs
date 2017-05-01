@@ -144,5 +144,30 @@ namespace KeptitClient.Persistency
             }
         }
 
+        // Post finishedtask
+        public static void PostFinishedtask(FinishedTask finishedtask)
+        {
+
+            using (var client = new HttpClient())
+            {
+
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/finishedtasks"));
+                try
+                { 
+                    var response = client.PostAsJsonAsync<FinishedTask>("api/finishedtasks", finishedtask).Result;
+
+                }
+
+                catch (Exception e)
+                {
+                    MessageDialog Error = new MessageDialog("Error : " + e);
+                    Error.Commands.Add(new UICommand { Label = "Ok" });
+                    Error.ShowAsync().AsTask();
+                }
+
+            }
+        }
     }
 }
