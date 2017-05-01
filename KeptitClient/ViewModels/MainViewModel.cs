@@ -88,6 +88,12 @@ namespace KeptitClient.ViewModels
             set { _finishedTaskCollection = value; }
         }
 
+        private DateTime _selectedDate;
+        public DateTime selectedDate
+        {
+            get { return _selectedDate; }
+            set { _selectedDate = value; }
+        }
 
 
         private Area _selectedArea;
