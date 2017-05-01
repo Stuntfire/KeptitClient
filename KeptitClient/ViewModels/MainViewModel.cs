@@ -115,6 +115,12 @@ namespace KeptitClient.ViewModels
 
         public MainViewModel()
         {
+            LoadAllCollections();
+            
+        }
+
+        private void LoadAllCollections()
+        {
             GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
             var gkh = new GreenkeeperHandler(this).GetGreenkeeperCollection();
 
@@ -129,10 +135,6 @@ namespace KeptitClient.ViewModels
 
             GreenTaskCollection = new ObservableCollection<GreenTask>();
             var gth = new GreenTaskHandler(this).GetGreenTaskCollection();
-
-            //FinishedTaskHandler = new FinishedTaskHandler(this);
-            //TaskCollection = new ObservableCollection<FinishedTask>();
-            //AddTaskCommand = new RelayCommand(FinishedTaskHandler.CreateTask, null);
         }
 
         #region INotify
