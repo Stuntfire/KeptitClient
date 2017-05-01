@@ -19,7 +19,7 @@ namespace KeptitClient.Models
 
         public override string ToString()
         {
-            return string.Format("Nr {0}. {1}.", AreaID, AreaTitle);
+            return string.Format("{0}",AreaTitle);
         }
     }
 }
