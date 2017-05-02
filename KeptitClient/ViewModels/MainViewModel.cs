@@ -44,8 +44,8 @@ namespace KeptitClient.ViewModels
             set { _taskMinutes = value; OnPropertyChanged(nameof(TaskMinutes)); }
         }
 
-        private int _taskNotes;
-        public int TaskNotes
+        private string _taskNotes;
+        public string TaskNotes
         {
             get { return _taskNotes; }
             set { _taskNotes = value; OnPropertyChanged(nameof(TaskNotes)); }
@@ -137,7 +137,7 @@ namespace KeptitClient.ViewModels
         public MainViewModel()
         {
             LoadAllCollections();
-
+            //ny relaycommand der binder til finishstaskshandleren
         }
 
         private void LoadAllCollections()

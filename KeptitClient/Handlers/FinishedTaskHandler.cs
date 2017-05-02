@@ -9,7 +9,7 @@ using KeptitClient.Models;
 
 namespace KeptitClient.Handlers
 {
-   public class FinishedTaskHandler
+    public class FinishedTaskHandler
     {
         private MainViewModel Mwm { get; set; }
 
@@ -31,8 +31,20 @@ namespace KeptitClient.Handlers
         public void PostFinishedTask()
         {
 
-            //FinishedTask temp_task = new FinishedTask(Mwm.SelectedArea.AreaID, Mwm.SelectedGreenTask.GreenTaskID, Mwm.SelectedSubArea.SubAreaID, Mwm.SelectedGreenKeeper.GreenkeeperID, Mwm.sel) 
-                
+            FinishedTask temp_task = new FinishedTask(Mwm.SelectedArea.AreaID, Mwm.SelectedGreenTask.GreenTaskID, Mwm.SelectedSubArea.SubAreaID, Mwm.SelectedGreenKeeper.GreenkeeperID, Mwm.SelectedDate.Date, Mwm.TaskHour, Mwm.TaskMinutes, Mwm.TaskNotes);
+
+            try
+            {
+                //PersistencyService.PostasJson
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+
+
         }
     }
 }
