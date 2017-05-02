@@ -15,12 +15,12 @@ namespace KeptitClient.Handlers
 
         public FinishedTaskHandler(MainViewModel mvm)
         {
-            //skal modtage en kopi af view modellen.
             this.Mwm = mvm;
         }
 
         public async Task GetFinishedTaskCollection()
         {
+
             //Brug foreach hvis LoadSubAreaAsync() i PersistencyService kodes som async:
             foreach (var item in await PersistencyService.LoadFinishedtaskAsync())
             {
@@ -30,21 +30,18 @@ namespace KeptitClient.Handlers
 
         public void PostFinishedTask()
         {
-
             FinishedTask temp_task = new FinishedTask(Mwm.SelectedArea.AreaID, Mwm.SelectedGreenTask.GreenTaskID, Mwm.SelectedSubArea.SubAreaID, Mwm.SelectedGreenKeeper.GreenkeeperID, Mwm.SelectedDate.Date, Mwm.TaskHour, Mwm.TaskMinutes, Mwm.TaskNotes);
 
             try
             {
-                //PersistencyService.PostasJson
+                PersistencyService.PostFinishedtask(temp_task);
             }
             catch (Exception)
             {
 
                 throw;
             }
-            
-
-
         }
+
     }
 }

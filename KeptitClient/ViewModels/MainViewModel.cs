@@ -17,12 +17,20 @@ namespace KeptitClient.ViewModels
     {
         #region Handlers
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
-        //public GreenkeeperHandler GreenkeeperHandler { get; set; }
+        
 
         #endregion
 
         #region RelayCommands
-        public Common.ICommand AddTaskCommand { get; set; }
+
+        private ICommand _addTaskCommand;
+
+        public ICommand AddTaskCommand
+        {
+            get { return _addTaskCommand; }
+            set { _addTaskCommand = value; }
+        }
+
         //public Common.ICommand DeleteTaskCommand { get; set; }
         //public Common.ICommand SelectTaskCommand { get; set; }
         //public Common.ICommand EditTaskCommand { get; set; }
@@ -96,26 +104,38 @@ namespace KeptitClient.ViewModels
             set { _selectedDate = value; }
         }
 
-
         private Area _selectedArea;
         public Area SelectedArea
         {
             get { return _selectedArea; }
-            set { _selectedArea = value; }
+            set
+            {
+                _selectedArea = value;
+                OnPropertyChanged(nameof(SelectedArea));
+
+            }
         }
 
         private SubArea _selectedSubArea;
         public SubArea SelectedSubArea
         {
             get { return _selectedSubArea; }
-            set { _selectedSubArea = value; }
+            set
+            {
+                _selectedSubArea = value;
+                OnPropertyChanged(nameof(SelectedSubArea));
+            }
         }
 
         private Greenkeeper _selectedGreenKeeper;
         public Greenkeeper SelectedGreenKeeper
         {
             get { return _selectedGreenKeeper; }
-            set { _selectedGreenKeeper = value; }
+            set
+            {
+                _selectedGreenKeeper = value;
+                OnPropertyChanged(nameof(SelectedGreenKeeper));
+            }
         }
 
         private GreenTask _selectedGreenTask;
@@ -132,17 +152,39 @@ namespace KeptitClient.ViewModels
         }
 
 
+        private ObservableCollection<GreenkeeperInfo> _greenkeeperInfoCollection;
+
+        public ObservableCollection<GreenkeeperInfo> GreenkeeperInfoCollection
+        {
+            get { return _greenkeeperInfoCollection; }
+            set { _greenkeeperInfoCollection = value; }
+        }
+
+
         #endregion
 
         public MainViewModel()
         {
+            SelectedGreenKeeper = new Greenkeeper(0, "");
+            FinishedTaskHandler = new FinishedTaskHandler(this);
             DateTime dt = DateTime.Now;
             _selectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
 
             LoadAllCollections();
             //ny relaycommand der binder til finishstaskshandleren
+            AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
         }
 
+        #region Methods
+
+        public bool IsEmpty()
+        {
+            if (SelectedGreenKeeper.GreenkeeperName != "")
+            {
+                return true;
+            }
+            return false;
+        }
         private void LoadAllCollections()
         {
             GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
@@ -160,6 +202,7 @@ namespace KeptitClient.ViewModels
             GreenTaskCollection = new ObservableCollection<GreenTask>();
             var gth = new GreenTaskHandler(this).GetGreenTaskCollection();
         }
+        #endregion 
 
         #region INotify
         public event PropertyChangedEventHandler PropertyChanged;

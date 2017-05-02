@@ -157,6 +157,7 @@ namespace KeptitClient.Persistency
                 try
                 { 
                     var response = client.PostAsJsonAsync<FinishedTask>("api/finishedtasks", finishedtask).Result;
+                    
 
                 }
 

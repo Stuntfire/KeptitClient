@@ -24,7 +24,7 @@ namespace KeptitClient.Models
 
         public int Minutes { get; set; }
 
-        public string Note { get; set; }
+        public string Notes { get; set; }
 
         public FinishedTask(int AreaID, int GreenTaskId, int SubAreaID, int GreenkeeperID, DateTime date, int hours, int minutes, string note)
         {
@@ -35,12 +35,12 @@ namespace KeptitClient.Models
             this.Date = date;
             this.Minutes = minutes;
             this.Hours = hours;
-            this.Note = note;
+            this.Notes = note;
         }
 
         public override string ToString()
         {
-            return string.Format("Nr {0}. {1}. {2}. {3}. {4}. {5}. {6}. {7}.", FinishedTasksID, AreaID, GreenTaskID,SubAreaID,GreenkeeperID,Date,Hours,Minutes);
+            return string.Format("Nr {0}. {1}. {2}. {3}. {4}. {5}. {6}. {7}. {8}", FinishedTasksID, AreaID, GreenTaskID,SubAreaID,GreenkeeperID,Date,Hours,Minutes, Notes);
         }
     }
 }
