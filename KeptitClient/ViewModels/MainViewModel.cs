@@ -136,6 +136,9 @@ namespace KeptitClient.ViewModels
 
         public MainViewModel()
         {
+            DateTime dt = DateTime.Now;
+            _selectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+
             LoadAllCollections();
             //ny relaycommand der binder til finishstaskshandleren
         }
