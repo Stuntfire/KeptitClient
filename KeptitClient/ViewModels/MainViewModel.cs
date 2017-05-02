@@ -44,8 +44,8 @@ namespace KeptitClient.ViewModels
             set { _taskMinutes = value; OnPropertyChanged(nameof(TaskMinutes)); }
         }
 
-        private int _taskNotes;
-        public int TaskNotes
+        private string _taskNotes;
+        public string TaskNotes
         {
             get { return _taskNotes; }
             set { _taskNotes = value; OnPropertyChanged(nameof(TaskNotes)); }
@@ -136,8 +136,11 @@ namespace KeptitClient.ViewModels
 
         public MainViewModel()
         {
-            LoadAllCollections();
+            DateTime dt = DateTime.Now;
+            _selectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
 
+            LoadAllCollections();
+            //ny relaycommand der binder til finishstaskshandleren
         }
 
         private void LoadAllCollections()
