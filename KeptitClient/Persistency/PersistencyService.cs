@@ -144,6 +144,25 @@ namespace KeptitClient.Persistency
             }
         }
 
+        // Henter alle Greenkeeper Info fra View GreenkeeperInfo
+        public static async Task<ObservableCollection<GreenkeeperInfo>> LoadGreenkeeperInfoAsync()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                string urlString = "api/greenkeeperInfoes";
+
+                HttpResponseMessage response = await client.GetAsync(urlString);
+                if (response.IsSuccessStatusCode)
+                {
+                    var AltInfoliste = response.Content.ReadAsAsync<ObservableCollection<GreenkeeperInfo>>().Result;
+                    return AltInfoliste;
+                }
+                return null;
+            }
+        }
+
         // Post finishedtask
         public static void PostFinishedtask(FinishedTask finishedtask)
         {

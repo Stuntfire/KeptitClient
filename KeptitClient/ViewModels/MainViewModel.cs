@@ -17,7 +17,7 @@ namespace KeptitClient.ViewModels
     {
         #region Handlers
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
-        
+
 
         #endregion
 
@@ -88,7 +88,6 @@ namespace KeptitClient.ViewModels
             set { _greenTaskCollektion = value; }
         }
 
-
         private ObservableCollection<FinishedTask> _finishedTaskCollection;
         public ObservableCollection<FinishedTask> FinishedTaskCollection
         {
@@ -97,7 +96,6 @@ namespace KeptitClient.ViewModels
         }
 
         private DateTimeOffset _selectedDate;
-
         public DateTimeOffset SelectedDate
         {
             get { return _selectedDate; }
@@ -112,7 +110,6 @@ namespace KeptitClient.ViewModels
             {
                 _selectedArea = value;
                 OnPropertyChanged(nameof(SelectedArea));
-
             }
         }
 
@@ -139,7 +136,6 @@ namespace KeptitClient.ViewModels
         }
 
         private GreenTask _selectedGreenTask;
-
         public GreenTask SelectedGreenTask
         {
             get { return _selectedGreenTask; }
@@ -153,18 +149,25 @@ namespace KeptitClient.ViewModels
 
 
         private ObservableCollection<GreenkeeperInfo> _greenkeeperInfoCollection;
-
         public ObservableCollection<GreenkeeperInfo> GreenkeeperInfoCollection
         {
             get { return _greenkeeperInfoCollection; }
-            set { _greenkeeperInfoCollection = value; }
+            set
+            {
+                _greenkeeperInfoCollection = value;
+                OnPropertyChanged(nameof(GreenKeeperCollection));
+            }
         }
 
+        public GreenkeeperInfoHandler GreenkeeperInfoHandler { get; set; }
 
         #endregion
 
         public MainViewModel()
         {
+
+            GreenkeeperInfoCollection = new ObservableCollection<GreenkeeperInfo>();
+
             SelectedGreenKeeper = new Greenkeeper(0, "");
             FinishedTaskHandler = new FinishedTaskHandler(this);
             DateTime dt = DateTime.Now;
@@ -185,6 +188,9 @@ namespace KeptitClient.ViewModels
             }
             return false;
         }
+
+
+
         private void LoadAllCollections()
         {
             GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
@@ -201,6 +207,10 @@ namespace KeptitClient.ViewModels
 
             GreenTaskCollection = new ObservableCollection<GreenTask>();
             var gth = new GreenTaskHandler(this).GetGreenTaskCollection();
+
+            GreenkeeperInfoHandler = new GreenkeeperInfoHandler(this);
+            GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
+
         }
         #endregion 
 

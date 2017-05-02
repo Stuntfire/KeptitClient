@@ -109,7 +109,7 @@
             <Button x:Name="button" Content="Gem udførte opgave" Grid.Column="1" HorizontalAlignment="Left" Margin="401,563,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Height="47" Width="258" Background="#cccccc" Command="{Binding AddTaskCommand}"/>
             <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="41,17,-64,0" Grid.Row="1" TextWrapping="Wrap" Text="Greenkeeper indtast udført opgave:" VerticalAlignment="Top" FontSize="36" Height="81" Width="1143" FontFamily="Segoe UI Light" Grid.ColumnSpan="2"/>
             <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="40,136,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="32" Grid.ColumnSpan="2" ItemsSource="{Binding GreenKeeperCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedGreenKeeper, Mode=TwoWay}"/>
-            <ListView x:Name="listView" Background="#f1f1f1" Grid.Column="1" HorizontalAlignment="Left" Height="474" Margin="715,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="275" ItemsSource="{Binding GreenkeeperInfoCollection}"/>
+            <ListView x:Name="listView" Background="#f1f1f1" Grid.Column="1" HorizontalAlignment="Left" Height="474" Margin="715,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="275" ItemsSource="{Binding GreenkeeperInfoCollection, Mode=TwoWay}"/>
             <TextBlock x:Name="textBlock9" Grid.Column="1" HorizontalAlignment="Left" Margin="715,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Dato og tid brugt på udførte opgaver" VerticalAlignment="Top" Height="33" Width="256" FontSize="18"/>
             <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="325,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="334" DataContext="{Binding SelectedDate, Mode=TwoWay}"/>
 
