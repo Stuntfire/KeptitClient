@@ -12,49 +12,10 @@
     <Page.DataContext>
         <ViewModels:MainViewModel/>
     </Page.DataContext>
-    <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="True" 
-               CompactPaneLength="160" OpenPaneLength="160" PaneBackground="{x:Null}">
-
-        <SplitView.Pane>
-
-            <StackPanel Background="#00412e" Margin="0,51,0,0">
-
-                <StackPanel Orientation="Horizontal" Background="#d6af55">
-                    <Button x:Name="MenuButton1" Content="G" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="30"
-                            Width="50" Height="50" Background="Transparent" Margin="0" Foreground="White">
-
-                        <Interactivity:Interaction.Behaviors>
-                            <Core:EventTriggerBehavior EventName="Click">
-
-                            </Core:EventTriggerBehavior>
-                        </Interactivity:Interaction.Behaviors>
-
-                    </Button>
+    <SplitView>
 
 
-                    <TextBlock Text="Greenkeeper" FontSize="18" VerticalAlignment="Center" Foreground="White" />
-
-                </StackPanel>
-                
-                <StackPanel Orientation="Horizontal" RenderTransformOrigin="0.348,0.508">
-                    <Button x:Name="MenuButton2" Content="Admin" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                            Width="160" Height="50" Background="Transparent" FontSize="30" Foreground="White">
-                        <Interactivity:Interaction.Behaviors>
-                            <Core:EventTriggerBehavior EventName="Click">
-                                <Core:NavigateToPageAction TargetPage="KeptitClient.View.Admin"/>
-                            </Core:EventTriggerBehavior>
-                        </Interactivity:Interaction.Behaviors>
-
-
-                    </Button>
-
-
-                </StackPanel>
-                <Image x:Name="image" Height="119" Source="Icons\Logo.png" Margin="0,350,3,3"/>
-            </StackPanel>
-        </SplitView.Pane>
-
-        <Grid Background="White">
+        <Grid Background="White" Margin="0,0,0,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="19*"/>
                 <ColumnDefinition Width="186*"/>
@@ -67,20 +28,7 @@
 
 
 
-            <Image HorizontalAlignment="Right" Source="\images\ledreborg_logo.png" Height="120" VerticalAlignment="Top" Width="0" Margin="0,0,7,0" Grid.RowSpan="2" Grid.Column="1"/>
-            <SplitView Height="53" Background="#00412e" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="-160,-2,0,0" Grid.RowSpan="2" PaneBackground="#FF00412E">
-
-                <SplitView.Pane>
-                    <Grid/>
-
-
-                </SplitView.Pane>
-                <TextBlock x:Name="textBlock" Padding="5"  HorizontalAlignment="Left" Height="53"  FontSize="30" TextWrapping="Wrap" Text="Keptit Greenkeeper CMS" VerticalAlignment="Top" Foreground="White" Width="1071"/>
-
-                <!--<TextBlock Padding="1,2,0,30" x:Name="textBlock" FontSize="30"  HorizontalAlignment="Left" Height="53" TextWrapping="Wrap" Text="Keptit Greenkeeper CMS" VerticalAlignment="Top" Width="1279" FocusVisualPrimaryBrush="White" Foreground="White"/>-->
-
-
-            </SplitView>
+           
             <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="42,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Navn:" FontSize="18" VerticalAlignment="Top" Width="171" Grid.ColumnSpan="2"/>
 
             <!--<TextBlock x:Name="textBlock2" Grid.Column="1" HorizontalAlignment="Left" Margin="48,19,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Greenkeeper indtast udført opgave:" VerticalAlignment="Top" Height="63" Width="1032" FocusVisualPrimaryBrush="White" FontSize="50"/>-->
