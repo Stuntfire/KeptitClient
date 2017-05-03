@@ -34,24 +34,19 @@
                     <TextBlock Text="Greenkeeper" FontSize="18" VerticalAlignment="Center" Foreground="White" />
 
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Button x:Name="MenuButton2" Content="A" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                            Width="50" Height="50" Background="Transparent" FontSize="30" Foreground="White">
-                        <!--<Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="Green"/>
-                                
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="Red"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>-->
+                
+                <StackPanel Orientation="Horizontal" RenderTransformOrigin="0.348,0.508">
+                    <Button x:Name="MenuButton2" Content="Admin" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                            Width="160" Height="50" Background="Transparent" FontSize="30" Foreground="White">
+                        <Interactivity:Interaction.Behaviors>
+                            <Core:EventTriggerBehavior EventName="Click">
+                                <Core:NavigateToPageAction TargetPage="KeptitClient.View.Admin"/>
+                            </Core:EventTriggerBehavior>
+                        </Interactivity:Interaction.Behaviors>
+
 
                     </Button>
 
-                    <TextBlock Text="Admin" FontSize="18" VerticalAlignment="Center" Foreground="White" />
 
                 </StackPanel>
                 <Image x:Name="image" Height="119" Source="Icons\Logo.png" Margin="0,350,3,3"/>
