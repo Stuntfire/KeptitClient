@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using KeptitClient.Persistency;
 using KeptitClient.Models;
+using KeptitClient.Handlers;
+using KeptitClient.ViewModels;
 
 
 namespace UnitTestKeptit
@@ -70,6 +72,10 @@ namespace UnitTestKeptit
         //        Assert.Fail();
         //    }
         //}
+        #endregion
+
+        #region HandlerTests
+        
         #endregion
     }
 }

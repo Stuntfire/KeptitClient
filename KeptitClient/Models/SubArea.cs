@@ -8,9 +8,11 @@ namespace KeptitClient.Models
 {
     public class SubArea
     {
-
+        #region Properties
         public int SubAreaID { get; set; }
         public string SubAreaTitle { get; set; }
+        
+        #endregion
 
         public SubArea(int inSubaAreaId, string inSubAreaTitle)
         {

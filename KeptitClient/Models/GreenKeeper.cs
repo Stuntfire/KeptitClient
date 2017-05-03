@@ -8,8 +8,11 @@ namespace KeptitClient.Models
 {
     public class Greenkeeper
     {
+        #region properties
         public int GreenkeeperID { get; set; }
         public string GreenkeeperName { get; set; }
+
+        #endregion
 
         public Greenkeeper(int inID, string ingreenkeeperid)
         {

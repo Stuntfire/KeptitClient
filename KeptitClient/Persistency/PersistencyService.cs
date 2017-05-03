@@ -18,35 +18,6 @@ namespace KeptitClient.Persistency
         //const string til serverenx
         const string serverUrl = "http://keptit.azurewebsites.net";
 
-        //Tilføj en udført opgave.
-        //public static void PostAsJsonTask(FinishedTask TaskToPost)
-        //{
-        //    using (var client = new HttpClient())
-        //    {
-        //        client.BaseAddress = new Uri(serverUrl);
-        //        client.DefaultRequestHeaders.Clear();
-        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-        //        try
-        //        {
-        //            var response = client.PostAsJsonAsync<FinishedTask>("api/finishedtasks", TaskToPost).Result;
-
-        //            if (response.IsSuccessStatusCode)
-        //            {
-        //                MessageDialogHelper.Show("Udført opgave blev gemt", TaskToPost.FinishedTasksID.ToString());
-        //            }
-        //            else
-        //            {
-        //                MessageDialogHelper.Show("Udført opgave blev ikke gemt", TaskToPost.FinishedTasksID.ToString());
-        //            }
-        //        }
-        //        catch (Exception e)
-        //        {
-        //            MessageDialogHelper.Show("Fejl ", TaskToPost.FinishedTasksID.ToString());
-        //        }
-        //    }
-        //}
-
         // Henter alle Greenkeeper fra tabellen Greenkeepers
         public static async Task<ObservableCollection<Greenkeeper>> LoadGreenkeeperAsync()
         {
@@ -175,9 +146,8 @@ namespace KeptitClient.Persistency
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/finishedtasks"));
                 try
                 { 
+                    //todo det her vil ikke nødvendigvis fange en fejlkode fra serveren
                     var response = client.PostAsJsonAsync<FinishedTask>("api/finishedtasks", finishedtask).Result;
-                    
-
                 }
 
                 catch (Exception e)

@@ -39,11 +39,9 @@ namespace KeptitClient.Handlers
             }
             catch (Exception)
             {
-
                 throw;
             }
 
         }
-
     }
 }

@@ -8,6 +8,7 @@ namespace KeptitClient.Models
 {
     public class FinishedTask
     {
+        #region properties
         public int FinishedTasksID { get; set; }
 
         public int AreaID { get; set; }
@@ -26,6 +27,8 @@ namespace KeptitClient.Models
 
         public string Notes { get; set; }
 
+        #endregion
+
         public FinishedTask(int AreaID, int GreenTaskId, int SubAreaID, int GreenkeeperID, DateTime date, int hours, int minutes, string note)
         {
             this.AreaID = AreaID;
@@ -40,7 +43,7 @@ namespace KeptitClient.Models
 
         public override string ToString()
         {
-            return string.Format("Nr {0}. {1}. {2}. {3}. {4}. {5}. {6}. {7}. {8}", FinishedTasksID, AreaID, GreenTaskID,SubAreaID,GreenkeeperID,Date,Hours,Minutes, Notes);
+            return string.Format("Nr {0}. {1}. {2}. {3}. {4}. {5}. {6}. {7}. {8}", FinishedTasksID, AreaID, GreenTaskID, SubAreaID, GreenkeeperID, Date, Hours, Minutes, Notes);
         }
     }
 }

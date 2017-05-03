@@ -8,8 +8,11 @@ namespace KeptitClient.Models
 {
     public class GreenkeeperInfo
     {
+        #region Properties
         public int FinishedTasksID { get; set; }
+
         public int GreenkeeperID { get; set; }
+
         public string GreenkeeperName { get; set; }
 
         public string AreaTitle { get; set; }
@@ -25,6 +28,8 @@ namespace KeptitClient.Models
         public DateTime Date { get; set; }
 
         public string Notes { get; set; }
+
+        #endregion
 
         public override string ToString()
         {

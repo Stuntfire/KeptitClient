@@ -8,8 +8,11 @@ namespace KeptitClient.Models
 {
     public class Area
     {
+        #region properties
         public int AreaID { get; set; }
         public string AreaTitle { get; set; }
+
+        #endregion
 
         public Area(int in_areaid, string in_areatitle)
         {

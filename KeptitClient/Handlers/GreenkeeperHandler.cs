@@ -21,23 +21,16 @@ namespace KeptitClient.Handlers
             this.Mwm = mwm;
         }
 
-        
-
         //Gets all Greenkeepers from Database via PersistencyService
         public async Task GetGreenkeeperCollection()
         {
-            
+
             //Brug foreach hvis LoadGreenkeepersAsync() i PersistencyService kodes som async:
             foreach (var item in await PersistencyService.LoadGreenkeeperAsync())
             {
                 Mwm.GreenKeeperCollection.Add(item);
             }
-
-            
-
         }
-
-       
 
         ////Creates a new Greenkeeper
         //public void CreateGreenkeeper()
