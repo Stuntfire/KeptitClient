@@ -20,7 +20,6 @@ namespace KeptitClient.Handlers
 
         public async Task GetFinishedTaskCollection()
         {
-
             //Brug foreach hvis LoadSubAreaAsync() i PersistencyService kodes som async:
             foreach (var item in await PersistencyService.LoadFinishedtaskAsync())
             {
@@ -43,7 +42,7 @@ namespace KeptitClient.Handlers
 
                 throw;
             }
-            
+
         }
 
     }
