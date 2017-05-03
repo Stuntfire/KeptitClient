@@ -13,6 +13,7 @@ namespace KeptitClient.Handlers
 
         private MainViewModel Mwm { get; set; }
 
+
         public GreenkeeperInfoHandler(MainViewModel mwm)
         {
             this.Mwm = mwm;
