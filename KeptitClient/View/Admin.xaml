@@ -6,6 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModels="using:KeptitClient.ViewModels"
     xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     x:Class="KeptitClient.View.Admin"
     mc:Ignorable="d">
 
@@ -13,126 +14,48 @@
         <ViewModels:MainViewModel/>
     </Page.DataContext>
 
-    <SplitView x:Name="MySplitView" DisplayMode="CompactInline"  IsPaneOpen="False" 
-               CompactPaneLength="50" OpenPaneLength="160">
-
-        <SplitView.Pane>
-
-            <StackPanel Background="#d8ad50">
-
-                <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
-                    Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click" Margin="0,0,0,0"/>
-                <StackPanel Orientation="Horizontal">
-                    <Button x:Name="MenuButton1" Content="G" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="30"
-                            Width="50" Height="50" Background="Transparent" Margin="0">
-                        <Interactivity:Interaction.Behaviors>
-                            <Core:EventTriggerBehavior EventName="Click">
-                                <Core:NavigateToPageAction TargetPage="KeptitClient.View.Greenkeeper"/>
-                            </Core:EventTriggerBehavior>
-                        </Interactivity:Interaction.Behaviors>
-                    </Button>
+    <SplitView>
 
 
-                    <TextBlock Text="Greenkeeper" FontSize="18" VerticalAlignment="Center" />
+        <Grid Background="White" Margin="0,0,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="19*"/>
+                <ColumnDefinition Width="186*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
 
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Button x:Name="MenuButton2" Content="A" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                            Width="50" Height="50" Background="Transparent" FontSize="30"/>
-
-                    <TextBlock Text="Admin" FontSize="18" VerticalAlignment="Center" />
-
-                </StackPanel>
-            </StackPanel>
-        </SplitView.Pane>
-
-        <Grid>
-
-            <SplitView Height="46" Background="#00412e"  Margin="0,0,0,0" VerticalAlignment="Top">
-
-                <SplitView.Pane>
-                    <Grid/>
-
-                </SplitView.Pane>
-                <Grid>
-                    <TextBlock HorizontalAlignment="Left" Margin="51,-1,0,0" TextWrapping="Wrap" Text="Admin siden" VerticalAlignment="Top" FontSize="35"  Foreground="White"/>
-                </Grid>
-            </SplitView>
-            <TextBlock Text="SplitView Basic" FontSize="54" Foreground="White"
-                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <RowDefinition Height="47*"/>
+                <RowDefinition Height="673*"/>
+            </Grid.RowDefinitions>
 
 
 
-            <SplitView Height="46" Background="#00412e"  Margin="0,0,0,0" VerticalAlignment="Bottom">
 
-                <SplitView.Pane>
-                    <Grid/>
-                </SplitView.Pane>
-                <Grid>
-                    <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="KeptIT" VerticalAlignment="Center" Foreground="White"/>
-                </Grid>
-            </SplitView>
-            <Image HorizontalAlignment="Right" Source="\images\ledreborg_logo.png" Height="120" VerticalAlignment="Top" Width="auto" Margin="0,0,7,0"/>
-            <Pivot Title="" Margin="0,12,0,0">
-                <PivotItem Header="Løn" >
-                    <Grid>
-                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Løn" VerticalAlignment="Top"/>
-                    </Grid>
-                </PivotItem>
-                <PivotItem Header="Opgaver">
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="42,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Navn:" FontSize="18" VerticalAlignment="Top" Width="171" Grid.ColumnSpan="2"/>
 
-                    <Grid>
-                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Opgaver" VerticalAlignment="Top"/>
-                    </Grid>
-                </PivotItem>
-                <PivotItem Header="Greenkeeper">
+            <!--<TextBlock x:Name="textBlock2" Grid.Column="1" HorizontalAlignment="Left" Margin="48,19,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Greenkeeper indtast udført opgave:" VerticalAlignment="Top" Height="63" Width="1032" FocusVisualPrimaryBrush="White" FontSize="50"/>-->
 
-                    <Border x:Name="border" BorderBrush="Black" BorderThickness="1"
-          Padding="5" Margin="5">
-                        <Grid Height="Auto" Width="420                                   " HorizontalAlignment="Left">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="8*" />
-                                <ColumnDefinition Width="27*" />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Navn:" Grid.ColumnSpan="2" Margin="0,0,235,0" />
-                            <TextBox x:Name="navn" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="147"/>
-
-                            <TextBlock Grid.Row="1" Grid.Column="0" Text="" Grid.ColumnSpan="2" Margin="0,0,235,0"/>
-                            <TextBlock Grid.Row="1" Grid.Column="1" Text="" />
-                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Telefon:" Grid.ColumnSpan="2" Margin="0,0,235,0" />
-                            <TextBox x:Name="telefon" Grid.Row="2" Grid.Column="1" Margin="0,0,0,0" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" Width="144" VerticalAlignment="Bottom"/>
-
-                            <TextBlock Grid.Row="3" Grid.Column="0" Text="" Grid.ColumnSpan="2" Margin="0,0,235,0"/>
-                            <TextBlock Grid.Row="3" Grid.Column="1" Text=""/>
-                            <TextBlock Grid.Row="4" Grid.Column="0" Text="" Grid.ColumnSpan="2" Margin="0,0,235,0"/>
-                            <Button x:Name="gembtn" Grid.Row="4" Grid.Column="1" Content="Gem" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="147"/>
-
-                            <ListView HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="1" />
-
-                        </Grid>
-                    </Border>
+            <!--<StackPanel Margin="48,134,846,385" Grid.Row="1" Grid.Column="1">
+                <ComboBox x:Name="comboBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding AreaCollection, Mode=TwoWay}" Width="423" Height="45" Margin="0,0,-301,0" IsDropDownOpen="True"/>
+            </StackPanel>-->
 
 
-                </PivotItem>
-                <PivotItem Header="Opgave">
-                    <Grid>
-                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Opgave" VerticalAlignment="Top"/>
-                    </Grid>
-                </PivotItem>
-                <PivotItem Header="Område">
-                    <Grid>
-                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Område" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock4" FontSize="18" HorizontalAlignment="Left" Margin="41,202,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Område:" VerticalAlignment="Top" Height="30" Width="311" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="40,230,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="34" Grid.ColumnSpan="2" ItemsSource="{Binding AreaCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedArea, Mode=TwoWay}"/>
+            <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="41,303,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Under område:" VerticalAlignment="Top" FontSize="18" Height="27" Width="171" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="40,330,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="32" Grid.ColumnSpan="2" ItemsSource="{Binding SubAreaCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedSubArea, Mode=TwoWay}"/>
+            <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Margin="41,411,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Opgave:" VerticalAlignment="Top" Height="26" Width="277" FontSize="18" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="comboBox3" HorizontalAlignment="Left" Margin="40,437,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="32" Grid.ColumnSpan="2" ItemsSource="{Binding GreenTaskCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedGreenTask, Mode=TwoWay}"/>
+            <TextBlock x:Name="textBlockOverskrift" HorizontalAlignment="Left" Margin="41,17,-64,0" Grid.Row="1" TextWrapping="Wrap" Text="Admin se timer:" VerticalAlignment="Top" FontSize="36" Height="81" Width="1143" FontFamily="Segoe UI Light" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="comboBoxNavn" HorizontalAlignment="Left" Margin="40,136,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="32" Grid.ColumnSpan="2" ItemsSource="{Binding GreenKeeperCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedGreenKeeper, Mode=TwoWay}"/>
+            <TextBlock x:Name="textBlockResultat" Grid.Column="1" HorizontalAlignment="Left" Margin="715,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Resultat liste: " VerticalAlignment="Top" Height="33" Width="256" FontSize="18"/>
 
-                    </Grid>
-                </PivotItem>
-            </Pivot>
+            <TextBlock x:Name="textBlockDatoFra" Grid.Column="1" HorizontalAlignment="Left" Margin="324.667,107,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Opgave udført fra den:" FontSize="18" VerticalAlignment="Top" Width="275"/>
+            <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="325,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="334" DataContext="{Binding SelectedDate, Mode=TwoWay}"/>
+            <TextBlock x:Name="textBlockDatoTil" Grid.Column="1" HorizontalAlignment="Left" Margin="324.667,203,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Opgave udført til den:" FontSize="18" VerticalAlignment="Top" Width="275"/>
+            <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="324.667,232,0,0" Grid.Row="1" VerticalAlignment="Top" Width="334" DataContext="{Binding SelectedDate, Mode=TwoWay}"/>
+
+
 
         </Grid>
     </SplitView>
