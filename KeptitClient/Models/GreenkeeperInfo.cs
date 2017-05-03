@@ -8,6 +8,7 @@ namespace KeptitClient.Models
 {
     public class GreenkeeperInfo
     {
+        public int FinishedTasksID { get; set; }
         public int GreenkeeperID { get; set; }
         public string GreenkeeperName { get; set; }
 
