@@ -217,6 +217,7 @@ namespace KeptitClient.ViewModels
             return false;
         }
 
+        // Beregner for hver greenkeeper der viser navn,timer og antal minutter.
         public async Task BeregnAlt()
         {
 
