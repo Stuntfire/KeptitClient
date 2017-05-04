@@ -13,8 +13,6 @@ namespace KeptitClient.Handlers
     {
         private MainViewModel Mwm { get; set; }
 
-        //public ObservableCollection<Tasks> TasksCollection { get; set; }
-
         public GreenTaskHandler(MainViewModel mwm)
         {
             this.Mwm = mwm;

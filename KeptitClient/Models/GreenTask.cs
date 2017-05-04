@@ -8,9 +8,12 @@ namespace KeptitClient.Models
 {
     public class GreenTask
     {
+        #region Properties
         public int GreenTaskID { get; set; }
         
         public string GreenTaskTitle { get; set; }
+
+        #endregion
 
         public override string ToString()
         {

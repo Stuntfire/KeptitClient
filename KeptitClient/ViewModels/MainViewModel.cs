@@ -17,14 +17,13 @@ namespace KeptitClient.ViewModels
     {
         #region Handlers
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
-
+        public GreenkeeperInfoHandler GreenkeeperInfoHandler { get; set; }
 
         #endregion
 
         #region RelayCommands
 
         private ICommand _addTaskCommand;
-
         public ICommand AddTaskCommand
         {
             get { return _addTaskCommand; }
@@ -81,7 +80,6 @@ namespace KeptitClient.ViewModels
         }
 
         private ObservableCollection<GreenTask> _greenTaskCollektion;
-
         public ObservableCollection<GreenTask> GreenTaskCollection
         {
             get { return _greenTaskCollektion; }
@@ -147,7 +145,6 @@ namespace KeptitClient.ViewModels
             }
         }
 
-
         private ObservableCollection<GreenkeeperInfo> _greenkeeperInfoCollection;
         public ObservableCollection<GreenkeeperInfo> GreenkeeperInfoCollection
         {
@@ -159,22 +156,18 @@ namespace KeptitClient.ViewModels
             }
         }
 
-        public GreenkeeperInfoHandler GreenkeeperInfoHandler { get; set; }
-
         #endregion
 
         public MainViewModel()
         {
-
             GreenkeeperInfoCollection = new ObservableCollection<GreenkeeperInfo>();
-
             SelectedGreenKeeper = new Greenkeeper(0, "");
             FinishedTaskHandler = new FinishedTaskHandler(this);
+
             DateTime dt = DateTime.Now;
             _selectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
 
             LoadAllCollections();
-            //ny relaycommand der binder til finishstaskshandleren
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
         }
 
@@ -188,8 +181,6 @@ namespace KeptitClient.ViewModels
             }
             return false;
         }
-
-
 
         private void LoadAllCollections()
         {
