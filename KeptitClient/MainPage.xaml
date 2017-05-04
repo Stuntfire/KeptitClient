@@ -11,7 +11,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <!--begin left menu-->
         <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="True" 
-               OpenPaneLength="200" Margin="0,46,0,0" CompactPaneLength="200" >
+               OpenPaneLength="200" Margin="0,48,0,0" CompactPaneLength="200" >
             <SplitView.Pane>
                 <StackPanel Background="#00412e">
                     <StackPanel Orientation="Horizontal">
