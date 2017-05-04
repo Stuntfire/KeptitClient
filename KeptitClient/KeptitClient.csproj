@@ -131,6 +131,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons\Logo.png" />
+    <Content Include="Images\billede1.png" />
+    <Content Include="Images\billede2.png" />
     <Content Include="Images\ledreborg_logo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

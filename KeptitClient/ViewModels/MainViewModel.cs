@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.Foundation.Metadata;
+using Windows.UI.Xaml.Controls;
 using KeptitClient.Persistency;
 
 namespace KeptitClient.ViewModels
@@ -156,11 +158,41 @@ namespace KeptitClient.ViewModels
             }
         }
 
+        private ObservableCollection<GreenkeeperInfo> alletimerogminutterCollection;
+
+        public ObservableCollection<GreenkeeperInfo> AlleTimerOgMinutterCollection
+        {
+            get { return alletimerogminutterCollection; }
+            set { alletimerogminutterCollection = value; }
+        }
+
+
+        public int result;
+        public float timerud;
+        public float minutterud;
+        float resultatetaftimer;
+        public int resultatetafminutter;
+        private ListView listViewSamlet;
+
+        public ListView ListViewSamlet
+        {
+            get { return listViewSamlet; }
+            set
+            {
+                listViewSamlet = value;
+                OnPropertyChanged(nameof(ListViewSamlet));
+            }
+        }
+
+
+
         #endregion
 
         public MainViewModel()
         {
             GreenkeeperInfoCollection = new ObservableCollection<GreenkeeperInfo>();
+            AlleTimerOgMinutterCollection = new ObservableCollection<GreenkeeperInfo>();
+
             SelectedGreenKeeper = new Greenkeeper(0, "");
             FinishedTaskHandler = new FinishedTaskHandler(this);
 
@@ -169,6 +201,9 @@ namespace KeptitClient.ViewModels
 
             LoadAllCollections();
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
+
+            ListViewSamlet = new ListView();
+            BeregnAlt();
         }
 
         #region Methods
@@ -180,6 +215,54 @@ namespace KeptitClient.ViewModels
                 return true;
             }
             return false;
+        }
+
+        public async Task BeregnAlt()
+        {
+
+            var NavnOgTimerIalt =
+               from t in AlleTimerOgMinutterCollection
+               orderby t.GreenkeeperName
+               group t by t.GreenkeeperName into Ansat
+               select new
+               {
+                   Greenkeeper = Ansat.Key,
+                   TimerIalt = Ansat.Sum(x => x.Hours),
+                   MinutterIalt = Ansat.Sum(x => x.Minutes),
+               };
+
+            foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
+            {
+                AlleTimerOgMinutterCollection.Add(item);
+
+                
+                
+            }
+
+            //--------------------------------------------------
+            //foreach (var test in NavnOgTimerIalt)
+            //{
+            //    if (test.MinutterIalt > 60)
+            //    {
+            //        float result = 0.0F;
+            //        float result2 = 0.0F;
+            //        timerud = test.MinutterIalt / 60;
+            //        resultatetafminutter = test.TimerIalt;
+            //        result = timerud + resultatetafminutter;
+            //        result2 = (test.MinutterIalt - (timerud * 60));
+            //        timerud = result ;
+            //        minutterud = result2;
+            //    }
+            //    else
+            //    {
+
+            //    }
+            //}
+            //---------------------------------------------
+
+            ListViewSamlet.DataContext = NavnOgTimerIalt;
+
+
         }
 
         private void LoadAllCollections()

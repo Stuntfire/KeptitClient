@@ -32,8 +32,6 @@
                         <RowDefinition Height="103*"/>
                         <RowDefinition Height="523*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="SplitView Basic" FontSize="54" Foreground="White"
-                           HorizontalAlignment="Center" VerticalAlignment="Center" Margin="520,61.333,519,390" Grid.Row="3" Height="72" Width="353"/>
                     <Frame x:Name="Mainframe" Content="Frame" HorizontalAlignment="Left" MinHeight="900" Margin="0,0,0,0" VerticalAlignment="Top" Width="1227" Grid.RowSpan="4">
                     </Frame>
                 </Grid>
