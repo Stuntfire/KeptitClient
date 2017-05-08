@@ -33,6 +33,7 @@ namespace KeptitClient.Handlers
 
             try
             {
+               
                 PersistencyService.PostFinishedtask(temp_task);
                 Mwm.GreenkeeperInfoCollection.Clear();
                 Mwm.GreenkeeperInfoHandler.GetGreenTaskInfoCollection();

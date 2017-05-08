@@ -9,7 +9,7 @@
     xmlns:ViewModels="using:KeptitClient.ViewModels"
     x:Class="KeptitClient.View.Greenkeeper"
     mc:Ignorable="d">
-    
+
     <Page.DataContext>
         <ViewModels:MainViewModel/>
     </Page.DataContext>
@@ -29,7 +29,7 @@
             <TextBlock x:Name="textBlockOverskrift" HorizontalAlignment="Left" Margin="41,17,-64,0" Grid.Row="1" TextWrapping="Wrap" Text="Greenkeeper indtast udført opgave:" VerticalAlignment="Top" FontSize="36" Height="81" Width="1143" FontFamily="Segoe UI Light" Grid.ColumnSpan="2"/>
 
             <TextBlock x:Name="textBlockNavn" HorizontalAlignment="Left" Margin="42,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Navn:" FontSize="18" VerticalAlignment="Top" Width="171" Grid.ColumnSpan="2"/>
-            <ComboBox x:Name="comboBoxNavn" HorizontalAlignment="Left" Margin="40,136,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="32" Grid.ColumnSpan="2" ItemsSource="{Binding GreenKeeperCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedGreenKeeper, Mode=TwoWay}"/>
+            <ComboBox x:Name="comboBoxNavn" HorizontalAlignment="Left" Margin="40,136,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="32" Grid.ColumnSpan="2" ItemsSource="{Binding GreenKeeperCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedGreenKeeper, Mode=TwoWay}" />
 
             <TextBlock x:Name="textBlockArea" FontSize="18" HorizontalAlignment="Left" Margin="41,202,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Område:" VerticalAlignment="Top" Height="30" Width="311" Grid.ColumnSpan="2"/>
             <ComboBox x:Name="comboBoxArea" HorizontalAlignment="Left" Margin="40,230,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="34" Grid.ColumnSpan="2" ItemsSource="{Binding AreaCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedArea, Mode=TwoWay}"/>
@@ -49,11 +49,11 @@
 
             <TextBlock x:Name="textBlockNotes" Grid.Column="1" HorizontalAlignment="Left" Margin="325,195,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Tilføj evt. en note til opgaven:" VerticalAlignment="Top"  FontSize="18" Height="37" Width="334"/>
             <TextBox x:Name="textBoxNotes" Grid.Column="1" HorizontalAlignment="Left" Margin="325,229,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Height="252" Width="334" Text="{Binding TaskNotes, Mode=TwoWay}" BorderBrush="#66000000"/>
-            
+
             <Button x:Name="buttonGem" Content="Gem udførte opgave" Grid.Column="1" HorizontalAlignment="Left" Margin="401,563,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Height="47" Width="258" Background="#cccccc" Command="{Binding AddTaskCommand}"/>
 
             <TextBlock x:Name="textBlockTidBrugt" Grid.Column="1" HorizontalAlignment="Left" Margin="715,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Dato og tid brugt på udførte opgaver" VerticalAlignment="Top" Height="33" Width="256" FontSize="18"/>
-            <ListView x:Name="listView" Background="#f1f1f1" Grid.Column="1" HorizontalAlignment="Left" Height="474" Margin="715,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="275" ItemsSource="{Binding GreenkeeperInfoCollection, Mode=TwoWay}">
+            <ListView x:Name="listView" Background="#f1f1f1" Grid.Column="1" HorizontalAlignment="Left" Height="474" Margin="715,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="275" ItemsSource="{Binding ListViewSamlet2.DataContext, Mode=TwoWay}" SelectedItem="{Binding  SelectedGreenKeeper, Mode=TwoWay}">
 
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
@@ -112,7 +112,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            
+
         </Grid>
     </SplitView>
 </Page>

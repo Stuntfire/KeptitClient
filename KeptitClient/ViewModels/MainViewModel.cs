@@ -131,7 +131,7 @@ namespace KeptitClient.ViewModels
             set
             {
                 _selectedGreenKeeper = value;
-                OnPropertyChanged(nameof(SelectedGreenKeeper));
+                OnPropertyChanged(nameof(SelectedGreenKeeper));LoadUpdatedList();
             }
         }
 
@@ -154,7 +154,6 @@ namespace KeptitClient.ViewModels
             set
             {
                 _greenkeeperInfoCollection = value;
-                OnPropertyChanged(nameof(GreenKeeperCollection));
             }
         }
 
@@ -167,11 +166,13 @@ namespace KeptitClient.ViewModels
         }
 
 
-        public int result;
+        public float result;
+        public int result2 = 0;
         public float timerud;
         public float minutterud;
-        float resultatetaftimer;
-        public int resultatetafminutter;
+        public float rtimer;
+        public float rminutter;
+        public int val2;
         private ListView listViewSamlet;
 
         public ListView ListViewSamlet
@@ -184,7 +185,13 @@ namespace KeptitClient.ViewModels
             }
         }
 
+        private ListView listViewSamlet2;
 
+        public ListView ListViewSamlet2
+        {
+            get { return listViewSamlet2; }
+            set { listViewSamlet2 = value; }
+        }
 
         #endregion
 
@@ -203,18 +210,39 @@ namespace KeptitClient.ViewModels
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
 
             ListViewSamlet = new ListView();
+            ListViewSamlet2 = new ListView();
             BeregnAlt();
         }
 
         #region Methods
 
+        public async Task LoadUpdatedList()
+        {
+            
+            
+            var updateList = from t in GreenkeeperInfoCollection
+                          where t.GreenkeeperName.Contains(SelectedGreenKeeper.GreenkeeperName)
+                          orderby t.Date descending 
+                          select t;
+            
+            foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
+            {
+                GreenkeeperInfoCollection.Add(item);
+            }
+            ListViewSamlet2.DataContext = updateList;
+            GreenkeeperInfoCollection.Clear();
+        }
+
+
+
         public bool IsEmpty()
         {
-            if (SelectedGreenKeeper.GreenkeeperName != "")
-            {
-                return true;
-            }
-            return false;
+            return true;
+            //if (SelectedGreenKeeper.GreenkeeperName != "")
+            //{
+            //    return true;
+            //}
+            //return false;
         }
 
         // Beregner for hver greenkeeper der viser navn,timer og antal minutter.
@@ -229,7 +257,8 @@ namespace KeptitClient.ViewModels
                {
                    Greenkeeper = Ansat.Key,
                    TimerIalt = Ansat.Sum(x => x.Hours),
-                   MinutterIalt = Ansat.Sum(x => x.Minutes),
+                   MinutterIalt = Ansat.Sum(x => x.Minutes)
+                   
                };
 
             foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
@@ -241,27 +270,31 @@ namespace KeptitClient.ViewModels
             }
 
             //--------------------------------------------------
-            //foreach (var test in NavnOgTimerIalt)
-            //{
-            //    if (test.MinutterIalt > 60)
-            //    {
-            //        float result = 0.0F;
-            //        float result2 = 0.0F;
-            //        timerud = test.MinutterIalt / 60;
-            //        resultatetafminutter = test.TimerIalt;
-            //        result = timerud + resultatetafminutter;
-            //        result2 = (test.MinutterIalt - (timerud * 60));
-            //        timerud = result ;
-            //        minutterud = result2;
-            //    }
-            //    else
-            //    {
-
-            //    }
-            //}
+            foreach (var test in NavnOgTimerIalt)
+            {
+                if (test.MinutterIalt > 60)
+                {
+                    float result = 0.0F;
+                    
+                    timerud = test.MinutterIalt / 60;
+                    rtimer = test.TimerIalt;
+                    result = timerud + rtimer;
+                    float val1 = (test.MinutterIalt - (timerud * 60)) ;
+                    
+                    int val2 = (int)val1;
+                    timerud = result;
+                    minutterud = val2;
+                }
+                else
+                {
+                  
+                }
+                //val2 = NavnOgTimerIalt.ToList();
+            }
             //---------------------------------------------
 
             ListViewSamlet.DataContext = NavnOgTimerIalt;
+            //ListViewSamlet2.DataContext = val2;
 
 
         }
@@ -284,7 +317,7 @@ namespace KeptitClient.ViewModels
             var gth = new GreenTaskHandler(this).GetGreenTaskCollection();
 
             GreenkeeperInfoHandler = new GreenkeeperInfoHandler(this);
-            GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
+            //GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
 
         }
         #endregion 
