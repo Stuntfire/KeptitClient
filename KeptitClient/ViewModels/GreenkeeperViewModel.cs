@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.Foundation.Metadata;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 using KeptitClient.Persistency;
 
@@ -218,8 +219,6 @@ namespace KeptitClient.ViewModels
 
         public async Task LoadUpdatedList()
         {
-            
-            
             var updateList = from t in GreenkeeperInfoCollection
                           where t.GreenkeeperName.Contains(SelectedGreenKeeper.GreenkeeperName)
                           orderby t.Date descending 
@@ -229,6 +228,7 @@ namespace KeptitClient.ViewModels
             {
                 GreenkeeperInfoCollection.Add(item);
             }
+
             ListViewSamlet2.DataContext = updateList;
             GreenkeeperInfoCollection.Clear();
         }
@@ -237,12 +237,20 @@ namespace KeptitClient.ViewModels
 
         public bool IsEmpty()
         {
-            return true;
-            //if (SelectedGreenKeeper.GreenkeeperName != "")
-            //{
-            //    return true;
-            //}
-            //return false;
+            try
+            {
+                if (SelectedGreenKeeper.GreenkeeperName != "")
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                MessageDialogHelper.Show("Greenkeeper er ikke valgt \n Opgaven kunne ikke gommes!", e.Message);
+                return false;
+            }
+            
         }
 
         // Beregner for hver greenkeeper der viser navn,timer og antal minutter.
