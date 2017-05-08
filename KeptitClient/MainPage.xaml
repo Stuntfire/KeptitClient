@@ -9,16 +9,16 @@
 
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <!--begin left menu-->
+        <!--venstre menu start-->
         <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="True" 
                OpenPaneLength="200" Margin="0,48,0,0" CompactPaneLength="200" >
             <SplitView.Pane>
                 <StackPanel Background="#00412e">
                     <StackPanel Orientation="Horizontal">
-                        <Button x:Name="HomePageButton" Margin="0,0,0,0"  Click="HomePageButton_Click" Content="Greenkeeper" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00000000" Width="200" Height="50" FontSize="30"/>
+                        <Button x:Name="GreenKeeperButton" Margin="0,0,0,0"  Click="HomePageButton_Click" Content="Greenkeeper" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00000000" Width="200" Height="50" FontSize="30"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Button x:Name="ManageBudgetbutton"    Margin="0,0,0,0"  Click="SettingsButton_Click" Content="Admin" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00000000" Width="200" Height="50" FontSize="30"/>
+                        <Button x:Name="AdminSeTimerButton"    Margin="0,0,0,0"  Click="SettingsButton_Click" Content="Admin Timer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00000000" Width="200" Height="50" FontSize="30"/>
 
                     </StackPanel>
                     <Image Height="160" Source="Images/ledreborg_logo.png" VerticalAlignment="Bottom" Margin="0,350,0,0" Width="131"/>
@@ -37,7 +37,7 @@
                 </Grid>
             </SplitView.Content>
         </SplitView>
-        <!--end left menu-->
+        <!--venstre menu slut-->
         <SplitView Height="50" Background="#00412e" VerticalAlignment="Top" Margin="0,-2,0,0" >
             <TextBlock x:Name="textBlock" Padding="5" Height="53"  FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="1071" HorizontalAlignment="Left" Margin="30,0,0,0">
                 <Run FontStyle="Italic" Text="Keptit"/>

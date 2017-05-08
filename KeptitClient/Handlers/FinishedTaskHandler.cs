@@ -27,16 +27,16 @@ namespace KeptitClient.Handlers
             }
         }
 
-        public void PostFinishedTask()
+        public async void PostFinishedTask()
         {
             FinishedTask temp_task = new FinishedTask(Mwm.SelectedArea.AreaID, Mwm.SelectedGreenTask.GreenTaskID, Mwm.SelectedSubArea.SubAreaID, Mwm.SelectedGreenKeeper.GreenkeeperID, Mwm.SelectedDate.Date, Mwm.TaskHour, Mwm.TaskMinutes, Mwm.TaskNotes);
 
             try
             {
-               
+                
                 PersistencyService.PostFinishedtask(temp_task);
                 Mwm.GreenkeeperInfoCollection.Clear();
-                Mwm.GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
+               await Mwm.GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
             }
             catch (Exception)
             {
