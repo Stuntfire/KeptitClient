@@ -18,6 +18,25 @@ namespace KeptitClient.ViewModels
 {
     public class MainViewModel
     {
+        public MainViewModel()
+        {
+            GreenkeeperInfoCollection = new ObservableCollection<GreenkeeperInfo>();
+            AlleTimerOgMinutterCollection = new ObservableCollection<GreenkeeperInfo>();
+
+            SelectedGreenKeeper = new Greenkeeper(0, "");
+            FinishedTaskHandler = new FinishedTaskHandler(this);
+
+            DateTime dt = DateTime.Now;
+            _selectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+
+            LoadAllCollections();
+            AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
+
+            ListViewSamlet = new ListView();
+            ListViewSamlet2 = new ListView();
+            BeregnAlt();
+        }
+
         #region Handlers
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
         public GreenkeeperInfoHandler GreenkeeperInfoHandler { get; set; }
@@ -195,25 +214,6 @@ namespace KeptitClient.ViewModels
         }
 
         #endregion
-
-        public MainViewModel()
-        {
-            GreenkeeperInfoCollection = new ObservableCollection<GreenkeeperInfo>();
-            AlleTimerOgMinutterCollection = new ObservableCollection<GreenkeeperInfo>();
-
-            SelectedGreenKeeper = new Greenkeeper(0, "");
-            FinishedTaskHandler = new FinishedTaskHandler(this);
-
-            DateTime dt = DateTime.Now;
-            _selectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
-
-            LoadAllCollections();
-            AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
-
-            ListViewSamlet = new ListView();
-            ListViewSamlet2 = new ListView();
-            BeregnAlt();
-        }
 
         #region Methods
 
