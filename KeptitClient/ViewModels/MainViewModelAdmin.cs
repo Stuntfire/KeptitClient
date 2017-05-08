@@ -22,6 +22,12 @@ namespace KeptitClient.ViewModels
 
         }
 
+        #region Methods
+        #endregion
+
+        #region Properties
+        #endregion
+
         #region Handlers
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
         public GreenkeeperInfoHandler GreenkeeperInfoHandler { get; set; }
