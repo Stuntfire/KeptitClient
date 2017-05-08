@@ -13,10 +13,10 @@ namespace KeptitClient.Handlers
 {
     public class GreenkeeperHandler
     {
-        private MainViewModel Mwm { get; set; }
+        private GreenkeeperViewModel Mwm { get; set; }
 
         //Constructor
-        public GreenkeeperHandler(MainViewModel mwm)
+        public GreenkeeperHandler(GreenkeeperViewModel mwm)
         {
             this.Mwm = mwm;
         }
