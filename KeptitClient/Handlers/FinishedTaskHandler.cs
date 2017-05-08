@@ -11,9 +11,9 @@ namespace KeptitClient.Handlers
 {
     public class FinishedTaskHandler
     {
-        private MainViewModel Mwm { get; set; }
+        private GreenkeeperViewModel Mwm { get; set; }
 
-        public FinishedTaskHandler(MainViewModel mvm)
+        public FinishedTaskHandler(GreenkeeperViewModel mvm)
         {
             this.Mwm = mvm;
         }

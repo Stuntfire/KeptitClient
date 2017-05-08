@@ -15,9 +15,9 @@ using KeptitClient.Persistency;
 
 namespace KeptitClient.ViewModels
 {
-    public class MainViewModel
+    public class GreenkeeperViewModel
     {
-        public MainViewModel()
+        public GreenkeeperViewModel()
         {
             GreenkeeperInfoCollection = new ObservableCollection<GreenkeeperInfo>();
             AlleTimerOgMinutterCollection = new ObservableCollection<GreenkeeperInfo>();

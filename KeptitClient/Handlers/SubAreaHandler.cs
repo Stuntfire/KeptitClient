@@ -12,10 +12,10 @@ namespace KeptitClient.Handlers
 {
     public class SubAreaHandler
     {
-        private MainViewModel Mwm { get; set; }
+        private GreenkeeperViewModel Mwm { get; set; }
 
         //Constructor
-        public SubAreaHandler(MainViewModel mwm)
+        public SubAreaHandler(GreenkeeperViewModel mwm)
         {
             this.Mwm = mwm;
         }
