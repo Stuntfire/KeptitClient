@@ -92,6 +92,12 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\AdminAnsatte.xaml.cs">
+      <DependentUpon>AdminAnsatte.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminAreas.xaml.cs">
+      <DependentUpon>AdminAreas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -120,6 +126,12 @@
     <Compile Include="View\Admin.xaml.cs">
       <DependentUpon>Admin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Admindonetasks.xaml.cs">
+      <DependentUpon>Admindonetasks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adminwhether.xaml.cs">
+      <DependentUpon>Adminwhether.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Greenkeeper.xaml.cs">
       <DependentUpon>Greenkeeper.xaml</DependentUpon>
     </Compile>
@@ -147,11 +159,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\AdminAnsatte.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AdminAreas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Admindonetasks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Adminwhether.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -30,16 +30,38 @@ namespace KeptitClient
         }
        
 
-        private void HomePageButton_Click(object sender, RoutedEventArgs e)
+        private void GreenKeeperButton_Click(object sender, RoutedEventArgs e)
         {
             Mainframe.Navigate(typeof(Greenkeeper));
         }
 
-        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        private void AdminSeTimerButton_Click(object sender, RoutedEventArgs e)
         {
             Mainframe.Navigate(typeof(Admin));
         }
 
-       
+        private void AdminDoneTasksButton_Click(object sender, RoutedEventArgs e)
+        {
+            Mainframe.Navigate(typeof(Admindonetasks));
+        }
+
+        private void AdminAreasButton_Click(object sender, RoutedEventArgs e)
+        {
+            Mainframe.Navigate(typeof(AdminAreas));
+        }
+
+        private void AdminAnsatteButton_Click(object sender, RoutedEventArgs e)
+        {
+            Mainframe.Navigate(typeof(AdminAnsatte));
+        }
+
+        private void AdminwhetherButton_Click(object sender, RoutedEventArgs e)
+        {
+            Mainframe.Navigate(typeof(Adminwhether));
+        }
+        
+
+
+
     }
 }

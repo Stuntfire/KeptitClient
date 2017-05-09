@@ -23,6 +23,7 @@ namespace KeptitClient.ViewModels
             GreenkeeperInfoCollection = new ObservableCollection<GreenkeeperInfo>();
             AlleTimerOgMinutterCollection = new ObservableCollection<GreenkeeperInfo>();
 
+            
             SelectedGreenKeeper = new Greenkeeper(0, "");
             FinishedTaskHandler = new FinishedTaskHandler(this);
 
@@ -174,6 +175,7 @@ namespace KeptitClient.ViewModels
             set
             {
                 _greenkeeperInfoCollection = value;
+                OnPropertyChanged(nameof(GreenkeeperInfoCollection));
             }
         }
 
@@ -265,8 +267,9 @@ namespace KeptitClient.ViewModels
                {
                    Greenkeeper = Ansat.Key,
                    TimerIalt = Ansat.Sum(x => x.Hours),
-                   MinutterIalt = Ansat.Sum(x => x.Minutes)
-                   
+                   MinutterIalt = Ansat.Sum(x => x.Minutes),
+                   //datoen = Ansat.Sum(x => x.Date.Day)
+
                };
 
             foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
@@ -275,6 +278,18 @@ namespace KeptitClient.ViewModels
 
                 
                 
+            }
+
+            foreach (var whichday in AlleTimerOgMinutterCollection)
+            {
+                if (whichday.Hours >= 1)
+                {
+                    int testtal = 23;
+                }
+                else
+                {
+                    
+                }
             }
 
             //--------------------------------------------------
