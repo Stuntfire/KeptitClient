@@ -17,6 +17,7 @@
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="GreenKeeperButton" Margin="0,0,0,0"  Click="GreenKeeperButton_Click" Content="Greenkeeper" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559"/>
                     </StackPanel>
+                    <StackPanel x:Name="AdminPanel" Visibility="Collapsed">
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="AdminSeTimerButton"    Margin="0,0,0,0"  Click="AdminSeTimerButton_Click" Content="Admin" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
                     </StackPanel>
@@ -29,13 +30,17 @@
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="AdminAnsatteButton"    Margin="0,0,0,0"  Click="AdminAnsatteButton_Click" Content="Ansatte" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Button x:Name="AdminwhetherButton"    Margin="0,0,0,0"  Click="AdminwhetherButton_Click" Content="Vejret" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="AdminlogudButton"    Margin="0,0,0,0"  Click="AdminlogudButton_Click" Content="Log ud" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
+                        </StackPanel>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
+                   
+                    <StackPanel Orientation="Horizontal" x:Name="LogudPanel">
                         <Button x:Name="AdminloginButton"    Margin="0,0,0,0"  Click="AdminloginButton_Click" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559"/>
                     </StackPanel>
-                    <Image Height="160" Source="Images/ledreborg_logo.png" VerticalAlignment="Bottom" Margin="0,350,0,0" Width="131"/>
+                    
+
+                    <Image Height="160" Source="Images/ledreborg_logo.png" VerticalAlignment="Bottom" Margin="0,140,0,0" Width="131"/>
                 </StackPanel>
             </SplitView.Pane>
             <SplitView.Content>

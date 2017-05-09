@@ -132,8 +132,8 @@
     <Compile Include="View\Adminlogin.xaml.cs">
       <DependentUpon>Adminlogin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Adminwhether.xaml.cs">
-      <DependentUpon>Adminwhether.xaml</DependentUpon>
+    <Compile Include="View\Adminweather.xaml.cs">
+      <DependentUpon>Adminweather.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Greenkeeper.xaml.cs">
       <DependentUpon>Greenkeeper.xaml</DependentUpon>
@@ -186,7 +186,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Adminwhether.xaml">
+    <Page Include="View\Adminweather.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
