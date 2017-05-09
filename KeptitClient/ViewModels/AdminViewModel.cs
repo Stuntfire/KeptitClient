@@ -15,7 +15,7 @@ using KeptitClient.Persistency;
 
 namespace KeptitClient.ViewModels
 {
-    class AdminViewModel
+    public class AdminViewModel
     {
         public AdminViewModel()
         {

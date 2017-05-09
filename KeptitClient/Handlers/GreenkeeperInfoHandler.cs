@@ -16,7 +16,7 @@ namespace KeptitClient.Handlers
         {
             this.Mwm = mwm;
         }
-
+        
         //Gets all Tasks from Database via PersistencyService
         public async Task GetGreenTaskInfoCollection()
         {
