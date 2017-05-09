@@ -54,10 +54,10 @@
 
             <TextBlock x:Name="textBlockTidBrugt" Grid.Column="1" HorizontalAlignment="Left" Margin="715,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Dato og tid brugt på udførte opgaver" VerticalAlignment="Top" Height="33" Width="256" FontSize="18"/>
 
-            <ListView x:Name="listView" Background="#f1f1f1" Grid.Column="1" HorizontalAlignment="Left" Height="474" Margin="715,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="275" ItemsSource="{Binding ListViewSamlet2.DataContext, Mode=TwoWay}" SelectedItem="{Binding  GreenkeeperInfoCollection, Mode=TwoWay}" />
+            <!--<ListView x:Name="listView" Background="#f1f1f1" Grid.Column="1" HorizontalAlignment="Left" Height="474" Margin="715,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="275" ItemsSource="{Binding ListViewSamlet2.DataContext, Mode=TwoWay}" SelectedItem="{Binding  GreenkeeperInfoCollection, Mode=TwoWay}" />-->
 
 
-            <!--<ListView x:Name="listView" Background="#f1f1f1" Grid.Column="1" HorizontalAlignment="Left" Height="474" Margin="715,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="275" ItemsSource="{Binding ListViewSamlet2.DataContext, Mode=TwoWay}" SelectedItem="{Binding  GreenkeeperInfoCollection, Mode=TwoWay}" >
+            <ListView x:Name="listView" Background="#f1f1f1" Grid.Column="1" HorizontalAlignment="Left" Height="474" Margin="715,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="275" ItemsSource="{Binding ListViewSamlet2.DataContext, Mode=TwoWay}" SelectedItem="{Binding  GreenkeeperInfoCollection, Mode=TwoWay}" >
 
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
@@ -115,7 +115,7 @@
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>-->
+            </ListView>
 
         </Grid>
     </SplitView>

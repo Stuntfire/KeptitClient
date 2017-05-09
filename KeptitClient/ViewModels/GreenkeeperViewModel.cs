@@ -236,7 +236,11 @@ namespace KeptitClient.ViewModels
         public ListView ListViewOmraader
         {
             get { return _listViewOmraader; }
-            set { _listViewOmraader = value; }
+            set
+            {
+                _listViewOmraader = value;
+                OnPropertyChanged(nameof(ListViewOmraader));
+            }
         }
 
 
@@ -287,8 +291,7 @@ namespace KeptitClient.ViewModels
         public async Task VisDoneTasks()
         {
             var opgaverdone =
-                from o in AlleTimerOgMinutterCollection
-                orderby o.Hours descending 
+                from o in await PersistencyService.LoadGreenkeeperInfoAsync()
                 group o by o.GreenTaskTitle
                 into opgaverne
                 select new
@@ -298,23 +301,22 @@ namespace KeptitClient.ViewModels
                     Minutterialt = opgaverne.Sum(x => x.Minutes)
                 };
 
-            foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
-            {
-                AlleTimerOgMinutterCollection.Add(item);
-            }
+            var opgaversamlet =
+                from o2 in opgaverdone
+                orderby o2.Timerialt descending
+                select o2;
 
-            ListViewOpgaver.DataContext = opgaverdone;
+            ListViewOpgaver.DataContext = opgaversamlet;
 
         }
         //-------------------------------------------------
 
-        // Viser i hvilke område der er brugt flest timer på siden Adminareas
+        // Viser i hvilke område der er brugt flest timer på siden Adminareas. Flest timer øverst.
         public async Task VisOmraader()
         {
             var areasdone =
-                from a in AlleTimerOgMinutterCollection
-                orderby a.Hours descending
-                group a by a.Hours
+                from a in await PersistencyService.LoadGreenkeeperInfoAsync()
+                group a by a.AreaTitle
                 into omraaederne
                 select new
                 {
@@ -323,12 +325,12 @@ namespace KeptitClient.ViewModels
                     Minutterialt = omraaederne.Sum(x => x.Minutes)
                 };
 
-            foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
-            {
-                AlleTimerOgMinutterCollection.Add(item);
-            }
-
-            ListViewOmraader.DataContext = areasdone;
+            var areassamlet =
+                from a2 in areasdone
+                orderby a2.Timerialt descending
+                select a2;
+            
+            ListViewOmraader.DataContext = areassamlet;
         }
 
 
@@ -338,7 +340,6 @@ namespace KeptitClient.ViewModels
 
             var NavnOgTimerIalt =
                from t in await PersistencyService.LoadGreenkeeperInfoAsync()
-               orderby t.GreenkeeperName
                group t by t.GreenkeeperName into Ansat
                select new
                {
@@ -346,14 +347,16 @@ namespace KeptitClient.ViewModels
                    TimerIalt = Ansat.Sum(x => x.Hours),
                    MinutterIalt = Ansat.Sum(x => x.Minutes),
                    //datoen = Ansat.Sum(x => x.Date.Day)
+
                };
 
-            //foreach (var item in NavnOgTimerIalt)
-            //{
-            //    AlleTimerOgMinutterCollection.Add(item);
-            //}
+            var navnogtimerialtsamlet =
+                from t2 in NavnOgTimerIalt
+                orderby t2.TimerIalt descending 
+                select t2;
 
-            ListViewSamlet.DataContext = NavnOgTimerIalt;
+            ListViewSamlet.DataContext = navnogtimerialtsamlet;
+
         }
         //--------------------------------------------------
         //foreach (var test in NavnOgTimerIalt)
