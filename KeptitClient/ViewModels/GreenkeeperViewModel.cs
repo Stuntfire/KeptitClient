@@ -281,13 +281,39 @@ namespace KeptitClient.ViewModels
             }
             catch (Exception e)
             {
-                MessageDialogHelper.Show("Greenkeeper er ikke valgt \n Opgaven kunne ikke gommes!", e.Message);
+                MessageDialogHelper.Show("Greenkeeper er ikke valgt \n Opgaven kunne ikke gemmes!", e.Message);
                 return false;
             }
 
         }
 
-        // Viser opgaver der er brugt flest timer på i et listview på siden Admindonetasks
+        private void LoadAllCollections()
+        {
+            GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
+            var gkh = new GreenkeeperHandler(this).GetGreenkeeperCollection();
+
+            AreaCollection = new ObservableCollection<Area>();
+            var ah = new AreaHandler(this).GetAreaCollection();
+
+            SubAreaCollection = new ObservableCollection<SubArea>();
+            var sah = new SubAreaHandler(this).GetSubAreaCollection();
+
+            FinishedTaskCollection = new ObservableCollection<FinishedTask>();
+            var fth = new FinishedTaskHandler(this);
+
+            GreenTaskCollection = new ObservableCollection<GreenTask>();
+            var gth = new GreenTaskHandler(this).GetGreenTaskCollection();
+
+            GreenkeeperInfoHandler = new GreenkeeperInfoHandler(this);
+            //GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
+
+        }
+        #endregion 
+
+        #region Methods Admin
+        //-------------------- Metoder til admin start ---------------------------//
+
+        // Viser opgaver der er brugt flest timer på i et listview på siden Admindonetasks. Flest timer øverst.
         public async Task VisDoneTasks()
         {
             var opgaverdone =
@@ -309,7 +335,7 @@ namespace KeptitClient.ViewModels
             ListViewOpgaver.DataContext = opgaversamlet;
 
         }
-        //-------------------------------------------------
+        
 
         // Viser i hvilke område der er brugt flest timer på siden Adminareas. Flest timer øverst.
         public async Task VisOmraader()
@@ -334,9 +360,25 @@ namespace KeptitClient.ViewModels
         }
 
 
-        // Beregner for hver greenkeeper der viser navn,timer og antal minutter.
+        // Beregner for hver greenkeeper der viser navn,timer og antal minutter. Flest timer øverst.
         public async Task BeregnAlt()
         {
+
+            var deldageop =
+                from t1 in await PersistencyService.LoadGreenkeeperInfoAsync()
+                where t1.Hours > 1 && t1.Minutes > 1
+                
+                group t1 by t1.Date
+                
+                into dagene
+                select new
+                {
+                    Enkeltedage = dagene.Key,
+                    
+                    Timer = dagene.Sum(x => x.Hours),
+                    Minutter = dagene.Sum(x => x.Minutes)
+
+                };
 
             var NavnOgTimerIalt =
                from t in await PersistencyService.LoadGreenkeeperInfoAsync()
@@ -355,7 +397,10 @@ namespace KeptitClient.ViewModels
                 orderby t2.TimerIalt descending 
                 select t2;
 
-            ListViewSamlet.DataContext = navnogtimerialtsamlet;
+            //ListViewSamlet.DataContext = navnogtimerialtsamlet;
+
+            
+                ListViewSamlet.DataContext = deldageop;
 
         }
         //--------------------------------------------------
@@ -385,31 +430,10 @@ namespace KeptitClient.ViewModels
 
         //ListViewSamlet2.DataContext = val2;
 
+        #endregion
 
 
-
-        private void LoadAllCollections()
-        {
-            GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
-            var gkh = new GreenkeeperHandler(this).GetGreenkeeperCollection();
-
-            AreaCollection = new ObservableCollection<Area>();
-            var ah = new AreaHandler(this).GetAreaCollection();
-
-            SubAreaCollection = new ObservableCollection<SubArea>();
-            var sah = new SubAreaHandler(this).GetSubAreaCollection();
-
-            FinishedTaskCollection = new ObservableCollection<FinishedTask>();
-            var fth = new FinishedTaskHandler(this);
-
-            GreenTaskCollection = new ObservableCollection<GreenTask>();
-            var gth = new GreenTaskHandler(this).GetGreenTaskCollection();
-
-            GreenkeeperInfoHandler = new GreenkeeperInfoHandler(this);
-            //GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
-
-        }
-        #endregion 
+       
 
         #region INotify
         public event PropertyChangedEventHandler PropertyChanged;
