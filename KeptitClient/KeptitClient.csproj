@@ -129,6 +129,9 @@
     <Compile Include="View\Admindonetasks.xaml.cs">
       <DependentUpon>Admindonetasks.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Adminlogin.xaml.cs">
+      <DependentUpon>Adminlogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Adminwhether.xaml.cs">
       <DependentUpon>Adminwhether.xaml</DependentUpon>
     </Compile>
@@ -176,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Admindonetasks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Adminlogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

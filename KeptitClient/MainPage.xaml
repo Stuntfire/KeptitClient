@@ -32,6 +32,9 @@
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="AdminwhetherButton"    Margin="0,0,0,0"  Click="AdminwhetherButton_Click" Content="Vejret" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559"/>
                     </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="AdminloginButton"    Margin="0,0,0,0"  Click="AdminloginButton_Click" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559"/>
+                    </StackPanel>
                     <Image Height="160" Source="Images/ledreborg_logo.png" VerticalAlignment="Bottom" Margin="0,350,0,0" Width="131"/>
                 </StackPanel>
             </SplitView.Pane>

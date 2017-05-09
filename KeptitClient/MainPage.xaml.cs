@@ -59,7 +59,11 @@ namespace KeptitClient
         {
             Mainframe.Navigate(typeof(Adminwhether));
         }
-        
+
+        private void AdminloginButton_Click(object sender, RoutedEventArgs e)
+        {
+            Mainframe.Navigate(typeof(Adminlogin));
+        }
 
 
 
