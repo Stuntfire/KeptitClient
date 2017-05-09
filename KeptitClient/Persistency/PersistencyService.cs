@@ -115,7 +115,7 @@ namespace KeptitClient.Persistency
             }
         }
 
-        // Henter alle Greenkeeper Info fra View GreenkeeperInfo
+        // Henter alle Greenkeeper Info fra DB-View GreenkeeperInfo
         public static async Task<ObservableCollection<GreenkeeperInfo>> LoadGreenkeeperInfoAsync()
         {
             using (var client = new HttpClient())
