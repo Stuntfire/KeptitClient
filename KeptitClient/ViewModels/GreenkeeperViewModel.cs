@@ -23,7 +23,7 @@ namespace KeptitClient.ViewModels
             GreenkeeperInfoCollection = new ObservableCollection<GreenkeeperInfo>();
             AlleTimerOgMinutterCollection = new ObservableCollection<GreenkeeperInfo>();
 
-            
+
             SelectedGreenKeeper = new Greenkeeper(0, "");
             FinishedTaskHandler = new FinishedTaskHandler(this);
 
@@ -35,7 +35,11 @@ namespace KeptitClient.ViewModels
 
             ListViewSamlet = new ListView();
             ListViewSamlet2 = new ListView();
+            ListViewOpgaver = new ListView();
+            ListViewOmraader = new ListView();
             BeregnAlt();
+            VisDoneTasks();
+            VisOmraader();
         }
 
         #region Handlers
@@ -152,7 +156,7 @@ namespace KeptitClient.ViewModels
             set
             {
                 _selectedGreenKeeper = value;
-                OnPropertyChanged(nameof(SelectedGreenKeeper));LoadUpdatedList();
+                OnPropertyChanged(nameof(SelectedGreenKeeper)); LoadUpdatedList();
             }
         }
 
@@ -215,6 +219,30 @@ namespace KeptitClient.ViewModels
             set { listViewSamlet2 = value; }
         }
 
+        private ListView _listViewOpgaver;
+
+        public ListView ListViewOpgaver
+        {
+            get { return _listViewOpgaver; }
+            set
+            {
+                _listViewOpgaver = value;
+                OnPropertyChanged(nameof(ListViewOpgaver));
+            }
+        }
+
+        private ListView _listViewOmraader;
+
+        public ListView ListViewOmraader
+        {
+            get { return _listViewOmraader; }
+            set { _listViewOmraader = value; }
+        }
+
+
+
+
+
         #endregion
 
         #region Methods
@@ -222,10 +250,10 @@ namespace KeptitClient.ViewModels
         public async Task LoadUpdatedList()
         {
             var updateList = from t in GreenkeeperInfoCollection
-                          where t.GreenkeeperName.Contains(SelectedGreenKeeper.GreenkeeperName)
-                          orderby t.Date descending 
-                          select t;
-            
+                             where t.GreenkeeperName.Contains(SelectedGreenKeeper.GreenkeeperName)
+                             orderby t.Date descending
+                             select t;
+
             foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
             {
                 GreenkeeperInfoCollection.Add(item);
@@ -252,8 +280,57 @@ namespace KeptitClient.ViewModels
                 MessageDialogHelper.Show("Greenkeeper er ikke valgt \n Opgaven kunne ikke gommes!", e.Message);
                 return false;
             }
-            
+
         }
+
+        // Viser opgaver der er brugt flest timer på i et listview på siden Admindonetasks
+        public async Task VisDoneTasks()
+        {
+            var opgaverdone =
+                from o in AlleTimerOgMinutterCollection
+                orderby o.Hours descending 
+                group o by o.GreenTaskTitle
+                into opgaverne
+                select new
+                {
+                    Opgave = opgaverne.Key,
+                    Timerialt = opgaverne.Sum(x => x.Hours),
+                    Minutterialt = opgaverne.Sum(x => x.Minutes)
+                };
+
+            foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
+            {
+                AlleTimerOgMinutterCollection.Add(item);
+            }
+
+            ListViewOpgaver.DataContext = opgaverdone;
+
+        }
+        //-------------------------------------------------
+
+        // Viser i hvilke område der er brugt flest timer på siden Adminareas
+        public async Task VisOmraader()
+        {
+            var areasdone =
+                from a in AlleTimerOgMinutterCollection
+                orderby a.Hours descending
+                group a by a.Hours
+                into omraaederne
+                select new
+                {
+                    Område = omraaederne.Key,
+                    Timerialt = omraaederne.Sum(x => x.Hours),
+                    Minutterialt = omraaederne.Sum(x => x.Minutes)
+                };
+
+            foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
+            {
+                AlleTimerOgMinutterCollection.Add(item);
+            }
+
+            ListViewOmraader.DataContext = areasdone;
+        }
+
 
         // Beregner for hver greenkeeper der viser navn,timer og antal minutter.
         public async Task BeregnAlt()
@@ -275,22 +352,9 @@ namespace KeptitClient.ViewModels
             foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
             {
                 AlleTimerOgMinutterCollection.Add(item);
-
-                
-                
             }
 
-            foreach (var whichday in AlleTimerOgMinutterCollection)
-            {
-                if (whichday.Hours >= 1)
-                {
-                    int testtal = 23;
-                }
-                else
-                {
-                    
-                }
-            }
+
 
             //--------------------------------------------------
             foreach (var test in NavnOgTimerIalt)
@@ -298,19 +362,19 @@ namespace KeptitClient.ViewModels
                 if (test.MinutterIalt > 60)
                 {
                     float result = 0.0F;
-                    
+
                     timerud = test.MinutterIalt / 60;
                     rtimer = test.TimerIalt;
                     result = timerud + rtimer;
-                    float val1 = (test.MinutterIalt - (timerud * 60)) ;
-                    
+                    float val1 = (test.MinutterIalt - (timerud * 60));
+
                     int val2 = (int)val1;
                     timerud = result;
                     minutterud = val2;
                 }
                 else
                 {
-                  
+
                 }
                 //val2 = NavnOgTimerIalt.ToList();
             }

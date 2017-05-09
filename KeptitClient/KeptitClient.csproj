@@ -92,11 +92,11 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="View\AdminAnsatte.xaml.cs">
-      <DependentUpon>AdminAnsatte.xaml</DependentUpon>
+    <Compile Include="View\Adminansatte.xaml.cs">
+      <DependentUpon>Adminansatte.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AdminAreas.xaml.cs">
-      <DependentUpon>AdminAreas.xaml</DependentUpon>
+    <Compile Include="View\Adminareas.xaml.cs">
+      <DependentUpon>Adminareas.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -162,11 +162,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\AdminAnsatte.xaml">
+    <Page Include="View\Adminansatte.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AdminAreas.xaml">
+    <Page Include="View\Adminareas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

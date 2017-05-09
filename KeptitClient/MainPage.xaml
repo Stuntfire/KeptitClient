@@ -58,6 +58,7 @@
         </SplitView>
         <!--venstre menu slut-->
         <SplitView Height="50" Background="#00412e" VerticalAlignment="Top" Margin="0,-2,0,0" >
+            
             <TextBlock x:Name="textBlock" Padding="5" Height="53"  FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="1071" HorizontalAlignment="Left" Margin="30,0,0,0">
                 <Run FontStyle="Italic" Text="Keptit"/>
                 <Run Text=" Greenkeeper CMS"/>
