@@ -13,32 +13,35 @@
         <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="True" 
                OpenPaneLength="200" Margin="0,48,0,0" CompactPaneLength="200" >
             <SplitView.Pane>
+                
+                        
                 <StackPanel Background="#00412e">
+                    
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="GreenKeeperButton" Margin="0,0,0,0"  Click="GreenKeeperButton_Click" Content="Greenkeeper" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559"/>
                     </StackPanel>
                     <StackPanel x:Name="AdminPanel" Visibility="Collapsed">
-                    <StackPanel Orientation="Horizontal">
-                        <Button x:Name="AdminSeTimerButton"    Margin="0,0,0,0"  Click="AdminSeTimerButton_Click" Content="Admin" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Button x:Name="AdminDoneTasksButton"    Margin="0,0,0,0"  Click="AdminDoneTasksButton_Click" Content="Opgaver" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Button x:Name="AdminAreasButton"    Margin="0,0,0,0"  Click="AdminAreasButton_Click" Content="Områder" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Button x:Name="AdminAnsatteButton"    Margin="0,0,0,0"  Click="AdminAnsatteButton_Click" Content="Ansatte" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
-                    </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="AdminSeTimerButton"    Margin="0,0,0,0"  Click="AdminSeTimerButton_Click" Content="Admin" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="AdminDoneTasksButton"    Margin="0,0,0,0"  Click="AdminDoneTasksButton_Click" Content="Opgaver" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="AdminAreasButton"    Margin="0,0,0,0"  Click="AdminAreasButton_Click" Content="Områder" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="AdminAnsatteButton"    Margin="0,0,0,0"  Click="AdminAnsatteButton_Click" Content="Ansatte" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
+                        </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="AdminlogudButton"    Margin="0,0,0,0"  Click="AdminlogudButton_Click" Content="Log ud" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
                         </StackPanel>
                     </StackPanel>
-                   
+
                     <StackPanel Orientation="Horizontal" x:Name="LogudPanel">
                         <Button x:Name="AdminloginButton"    Margin="0,0,0,0"  Click="AdminloginButton_Click" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559"/>
                     </StackPanel>
-                    
+
 
                     <Image Height="160" Source="Images/ledreborg_logo.png" VerticalAlignment="Bottom" Margin="0,140,0,0" Width="131"/>
                 </StackPanel>
@@ -57,11 +60,22 @@
             </SplitView.Content>
         </SplitView>
         <!--venstre menu slut-->
+
+
+
         <SplitView Height="50" Background="#00412e" VerticalAlignment="Top" Margin="0,-2,0,0" >
-            <TextBlock x:Name="textBlock" Padding="5" Height="53"  FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="1071" HorizontalAlignment="Left" Margin="30,0,0,0">
+
+            <TextBlock x:Name="textBlock" Padding="5"  FontSize="30" TextWrapping="Wrap" Foreground="White" Width="1071" HorizontalAlignment="Left" Margin="30,0,0,-3" >
                 <Run FontStyle="Italic" Text="Keptit"/>
                 <Run Text=" Greenkeeper CMS"/>
+
             </TextBlock>
+
+
         </SplitView>
+
+        <Button Content="GetWeather" Click="Button_Click" />
+        <TextBlock Name="ResultTextBlock" Width="200px" Height="20" />
+
     </Grid>
 </Page>

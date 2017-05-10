@@ -74,5 +74,11 @@ namespace KeptitClient
             LogudPanel.Visibility = Visibility.Visible;
         }
 
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RootObject myWeather = await WeatherProxy.GetWeather(-16.92, 145.77);
+
+            ResultTextBlock.Text = myWeather.name + "-" + myWeather.main.temp + "-" + myWeather.weather[0].description;
+        }
     }
 }
