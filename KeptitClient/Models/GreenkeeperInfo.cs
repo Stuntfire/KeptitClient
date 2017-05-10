@@ -31,6 +31,18 @@ namespace KeptitClient.Models
 
         #endregion
 
+        public int GivTotalMinut()
+        {
+            decimal totalminut = Hours * 60 + (Minutes);
+            if (Date.DayOfWeek == DayOfWeek.Saturday || Date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                 totalminut = totalminut * 1.5M;
+            }
+            return (int) totalminut;
+
+
+        }
+
         public override string ToString()
         {
             return string.Format("{0}. {1}. {2}. {3}. {4}. {5}. {6}. {7}.", GreenkeeperName, AreaTitle, SubAreaTitle, GreenTaskTitle, Hours, Minutes, Date, Notes);
