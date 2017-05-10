@@ -38,7 +38,7 @@ namespace KeptitClient.ViewModels
             ListViewSamlet2 = new ListView();
             ListViewOpgaver = new ListView();
             ListViewOmraader = new ListView();
-            BeregnAlt();
+            GreenkeeperInfoHandler.GetGreenInfoSortedList();
             VisDoneTasks();
             VisOmraader();
         }
@@ -361,25 +361,7 @@ namespace KeptitClient.ViewModels
         }
 
 
-        // Beregner for hver greenkeeper der viser navn,timer og antal minutter. Flest timer øverst.
-        public async Task BeregnAlt()
-        {
-
-            var deldageop =
-                from t1 in await PersistencyService.LoadGreenkeeperInfoAsync()
-                orderby t1.Date descending
-                group t1 by new {t1.Date, t1.GreenkeeperName}
-                into dagene
-                select new
-                {
-                    Datoen = dagene.Key,
-                    Timer = dagene.Sum(x => x.Hours),
-                    Minutter = dagene.Sum(x => x.Minutes),
-                    Status = (dagene.Count() == 0 ? "Prospect" : (dagene.Count() == 1 ? "Client" : "Other"))
-                };
-            ListViewSamlet.DataContext = deldageop;
-        }
-
+       
         //foreach (var timerbegener in deldageop)
             //{
             //    if (timerbegener.Timer > 7.4)
