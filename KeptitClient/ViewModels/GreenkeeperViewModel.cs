@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.Foundation.Metadata;
@@ -366,36 +367,41 @@ namespace KeptitClient.ViewModels
 
             var deldageop =
                 from t1 in await PersistencyService.LoadGreenkeeperInfoAsync()
-                where t1.Hours > 1 && t1.Minutes > 1
-                
-                group t1 by t1.Date
-                
+                orderby t1.Date descending
+                group t1 by new { t1.Date, t1.GreenkeeperName }
                 into dagene
                 select new
                 {
-                    Enkeltedage = dagene.Key,
-                    
+                    Datoen = dagene.Key,
                     Timer = dagene.Sum(x => x.Hours),
-                    Minutter = dagene.Sum(x => x.Minutes)
-
+                    Minutter = dagene.Sum(x => x.Minutes),
+                    Status = (dagene.Count() == 0 ? "Prospect" : (dagene.Count() == 1 ? "Client" : "Other"))
                 };
+            //foreach (var timerbegener in deldageop)
+            //{
+            //    if (timerbegener.Timer > 7.4)
+            //    {
+                    
+            //    }
+            //}
+        
 
-            var NavnOgTimerIalt =
-               from t in await PersistencyService.LoadGreenkeeperInfoAsync()
-               group t by t.GreenkeeperName into Ansat
-               select new
-               {
-                   Greenkeeper = Ansat.Key,
-                   TimerIalt = Ansat.Sum(x => x.Hours),
-                   MinutterIalt = Ansat.Sum(x => x.Minutes),
-                   //datoen = Ansat.Sum(x => x.Date.Day)
+            //var NavnOgTimerIalt =
+            //   from t in await PersistencyService.LoadGreenkeeperInfoAsync()
+            //   group t by t.GreenkeeperName into Ansat
+            //   select new
+            //   {
+            //       Greenkeeper = Ansat.Key,
+            //       TimerIalt = Ansat.Sum(x => x.Hours),
+            //       MinutterIalt = Ansat.Sum(x => x.Minutes),
+            //       //datoen = Ansat.Sum(x => x.Date.Day)
 
-               };
+            //   };
 
-            var navnogtimerialtsamlet =
-                from t2 in NavnOgTimerIalt
-                orderby t2.TimerIalt descending 
-                select t2;
+            //var navnogtimerialtsamlet =
+            //    from t2 in NavnOgTimerIalt
+            //    orderby t2.TimerIalt descending 
+            //    select t2;
 
             //ListViewSamlet.DataContext = navnogtimerialtsamlet;
 
