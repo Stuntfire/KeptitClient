@@ -368,7 +368,7 @@ namespace KeptitClient.ViewModels
             var deldageop =
                 from t1 in await PersistencyService.LoadGreenkeeperInfoAsync()
                 orderby t1.Date descending
-                group t1 by new { t1.Date, t1.GreenkeeperName }
+                group t1 by new {t1.Date, t1.GreenkeeperName}
                 into dagene
                 select new
                 {
@@ -377,14 +377,17 @@ namespace KeptitClient.ViewModels
                     Minutter = dagene.Sum(x => x.Minutes),
                     Status = (dagene.Count() == 0 ? "Prospect" : (dagene.Count() == 1 ? "Client" : "Other"))
                 };
-            //foreach (var timerbegener in deldageop)
+            ListViewSamlet.DataContext = deldageop;
+        }
+
+        //foreach (var timerbegener in deldageop)
             //{
             //    if (timerbegener.Timer > 7.4)
             //    {
-                    
+
             //    }
             //}
-        
+
 
             //var NavnOgTimerIalt =
             //   from t in await PersistencyService.LoadGreenkeeperInfoAsync()
@@ -405,10 +408,10 @@ namespace KeptitClient.ViewModels
 
             //ListViewSamlet.DataContext = navnogtimerialtsamlet;
 
-            
-                ListViewSamlet.DataContext = deldageop;
 
-        }
+
+
+        
         //--------------------------------------------------
         //foreach (var test in NavnOgTimerIalt)
         //{
