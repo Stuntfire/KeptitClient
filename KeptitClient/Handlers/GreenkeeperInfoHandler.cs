@@ -31,17 +31,17 @@ namespace KeptitClient.Handlers
         public async Task GetGreenInfoSortedList()
         {
 
-            var deldageop =
+          var deldageop =
                 from t1 in await PersistencyService.LoadGreenkeeperInfoAsync()
                 orderby t1.Date descending
                 group t1 by new { t1.Date, t1.GreenkeeperName }
                 into dagene
                 select new
-                {
+                { 
                     Datoen = dagene.Key,
                     Timer = dagene.Sum(x => x.Hours),
                     Minutter = dagene.Sum(x => x.Minutes),
-                    Status = (dagene.Count() == 0 ? "Prospect" : (dagene.Count() == 1 ? "Client" : "Other"))
+                    Status = (dagene.Sum(x => x.Hours) == 7 ? "Normal Timer" : (dagene.Sum(x => x.Minutes) == 60 ? "60 minutter" : (dagene.Count() == 1 ? "En opgave" : "Flere opgaver")))
                 };
            Mwm.ListViewSamlet.DataContext = deldageop;
         }
