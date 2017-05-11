@@ -17,7 +17,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel Margin="20">
             <Grid>
-                <ListView Height="334" Width="945" Margin="0,150,0,0" HorizontalAlignment="Left" ItemsSource="{Binding ListViewSamlet.DataContext, Mode=TwoWay}" />
+                <ListView Height="334" Width="1200" Margin="0,150,0,0" HorizontalAlignment="Left" ItemsSource="{Binding ListViewSamlet.DataContext, Mode=TwoWay}" />
                 <DatePicker HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Width="287" DayVisible="False"/>
                 <TextBlock HorizontalAlignment="Left" Margin="10,53,0,0" TextWrapping="Wrap" Text="Vælg måned." VerticalAlignment="Top" Height="33" Width="231" FontSize="20"/>
 

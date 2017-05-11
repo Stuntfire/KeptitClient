@@ -31,16 +31,41 @@ namespace KeptitClient.Models
 
         #endregion
 
-        public int GivTotalMinut()
+        public int GivTotalMinutOverarbejde()
         {
-            decimal totalminut = Hours * 60 + (Minutes);
+            decimal totalminuthelligdage = Hours * 60 + (Minutes);
+            decimal totalminutoverarbejdetimer = Hours * 60 + (Minutes);
             if (Date.DayOfWeek == DayOfWeek.Saturday || Date.DayOfWeek == DayOfWeek.Sunday)
             {
-                 totalminut = totalminut * 1.5M;
+                totalminuthelligdage = totalminuthelligdage * 1.5M;
+
             }
-            return (int) totalminut;
+            else if (Date.DayOfWeek == DayOfWeek.Monday ||
+                 Date.DayOfWeek == DayOfWeek.Tuesday ||
+                 Date.DayOfWeek == DayOfWeek.Wednesday ||
+                 Date.DayOfWeek == DayOfWeek.Thursday ||
+                 Date.DayOfWeek == DayOfWeek.Friday &&
+                 totalminutoverarbejdetimer >= 444M)
+            {
+                totalminutoverarbejdetimer = (totalminutoverarbejdetimer) * 1.5M;
+            }
+            return (int)totalminuthelligdage + ((int)totalminutoverarbejdetimer - 444);
 
+        }
 
+        public int GivTotalMinutNormalTimer()
+        {
+            decimal totalminutnormaltimer = Hours * 60 + (Minutes);
+            if (Date.DayOfWeek == DayOfWeek.Monday ||
+                Date.DayOfWeek == DayOfWeek.Tuesday ||
+                Date.DayOfWeek == DayOfWeek.Wednesday ||
+                Date.DayOfWeek == DayOfWeek.Thursday ||
+                Date.DayOfWeek == DayOfWeek.Friday &&
+                totalminutnormaltimer <= 444M)
+            {
+                totalminutnormaltimer = totalminutnormaltimer * 1;
+            }
+            return (int)totalminutnormaltimer;
         }
 
         public override string ToString()
