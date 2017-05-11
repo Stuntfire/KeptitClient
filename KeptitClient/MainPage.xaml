@@ -13,10 +13,10 @@
         <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="True" 
                OpenPaneLength="200" Margin="0,48,0,0" CompactPaneLength="200" >
             <SplitView.Pane>
-                
-                        
+
+
                 <StackPanel Background="#00412e">
-                    
+
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="GreenKeeperButton" Margin="0,0,0,0"  Click="GreenKeeperButton_Click" Content="Greenkeeper" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559"/>
                     </StackPanel>
@@ -65,7 +65,7 @@
 
         <SplitView Height="50" Background="#00412e" VerticalAlignment="Top" Margin="0,-2,0,0" >
 
-            <TextBlock x:Name="textBlock" Padding="5"  FontSize="30" TextWrapping="Wrap" Foreground="White" Width="1071" HorizontalAlignment="Left" Margin="30,0,0,-3" >
+            <TextBlock x:Name="textBlock" Padding="5"  FontSize="30" TextWrapping="Wrap" Foreground="White" Width="1071" HorizontalAlignment="Left" Margin="80,0,0,-3" >
                 <Run FontStyle="Italic" Text="Keptit"/>
                 <Run Text=" Greenkeeper CMS"/>
 
@@ -73,9 +73,11 @@
 
 
         </SplitView>
-
-        <Button Content="GetWeather" Click="Button_Click" />
-        <TextBlock Name="ResultTextBlock" Width="200px" Height="20" />
-
+        <StackPanel Margin="650,0,0,672">
+            <Grid Height="49">
+                <TextBlock Name="ResultTextBlock" Margin="532,0,43,0" FontSize="35" Foreground="#FFFFFF" RenderTransformOrigin="0.5,0.5"/>
+                <Image Name="ResultImage" Height="90" Width="100" Margin="514,-17,-20,-16"/>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Page>
