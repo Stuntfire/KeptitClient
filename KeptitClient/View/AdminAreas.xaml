@@ -15,8 +15,6 @@
 
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
         <ListView Height="770" Width="1159" Margin="35,55,0,0" HorizontalAlignment="Left" ItemsSource="{Binding ListViewOmraader.DataContext, Mode=TwoWay}" VerticalAlignment="Top" />
-       
     </Grid>
 </Page>

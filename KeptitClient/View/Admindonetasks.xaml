@@ -14,6 +14,7 @@
     </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <ListView Height="770" Width="1159" Margin="35,55,0,0" HorizontalAlignment="Left" ItemsSource="{Binding ListViewOpgaver.DataContext, Mode=TwoWay}" VerticalAlignment="Top" />
-</Grid>
+        <ListView Height="403" Width="475" Margin="35,147,0,0" HorizontalAlignment="Left" ItemsSource="{Binding ListViewOpgaver.DataContext, Mode=TwoWay}" VerticalAlignment="Top" />
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Færdige opgaver" VerticalAlignment="Top" Margin="35,74,0,0" Width="370"/>
+    </Grid>
 </Page>

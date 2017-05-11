@@ -25,6 +25,6 @@ namespace KeptitClient.View
         public Admindonetasks()
         {
             this.InitializeComponent();
-        }
+        }        
     }
 }

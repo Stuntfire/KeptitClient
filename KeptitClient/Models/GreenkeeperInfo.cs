@@ -68,6 +68,12 @@ namespace KeptitClient.Models
             return (int)totalminutnormaltimer;
         }
 
+        public int GetSumTasksHours()
+        {
+            decimal Totalminutes = Hours * 60 + (Minutes);
+            return (int)Totalminutes;
+        }
+
         public override string ToString()
         {
             return string.Format("{0}. {1}. {2}. {3}. {4}. {5}. {6}. {7}.", GreenkeeperName, AreaTitle, SubAreaTitle, GreenTaskTitle, Hours, Minutes, Date, Notes);

@@ -29,6 +29,30 @@ namespace KeptitClient.Handlers
             }
         }
 
+        // Viser i hvilke område der er brugt flest timer på siden Adminareas. Flest timer øverst.
+        public async Task VisOmraader()
+        {
+            var areasdone =
+                from a in await PersistencyService.LoadGreenkeeperInfoAsync()
+                group a by a.AreaTitle
+                into omraaederne
+                select new
+                {
+                    //todo Minut-beregneren virker ikke helt korrekt
+                    Område = omraaederne.Key,
+                    Timer = omraaederne.Sum(x => x.GetSumTasksHours() / 60),
+                    Min = omraaederne.Sum(x => x.GetSumTasksHours() % 60)
+                };
+
+            var areassamlet =
+                from a2 in areasdone
+                orderby a2.Timer descending
+                select a2;
+
+            Mwm.ListViewOmraader.DataContext = areassamlet;
+        }
+
+
         ////Creates a new Area
         //public void CreateArea()
         //{

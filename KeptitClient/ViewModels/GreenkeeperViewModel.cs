@@ -19,33 +19,10 @@ namespace KeptitClient.ViewModels
 {
     public class GreenkeeperViewModel
     {
-        public GreenkeeperViewModel()
-        {
-            GreenkeeperInfoCollection = new ObservableCollection<GreenkeeperInfo>();
-            AlleTimerOgMinutterCollection = new ObservableCollection<GreenkeeperInfo>();
-
-
-            SelectedGreenKeeper = new Greenkeeper(0, "");
-            FinishedTaskHandler = new FinishedTaskHandler(this);
-
-            DateTime dt = DateTime.Now;
-            _selectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
-
-            LoadAllCollections();
-            AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
-
-            ListViewSamlet = new ListView();
-            ListViewSamlet2 = new ListView();
-            ListViewOpgaver = new ListView();
-            ListViewOmraader = new ListView();
-            GreenkeeperInfoHandler.GetGreenInfoSortedList();
-            VisDoneTasks();
-            VisOmraader();
-        }
-
         #region Handlers
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
         public GreenkeeperInfoHandler GreenkeeperInfoHandler { get; set; }
+        public AreaHandler AreaHandler { get; set; }
 
         #endregion
 
@@ -250,6 +227,29 @@ namespace KeptitClient.ViewModels
 
         #endregion
 
+        public GreenkeeperViewModel()
+        {
+            GreenkeeperInfoCollection = new ObservableCollection<GreenkeeperInfo>();
+            AlleTimerOgMinutterCollection = new ObservableCollection<GreenkeeperInfo>();
+            SelectedGreenKeeper = new Greenkeeper(0, "");
+            FinishedTaskHandler = new FinishedTaskHandler(this);
+            AreaHandler = new AreaHandler(this);
+
+            DateTime dt = DateTime.Now;
+            _selectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+
+            LoadAllCollections();
+            AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
+
+            ListViewSamlet = new ListView();
+            ListViewSamlet2 = new ListView();
+            ListViewOpgaver = new ListView();
+            ListViewOmraader = new ListView();
+            GreenkeeperInfoHandler.GetGreenInfoSortedList();
+            FinishedTaskHandler.VisDoneTasks();
+            AreaHandler.VisOmraader();
+        }
+
         #region Methods
 
         public async Task LoadUpdatedList()
@@ -309,91 +309,50 @@ namespace KeptitClient.ViewModels
             //GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
 
         }
-        #endregion 
+        #endregion
 
         #region Methods Admin
         //-------------------- Metoder til admin start ---------------------------//
 
         // Viser opgaver der er brugt flest timer på i et listview på siden Admindonetasks. Flest timer øverst.
-        public async Task VisDoneTasks()
-        {
-            var opgaverdone =
-                from o in await PersistencyService.LoadGreenkeeperInfoAsync()
-                group o by o.GreenTaskTitle
-                into opgaverne
-                select new
-                {
-                    Opgave = opgaverne.Key,
-                    Timerialt = opgaverne.Sum(x => x.Hours),
-                    Minutterialt = opgaverne.Sum(x => x.Minutes)
-                };
-
-            var opgaversamlet =
-                from o2 in opgaverdone
-                orderby o2.Timerialt descending
-                select o2;
-
-            ListViewOpgaver.DataContext = opgaversamlet;
-
-        }
-        
-
-        // Viser i hvilke område der er brugt flest timer på siden Adminareas. Flest timer øverst.
-        public async Task VisOmraader()
-        {
-            var areasdone =
-                from a in await PersistencyService.LoadGreenkeeperInfoAsync()
-                group a by a.AreaTitle
-                into omraaederne
-                select new
-                {
-                    Område = omraaederne.Key,
-                    Timerialt = omraaederne.Sum(x => x.Hours),
-                    Minutterialt = omraaederne.Sum(x => x.Minutes)
-                };
-
-            var areassamlet =
-                from a2 in areasdone
-                orderby a2.Timerialt descending
-                select a2;
-            
-            ListViewOmraader.DataContext = areassamlet;
-        }
 
 
-       
+
+
+
+
         //foreach (var timerbegener in deldageop)
-            //{
-            //    if (timerbegener.Timer > 7.4)
-            //    {
+        //{
+        //    if (timerbegener.Timer > 7.4)
+        //    {
 
-            //    }
-            //}
-
-
-            //var NavnOgTimerIalt =
-            //   from t in await PersistencyService.LoadGreenkeeperInfoAsync()
-            //   group t by t.GreenkeeperName into Ansat
-            //   select new
-            //   {
-            //       Greenkeeper = Ansat.Key,
-            //       TimerIalt = Ansat.Sum(x => x.Hours),
-            //       MinutterIalt = Ansat.Sum(x => x.Minutes),
-            //       //datoen = Ansat.Sum(x => x.Date.Day)
-
-            //   };
-
-            //var navnogtimerialtsamlet =
-            //    from t2 in NavnOgTimerIalt
-            //    orderby t2.TimerIalt descending 
-            //    select t2;
-
-            //ListViewSamlet.DataContext = navnogtimerialtsamlet;
+        //    }
+        //}
 
 
+        //var NavnOgTimerIalt =
+        //   from t in await PersistencyService.LoadGreenkeeperInfoAsync()
+        //   group t by t.GreenkeeperName into Ansat
+        //   select new
+        //   {
+        //       Greenkeeper = Ansat.Key,
+        //       TimerIalt = Ansat.Sum(x => x.Hours),
+        //       MinutterIalt = Ansat.Sum(x => x.Minutes),
+        //       //datoen = Ansat.Sum(x => x.Date.Day)
+
+        //   };
+
+        //var navnogtimerialtsamlet =
+        //    from t2 in NavnOgTimerIalt
+        //    orderby t2.TimerIalt descending 
+        //    select t2;
+
+        //ListViewSamlet.DataContext = navnogtimerialtsamlet;
 
 
-        
+
+
+
         //--------------------------------------------------
         //foreach (var test in NavnOgTimerIalt)
         //{
@@ -424,7 +383,7 @@ namespace KeptitClient.ViewModels
         #endregion
 
 
-       
+
 
         #region INotify
         public event PropertyChangedEventHandler PropertyChanged;

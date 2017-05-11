@@ -27,16 +27,36 @@ namespace KeptitClient.Handlers
             }
         }
 
+        public async Task VisDoneTasks()
+        {
+            var opgaverdone =
+                from o in await PersistencyService.LoadGreenkeeperInfoAsync()
+                group o by o.GreenTaskTitle
+                into opgaverne
+                select new
+                {
+                    Opgave = opgaverne.Key,
+                    Timer = opgaverne.Sum(x => x.Hours),
+                    Min = opgaverne.Sum(x => x.Minutes)
+                };
+            var opgaversamlet =
+                from o2 in opgaverdone
+                orderby o2.Timer descending
+                select o2;
+
+            Mwm.ListViewOpgaver.DataContext = opgaversamlet;
+        }
+
         public async void PostFinishedTask()
         {
             FinishedTask temp_task = new FinishedTask(Mwm.SelectedArea.AreaID, Mwm.SelectedGreenTask.GreenTaskID, Mwm.SelectedSubArea.SubAreaID, Mwm.SelectedGreenKeeper.GreenkeeperID, Mwm.SelectedDate.Date, Mwm.TaskHour, Mwm.TaskMinutes, Mwm.TaskNotes);
 
             try
             {
-                
+
                 PersistencyService.PostFinishedtask(temp_task);
                 Mwm.GreenkeeperInfoCollection.Clear();
-               await Mwm.GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
+                await Mwm.GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
             }
             catch (Exception)
             {
