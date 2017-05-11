@@ -14,7 +14,7 @@ namespace KeptitClient
     {
         public async static Task<RootObject> GetWeather(double lat, double lon)
         {
-            var http = new HttpClient();
+            var http = new HttpClient(); //http://api.openweathermap.org/data/2.5/weather?lat=32.77&lon=-96.79&units=imperial
             var response = await http.GetAsync("http://samples.openweathermap.org/data/2.5/weather?id=2172797&appid=b1b15e88fa797225412429c1c50c122a1");
             var result = response.Content.ReadAsStringAsync().Result;
             var serializer = new DataContractJsonSerializer(typeof(RootObject));

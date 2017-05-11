@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using KeptitClient.View;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -27,6 +28,7 @@ namespace KeptitClient
         {
             this.InitializeComponent();
             Mainframe.Navigate(typeof(Greenkeeper));
+            GetWeather();
         }
        
 
@@ -74,11 +76,14 @@ namespace KeptitClient
             LogudPanel.Visibility = Visibility.Visible;
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private async void GetWeather()
         {
             RootObject myWeather = await WeatherProxy.GetWeather(-16.92, 145.77);
+            string icon = String.Format("http://openweathermap.org/img/w/{0}.png", myWeather.weather[0].icon);
+            ResultImage.Source = new BitmapImage(new Uri(icon, UriKind.Absolute));
 
-            ResultTextBlock.Text = myWeather.name + "-" + myWeather.main.temp + "-" + myWeather.weather[0].description;
+            double udregncel = myWeather.main.temp - 273.15;
+            ResultTextBlock.Text = udregncel + "°";
         }
     }
 }
