@@ -221,6 +221,14 @@ namespace KeptitClient.ViewModels
             }
         }
 
+        private ListView listViewOpgaverPrDag;
+
+        public ListView ListViewOpgaverPrDag
+        {
+            get { return listViewOpgaverPrDag; }
+            set { listViewOpgaverPrDag = value; }
+        }
+
 
 
 
@@ -243,6 +251,7 @@ namespace KeptitClient.ViewModels
 
             ListViewSamlet = new ListView();
             ListViewSamlet2 = new ListView();
+            ListViewOpgaverPrDag = new ListView();
             ListViewOpgaver = new ListView();
             ListViewOmraader = new ListView();
             GreenkeeperInfoHandler.GetGreenInfoSortedList();
@@ -311,76 +320,7 @@ namespace KeptitClient.ViewModels
         }
         #endregion
 
-        #region Methods Admin
-        //-------------------- Metoder til admin start ---------------------------//
-
-        // Viser opgaver der er brugt flest timer på i et listview på siden Admindonetasks. Flest timer øverst.
-
-
-
-
-
-
-        //foreach (var timerbegener in deldageop)
-        //{
-        //    if (timerbegener.Timer > 7.4)
-        //    {
-
-        //    }
-        //}
-
-
-        //var NavnOgTimerIalt =
-        //   from t in await PersistencyService.LoadGreenkeeperInfoAsync()
-        //   group t by t.GreenkeeperName into Ansat
-        //   select new
-        //   {
-        //       Greenkeeper = Ansat.Key,
-        //       TimerIalt = Ansat.Sum(x => x.Hours),
-        //       MinutterIalt = Ansat.Sum(x => x.Minutes),
-        //       //datoen = Ansat.Sum(x => x.Date.Day)
-
-        //   };
-
-        //var navnogtimerialtsamlet =
-        //    from t2 in NavnOgTimerIalt
-        //    orderby t2.TimerIalt descending 
-        //    select t2;
-
-        //ListViewSamlet.DataContext = navnogtimerialtsamlet;
-
-
-
-
-
-        //--------------------------------------------------
-        //foreach (var test in NavnOgTimerIalt)
-        //{
-        //    if (test.MinutterIalt > 60)
-        //    {
-        //        float result = 0.0F;
-
-        //        timerud = test.MinutterIalt / 60;
-        //        rtimer = test.TimerIalt;
-        //        result = timerud + rtimer;
-        //        float val1 = (test.MinutterIalt - (timerud * 60));
-
-        //        int val2 = (int)val1;
-        //        timerud = result;
-        //        minutterud = val2;
-        //    }
-        //    else
-        //    {
-
-        //    }
-        //    //val2 = NavnOgTimerIalt.ToList();
-        //}
-        //---------------------------------------------
-
-
-        //ListViewSamlet2.DataContext = val2;
-
-        #endregion
+    
 
 
 
