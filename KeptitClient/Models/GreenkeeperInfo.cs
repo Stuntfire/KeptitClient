@@ -29,43 +29,48 @@ namespace KeptitClient.Models
 
         public string Notes { get; set; }
 
+        public decimal totalminutover { get; set; }
+
         #endregion
 
+        // Beregner til overarbejde. Den tager højde for weekend og når man passere 7,4 timer i hverdagen. en dag er 444 minutter i normal timer.
         public int GivTotalMinutOverarbejde()
         {
-            decimal totalminuthelligdage = Hours * 60 + (Minutes);
-            decimal totalminutoverarbejdetimer = Hours * 60 + (Minutes);
+            totalminutover = Hours * 60 + (Minutes);
+            decimal totalminut = Hours * 60 + (Minutes);
             if (Date.DayOfWeek == DayOfWeek.Saturday || Date.DayOfWeek == DayOfWeek.Sunday)
             {
-                totalminuthelligdage = totalminuthelligdage * 1.5M;
+                totalminutover = totalminutover * 1.5M;
 
             }
-            else if (Date.DayOfWeek == DayOfWeek.Monday ||
-                 Date.DayOfWeek == DayOfWeek.Tuesday ||
-                 Date.DayOfWeek == DayOfWeek.Wednesday ||
-                 Date.DayOfWeek == DayOfWeek.Thursday ||
-                 Date.DayOfWeek == DayOfWeek.Friday &&
-                 totalminutoverarbejdetimer >= 444M)
+            if (Date.DayOfWeek == DayOfWeek.Monday && totalminutover >= 445 ||
+                 Date.DayOfWeek == DayOfWeek.Tuesday && totalminutover >= 445 ||
+                 Date.DayOfWeek == DayOfWeek.Wednesday && totalminutover >= 445 ||
+                 Date.DayOfWeek == DayOfWeek.Thursday && totalminutover >= 445 ||
+                 Date.DayOfWeek == DayOfWeek.Friday && totalminutover >= 445)
             {
-                totalminutoverarbejdetimer = (totalminutoverarbejdetimer) * 1.5M;
+                totalminutover = totalminutover - 444M;
+                totalminutover = totalminutover * 1.5M;
             }
-            return (int)totalminuthelligdage + ((int)totalminutoverarbejdetimer - 444);
+            return (int)totalminutover;
 
         }
 
-        public int GivTotalMinutNormalTimer()
+        // beregner for normal timer. En normal dag er 7.4 timer = 444 minutter.
+        public int GivTotalMinutNormal()
         {
-            decimal totalminutnormaltimer = Hours * 60 + (Minutes);
-            if (Date.DayOfWeek == DayOfWeek.Monday ||
-                Date.DayOfWeek == DayOfWeek.Tuesday ||
-                Date.DayOfWeek == DayOfWeek.Wednesday ||
-                Date.DayOfWeek == DayOfWeek.Thursday ||
-                Date.DayOfWeek == DayOfWeek.Friday &&
-                totalminutnormaltimer <= 444M)
+            decimal totalminut = Hours * 60 + (Minutes);
+            if (Date.DayOfWeek == DayOfWeek.Monday && totalminut <= 444 ||
+                Date.DayOfWeek == DayOfWeek.Tuesday && totalminut <= 444 ||
+                Date.DayOfWeek == DayOfWeek.Wednesday && totalminut <= 444 ||
+                Date.DayOfWeek == DayOfWeek.Thursday && totalminut <= 444 ||
+                Date.DayOfWeek == DayOfWeek.Friday && totalminut <= 444)
             {
-                totalminutnormaltimer = totalminutnormaltimer * 1;
+
+                return (int)totalminut;
             }
-            return (int)totalminutnormaltimer;
+            totalminut = totalminut - (totalminutover / 1.5M);
+            return (int)totalminut;
         }
 
         public int GetSumTasksHours()

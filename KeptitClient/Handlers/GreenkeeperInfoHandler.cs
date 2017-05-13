@@ -41,8 +41,8 @@ namespace KeptitClient.Handlers
                       D = dagene.Key,
                       TimerOver = dagene.Sum(x => x.GivTotalMinutOverarbejde() / 60),
                       MinutterOver = dagene.Sum(x => x.GivTotalMinutOverarbejde()) % 60,
-                      TimerNormal = dagene.Sum(x => x.GivTotalMinutNormalTimer() / 60),
-                      MinutterNormal = dagene.Sum(x => x.GivTotalMinutNormalTimer() % 60)
+                      Timer = dagene.Sum(x => x.GivTotalMinutNormal() / 60),
+                      Minutter= dagene.Sum(x => x.GivTotalMinutNormal() % 60)
                     //Status = (dagene.Sum(x => x.Hours) == 7 ? "Normal Timer" :
                     //(dagene.Sum(x => x.Minutes) == 60 ? "60 minutter" :
                     //(dagene.Count() == 1 ? "En opgave" : "Flere opgaver")))
