@@ -134,6 +134,25 @@ namespace KeptitClient.Persistency
             }
         }
 
+        // Henter alle Greenkeeper Minutter Pr Dag fra DB-View GreenkeeperMinutterPrDag
+        public static async Task<ObservableCollection<GreenkeeperMinutterPrDag>> LoadGreenkeeperMinutterPrDagAsync()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                string urlString = "api/GreenkeeperMinutterPrDags";
+
+                HttpResponseMessage response = await client.GetAsync(urlString);
+                if (response.IsSuccessStatusCode)
+                {
+                    var AlleMinutterPrDagPrGreenkeeperListe = response.Content.ReadAsAsync<ObservableCollection<GreenkeeperMinutterPrDag>>().Result;
+                    return AlleMinutterPrDagPrGreenkeeperListe;
+                }
+                return null;
+            }
+        }
+
         // Post finishedtask
         public static void PostFinishedtask(FinishedTask finishedtask)
         {
