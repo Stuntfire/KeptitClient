@@ -78,7 +78,7 @@ namespace KeptitClient
 
         private async void GetWeather()
         {
-            RootObject myWeather = await WeatherProxy.GetWeather(-16.92, 145.77);
+            RootObject myWeather = await WeatherProxy.GetWeather(12.56553, 55.675941);
             string icon = String.Format("http://openweathermap.org/img/w/{0}.png", myWeather.weather[0].icon);
             ResultImage.Source = new BitmapImage(new Uri(icon, UriKind.Absolute));
 
