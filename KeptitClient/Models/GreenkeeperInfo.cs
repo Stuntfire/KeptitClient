@@ -54,14 +54,6 @@ namespace KeptitClient.Models
             {
                 totalminutover = 0;
             }
-            //else if (Date.DayOfWeek == DayOfWeek.Monday && totalminutover <= 444 ||
-            //    Date.DayOfWeek == DayOfWeek.Tuesday && totalminutover <= 444 ||
-            //    Date.DayOfWeek == DayOfWeek.Wednesday && totalminutover <= 444 ||
-            //    Date.DayOfWeek == DayOfWeek.Thursday && totalminutover <= 444 ||
-            //    Date.DayOfWeek == DayOfWeek.Friday && totalminutover <= 444)
-            //{
-            //    totalminutover = 0;
-            //}
             return (int)totalminutover;
 
         }
@@ -86,7 +78,6 @@ namespace KeptitClient.Models
             {
                 totalminut = 444M;
                 return (int)totalminut;
-                //totalminut = totalminut - (totalminutover / 1.5M);
             }
             else
             {
