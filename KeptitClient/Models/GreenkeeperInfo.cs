@@ -48,7 +48,7 @@ namespace KeptitClient.Models
                  Date.DayOfWeek == DayOfWeek.Friday && totalminutover >= 445)
             {
                 totalminutover = totalminutover - 444M;
-                totalminutover = totalminutover * 1.5M;
+                //totalminutover = totalminutover * 1.5M;
             }
             else
             {

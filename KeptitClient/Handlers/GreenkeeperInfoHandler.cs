@@ -40,10 +40,10 @@ namespace KeptitClient.Handlers
                   select new
                   {
                       D = dagene.Key,
-                      TOver = dagene.Sum(x => x.GivTotalMinutOverarbejde() / 60),
-                      MOver = dagene.Sum(x => x.GivTotalMinutOverarbejde()) % 60,
-                      Timer = dagene.Sum(x => x.GivTotalMinutNormal() / 60),
-                      Minutter = dagene.Sum(x => x.GivTotalMinutNormal() % 60)
+                      TOver = dagene.Sum(D => D.GivTotalMinutOverarbejde() / 60),
+                      MOver = dagene.Sum(D => D.GivTotalMinutOverarbejde()) % 60,
+                      Timer = dagene.Sum(D => D.GivTotalMinutNormal() / 60),
+                      Minutter = dagene.Sum(D => D.GivTotalMinutNormal() % 60)
                 };
 
 
