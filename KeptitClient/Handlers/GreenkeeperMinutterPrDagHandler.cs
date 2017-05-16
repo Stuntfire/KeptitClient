@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using KeptitClient.Persistency;
 using KeptitClient.ViewModels;
+using KeptitClient.Persistency;
 
 namespace KeptitClient.Handlers
 {
     public class GreenkeeperMinutterPrDagHandler
     {
-
         private GreenkeeperViewModel Mwm { get; set; }
 
         public GreenkeeperMinutterPrDagHandler(GreenkeeperViewModel mwm)
@@ -47,20 +46,21 @@ namespace KeptitClient.Handlers
                   };
 
 
-            //var AlleOpgaverPaaGreenkeeper =
-            //    from t2 in deldageop
-            //    orderby t2.Timer descending
-            //    group t2 by t2.D.GreenkeeperName
-            //      into dagene2
-            //    select new
-            //    {
-            //        D = dagene2.Key,
-            //        Sammen_Lagt_Timer = dagene2.Sum(x => x.Timer * 60 + x.Minutter) / 60,
-            //        Sammen_Lagt_Minutter = dagene2.Sum(x => x.Timer * 60 + x.Minutter) % 60
-            //    };
-           // Mwm.ListViewSamlet.DataContext = AlleOpgaverPaaGreenkeeper;
+            var AlleOpgaverPaaGreenkeeper =
+                from t2 in deldageop
+                orderby t2.Timer descending
+                group t2 by t2.D.GreenkeeperName
+                  into dagene2
+                select new
+                {
+                    D = dagene2.Key,
+                    Sammen_Lagt_Timer = dagene2.Sum(x => x.Timer * 60 + x.Minutter) / 60,
+                    Sammen_Lagt_Minutter = dagene2.Sum(x => x.Timer * 60 + x.Minutter) % 60
+                };
+            Mwm.ListViewSamlet.DataContext = AlleOpgaverPaaGreenkeeper;
             Mwm.ListViewOpgaverPrDag.DataContext = deldageop;
 
         }
     }
 }
+

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using KeptitClient.Persistency;
 using KeptitClient.ViewModels;
 using KeptitClient.Models;
+using KeptitClient.Common;
 
 namespace KeptitClient.Handlers
 {
@@ -49,18 +50,21 @@ namespace KeptitClient.Handlers
 
         public async void PostFinishedTask()
         {
-            FinishedTask temp_task = new FinishedTask(Mwm.SelectedArea.AreaID, Mwm.SelectedGreenTask.GreenTaskID, Mwm.SelectedSubArea.SubAreaID, Mwm.SelectedGreenKeeper.GreenkeeperID, Mwm.SelectedDate.Date, Mwm.TaskHour, Mwm.TaskMinutes, Mwm.TaskNotes);
-
+            
             try
             {
-
+                FinishedTask temp_task = new FinishedTask(Mwm.SelectedArea.AreaID, Mwm.SelectedGreenTask.GreenTaskID, Mwm.SelectedSubArea.SubAreaID, Mwm.SelectedGreenKeeper.GreenkeeperID, Mwm.SelectedDate.Date, Mwm.TaskHour, Mwm.TaskMinutes, Mwm.TaskNotes);
+                if (Mwm.TaskHour == 0 && Mwm.TaskMinutes == 0)
+                {
+                    throw new Exception();
+                }
                 PersistencyService.PostFinishedtask(temp_task);
                 Mwm.GreenkeeperInfoCollection.Clear();
                 await Mwm.GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
             }
             catch (Exception)
             {
-                throw;
+                MessageDialogHelper.Show("Alle felterne skal udfyldes", "Fejl: ");
             }
 
         }
