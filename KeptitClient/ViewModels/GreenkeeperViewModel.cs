@@ -26,6 +26,8 @@ namespace KeptitClient.ViewModels
 
         public GreenkeeperMinutterPrDagHandler GreenkeeperMinutterPrDagHandler { get; set; }
 
+        public AnsatteHandler AnsatteHandler { get; set; }
+
         #endregion
 
         #region RelayCommands
@@ -173,6 +175,19 @@ namespace KeptitClient.ViewModels
                 OnPropertyChanged(nameof(GreenkeeperMinutterPrDagCollection));
             }
         }
+        
+
+             private ObservableCollection<GreenkeeperInfo> _getGreenkeeperNavnSortedList;
+        public ObservableCollection<GreenkeeperInfo> GetGreenkeeperNavnSortedList
+        {
+            get { return _getGreenkeeperNavnSortedList; }
+            set
+            {
+                _getGreenkeeperNavnSortedList = value;
+                OnPropertyChanged(nameof(GetGreenkeeperNavnSortedList));
+            }
+        }
+
 
         private ObservableCollection<GreenkeeperInfo> alletimerogminutterCollection;
 
@@ -193,6 +208,18 @@ namespace KeptitClient.ViewModels
             {
                 listViewSamlet = value;
                 OnPropertyChanged(nameof(ListViewSamlet));
+            }
+        }
+
+        private ListView listViewAnsat;
+
+        public ListView ListViewAnsat
+        {
+            get { return listViewAnsat; }
+            set
+            {
+                listViewAnsat = value;
+                OnPropertyChanged(nameof(ListViewAnsat));
             }
         }
 
@@ -235,6 +262,7 @@ namespace KeptitClient.ViewModels
             get { return listViewOpgaverPrDag; }
             set { listViewOpgaverPrDag = value; }
         }
+        
 
 
 
@@ -246,6 +274,7 @@ namespace KeptitClient.ViewModels
         {
             GreenkeeperInfoCollection = new ObservableCollection<GreenkeeperInfo>();
             GreenkeeperMinutterPrDagCollection = new ObservableCollection<GreenkeeperMinutterPrDag>();
+            GetGreenkeeperNavnSortedList = new ObservableCollection<GreenkeeperInfo>();
             AlleTimerOgMinutterCollection = new ObservableCollection<GreenkeeperInfo>();
             SelectedGreenKeeper = new Greenkeeper(0, "");
             FinishedTaskHandler = new FinishedTaskHandler(this);
@@ -262,8 +291,10 @@ namespace KeptitClient.ViewModels
             ListViewOpgaverPrDag = new ListView();
             ListViewOpgaver = new ListView();
             ListViewOmraader = new ListView();
+            ListViewAnsat = new ListView();
             GreenkeeperInfoHandler.GetGreenInfoSortedList();
             GreenkeeperMinutterPrDagHandler.GetGreenkeeperMinutterPrDagSortedList();
+            AnsatteHandler.GetGreenkeeperNavnSortedList();
             FinishedTaskHandler.VisDoneTasks();
             AreaHandler.VisOmraader();
         }
@@ -327,6 +358,7 @@ namespace KeptitClient.ViewModels
             //GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
 
             GreenkeeperMinutterPrDagHandler = new GreenkeeperMinutterPrDagHandler(this);
+            AnsatteHandler = new AnsatteHandler(this);
 
         }
         #endregion
