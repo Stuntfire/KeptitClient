@@ -29,7 +29,7 @@ namespace KeptitClient.Handlers
         // Beregner for hver greenkeeper der viser navn,timer og antal minutter. Flest timer øverst.
         public async Task GetGreenkeeperNavnSortedList()
         {
-            
+
 
             var AnsatteNavn =
                 from t2 in await PersistencyService.LoadGreenkeeperInfoAsync()
@@ -38,7 +38,8 @@ namespace KeptitClient.Handlers
                   into greenkeeper
                 select new
                 {
-                    D = greenkeeper.Key
+                    Navn = greenkeeper.Key,
+                    Telefon = greenkeeper.Min(x => x.GreenkeeperID)
                 };
             Mwm.ListViewAnsat.DataContext = AnsatteNavn;
            
