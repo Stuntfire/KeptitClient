@@ -13,5 +13,12 @@ namespace KeptitClient.Models
         public DateTime Date { get; set; }
 
         public string AreaTitle { get; set; }
+
+        
+
+        public override string ToString()
+        {
+            return string.Format("{0} {1} {2}", AreaMinutterIalt, Date, AreaTitle);
+        }
     }
 }
