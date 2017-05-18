@@ -54,9 +54,8 @@ namespace KeptitClient.Models
             {
                 totalminutover = 0;
             }
- 
-            return (int)totalminutover;
 
+            return (int)totalminutover;
         }
 
         // beregner for normal timer. En normal dag er 7.4 timer = 444 minutter.
@@ -71,11 +70,11 @@ namespace KeptitClient.Models
             {
                 return (int)totalminut;
             }
-           else if (Date.DayOfWeek == DayOfWeek.Monday && totalminut >= 445 ||
-               Date.DayOfWeek == DayOfWeek.Tuesday && totalminut >= 445 ||
-               Date.DayOfWeek == DayOfWeek.Wednesday && totalminut >= 445 ||
-               Date.DayOfWeek == DayOfWeek.Thursday && totalminut >= 445 ||
-               Date.DayOfWeek == DayOfWeek.Friday && totalminut >= 445)
+            else if (Date.DayOfWeek == DayOfWeek.Monday && totalminut >= 445 ||
+                Date.DayOfWeek == DayOfWeek.Tuesday && totalminut >= 445 ||
+                Date.DayOfWeek == DayOfWeek.Wednesday && totalminut >= 445 ||
+                Date.DayOfWeek == DayOfWeek.Thursday && totalminut >= 445 ||
+                Date.DayOfWeek == DayOfWeek.Friday && totalminut >= 445)
             {
                 totalminut = 444M;
                 return (int)totalminut;
@@ -84,13 +83,6 @@ namespace KeptitClient.Models
             {
                 return 0;
             }
-           
-        }
-
-        public int GetSumTasksHours()
-        {
-            decimal Totalminutes = Hours * 60 + (Minutes);
-            return (int)Totalminutes;
         }
 
         public override string ToString()

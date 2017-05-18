@@ -38,7 +38,6 @@ namespace KeptitClient.Handlers
                 into omraaederne
                 select new
                 {
-                    //todo Minut-beregneren virker ikke helt korrekt
                     D = omraaederne.Key,
                     Timer = omraaederne.Sum(x => x.AreaMinutterIalt) / 60,
                     Minutter = omraaederne.Sum(x => x.AreaMinutterIalt) % 60

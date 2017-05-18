@@ -23,9 +23,8 @@ namespace KeptitClient.ViewModels
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
         public GreenkeeperInfoHandler GreenkeeperInfoHandler { get; set; }
         public AreaHandler AreaHandler { get; set; }
-
+        public GreenTaskHandler GreenTaskHandler { get; set; }
         public GreenkeeperMinutterPrDagHandler GreenkeeperMinutterPrDagHandler { get; set; }
-
         public AnsatteHandler AnsatteHandler { get; set; }
 
         #endregion
@@ -175,9 +174,9 @@ namespace KeptitClient.ViewModels
                 OnPropertyChanged(nameof(GreenkeeperMinutterPrDagCollection));
             }
         }
-        
 
-             private ObservableCollection<GreenkeeperInfo> _getGreenkeeperNavnSortedList;
+
+        private ObservableCollection<GreenkeeperInfo> _getGreenkeeperNavnSortedList;
         public ObservableCollection<GreenkeeperInfo> GetGreenkeeperNavnSortedList
         {
             get { return _getGreenkeeperNavnSortedList; }
@@ -198,9 +197,8 @@ namespace KeptitClient.ViewModels
         }
 
 
-       
-        private ListView listViewSamlet;
 
+        private ListView listViewSamlet;
         public ListView ListViewSamlet
         {
             get { return listViewSamlet; }
@@ -262,7 +260,7 @@ namespace KeptitClient.ViewModels
             get { return listViewOpgaverPrDag; }
             set { listViewOpgaverPrDag = value; }
         }
-        
+
 
 
 
@@ -279,6 +277,7 @@ namespace KeptitClient.ViewModels
             SelectedGreenKeeper = new Greenkeeper(0, "");
             FinishedTaskHandler = new FinishedTaskHandler(this);
             AreaHandler = new AreaHandler(this);
+            GreenTaskHandler = new GreenTaskHandler(this);
 
             DateTime dt = DateTime.Now;
             _selectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
@@ -292,11 +291,11 @@ namespace KeptitClient.ViewModels
             ListViewOpgaver = new ListView();
             ListViewOmraader = new ListView();
             ListViewAnsat = new ListView();
-            GreenkeeperInfoHandler.GetGreenInfoSortedList();
             GreenkeeperMinutterPrDagHandler.GetGreenkeeperMinutterPrDagSortedList();
             AnsatteHandler.GetGreenkeeperNavnSortedList();
             FinishedTaskHandler.VisDoneTasks();
             AreaHandler.VisOmraader();
+            GreenTaskHandler.GetSumGreenTaskCollection();
         }
 
         #region Methods
@@ -362,11 +361,6 @@ namespace KeptitClient.ViewModels
 
         }
         #endregion
-
-    
-
-
-
 
         #region INotify
         public event PropertyChangedEventHandler PropertyChanged;

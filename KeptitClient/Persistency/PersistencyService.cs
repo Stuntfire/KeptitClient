@@ -157,7 +157,7 @@ namespace KeptitClient.Persistency
             }
         }
         /// <summary>
-        /// Summer alle minutter og samler dato'er fra Area fra DB-View SumAreaView
+        /// Summer alle minutter og samler dato'er fra GreenTask fra DB-View SumAreaView
         /// </summary>
         /// <returns></returns>
         public static async Task<ObservableCollection<SumTaskDateView>> LoadSumTaskDateViewAsync()
@@ -178,14 +178,17 @@ namespace KeptitClient.Persistency
             }
         }
 
-        // samler Tasks fra Area fra DB-View SumAreaView
+        /// <summary>
+        /// Summer alle minutter og samler dem fra GreenTask fra DB-View SumTaskView
+        /// </summary>
+        /// <returns></returns>
         public static async Task<ObservableCollection<SumTaskView>> LoadSumTaskViewAsync()
         {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(serverUrl);
                 client.DefaultRequestHeaders.Clear();
-                string urlString = "api/SumTaskDateViews";
+                string urlString = "api/SumTaskViews";
 
                 HttpResponseMessage response = await client.GetAsync(urlString);
                 if (response.IsSuccessStatusCode)
