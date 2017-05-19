@@ -10,6 +10,7 @@ using KeptitClient.Common;
 using KeptitClient.Models;
 using Task = System.Threading.Tasks.Task;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 
 namespace KeptitClient.Persistency
 {
@@ -167,6 +168,14 @@ namespace KeptitClient.Persistency
                 { 
                     //todo det her vil ikke nødvendigvis fange en fejlkode fra serveren
                     var response = client.PostAsJsonAsync<FinishedTask>("api/finishedtasks", finishedtask).Result;
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        ContentDialog cd = new ContentDialog();
+                        cd.Content = "Din opgave er gemt";
+                        cd.PrimaryButtonText = "OK";
+                        cd.ShowAsync();
+                    }
                 }
 
                 catch (Exception e)
