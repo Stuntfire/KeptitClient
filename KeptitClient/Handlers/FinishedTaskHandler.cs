@@ -28,26 +28,6 @@ namespace KeptitClient.Handlers
             }
         }
 
-        public async Task VisDoneTasks()
-        {
-            var opgaverdone =
-                from o in await PersistencyService.LoadGreenkeeperInfoAsync()
-                group o by o.GreenTaskTitle
-                into opgaverne
-                select new
-                {
-                    Opgave = opgaverne.Key,
-                    Timer = opgaverne.Sum(x => x.Hours),
-                    Min = opgaverne.Sum(x => x.Minutes)
-                };
-            var opgaversamlet =
-                from o2 in opgaverdone
-                orderby o2.Timer descending
-                select o2;
-
-            Mwm.ListViewOpgaver.DataContext = opgaversamlet;
-        }
-
         public async void PostFinishedTask()
         {
             

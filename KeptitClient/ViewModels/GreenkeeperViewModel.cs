@@ -276,9 +276,6 @@ namespace KeptitClient.ViewModels
             GetGreenkeeperNavnSortedList = new ObservableCollection<GreenkeeperInfo>();
             AlleTimerOgMinutterCollection = new ObservableCollection<GreenkeeperInfo>();
             SelectedGreenKeeper = new Greenkeeper(0, "");
-            //FinishedTaskHandler = new FinishedTaskHandler(this);
-            //AreaHandler = new AreaHandler(this);
-            //GreenTaskHandler = new GreenTaskHandler(this);
 
             DateTime dt = DateTime.Now;
             _selectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
@@ -292,8 +289,6 @@ namespace KeptitClient.ViewModels
             ListViewOpgaver = new ListView();
             ListViewOmraader = new ListView();
             ListViewAnsat = new ListView();
-            GreenkeeperMinutterPrDagHandler.GetGreenkeeperMinutterPrDagSortedList();
-
         }
 
         #region Methods
@@ -313,8 +308,6 @@ namespace KeptitClient.ViewModels
             ListViewSamlet2.DataContext = updateList;
             GreenkeeperInfoCollection.Clear();
         }
-
-
 
         public bool IsEmpty()
         {
