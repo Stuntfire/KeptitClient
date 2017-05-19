@@ -40,6 +40,7 @@ namespace KeptitClient.Handlers
                     Timer = AllTasks.Sum(x => x.TaskMinutesTotal) / 60,
                     Minutter = AllTasks.Sum(x => x.TaskMinutesTotal) % 60
                 };
+            SumAllTasks.OrderBy(x => x.Timer);
             //Todo Hvad går der galt her? Forkert liste?
            Mwm.ListViewOpgaver.DataContext = SumAllTasks;
         }
