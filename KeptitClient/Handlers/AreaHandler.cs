@@ -33,31 +33,18 @@ namespace KeptitClient.Handlers
         public async Task VisOmraader()
         {
             var areasdone =
-                from a in await PersistencyService.LoadGreenkeeperInfoAsync()
+                from a in await PersistencyService.LoadSumAreaViewAsync()
                 group a by a.AreaTitle
                 into omraaederne
                 select new
                 {
-                    //todo Minut-beregneren virker ikke helt korrekt
-                    Område = omraaederne.Key,
-                    Timer = omraaederne.Sum(x => x.GetSumTasksHours() / 60),
-                    Min = omraaederne.Sum(x => x.GetSumTasksHours() % 60)
+                    D = omraaederne.Key,
+                    Timer = omraaederne.Sum(x => x.AreaMinutterIalt) / 60,
+                    Minutter = omraaederne.Sum(x => x.AreaMinutterIalt) % 60
                 };
 
-            var areassamlet =
-                from a2 in areasdone
-                orderby a2.Timer descending
-                select a2;
-
-            Mwm.ListViewOmraader.DataContext = areassamlet;
+            Mwm.ListViewOmraader.DataContext = areasdone;
         }
-
-
-        ////Creates a new Area
-        //public void CreateArea()
-        //{
-        //    Area temp_Area = new Area(Mwm.SelectedArea.AreaID, Mwm.SelectedArea.AreaTitle);
-        //    PersistencyService.PostAsJsonTask(temp_Area);
-        //}
+        
     }
 }

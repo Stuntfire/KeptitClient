@@ -92,8 +92,12 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handlers\AnsatteHandler.cs" />
     <Compile Include="Handlers\GreenkeeperMinutterPrDagHandler.cs" />
     <Compile Include="Models\GreenkeeperMinutterPrDag.cs" />
+    <Compile Include="Models\SumAreaView.cs" />
+    <Compile Include="Models\SumTaskDateView.cs" />
+    <Compile Include="Models\SumTaskView.cs" />
     <Compile Include="View\Adminansatte.xaml.cs">
       <DependentUpon>Adminansatte.xaml</DependentUpon>
     </Compile>

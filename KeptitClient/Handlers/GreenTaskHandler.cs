@@ -27,5 +27,24 @@ namespace KeptitClient.Handlers
                 Mwm.GreenTaskCollection.Add(item);
             }
         }
+
+        public async Task GetSumGreenTaskCollection()
+        {
+            var SumAllTasks =
+                from a in await PersistencyService.LoadSumTaskViewAsync()
+                orderby a.TaskMinutesTotal descending
+                group a by a.GreenTaskTitle
+                into AllTasks
+                select new
+                {
+                    D = AllTasks.Key,
+                    Timer = AllTasks.Sum(x => x.TaskMinutesTotal) / 60,
+                    Minutter = AllTasks.Sum(x => x.TaskMinutesTotal) % 60
+                };
+           
+            //Todo Hvad går der galt her? Forkert liste?
+           Mwm.ListViewOpgaver.DataContext = SumAllTasks;
+        }
+
     }
 }

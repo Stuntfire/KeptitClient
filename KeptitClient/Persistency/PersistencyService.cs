@@ -115,8 +115,10 @@ namespace KeptitClient.Persistency
                 return null;
             }
         }
-
-        // Henter alle Greenkeeper Info fra DB-View GreenkeeperInfo
+        /// <summary>
+        /// Henter alle Greenkeeper Info fra DB-View GreenkeeperInfo
+        /// </summary>
+        /// <returns></returns>
         public static async Task<ObservableCollection<GreenkeeperInfo>> LoadGreenkeeperInfoAsync()
         {
             using (var client = new HttpClient())
@@ -130,6 +132,70 @@ namespace KeptitClient.Persistency
                 {
                     var AltInfoliste = response.Content.ReadAsAsync<ObservableCollection<GreenkeeperInfo>>().Result;
                     return AltInfoliste;
+                }
+                return null;
+            }
+        }
+        /// <summary>
+        /// Summer alle Area-minutter fra DB-View SumAreaView
+        /// </summary>
+        /// <returns></returns>
+        public static async Task<ObservableCollection<SumAreaView>> LoadSumAreaViewAsync()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                string urlString = "api/SumAreaViews";
+
+                HttpResponseMessage response = await client.GetAsync(urlString);
+                if (response.IsSuccessStatusCode)
+                {
+                    var SumAreaViewMinutter = response.Content.ReadAsAsync<ObservableCollection<SumAreaView>>().Result;
+                    return SumAreaViewMinutter;
+                }
+                return null;
+            }
+        }
+        /// <summary>
+        /// Summer alle minutter og samler dato'er fra GreenTask fra DB-View SumAreaView
+        /// </summary>
+        /// <returns></returns>
+        public static async Task<ObservableCollection<SumTaskDateView>> LoadSumTaskDateViewAsync()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                string urlString = "api/SumTaskDateViews";
+
+                HttpResponseMessage response = await client.GetAsync(urlString);
+                if (response.IsSuccessStatusCode)
+                {
+                    var SumTaskDateViewMinutter = response.Content.ReadAsAsync<ObservableCollection<SumTaskDateView>>().Result;
+                    return SumTaskDateViewMinutter;
+                }
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Summer alle minutter og samler dem fra GreenTask fra DB-View SumTaskView
+        /// </summary>
+        /// <returns></returns>
+        public static async Task<ObservableCollection<SumTaskView>> LoadSumTaskViewAsync()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                string urlString = "api/SumTaskViews";
+
+                HttpResponseMessage response = await client.GetAsync(urlString);
+                if (response.IsSuccessStatusCode)
+                {
+                    var SumTaskViewMinutter = response.Content.ReadAsAsync<ObservableCollection<SumTaskView>>().Result;
+                    return SumTaskViewMinutter;
                 }
                 return null;
             }
