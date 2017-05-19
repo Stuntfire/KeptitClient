@@ -32,6 +32,7 @@ namespace KeptitClient.Handlers
         {
             var SumAllTasks =
                 from a in await PersistencyService.LoadSumTaskViewAsync()
+                orderby a.TaskMinutesTotal descending
                 group a by a.GreenTaskTitle
                 into AllTasks
                 select new
@@ -40,7 +41,7 @@ namespace KeptitClient.Handlers
                     Timer = AllTasks.Sum(x => x.TaskMinutesTotal) / 60,
                     Minutter = AllTasks.Sum(x => x.TaskMinutesTotal) % 60
                 };
-           SumAllTasks.OrderBy(x => x.Timer);
+           
             //Todo Hvad går der galt her? Forkert liste?
            Mwm.ListViewOpgaver.DataContext = SumAllTasks;
         }

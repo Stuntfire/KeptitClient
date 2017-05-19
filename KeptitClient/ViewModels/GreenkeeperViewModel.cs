@@ -344,7 +344,7 @@ namespace KeptitClient.ViewModels
 
             FinishedTaskCollection = new ObservableCollection<FinishedTask>();
             FinishedTaskHandler = new FinishedTaskHandler(this);
-            FinishedTaskHandler.VisDoneTasks();
+            //FinishedTaskHandler.VisDoneTasks();
 
             GreenTaskCollection = new ObservableCollection<GreenTask>();
             GreenTaskHandler = new GreenTaskHandler(this);
