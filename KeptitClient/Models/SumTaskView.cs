@@ -11,5 +11,10 @@ namespace KeptitClient.Models
         public int TaskMinutesTotal { get; set; }
 
         public string GreenTaskTitle { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0}", GreenTaskTitle);
+        }
     }
 }

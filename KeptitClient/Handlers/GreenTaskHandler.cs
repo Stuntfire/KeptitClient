@@ -36,11 +36,11 @@ namespace KeptitClient.Handlers
                 into AllTasks
                 select new
                 {
-                    Task = AllTasks.Key,
+                    D = AllTasks.Key,
                     Timer = AllTasks.Sum(x => x.TaskMinutesTotal) / 60,
                     Minutter = AllTasks.Sum(x => x.TaskMinutesTotal) % 60
                 };
-            SumAllTasks.OrderBy(x => x.Timer);
+           SumAllTasks.OrderBy(x => x.Timer);
             //Todo Hvad går der galt her? Forkert liste?
            Mwm.ListViewOpgaver.DataContext = SumAllTasks;
         }

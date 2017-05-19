@@ -26,7 +26,8 @@ namespace KeptitClient.ViewModels
         public GreenTaskHandler GreenTaskHandler { get; set; }
         public GreenkeeperMinutterPrDagHandler GreenkeeperMinutterPrDagHandler { get; set; }
         public AnsatteHandler AnsatteHandler { get; set; }
-
+        public SubAreaHandler SubAreaHandler { get; set; }
+        public GreenkeeperHandler GreenkeeperHandler { get; set; }
         #endregion
 
         #region RelayCommands
@@ -275,9 +276,9 @@ namespace KeptitClient.ViewModels
             GetGreenkeeperNavnSortedList = new ObservableCollection<GreenkeeperInfo>();
             AlleTimerOgMinutterCollection = new ObservableCollection<GreenkeeperInfo>();
             SelectedGreenKeeper = new Greenkeeper(0, "");
-            FinishedTaskHandler = new FinishedTaskHandler(this);
-            AreaHandler = new AreaHandler(this);
-            GreenTaskHandler = new GreenTaskHandler(this);
+            //FinishedTaskHandler = new FinishedTaskHandler(this);
+            //AreaHandler = new AreaHandler(this);
+            //GreenTaskHandler = new GreenTaskHandler(this);
 
             DateTime dt = DateTime.Now;
             _selectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
@@ -292,10 +293,7 @@ namespace KeptitClient.ViewModels
             ListViewOmraader = new ListView();
             ListViewAnsat = new ListView();
             GreenkeeperMinutterPrDagHandler.GetGreenkeeperMinutterPrDagSortedList();
-            AnsatteHandler.GetGreenkeeperNavnSortedList();
-            FinishedTaskHandler.VisDoneTasks();
-            AreaHandler.VisOmraader();
-            GreenTaskHandler.GetSumGreenTaskCollection();
+
         }
 
         #region Methods
@@ -339,25 +337,36 @@ namespace KeptitClient.ViewModels
         private void LoadAllCollections()
         {
             GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
-            var gkh = new GreenkeeperHandler(this).GetGreenkeeperCollection();
+            GreenkeeperHandler = new GreenkeeperHandler(this);
+            GreenkeeperHandler.GetGreenkeeperCollection();
 
             AreaCollection = new ObservableCollection<Area>();
-            var ah = new AreaHandler(this).GetAreaCollection();
+            AreaHandler = new AreaHandler(this);
+            AreaHandler.GetAreaCollection();
+            AreaHandler.VisOmraader();
 
             SubAreaCollection = new ObservableCollection<SubArea>();
-            var sah = new SubAreaHandler(this).GetSubAreaCollection();
+            SubAreaHandler = new SubAreaHandler(this);
+            SubAreaHandler.GetSubAreaCollection();
 
             FinishedTaskCollection = new ObservableCollection<FinishedTask>();
-            var fth = new FinishedTaskHandler(this);
+            FinishedTaskHandler = new FinishedTaskHandler(this);
+            FinishedTaskHandler.VisDoneTasks();
 
             GreenTaskCollection = new ObservableCollection<GreenTask>();
-            var gth = new GreenTaskHandler(this).GetGreenTaskCollection();
+            GreenTaskHandler = new GreenTaskHandler(this);
+            GreenTaskHandler.GetGreenTaskCollection();
+            GreenTaskHandler.GetSumGreenTaskCollection();
 
             GreenkeeperInfoHandler = new GreenkeeperInfoHandler(this);
-            //GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
+            GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
 
             GreenkeeperMinutterPrDagHandler = new GreenkeeperMinutterPrDagHandler(this);
+            GreenkeeperMinutterPrDagHandler.GetGreenkeeperMinutterPrDagSortedList();
+
             AnsatteHandler = new AnsatteHandler(this);
+            AnsatteHandler.GetGreenkeeperNavnSortedList();
+
 
         }
         #endregion
