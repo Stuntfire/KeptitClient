@@ -39,12 +39,33 @@ namespace KeptitClient.ViewModels
             set { _addTaskCommand = value; }
         }
 
-        //public Common.ICommand DeleteTaskCommand { get; set; }
-        //public Common.ICommand SelectTaskCommand { get; set; }
-        //public Common.ICommand EditTaskCommand { get; set; }
+        private ICommand _addGreenkeeperCommand;
+
+        public ICommand AddGreenkeeperCommand
+        {
+            get { return _addGreenkeeperCommand; }
+            set { _addGreenkeeperCommand = value; }
+        }
+
         #endregion
 
         #region Properties
+
+        private string _greenname;
+
+        public string Greenname
+        {
+            get { return _greenname; }
+            set { _greenname = value; }
+        }
+
+        private int _greennumber;
+
+        public int Greennumber
+        {
+            get { return _greennumber; }
+            set { _greennumber = value; }
+        } 
 
         private int _taskHour;
         public int TaskHour
@@ -262,11 +283,6 @@ namespace KeptitClient.ViewModels
             set { listViewOpgaverPrDag = value; }
         }
 
-
-
-
-
-
         #endregion
 
         public GreenkeeperViewModel()
@@ -282,6 +298,7 @@ namespace KeptitClient.ViewModels
 
             LoadAllCollections();
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
+            AddGreenkeeperCommand = new RelayCommand(GreenkeeperHandler.PostGreenkeeper, IsEmpty);
 
             ListViewSamlet = new ListView();
             ListViewSamlet2 = new ListView();

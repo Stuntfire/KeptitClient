@@ -11,6 +11,7 @@ using KeptitClient.Models;
 using Task = System.Threading.Tasks.Task;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
+using KeptitClient.View;
 
 namespace KeptitClient.Persistency
 {
@@ -20,7 +21,7 @@ namespace KeptitClient.Persistency
         const string serverUrl = "http://keptit.azurewebsites.net";
 
         // Henter alle Greenkeeper fra tabellen Greenkeepers
-        public static async Task<ObservableCollection<Greenkeeper>> LoadGreenkeeperAsync()
+        public static async Task<ObservableCollection<Models.Greenkeeper>> LoadGreenkeeperAsync()
         {
             using (var client = new HttpClient())
             {
@@ -31,11 +32,16 @@ namespace KeptitClient.Persistency
                 HttpResponseMessage response = await client.GetAsync(urlString);
                 if (response.IsSuccessStatusCode)
                 {
-                    var greenkeeperliste = response.Content.ReadAsAsync<ObservableCollection<Greenkeeper>>().Result;
+                    var greenkeeperliste = response.Content.ReadAsAsync<ObservableCollection<Models.Greenkeeper>>().Result;
                     return greenkeeperliste;
                 }
                 return null;
             }
+        }
+
+        internal static void PostGreenkeeper(View.Greenkeeper temp_green)
+        {
+            throw new NotImplementedException();
         }
 
         // Henter alle Area fra tabellen Areas
@@ -239,6 +245,37 @@ namespace KeptitClient.Persistency
                     {
                         ContentDialog cd = new ContentDialog();
                         cd.Content = "Din opgave er gemt";
+                        cd.PrimaryButtonText = "OK";
+                        cd.ShowAsync();
+                    }
+                }
+
+                catch (Exception e)
+                {
+                    MessageDialog Error = new MessageDialog("Error : " + e);
+                    Error.Commands.Add(new UICommand { Label = "Ok" });
+                    Error.ShowAsync().AsTask();
+                }
+
+            }
+        }
+
+        //Post Greenkeeper
+        public static void PostGreenkeeper(Models.Greenkeeper greenkeeper)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/greenkeeper"));
+                try
+                {
+                    var response = client.PostAsJsonAsync<Models.Greenkeeper>("api/greenkeeper", greenkeeper).Result;
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        ContentDialog cd = new ContentDialog();
+                        cd.Content = "Greenkeeper er oprettet";
                         cd.PrimaryButtonText = "OK";
                         cd.ShowAsync();
                     }

@@ -14,10 +14,10 @@ namespace KeptitClient.Models
 
         #endregion
 
-        public Greenkeeper(int inID, string ingreenkeeperid)
+        public Greenkeeper(int greenId, string greenname)
         {
-            this.GreenkeeperID = inID;
-            this.GreenkeeperName = ingreenkeeperid;
+            this.GreenkeeperID = greenId;
+            this.GreenkeeperName = greenname;
         }
 
         public override string ToString()

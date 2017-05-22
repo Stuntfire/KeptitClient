@@ -25,9 +25,18 @@ namespace KeptitClient.View
 
     public sealed partial class Greenkeeper : Page
     {
+        private string greenname;
+        private int greennumber;
+
         public Greenkeeper()
         {
             this.InitializeComponent();
+        }
+
+        public Greenkeeper(string greenname, int greennumber)
+        {
+            this.greenname = greenname;
+            this.greennumber = greennumber;
         }
     }
 }

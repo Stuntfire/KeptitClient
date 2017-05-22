@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Greenkeeper = KeptitClient.View.Greenkeeper;
+using KeptitClient.Common;
 
 namespace KeptitClient.Handlers
 {
@@ -32,11 +33,26 @@ namespace KeptitClient.Handlers
             }
         }
 
-        ////Creates a new Greenkeeper
-        //public void CreateGreenkeeper()
-        //{
-        //    GreenKeeper tempGreenkeeper = new GreenKeeper(Mwm.SelectedGreenKeeper.GreenkeeperID, Mwm.SelectedGreenKeeper.GreenkeeperName);
-        //    PersistencyService.PostGreenkeeperAsJsonAsync(tempGreenkeeper);
-        //}
+        public async void PostGreenkeeper()
+        {
+
+            try
+            {
+                Greenkeeper temp_green = new Greenkeeper(Mwm.Greenname, Mwm.Greennumber);
+                if (Mwm.Greenname == "" && Mwm.Greennumber < 9999999)
+                {
+                    throw new Exception();
+                }
+                PersistencyService.PostGreenkeeper(temp_green);
+                Mwm.GreenkeeperInfoCollection.Clear();
+                await Mwm.GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
+            }
+            catch (Exception)
+            {
+                MessageDialogHelper.Show("Alle felterne skal udfyldes", "Fejl: ");
+            }
+
+        }
+
     }
 }
