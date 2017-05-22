@@ -73,11 +73,5 @@
 
 
         </SplitView>
-        <StackPanel Margin="650,0,0,672">
-            <Grid Height="49">
-                <TextBlock Name="ResultTextBlock" Margin="532,0,43,0" FontSize="35" Foreground="#FFFFFF" RenderTransformOrigin="0.5,0.5"/>
-                <Image Name="ResultImage" Height="90" Width="100" Margin="514,-17,-20,-16"/>
-            </Grid>
-        </StackPanel>
     </Grid>
 </Page>

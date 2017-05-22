@@ -28,7 +28,6 @@ namespace KeptitClient
         {
             this.InitializeComponent();
             Mainframe.Navigate(typeof(Greenkeeper));
-            GetWeather();
         }
        
 
@@ -74,16 +73,6 @@ namespace KeptitClient
             Mainframe.Navigate(typeof(Adminlogin));
             AdminPanel.Visibility = Visibility.Collapsed;
             LogudPanel.Visibility = Visibility.Visible;
-        }
-
-        private async void GetWeather()
-        {
-            RootObject myWeather = await WeatherProxy.GetWeather(12.56553, 55.675941);
-            string icon = String.Format("http://openweathermap.org/img/w/{0}.png", myWeather.weather[0].icon);
-            ResultImage.Source = new BitmapImage(new Uri(icon, UriKind.Absolute));
-
-            double udregncel = myWeather.main.temp - 273.15;
-            ResultTextBlock.Text = udregncel + "°";
         }
     }
 }

@@ -144,7 +144,6 @@
     <Compile Include="View\Greenkeeper.xaml.cs">
       <DependentUpon>Greenkeeper.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WeatherProxy.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
