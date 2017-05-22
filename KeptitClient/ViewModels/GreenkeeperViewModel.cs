@@ -39,9 +39,13 @@ namespace KeptitClient.ViewModels
             set { _addTaskCommand = value; }
         }
 
-        //public Common.ICommand DeleteTaskCommand { get; set; }
-        //public Common.ICommand SelectTaskCommand { get; set; }
-        //public Common.ICommand EditTaskCommand { get; set; }
+        private ICommand _deleteFinishedTask;
+        public ICommand DeleteFinishedTask
+        {
+            get { return _deleteFinishedTask; }
+            set { _deleteFinishedTask = value; }
+        }
+
         #endregion
 
         #region Properties
@@ -138,7 +142,8 @@ namespace KeptitClient.ViewModels
             set
             {
                 _selectedGreenKeeper = value;
-                OnPropertyChanged(nameof(SelectedGreenKeeper)); LoadUpdatedList();
+                OnPropertyChanged(nameof(SelectedGreenKeeper));
+                loadlist();
             }
         }
 
@@ -154,7 +159,19 @@ namespace KeptitClient.ViewModels
             }
         }
 
-        private ObservableCollection<GreenkeeperInfo> _greenkeeperInfoCollection;
+        private GreenkeeperInfo _greenkeeperInfoToDelete;
+        public GreenkeeperInfo GreenkeeperInfoToDelete
+        {
+            get { return _greenkeeperInfoToDelete; }
+            set
+            {
+                _greenkeeperInfoToDelete = value;
+                OnPropertyChanged(nameof(GreenkeeperInfoToDelete));
+
+            }
+        }
+
+private ObservableCollection<GreenkeeperInfo> _greenkeeperInfoCollection;
         public ObservableCollection<GreenkeeperInfo> GreenkeeperInfoCollection
         {
             get { return _greenkeeperInfoCollection; }
@@ -176,8 +193,7 @@ namespace KeptitClient.ViewModels
             }
         }
 
-
-        private ObservableCollection<GreenkeeperInfo> _getGreenkeeperNavnSortedList;
+private ObservableCollection<GreenkeeperInfo> _getGreenkeeperNavnSortedList;
         public ObservableCollection<GreenkeeperInfo> GetGreenkeeperNavnSortedList
         {
             get { return _getGreenkeeperNavnSortedList; }
@@ -188,16 +204,12 @@ namespace KeptitClient.ViewModels
             }
         }
 
-
         private ObservableCollection<GreenkeeperInfo> alletimerogminutterCollection;
-
         public ObservableCollection<GreenkeeperInfo> AlleTimerOgMinutterCollection
         {
             get { return alletimerogminutterCollection; }
             set { alletimerogminutterCollection = value; }
         }
-
-
 
         private ListView listViewSamlet;
         public ListView ListViewSamlet
@@ -262,11 +274,6 @@ namespace KeptitClient.ViewModels
             set { listViewOpgaverPrDag = value; }
         }
 
-
-
-
-
-
         #endregion
 
         public GreenkeeperViewModel()
@@ -282,31 +289,25 @@ namespace KeptitClient.ViewModels
 
             LoadAllCollections();
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
+            DeleteFinishedTask = new RelayCommand(FinishedTaskHandler.DeleteFinishedTask, null);
 
+            #region AllListviews
             ListViewSamlet = new ListView();
             ListViewSamlet2 = new ListView();
             ListViewOpgaverPrDag = new ListView();
             ListViewOpgaver = new ListView();
             ListViewOmraader = new ListView();
             ListViewAnsat = new ListView();
+            #endregion
         }
 
         #region Methods
 
-        public async Task LoadUpdatedList()
+        void loadlist()
         {
-            var updateList = from t in GreenkeeperInfoCollection
-                             where t.GreenkeeperName.Contains(SelectedGreenKeeper.GreenkeeperName)
-                             orderby t.Date descending
-                             select t;
+            GreenkeeperInfoHandler = new GreenkeeperInfoHandler(this);
+            GreenkeeperInfoHandler.LoadUpdatedList();
 
-            foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
-            {
-                GreenkeeperInfoCollection.Add(item);
-            }
-
-            ListViewSamlet2.DataContext = updateList;
-            GreenkeeperInfoCollection.Clear();
         }
 
         public bool IsEmpty()
@@ -327,6 +328,15 @@ namespace KeptitClient.ViewModels
 
         }
 
+        public bool IsFinishedTaskSelected()
+        {
+            if (GreenkeeperInfoToDelete.FinishedTasksID != 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         private void LoadAllCollections()
         {
             GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
@@ -344,7 +354,7 @@ namespace KeptitClient.ViewModels
 
             FinishedTaskCollection = new ObservableCollection<FinishedTask>();
             FinishedTaskHandler = new FinishedTaskHandler(this);
-            //FinishedTaskHandler.VisDoneTasks();
+            //FinishedTaskHandler.GetFinishedTaskCollection();
 
             GreenTaskCollection = new ObservableCollection<GreenTask>();
             GreenTaskHandler = new GreenTaskHandler(this);
@@ -359,6 +369,8 @@ namespace KeptitClient.ViewModels
 
             AnsatteHandler = new AnsatteHandler(this);
             AnsatteHandler.GetGreenkeeperNavnSortedList();
+
+
 
 
         }

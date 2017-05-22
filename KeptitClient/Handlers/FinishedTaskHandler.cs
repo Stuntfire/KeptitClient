@@ -48,5 +48,18 @@ namespace KeptitClient.Handlers
             }
 
         }
+
+        public async void DeleteFinishedTask()
+        {
+            try
+            {
+                PersistencyService.DeleteFinishedTask(Mwm.GreenkeeperInfoToDelete.FinishedTasksID);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        } 
     }
 }
