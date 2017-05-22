@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Text;
 
 namespace KeptitClient.Models
 {
@@ -87,7 +88,7 @@ namespace KeptitClient.Models
 
         public override string ToString()
         {
-            return string.Format("{0}. {1}. {2}. {3}. {4}. {5}. {6}. {7}.", GreenkeeperName, AreaTitle, SubAreaTitle, GreenTaskTitle, Hours, Minutes, Date, Notes);
+            return string.Format("{0}{1} {2} {3} {4}{5}Timer: {6} Minutter: {7}. {8} {9:dd-MM-yy}. {10} {11}",GreenkeeperName,Environment.NewLine, AreaTitle, SubAreaTitle, GreenTaskTitle, Environment.NewLine, Hours, Minutes, Environment.NewLine, Date, Environment.NewLine, Notes);
         }
     }
 }
