@@ -287,10 +287,10 @@ namespace KeptitClient.Persistency
             {
                 client.BaseAddress = new Uri(serverUrl);
                 client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/greenkeeper"));
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/greenkeepers"));
                 try
                 {
-                    var response = client.PostAsJsonAsync<Models.Greenkeeper>("api/greenkeeper", greenkeeper).Result;
+                    var response = client.PostAsJsonAsync<Models.Greenkeeper>("api/greenkeepers", greenkeeper).Result;
 
                     if (response.IsSuccessStatusCode)
                     {

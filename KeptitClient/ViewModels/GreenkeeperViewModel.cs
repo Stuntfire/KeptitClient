@@ -333,6 +333,7 @@ namespace KeptitClient.ViewModels
 
             LoadAllCollections();
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
+            AddGreenkeeperCommand = new RelayCommand(GreenkeeperHandler.PostGreenkeeper, null);
             DeleteFinishedTask = new RelayCommand(FinishedTaskHandler.DeleteFinishedTask, null);
 
             #region AllListviews
