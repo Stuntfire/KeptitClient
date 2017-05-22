@@ -7,7 +7,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Greenkeeper = KeptitClient.View.Greenkeeper;
 using KeptitClient.Common;
 
 namespace KeptitClient.Handlers
@@ -35,13 +34,12 @@ namespace KeptitClient.Handlers
 
         public async void PostGreenkeeper()
         {
-
             try
             {
-                Greenkeeper temp_green = new Greenkeeper(Mwm.Greenname, Mwm.Greennumber);
+                Greenkeeper temp_green = new Greenkeeper(Mwm.Greennumber, Mwm.Greenname);
                 if (Mwm.Greenname == "" && Mwm.Greennumber < 9999999)
                 {
-                    throw new Exception();
+                    MessageDialogHelper.Show("Alle felterne skal udfyldes", "Fejl: ");
                 }
                 PersistencyService.PostGreenkeeper(temp_green);
                 Mwm.GreenkeeperInfoCollection.Clear();

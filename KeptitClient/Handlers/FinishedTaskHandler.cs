@@ -7,6 +7,7 @@ using KeptitClient.Persistency;
 using KeptitClient.ViewModels;
 using KeptitClient.Models;
 using KeptitClient.Common;
+using Windows.UI.Xaml.Controls;
 
 namespace KeptitClient.Handlers
 {
@@ -30,7 +31,6 @@ namespace KeptitClient.Handlers
 
         public async void PostFinishedTask()
         {
-            
             try
             {
                 FinishedTask temp_task = new FinishedTask(Mwm.SelectedArea.AreaID, Mwm.SelectedGreenTask.GreenTaskID, Mwm.SelectedSubArea.SubAreaID, Mwm.SelectedGreenKeeper.GreenkeeperID, Mwm.SelectedDate.Date, Mwm.TaskHour, Mwm.TaskMinutes, Mwm.TaskNotes);
@@ -53,12 +53,27 @@ namespace KeptitClient.Handlers
         {
             try
             {
+                if (Mwm.GreenkeeperInfoToDelete == null)
+                {
+                    throw new Exception();
+                }
                 PersistencyService.DeleteFinishedTask(Mwm.GreenkeeperInfoToDelete.FinishedTasksID);
+                Mwm.GreenkeeperInfoCollection.Clear();
+                Mwm.GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
+
+                ContentDialog cd = new ContentDialog();
+                cd.Content = "Din opgave er slettet";
+                cd.PrimaryButtonText = "OK";
+                cd.ShowAsync();
+
             }
             catch (Exception)
             {
-
-                throw;
+                ContentDialog cd = new ContentDialog();
+                cd.Content = "Vælg venligst en opgave";
+                cd.PrimaryButtonText = "OK";
+                cd.ShowAsync();
+                
             }
         } 
     }

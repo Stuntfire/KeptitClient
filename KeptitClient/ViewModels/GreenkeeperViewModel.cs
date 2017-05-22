@@ -14,6 +14,7 @@ using Windows.Foundation.Metadata;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 using KeptitClient.Persistency;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace KeptitClient.ViewModels
 {
@@ -28,6 +29,7 @@ namespace KeptitClient.ViewModels
         public AnsatteHandler AnsatteHandler { get; set; }
         public SubAreaHandler SubAreaHandler { get; set; }
         public GreenkeeperHandler GreenkeeperHandler { get; set; }
+        public WeatherHandler WeatherHandler { get; set; }
         #endregion
 
         #region RelayCommands
@@ -58,8 +60,26 @@ namespace KeptitClient.ViewModels
 
         #region Properties
 
-        private string _greenname;
 
+        private BitmapImage _icon;
+        public BitmapImage Icon
+        {
+            get { return _icon; }
+            set { _icon = value;
+                OnPropertyChanged(nameof(Icon));
+            }
+        }
+
+        private float temp;
+        public float Temp
+        {
+            get { return temp; }
+            set { temp = value;
+                OnPropertyChanged(nameof(Temp));
+            }
+        }
+
+        private string _greenname;
         public string Greenname
         {
             get { return _greenname; }
@@ -72,7 +92,7 @@ namespace KeptitClient.ViewModels
         {
             get { return _greennumber; }
             set { _greennumber = value; }
-        } 
+        }
 
         private int _taskHour;
         public int TaskHour
@@ -195,7 +215,7 @@ namespace KeptitClient.ViewModels
             }
         }
 
-private ObservableCollection<GreenkeeperInfo> _greenkeeperInfoCollection;
+        private ObservableCollection<GreenkeeperInfo> _greenkeeperInfoCollection;
         public ObservableCollection<GreenkeeperInfo> GreenkeeperInfoCollection
         {
             get { return _greenkeeperInfoCollection; }
@@ -217,7 +237,7 @@ private ObservableCollection<GreenkeeperInfo> _greenkeeperInfoCollection;
             }
         }
 
-private ObservableCollection<GreenkeeperInfo> _getGreenkeeperNavnSortedList;
+        private ObservableCollection<GreenkeeperInfo> _getGreenkeeperNavnSortedList;
         public ObservableCollection<GreenkeeperInfo> GetGreenkeeperNavnSortedList
         {
             get { return _getGreenkeeperNavnSortedList; }
@@ -313,6 +333,7 @@ private ObservableCollection<GreenkeeperInfo> _getGreenkeeperNavnSortedList;
 
             LoadAllCollections();
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
+            DeleteFinishedTask = new RelayCommand(FinishedTaskHandler.DeleteFinishedTask, null);
 
             #region AllListviews
             ListViewSamlet = new ListView();
@@ -362,6 +383,9 @@ private ObservableCollection<GreenkeeperInfo> _getGreenkeeperNavnSortedList;
 
         private void LoadAllCollections()
         {
+            WeatherHandler = new WeatherHandler(this);
+            //WeatherHandler.GetWeatherData();
+
             GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
             GreenkeeperHandler = new GreenkeeperHandler(this);
             GreenkeeperHandler.GetGreenkeeperCollection();

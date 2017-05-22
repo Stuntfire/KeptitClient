@@ -31,7 +31,6 @@ namespace KeptitClient.Handlers
         {
             Mwm.GreenkeeperInfoCollection.Clear();
 
-            //todo Lav den her liste til updatelist
             foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
             {
                 if (item.GreenkeeperName == Mwm.SelectedGreenKeeper.GreenkeeperName)
