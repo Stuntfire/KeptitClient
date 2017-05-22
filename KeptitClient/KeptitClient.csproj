@@ -92,7 +92,6 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Handlers\AnsatteHandler.cs" />
     <Compile Include="Handlers\GreenkeeperMinutterPrDagHandler.cs" />
     <Compile Include="Handlers\WeatherHandler.cs" />
     <Compile Include="Models\GreenkeeperMinutterPrDag.cs" />

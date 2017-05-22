@@ -25,8 +25,6 @@ namespace KeptitClient.Handlers
         //Gets all Greenkeepers from Database via PersistencyService
         public async Task GetGreenkeeperCollection()
         {
-
-            //Brug foreach hvis LoadGreenkeepersAsync() i PersistencyService kodes som async:
             foreach (var item in await PersistencyService.LoadGreenkeeperAsync())
             {
                 Mwm.GreenKeeperCollection.Add(item);
@@ -40,7 +38,7 @@ namespace KeptitClient.Handlers
                 Greenkeeper temp_green = new Greenkeeper(Mwm.Greennumber, Mwm.Greenname);
                 if (Mwm.Greenname == "" && Mwm.Greennumber < 9999999)
                 {
-                    MessageDialogHelper.Show("Alle felterne skal udfyldes", "Fejl: ");
+                    throw new Exception();
                 }
                 PersistencyService.PostGreenkeeper(temp_green);
                 Mwm.GreenkeeperInfoCollection.Clear();
@@ -52,6 +50,5 @@ namespace KeptitClient.Handlers
             }
 
         }
-
     }
 }

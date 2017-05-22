@@ -26,7 +26,6 @@ namespace KeptitClient.ViewModels
         public AreaHandler AreaHandler { get; set; }
         public GreenTaskHandler GreenTaskHandler { get; set; }
         public GreenkeeperMinutterPrDagHandler GreenkeeperMinutterPrDagHandler { get; set; }
-        public AnsatteHandler AnsatteHandler { get; set; }
         public SubAreaHandler SubAreaHandler { get; set; }
         public GreenkeeperHandler GreenkeeperHandler { get; set; }
         public WeatherHandler WeatherHandler { get; set; }
@@ -59,13 +58,13 @@ namespace KeptitClient.ViewModels
         #endregion
 
         #region Properties
-
-
         private BitmapImage _icon;
         public BitmapImage Icon
         {
             get { return _icon; }
-            set { _icon = value;
+            set
+            {
+                _icon = value;
                 OnPropertyChanged(nameof(Icon));
             }
         }
@@ -74,7 +73,9 @@ namespace KeptitClient.ViewModels
         public float Temp
         {
             get { return temp; }
-            set { temp = value;
+            set
+            {
+                temp = value;
                 OnPropertyChanged(nameof(Temp));
             }
         }
@@ -87,7 +88,6 @@ namespace KeptitClient.ViewModels
         }
 
         private int _greennumber;
-
         public int Greennumber
         {
             get { return _greennumber; }
@@ -390,6 +390,7 @@ namespace KeptitClient.ViewModels
             GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
             GreenkeeperHandler = new GreenkeeperHandler(this);
             GreenkeeperHandler.GetGreenkeeperCollection();
+            GreenKeeperCollection.OrderByDescending(x => x.GreenkeeperName);
 
             AreaCollection = new ObservableCollection<Area>();
             AreaHandler = new AreaHandler(this);
@@ -414,13 +415,6 @@ namespace KeptitClient.ViewModels
 
             GreenkeeperMinutterPrDagHandler = new GreenkeeperMinutterPrDagHandler(this);
             GreenkeeperMinutterPrDagHandler.GetGreenkeeperMinutterPrDagSortedList();
-
-            AnsatteHandler = new AnsatteHandler(this);
-            AnsatteHandler.GetGreenkeeperNavnSortedList();
-
-
-
-
         }
         #endregion
 

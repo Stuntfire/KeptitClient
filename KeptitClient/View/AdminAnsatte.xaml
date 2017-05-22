@@ -14,24 +14,18 @@
     </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-
-
-
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <StackPanel Margin="20,20,20,20">
                 <Grid>
-                    <TextBlock TextWrapping="Wrap" Text="Ansatte" HorizontalAlignment="Left" Width="552" Height="80" Margin="12,0,0,0" FontSize="35" VerticalAlignment="Top"/>
-
-                    <ListView Width="1200" Margin="0,150,0,49" HorizontalAlignment="Left" ItemsSource="{Binding ListViewAnsat.DataContext, Mode=TwoWay}" />
-                   
+                    <TextBlock TextWrapping="Wrap" Text="Ansatte" HorizontalAlignment="Left" Width="552" Height="60" Margin="12,0,0,0" FontSize="35" VerticalAlignment="Top"/>
+                    <ListView Width="354" Height="350" Margin="0,65,0,0" HorizontalAlignment="Left" ItemsSource="{Binding GreenKeeperCollection, Mode=TwoWay}" />
                 </Grid>
             </StackPanel>
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="33,349,0,0" TextWrapping="Wrap" Text="{Binding Greenname, Mode=TwoWay}" VerticalAlignment="Top" Width="128"/>
-            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="186,349,0,0" TextWrapping="Wrap" Text="{Binding Greennumber, Mode=TwoWay}" VerticalAlignment="Top" Width="133"/>
-            <Button x:Name="button" Content="Opret" HorizontalAlignment="Left" Margin="33,406,0,0" VerticalAlignment="Top" Command="{Binding AddGreenkeeperCommand}"/>
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="33,324,0,0" TextWrapping="Wrap" Text="Navn:" VerticalAlignment="Top"/>
-            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="186,324,0,0" TextWrapping="Wrap" Text="Telefon:" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="33,461,0,0" TextWrapping="Wrap" Text="{Binding Greenname, Mode=TwoWay}" VerticalAlignment="Top" Width="128"/>
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="186,461,0,0" TextWrapping="Wrap" Text="{Binding Greennumber, Mode=TwoWay}" VerticalAlignment="Top" Width="133"/>
+            <Button x:Name="button" Content="Opret GreenKeeper" HorizontalAlignment="Left" Margin="33,518,0,0" VerticalAlignment="Top" Command="{Binding AddGreenkeeperCommand}" Width="286" Height="48" FontSize="20"/>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="33,436,0,0" TextWrapping="Wrap" Text="Navn:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="186,436,0,0" TextWrapping="Wrap" Text="Telefon:" VerticalAlignment="Top"/>
 
         </Grid>
 
