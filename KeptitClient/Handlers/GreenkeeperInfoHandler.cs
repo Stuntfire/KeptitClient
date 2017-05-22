@@ -25,6 +25,20 @@ namespace KeptitClient.Handlers
             {
                 Mwm.GreenkeeperInfoCollection.Add(item);
             }
-        }        
+        }
+
+        public async Task LoadUpdatedList()
+        {
+            Mwm.GreenkeeperInfoCollection.Clear();
+
+            //todo Lav den her liste til updatelist
+            foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
+            {
+                if (item.GreenkeeperName == Mwm.SelectedGreenKeeper.GreenkeeperName)
+                {
+                    Mwm.GreenkeeperInfoCollection.Add(item);
+                }
+            }
+        }
     }
 }

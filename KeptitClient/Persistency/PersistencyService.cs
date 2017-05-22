@@ -142,6 +142,7 @@ namespace KeptitClient.Persistency
                 return null;
             }
         }
+
         /// <summary>
         /// Summer alle Area-minutter fra DB-View SumAreaView
         /// </summary>
@@ -163,6 +164,7 @@ namespace KeptitClient.Persistency
                 return null;
             }
         }
+
         /// <summary>
         /// Summer alle minutter og samler dato'er fra GreenTask fra DB-View SumAreaView
         /// </summary>
@@ -237,7 +239,7 @@ namespace KeptitClient.Persistency
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/finishedtasks"));
                 try
-                { 
+                {
                     //todo det her vil ikke nødvendigvis fange en fejlkode fra serveren
                     var response = client.PostAsJsonAsync<FinishedTask>("api/finishedtasks", finishedtask).Result;
 
@@ -247,6 +249,7 @@ namespace KeptitClient.Persistency
                         cd.Content = "Din opgave er gemt";
                         cd.PrimaryButtonText = "OK";
                         cd.ShowAsync();
+
                     }
                 }
 
@@ -257,6 +260,28 @@ namespace KeptitClient.Persistency
                     Error.ShowAsync().AsTask();
                 }
 
+            }
+        }
+
+        /// <summary>
+        /// Sletter en valgt task
+        /// </summary>
+        /// <param name="TaskToDelete"></param>
+        public static void DeleteFinishedTask(int FinishedTaskIdToDelete)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+
+                try
+                {
+                    var responce = client.DeleteAsync("api/finishedtasks/" + FinishedTaskIdToDelete).Result;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
         }
 
