@@ -28,7 +28,7 @@
         <StackPanel  Margin="611,30,48,143">
             <TextBlock TextWrapping="Wrap" Text="Timer pr opgave,pr mand." HorizontalAlignment="Left" Width="552" Height="80" Margin="12,0,0,0" FontSize="35" VerticalAlignment="Top"/>
 
-            <ListView x:Name="listView" Height="647" VerticalAlignment="Top" ItemsSource="{Binding ListViewOpgaverPrDag.DataContext, Mode=TwoWay}" SelectedItem="{Binding GreenkeeperInfoCollection, Mode=TwoWay}" Grid.ColumnSpan="3" Margin="0,0,12.333,0" />
+            <ListView x:Name="listView" Height="647" VerticalAlignment="Top" ItemsSource="{Binding ListViewOpgaverPrDag.DataContext, Mode=TwoWay}" SelectedItem="{Binding GreenkeeperInfoCollection, Mode=TwoWay}" Grid.ColumnSpan="3" Margin="0,0,0,0" />
         </StackPanel>
     </Grid>
     <!--<GridView x:Name="GridViewMinutterne" Width="200" Height="200"></GridView>-->

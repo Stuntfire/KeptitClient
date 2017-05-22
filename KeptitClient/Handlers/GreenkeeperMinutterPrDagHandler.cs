@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using KeptitClient.ViewModels;
 using KeptitClient.Persistency;
 
@@ -54,11 +55,13 @@ namespace KeptitClient.Handlers
                 {
                     Navn = testen.Min(x => x.D.GreenkeeperName),
                     Dato = testen.Min(x => x.D.Date),
+                    Environment.NewLine,
                     Timer = testen.Min(x => x.Timer),
                     Minutter = testen.Min(x => x.Minutter),
-                    Environment.NewLine,
+                    
                     TimerO = testen.Min(x => x.TOver),
                     MinutterO = testen.Min(x => x.MOver)
+                    
 
                 };
 
