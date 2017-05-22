@@ -25,6 +25,7 @@ namespace KeptitClient.Handlers
                 Mwm.GreenkeeperMinutterPrDagCollection.Add(item);
             }
         }
+        
 
         // Beregner for hver greenkeeper der viser navn,timer og antal minutter. Flest timer øverst.
         public async Task GetGreenkeeperMinutterPrDagSortedList()
@@ -40,10 +41,26 @@ namespace KeptitClient.Handlers
                   {
                       D = dagene.Key,
                       TOver = dagene.Sum(x => x.GivTotalMinutOverarbejde() / 60),
-                      MOver = dagene.Sum(x => x.GivTotalMinutOverarbejde()) % 60,
+                      MOver = dagene.Sum(x => x.GivTotalMinutOverarbejde()) % 60,Environment.NewLine,
                       Timer = dagene.Sum(x => x.GivTotalMinutNormal() / 60),
                       Minutter = dagene.Sum(x => x.GivTotalMinutNormal() % 60)
                   };
+
+            var testnyliste =
+                from e1 in deldageop
+                group e1 by e1.D
+                into testen
+                select new
+                {
+                    Navn = testen.Min(x => x.D.GreenkeeperName),
+                    Dato = testen.Min(x => x.D.Date),
+                    Timer = testen.Min(x => x.Timer),
+                    Minutter = testen.Min(x => x.Minutter),
+                    Environment.NewLine,
+                    TimerO = testen.Min(x => x.TOver),
+                    MinutterO = testen.Min(x => x.MOver)
+
+                };
 
 
             var AlleOpgaverPaaGreenkeeper =
@@ -58,7 +75,7 @@ namespace KeptitClient.Handlers
                     Sammen_Lagt_Minutter = dagene2.Sum(x => x.Timer * 60 + x.Minutter) % 60
                 };
             Mwm.ListViewSamlet.DataContext = AlleOpgaverPaaGreenkeeper;
-            Mwm.ListViewOpgaverPrDag.DataContext = deldageop;
+            Mwm.ListViewOpgaverPrDag.DataContext = testnyliste;
 
         }
     }
