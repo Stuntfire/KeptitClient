@@ -39,10 +39,6 @@ namespace KeptitClient.Persistency
             }
         }
 
-        internal static void PostGreenkeeper(View.Greenkeeper temp_green)
-        {
-            throw new NotImplementedException();
-        }
 
         // Henter alle Area fra tabellen Areas
         // hvis async Task:
@@ -292,10 +288,10 @@ namespace KeptitClient.Persistency
             {
                 client.BaseAddress = new Uri(serverUrl);
                 client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/greenkeeper"));
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/greenkeepers"));
                 try
                 {
-                    var response = client.PostAsJsonAsync<Models.Greenkeeper>("api/greenkeeper", greenkeeper).Result;
+                    var response = client.PostAsJsonAsync<Models.Greenkeeper>("api/greenkeepers", greenkeeper).Result;
 
                     if (response.IsSuccessStatusCode)
                     {

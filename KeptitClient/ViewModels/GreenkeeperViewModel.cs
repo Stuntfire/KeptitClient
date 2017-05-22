@@ -313,6 +313,7 @@ private ObservableCollection<GreenkeeperInfo> _getGreenkeeperNavnSortedList;
 
             LoadAllCollections();
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
+            AddGreenkeeperCommand = new RelayCommand(GreenkeeperHandler.PostGreenkeeper, null);
 
             #region AllListviews
             ListViewSamlet = new ListView();
