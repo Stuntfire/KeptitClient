@@ -18,7 +18,7 @@
         <StackPanel Margin="20,20,829,143">
             <Grid Height="562" Margin="0,0,0.333,0">
                 <TextBlock TextWrapping="Wrap" Text="Timer ialt." HorizontalAlignment="Left" Width="552" Height="80" Margin="12,0,0,0" FontSize="35" VerticalAlignment="Top"/>
-                <ListView Width="1417" Margin="0,150,-827,-314" HorizontalAlignment="Left" ItemsSource="{Binding ListViewSamlet.DataContext, Mode=TwoWay}" />
+                <ListView Width="591" Margin="0,150,0,-314" HorizontalAlignment="Left" ItemsSource="{Binding ListViewSamlet.DataContext, Mode=TwoWay}" />
                 <DatePicker HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Width="287" DayVisible="False"/>
                 <TextBlock HorizontalAlignment="Left" Margin="10,53,0,0" TextWrapping="Wrap" Text="Vælg måned." VerticalAlignment="Top" Height="33" Width="231" FontSize="20"/>
 
@@ -26,7 +26,7 @@
         </StackPanel>
 
         <StackPanel  Margin="611,30,48,143">
-            <TextBlock TextWrapping="Wrap" Text="Timer pr opgave,pr mand." HorizontalAlignment="Left" Width="552" Height="80" Margin="12,0,0,0" FontSize="35" VerticalAlignment="Top"/>
+            <TextBlock TextWrapping="Wrap" Text="Timer pr dag, pr mand." HorizontalAlignment="Left" Width="552" Height="80" Margin="12,0,0,0" FontSize="35" VerticalAlignment="Top"/>
 
             <ListView x:Name="listView" Height="647" VerticalAlignment="Top" ItemsSource="{Binding ListViewOpgaverPrDag.DataContext, Mode=TwoWay}" SelectedItem="{Binding GreenkeeperInfoCollection, Mode=TwoWay}" Grid.ColumnSpan="3" Margin="0,0,0,0" />
         </StackPanel>
