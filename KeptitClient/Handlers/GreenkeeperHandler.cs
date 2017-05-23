@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using KeptitClient.Common;
+using KeptitClient.Models;
 
 namespace KeptitClient.Handlers
 {
@@ -24,7 +25,6 @@ namespace KeptitClient.Handlers
         //Gets all Greenkeepers from Database via PersistencyService
         public async Task GetGreenkeeperCollection()
         {
-            //Brug foreach hvis LoadGreenkeepersAsync() i PersistencyService kodes som async:
             foreach (var item in await PersistencyService.LoadGreenkeeperAsync())
             {
                 Mwm.GreenKeeperCollection.Add(item);
@@ -48,19 +48,7 @@ namespace KeptitClient.Handlers
             {
                 MessageDialogHelper.Show("Alle felterne skal udfyldes", "Fejl: ");
             }
-        }
 
-        public void DeleteGreenkeeper()
-        {
-            try
-            {
-                PersistencyService.DeleteGreenkeeper(Mwm.DeleteGreenkeeper.GreenkeeperID);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
         }
-
     }
 }

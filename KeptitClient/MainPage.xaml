@@ -34,6 +34,9 @@
                             <Button x:Name="AdminAnsatteButton"    Margin="0,0,0,0"  Click="AdminAnsatteButton_Click" Content="Ansatte" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
+                            <Button x:Name="AdminwhetherButton"    Margin="0,0,0,0"  Click="AdminwhetherButton_Click" Content="Vejret" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
                             <Button x:Name="AdminlogudButton"    Margin="0,0,0,0"  Click="AdminlogudButton_Click" Content="Log ud" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
                         </StackPanel>
                     </StackPanel>
@@ -73,5 +76,6 @@
 
 
         </SplitView>
+        <TextBlock x:Name="tb_Temp" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
     </Grid>
 </Page>

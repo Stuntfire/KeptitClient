@@ -34,6 +34,7 @@ namespace KeptitClient
         private void GreenKeeperButton_Click(object sender, RoutedEventArgs e)
         {
             Mainframe.Navigate(typeof(Greenkeeper));
+            
         }
 
         private void AdminSeTimerButton_Click(object sender, RoutedEventArgs e)

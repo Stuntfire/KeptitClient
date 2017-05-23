@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using KeptitClient.ViewModels;
 using KeptitClient.Persistency;
 
@@ -26,6 +27,7 @@ namespace KeptitClient.Handlers
             }
         }
 
+
         // Beregner for hver greenkeeper der viser navn,timer og antal minutter. Flest timer øverst.
         public async Task GetGreenkeeperMinutterPrDagSortedList()
         {
@@ -41,10 +43,33 @@ namespace KeptitClient.Handlers
                       D = dagene.Key,
                       TOver = dagene.Sum(x => x.GivTotalMinutOverarbejde() / 60),
                       MOver = dagene.Sum(x => x.GivTotalMinutOverarbejde()) % 60,
+                      Environment.NewLine,
                       Timer = dagene.Sum(x => x.GivTotalMinutNormal() / 60),
                       Minutter = dagene.Sum(x => x.GivTotalMinutNormal() % 60)
                   };
 
+            var testnyliste =
+                from e1 in deldageop
+                group e1 by e1.D
+                into testen
+                select new
+                {
+                    Navn = testen.Min(x => x.D.GreenkeeperName),
+                    Dag = testen.Min(x => x.D.Date.Day),
+                    Måned = testen.Min(x => x.D.Date.Month),
+                    År = testen.Min(x => x.D.Date.Year),
+                    n = Environment.NewLine,
+                    Timer = testen.Min(x => x.Timer),
+                    Minutter = testen.Min(x => x.Minutter),
+                    TimerO = testen.Min(x => x.TOver),
+                    MinutterO = testen.Min(x => x.MOver),
+                    n2 = Environment.NewLine,
+                };
+
+            //foreach (var t in testnyliste)
+            //{
+            //    t.Navn + t.Dag + t.Måned + t.År
+            //} 
 
             var AlleOpgaverPaaGreenkeeper =
                 from t2 in deldageop
@@ -58,7 +83,7 @@ namespace KeptitClient.Handlers
                     Sammen_Lagt_Minutter = dagene2.Sum(x => x.Timer * 60 + x.Minutter) % 60
                 };
             Mwm.ListViewSamlet.DataContext = AlleOpgaverPaaGreenkeeper;
-            Mwm.ListViewOpgaverPrDag.DataContext = deldageop;
+            Mwm.ListViewOpgaverPrDag.DataContext = testnyliste;
 
         }
     }
