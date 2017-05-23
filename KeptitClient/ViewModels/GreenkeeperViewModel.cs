@@ -48,12 +48,22 @@ namespace KeptitClient.ViewModels
             set { _addGreenkeeperCommand = value; }
         }
 
+        private ICommand _deleteGreenkeeperCommand;
+
+        public ICommand DeleteGreenkeeperCommand
+        {
+            get { return _deleteGreenkeeperCommand; }
+            set { _deleteGreenkeeperCommand = value; }
+        }
+
         private ICommand _deleteFinishedTask;
         public ICommand DeleteFinishedTask
         {
             get { return _deleteFinishedTask; }
             set { _deleteFinishedTask = value; }
         }
+
+
 
         #endregion
 
@@ -201,6 +211,14 @@ namespace KeptitClient.ViewModels
                 OnPropertyChanged(nameof(SelectedGreenTask));
 
             }
+        }
+
+        private Greenkeeper _deletegreenkeeper;
+
+        public Greenkeeper DeleteGreenkeeper
+        {
+            get { return _deletegreenkeeper; }
+            set { _deletegreenkeeper = value; }
         }
 
         private GreenkeeperInfo _greenkeeperInfoToDelete;

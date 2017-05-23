@@ -310,5 +310,24 @@ namespace KeptitClient.Persistency
 
             }
         }
+
+        //Delete Greenkeeper
+        public static void DeleteGreenkeeper(int GreenkeeperIdToDelete)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+
+                try
+                {
+                    var responce = client.DeleteAsync("api/greenkeepers/" + GreenkeeperIdToDelete).Result;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
     }
 }
