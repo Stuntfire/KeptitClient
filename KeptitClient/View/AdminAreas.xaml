@@ -13,7 +13,7 @@
         <ViewModels:GreenkeeperViewModel/>
     </Page.DataContext>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView Height="570" Width="357" Margin="35,115,0,0" HorizontalAlignment="Left" ItemsSource="{Binding ListViewOmraader.DataContext, Mode=TwoWay}" VerticalAlignment="Top" />
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="35,40,0,0" TextWrapping="Wrap" Text="Timer per område" VerticalAlignment="Top" FontSize="35"/>
+        <ListView Height="570" Width="494" Margin="40,80,0,0" HorizontalAlignment="Left" ItemsSource="{Binding ListViewOmraader.DataContext, Mode=TwoWay}" VerticalAlignment="Top" />
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="40,20,0,0" TextWrapping="Wrap" Text="Timer per område" VerticalAlignment="Top" FontSize="35"/>
     </Grid>
 </Page>

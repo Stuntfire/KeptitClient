@@ -153,6 +153,7 @@
     <None Include="KeptitClient_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\ledreborg_logo.png" />
     <Content Include="Icons\Logo.png" />
     <Content Include="Images\ledreborg_logo.png" />
     <Content Include="Properties\Default.rd.xml" />

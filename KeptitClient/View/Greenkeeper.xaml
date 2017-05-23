@@ -26,7 +26,7 @@
                 <RowDefinition Height="673*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="textBlockOverskrift" HorizontalAlignment="Left" Margin="41,17,-64,0" Grid.Row="1" TextWrapping="Wrap" Text="Greenkeeper indtast udført opgave:" VerticalAlignment="Top" FontSize="36" Height="81" Width="1143" FontFamily="Segoe UI Light" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="textBlockOverskrift" HorizontalAlignment="Left" Margin="40,20,-64,0" Grid.Row="1" TextWrapping="Wrap" Text="Greenkeeper indtast udført opgave:" VerticalAlignment="Top" FontSize="36" Height="81" Width="1143" FontFamily="Segoe UI Light" Grid.ColumnSpan="2"/>
 
             <TextBlock x:Name="textBlockNavn" HorizontalAlignment="Left" Margin="42,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Navn:" FontSize="18" VerticalAlignment="Top" Width="171" Grid.ColumnSpan="2"/>
             <ComboBox x:Name="comboBoxNavn" HorizontalAlignment="Left" Margin="40,136,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="32" Grid.ColumnSpan="2" ItemsSource="{Binding GreenKeeperCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedGreenKeeper, Mode=TwoWay}" />
