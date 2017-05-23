@@ -48,23 +48,27 @@ namespace KeptitClient.Handlers
                       Minutter = dagene.Sum(x => x.GivTotalMinutNormal() % 60)
                   };
 
-            var testnyliste =
+            var testnyliste1 =
                 from e1 in deldageop
-                group e1 by e1.D
-                into testen
-                select new
-                {
-                    Navn = testen.Min(x => x.D.GreenkeeperName),
-                    Dag = testen.Min(x => x.D.Date.Day),
-                    Måned = testen.Min(x => x.D.Date.Month),
-                    År = testen.Min(x => x.D.Date.Year),
-                    n = Environment.NewLine,
-                    Timer = testen.Min(x => x.Timer),
-                    Minutter = testen.Min(x => x.Minutter),
-                    TimerO = testen.Min(x => x.TOver),
-                    MinutterO = testen.Min(x => x.MOver),
-                    n2 = Environment.NewLine,
-                };
+                select new Models.TimerPrDagPrMand() { GreenkeeperName = e1.D.GreenkeeperName, Date = e1.D.Date, Timer = e1.Timer, Minutter = e1.Minutter,TimerOver = e1.TOver,MinutterOver = e1.MOver};
+
+            //var testnyliste =
+            //    from e1 in deldageop
+            //    group e1 by e1.D
+            //    into testen
+            //    select new
+            //    {
+            //        Navn = testen.Min(x => x.D.GreenkeeperName),
+            //        Dag = testen.Min(x => x.D.Date.Day),
+            //        Måned = testen.Min(x => x.D.Date.Month),
+            //        År = testen.Min(x => x.D.Date.Year),
+            //        n = Environment.NewLine,
+            //        Timer = testen.Min(x => x.Timer),
+            //        Minutter = testen.Min(x => x.Minutter),
+            //        TimerO = testen.Min(x => x.TOver),
+            //        MinutterO = testen.Min(x => x.MOver),
+            //        n2 = Environment.NewLine,
+            //    };
 
             //foreach (var t in testnyliste)
             //{
@@ -79,11 +83,11 @@ namespace KeptitClient.Handlers
                 select new
                 {
                     D = dagene2.Key,
-                    Sammen_Lagt_Timer = dagene2.Sum(x => x.Timer * 60 + x.Minutter) / 60,
-                    Sammen_Lagt_Minutter = dagene2.Sum(x => x.Timer * 60 + x.Minutter) % 60
+                    Timer = dagene2.Sum(x => x.Timer * 60 + x.Minutter) / 60,
+                    Minutter = dagene2.Sum(x => x.Timer * 60 + x.Minutter) % 60
                 };
             Mwm.ListViewSamlet.DataContext = AlleOpgaverPaaGreenkeeper;
-            Mwm.ListViewOpgaverPrDag.DataContext = testnyliste;
+            Mwm.ListViewOpgaverPrDag.DataContext = testnyliste1;
 
         }
     }
