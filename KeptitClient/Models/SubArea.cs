@@ -8,22 +8,22 @@ namespace KeptitClient.Models
 {
     public class SubArea
     {
-        #region Properties
-        public int SubAreaID { get; set; }
-        public string SubAreaTitle { get; set; }
+        //#region Properties
+        //public int SubAreaID { get; set; }
+        //public string SubAreaTitle { get; set; }
         
-        #endregion
+        //#endregion
 
-        public SubArea(int inSubaAreaId, string inSubAreaTitle)
-        {
-            this.SubAreaID = inSubaAreaId;
-            this.SubAreaTitle = inSubAreaTitle;
-        }
+        //public SubArea(int inSubaAreaId, string inSubAreaTitle)
+        //{
+        //    this.SubAreaID = inSubaAreaId;
+        //    this.SubAreaTitle = inSubAreaTitle;
+        //}
 
-        public override string ToString()
-        {
-            return string.Format("{0}", SubAreaTitle);
-        }
+        //public override string ToString()
+        //{
+        //    return string.Format("{0}", SubAreaTitle);
+        //}
     }
 }
 
