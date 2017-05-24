@@ -34,8 +34,8 @@
             <TextBlock x:Name="textBlockArea" FontSize="18" HorizontalAlignment="Left" Margin="41,202,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Område:" VerticalAlignment="Top" Height="30" Width="311" Grid.ColumnSpan="2"/>
             <ComboBox x:Name="comboBoxArea" HorizontalAlignment="Left" Margin="40,230,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="34" Grid.ColumnSpan="2" ItemsSource="{Binding AreaCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedArea, Mode=TwoWay}"/>
 
-            <TextBlock x:Name="textBlockSubArea" HorizontalAlignment="Left" Margin="41,303,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Under område:" VerticalAlignment="Top" FontSize="18" Height="27" Width="171" Grid.ColumnSpan="2"/>
-            <ComboBox x:Name="comboBoxSubArea" HorizontalAlignment="Left" Margin="40,330,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="32" Grid.ColumnSpan="2" ItemsSource="{Binding SubAreaCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedSubArea, Mode=TwoWay}"/>
+            <!--<TextBlock x:Name="textBlockSubArea" HorizontalAlignment="Left" Margin="41,303,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Under område:" VerticalAlignment="Top" FontSize="18" Height="27" Width="171" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="comboBoxSubArea" HorizontalAlignment="Left" Margin="40,330,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="32" Grid.ColumnSpan="2" ItemsSource="{Binding SubAreaCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedSubArea, Mode=TwoWay}"/>-->
 
             <TextBlock x:Name="textBlockTask" HorizontalAlignment="Left" Margin="41,411,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Opgave:" VerticalAlignment="Top" Height="26" Width="277" FontSize="18" Grid.ColumnSpan="2"/>
             <ComboBox x:Name="comboBoxTask" HorizontalAlignment="Left" Margin="40,437,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="32" Grid.ColumnSpan="2" ItemsSource="{Binding GreenTaskCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedGreenTask, Mode=TwoWay}"/>

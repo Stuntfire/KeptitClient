@@ -29,11 +29,10 @@ namespace KeptitClient.Models
 
         #endregion
 
-        public FinishedTask(int AreaID, int GreenTaskId, int SubAreaID, int GreenkeeperID, DateTime date, int hours, int minutes, string note)
+        public FinishedTask(int AreaID, int GreenTaskId, int GreenkeeperID, DateTime date, int hours, int minutes, string note)
         {
             this.AreaID = AreaID;
             this.GreenTaskID = GreenTaskId;
-            this.SubAreaID = SubAreaID;
             this.GreenkeeperID = GreenkeeperID;
             this.Date = date;
             this.Minutes = minutes;
@@ -43,7 +42,7 @@ namespace KeptitClient.Models
 
         public override string ToString()
         {
-            return string.Format("Nr {0}. {1}. {2}. {3}. {4}. {5}. {6}. {7}. {8}", FinishedTasksID, AreaID, GreenTaskID, SubAreaID, GreenkeeperID, Date, Hours, Minutes, Notes);
+            return string.Format("Nr {0}. {1}. {2}. {3}. {4}. {5}. {6}. {7}.", FinishedTasksID, AreaID, GreenTaskID, GreenkeeperID, Date, Hours, Minutes, Notes);
         }
     }
 }

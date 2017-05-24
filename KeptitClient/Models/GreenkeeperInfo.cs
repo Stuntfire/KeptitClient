@@ -18,7 +18,7 @@ namespace KeptitClient.Models
 
         public string AreaTitle { get; set; }
 
-        public string SubAreaTitle { get; set; }
+        //public string SubAreaTitle { get; set; }
 
         public string GreenTaskTitle { get; set; }
 
@@ -88,7 +88,7 @@ namespace KeptitClient.Models
 
         public override string ToString()
         {
-            return string.Format("{0}{1} {2} {3} {4}{5}Timer: {6} Minutter: {7}. {8} {9:dd-MM-yy}. {10} {11} {12}",GreenkeeperName,Environment.NewLine,AreaTitle, SubAreaTitle, GreenTaskTitle, Environment.NewLine,Hours, Minutes, Environment.NewLine, Date, Environment.NewLine, Notes, Environment.NewLine);
+            return string.Format("{0}{1} {2} {3} {4}{5}Timer: {6} Minutter: {7}. {8:dd-MM-yy} {9}. {10} {11} ", GreenkeeperName,Environment.NewLine,AreaTitle, GreenTaskTitle, Environment.NewLine,Hours, Minutes, Environment.NewLine, Date, Environment.NewLine, Notes, Environment.NewLine);
         }
     }
 }
