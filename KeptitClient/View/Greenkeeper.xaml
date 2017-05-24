@@ -15,7 +15,7 @@
     </Page.DataContext>
     <SplitView>
 
-        <Grid Background="White" VerticalAlignment="Top">
+        <Grid Background="White" VerticalAlignment="Top" Margin="0,24,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="19*"/>
                 <ColumnDefinition Width="186*"/>
@@ -26,7 +26,7 @@
                 <RowDefinition Height="673*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="textBlockOverskrift" HorizontalAlignment="Left" Margin="41,17,-64,0" Grid.Row="1" TextWrapping="Wrap" Text="Greenkeeper indtast udført opgave:" VerticalAlignment="Top" FontSize="36" Height="81" Width="1143" FontFamily="Segoe UI Light" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="textBlockOverskrift" HorizontalAlignment="Left" Margin="41,17,-64,0" Grid.Row="1" TextWrapping="Wrap" Text="Greenkeeper indtast udført opgave:" VerticalAlignment="Top" FontSize="36" FontFamily="Segoe UI Light" Grid.ColumnSpan="2"/>
 
             <TextBlock x:Name="textBlockNavn" HorizontalAlignment="Left" Margin="42,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Navn:" FontSize="18" VerticalAlignment="Top" Width="171" Grid.ColumnSpan="2"/>
             <ComboBox x:Name="comboBoxNavn" HorizontalAlignment="Left" Margin="40,136,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="32" Grid.ColumnSpan="2" ItemsSource="{Binding GreenKeeperCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedGreenKeeper, Mode=TwoWay}" />
@@ -41,16 +41,14 @@
             <ComboBox x:Name="comboBoxTask" HorizontalAlignment="Left" Margin="40,437,4,0" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="32" Grid.ColumnSpan="2" ItemsSource="{Binding GreenTaskCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedGreenTask, Mode=TwoWay}"/>
 
             <TextBlock x:Name="textBlockTimerMinutter" HorizontalAlignment="Left" Margin="41,529,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Indtast antal timer og minutter brugt:"  FontSize="18" VerticalAlignment="Top" Height="29" Width="351" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="timer" HorizontalAlignment="Left" Margin="41,563,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding TaskHour, Mode=TwoWay}" VerticalAlignment="Top" Height="47" Width="95" Grid.ColumnSpan="2" PlaceholderText="Timer"/>
-            <TextBox x:Name="minutter" Grid.Column="1" HorizontalAlignment="Left" Margin="72,563,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding TaskMinutes, Mode=TwoWay}" VerticalAlignment="Top" Height="47" Width="99" PlaceholderText="Minutter"/>
+            <TextBox x:Name="timer" HorizontalAlignment="Left" Margin="41,563,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding TaskHour, Mode=TwoWay}" VerticalAlignment="Top" Height="32" Width="95" Grid.ColumnSpan="2" PlaceholderText="Timer" MaxLength="2"/>
+            <TextBox x:Name="minutter" Grid.Column="1" HorizontalAlignment="Left" Margin="72,563,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding TaskMinutes, Mode=TwoWay}" VerticalAlignment="Top" Height="32" Width="99" PlaceholderText="Minutter" MaxLength="2"/>
 
             <TextBlock x:Name="textBlockDato" Grid.Column="1" HorizontalAlignment="Left" Margin="325,107,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Opgave udført den:" FontSize="18" VerticalAlignment="Top" Width="160"/>
-            <DatePicker x:Name="DatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="325,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="334" DataContext="{Binding SelectedDate, Mode=TwoWay}"/>
+            <DatePicker x:Name="DatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="325,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="334" Date="{Binding SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock x:Name="textBlockNotes" Grid.Column="1" HorizontalAlignment="Left" Margin="325,195,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Tilføj evt. en note til opgaven:" VerticalAlignment="Top"  FontSize="18" Height="37" Width="334"/>
             <TextBox x:Name="textBoxNotes" Grid.Column="1" HorizontalAlignment="Left" Margin="325,229,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Height="240" Width="334" Text="{Binding TaskNotes, Mode=TwoWay}" BorderBrush="#66000000"/>
-
-            <Button x:Name="buttonGem" Content="Gem udførte opgave" Grid.Column="1" HorizontalAlignment="Left" Margin="401,563,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Height="47" Width="258" Background="#cccccc" Command="{Binding AddTaskCommand}"/>
 
             <TextBlock x:Name="textBlockTidBrugt" Grid.Column="1" HorizontalAlignment="Left" Margin="715,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Dato og tid brugt på udførte opgaver" VerticalAlignment="Top" Height="33" Width="338" FontSize="18"/>
 
@@ -59,7 +57,8 @@
 
             <ListView x:Name="listView" Grid.Column="1" HorizontalAlignment="Left" Height="474" Margin="714.667,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="374" ItemsSource="{Binding GreenkeeperInfoCollection, Mode=TwoWay}" SelectedItem="{Binding GreenkeeperInfoToDelete, Mode=TwoWay}">
             </ListView>
-            <Button x:Name="Btn_delete" Content="Slet valgt opgave" Grid.Column="1" HorizontalAlignment="Left" Margin="401,499,0,0" Grid.Row="1" VerticalAlignment="Top" Width="258" Height="47" Command="{Binding DeleteFinishedTask}"/>
+            <Button x:Name="Btn_delete" Content="Slet valgt opgave" Grid.Column="1" HorizontalAlignment="Left" Margin="484,555,0,0" Grid.Row="1" VerticalAlignment="Top" Width="175" Height="40" Command="{Binding DeleteFinishedTask}" FontSize="18" Background="#FFC81616" Foreground="White"/>
+            <Button x:Name="buttonGem" Content="Gem udførte opgave" Grid.Column="1" HorizontalAlignment="Left" Margin="401,490,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Height="47" Width="258" Command="{Binding AddTaskCommand}"/>
         </Grid>
     </SplitView>
 </Page>

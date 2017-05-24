@@ -164,7 +164,9 @@ namespace KeptitClient.ViewModels
         public DateTimeOffset SelectedDate
         {
             get { return _selectedDate; }
-            set { _selectedDate = value; }
+            set { _selectedDate = value;
+                OnPropertyChanged(nameof(SelectedDate));
+            }
         }
 
         private Area _selectedArea;
@@ -345,9 +347,9 @@ namespace KeptitClient.ViewModels
             GetGreenkeeperNavnSortedList = new ObservableCollection<GreenkeeperInfo>();
             AlleTimerOgMinutterCollection = new ObservableCollection<GreenkeeperInfo>();
             SelectedGreenKeeper = new Greenkeeper(0, "");
-
-            DateTime dt = DateTime.Now;
-            _selectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+            
+            DateTime dt = DateTime.Today;
+            SelectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
 
             LoadAllCollections();
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
