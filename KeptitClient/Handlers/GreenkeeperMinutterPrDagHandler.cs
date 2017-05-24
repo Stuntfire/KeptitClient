@@ -84,7 +84,10 @@ namespace KeptitClient.Handlers
                 {
                     D = dagene2.Key,
                     Timer = dagene2.Sum(x => x.Timer * 60 + x.Minutter) / 60,
-                    Minutter = dagene2.Sum(x => x.Timer * 60 + x.Minutter) % 60
+                    Minutter = dagene2.Sum(x => x.Timer * 60 + x.Minutter) % 60,
+                    n = Environment.NewLine,
+                    TOver2 = dagene2.Sum(x => x.TOver),
+                    MOver2 = dagene2.Sum(x => x.MOver)
                 };
             Mwm.ListViewSamlet.DataContext = AlleOpgaverPaaGreenkeeper;
             Mwm.ListViewOpgaverPrDag.DataContext = testnyliste1;
