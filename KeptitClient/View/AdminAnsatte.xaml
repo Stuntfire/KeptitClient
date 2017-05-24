@@ -22,15 +22,15 @@
             <StackPanel Margin="20,20,20,20">
                 <Grid>
                     <TextBlock TextWrapping="Wrap" Text="Ansatte" HorizontalAlignment="Left" Width="552" Height="60" Margin="12,0,0,0" FontSize="35" VerticalAlignment="Top"/>
-                    <ListView Width="354" Height="350" Margin="0,65,0,0" HorizontalAlignment="Left" ItemsSource="{Binding GreenKeeperCollection, Mode=TwoWay}" />
+                    <ListView Width="354" Height="350" Margin="0,65,0,0" HorizontalAlignment="Left" ItemsSource="{Binding GreenKeeperCollection, Mode=TwoWay}" SelectedItem="{Binding DeleteGreenkeeper}"  />
                 </Grid>
             </StackPanel>
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="33,461,0,0" TextWrapping="Wrap" Text="{Binding Greenname, Mode=TwoWay}" VerticalAlignment="Top" Width="128"/>
             <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="186,461,0,0" TextWrapping="Wrap" Text="{Binding Greennumber, Mode=TwoWay}" VerticalAlignment="Top" Width="133"/>
-            <Button x:Name="button" Content="Opret GreenKeeper" HorizontalAlignment="Left" Margin="33,518,0,0" VerticalAlignment="Top" Command="{Binding AddGreenkeeperCommand}" Width="286" Height="48" FontSize="20"/>
+            <Button x:Name="button" Content="Opret GreenKeeper" HorizontalAlignment="Left" Margin="33,585,0,0" VerticalAlignment="Top" Command="{Binding AddGreenkeeperCommand}" Width="286" Height="48" FontSize="20"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="33,436,0,0" TextWrapping="Wrap" Text="Navn:" VerticalAlignment="Top"/>
             <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="186,436,0,0" TextWrapping="Wrap" Text="Telefon:" VerticalAlignment="Top"/>
-           <Button x:Name="button1" Content="Slet" HorizontalAlignment="Left" Margin="570,262,0,0" VerticalAlignment="Top" Width="61" Height="32" Command="{Binding DeleteGreenkeeper}"/>
+            <Button x:Name="button1" Content="Slet GreenKeeper" HorizontalAlignment="Left" Margin="33,516,0,0" VerticalAlignment="Top" Width="286" Height="47" FontSize="20" Command="{Binding DeleteGreenkeeperCommand, Mode=TwoWay}"/>
 
         </Grid>
 

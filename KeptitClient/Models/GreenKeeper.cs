@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KeptitClient.Common;
 
 namespace KeptitClient.Models
 {
@@ -23,6 +24,11 @@ namespace KeptitClient.Models
         public override string ToString()
         {
             return string.Format("Navn: {0} tfl: {1}", GreenkeeperName, GreenkeeperID);
+        }
+
+        public static implicit operator Greenkeeper(RelayCommand v)
+        {
+            throw new NotImplementedException();
         }
     }
 }
