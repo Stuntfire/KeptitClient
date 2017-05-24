@@ -98,6 +98,7 @@
     <Compile Include="Models\SumAreaView.cs" />
     <Compile Include="Models\SumTaskDateView.cs" />
     <Compile Include="Models\SumTaskView.cs" />
+    <Compile Include="Models\TimerPrDagPrMand.cs" />
     <Compile Include="Models\Weather.cs" />
     <Compile Include="View\Adminansatte.xaml.cs">
       <DependentUpon>Adminansatte.xaml</DependentUpon>
@@ -152,6 +153,7 @@
     <None Include="KeptitClient_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\ledreborg_logo.png" />
     <Content Include="Icons\Logo.png" />
     <Content Include="Images\ledreborg_logo.png" />
     <Content Include="Properties\Default.rd.xml" />

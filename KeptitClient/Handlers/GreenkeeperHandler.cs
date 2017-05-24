@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using KeptitClient.Common;
-using KeptitClient.Models;
+using Windows.UI.Xaml.Controls;
 
 namespace KeptitClient.Handlers
 {
@@ -48,7 +48,29 @@ namespace KeptitClient.Handlers
             {
                 MessageDialogHelper.Show("Alle felterne skal udfyldes", "Fejl: ");
             }
+        }
 
+        public async void DeleteGreenkeeper()
+        {
+            try
+            {
+                PersistencyService.DeleteGreenkeeper(Mwm.DeleteGreenkeeper.GreenkeeperID);
+
+                ContentDialog cd = new ContentDialog();
+                cd.Content = "Du har nu fjernet en greenkeeper";
+                cd.PrimaryButtonText = "OK";
+                cd.ShowAsync();
+
+            }
+            catch (Exception)
+            {
+                ContentDialog cd = new ContentDialog();
+                cd.Content = "Vælg venligst en greenkeeper";
+                cd.PrimaryButtonText = "OK";
+                cd.ShowAsync();
+            }
         }
     }
+
+
 }

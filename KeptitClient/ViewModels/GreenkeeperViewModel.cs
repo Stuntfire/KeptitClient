@@ -355,6 +355,7 @@ namespace KeptitClient.ViewModels
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
             AddGreenkeeperCommand = new RelayCommand(GreenkeeperHandler.PostGreenkeeper, null);
             DeleteFinishedTask = new RelayCommand(FinishedTaskHandler.DeleteFinishedTask, null);
+            DeleteGreenkeeperCommand = new RelayCommand(GreenkeeperHandler.DeleteGreenkeeper, null);
 
             #region AllListviews
             ListViewSamlet = new ListView();
