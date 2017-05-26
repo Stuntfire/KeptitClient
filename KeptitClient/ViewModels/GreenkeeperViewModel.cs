@@ -337,11 +337,54 @@ namespace KeptitClient.ViewModels
             get { return listViewOpgaverPrDag; }
             set { listViewOpgaverPrDag = value; }
         }
+        #endregion
+
+        #region Værdier til Antal timer og -minutter ComboBox's
+        /// <summary>
+        /// HourList og SetHourIndex() samt MinuteList og SetMinuteList
+        /// sætter de værdier der bliver vis i GUI for hhv.
+        /// ComboBox Antal timer og ComboBox Antal minutter.
+        /// </summary>
+        private List<int> _hourList;
+
+        public List<int> HourList {
+            get { return _hourList; }
+            set { _hourList = value; }
+        }
+
+        public void SetHourIndex()
+        {
+            HourList = new List<int>();
+
+            for (int i = 0; i < 24; i++)
+            {
+                HourList.Add(i);
+            }
+        }
+
+        private List<int> _minuteList;
+
+        public List<int> MinuteList {
+            get { return _minuteList; }
+            set { _minuteList = value; }
+        }
+
+        public void SetMinuteIndex()
+        {
+            MinuteList = new List<int>();
+            MinuteList.Add(0);
+            MinuteList.Add(15);
+            MinuteList.Add(30);
+            MinuteList.Add(45);
+        }
 
         #endregion
 
+
         public GreenkeeperViewModel()
         {
+            SetHourIndex();
+            SetMinuteIndex();
             GreenkeeperInfoCollection = new ObservableCollection<GreenkeeperInfo>();
             GreenkeeperMinutterPrDagCollection = new ObservableCollection<GreenkeeperMinutterPrDag>();
             GetGreenkeeperNavnSortedList = new ObservableCollection<GreenkeeperInfo>();
