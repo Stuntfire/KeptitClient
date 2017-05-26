@@ -88,7 +88,7 @@ namespace KeptitClient.Models
 
         public override string ToString()
         {
-            return string.Format("{0}{1} {2} {3} {4}{5}Timer: {6} Minutter: {7}. {8:dd-MM-yy} {9}. {10} {11} ", GreenkeeperName,Environment.NewLine,AreaTitle, GreenTaskTitle, Environment.NewLine,Hours, Minutes, Environment.NewLine, Date, Environment.NewLine, Notes, Environment.NewLine);
+            return $"{GreenkeeperName}\n{AreaTitle}, {GreenTaskTitle}\n{Hours} timer og {Minutes} minutter\n{Date:dd-MM-yy}\nNote: {Notes}\n";
         }
     }
 }

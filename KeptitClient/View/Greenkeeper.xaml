@@ -201,7 +201,7 @@
     </Page.DataContext>
     <SplitView>
 
-        <Grid Background="White" VerticalAlignment="Top" Margin="0" HorizontalAlignment="Left" Height="843" Width="1384">
+        <Grid Background="White" VerticalAlignment="Top" Margin="0" HorizontalAlignment="Left" Width="1280">
             <!--<Grid.ColumnDefinitions>
                 <ColumnDefinition Width="400*"/>
                 <ColumnDefinition Width="1511*"/>
