@@ -90,5 +90,9 @@ namespace KeptitClient.Models
         {
             return $"{GreenkeeperName}\n{AreaTitle}, {GreenTaskTitle}\n{Hours} timer og {Minutes} minutter\n{Date:dd-MM-yy}\nNote: {Notes}\n";
         }
+
+        //public string Summary {
+        //    get { return $"{GreenkeeperName}\n{AreaTitle}, {GreenTaskTitle}\n{Hours} timer og {Minutes} minutter\n{Date:dd-MM-yy}\nNote: {Notes}\n"; }
+        //}
     }
 }

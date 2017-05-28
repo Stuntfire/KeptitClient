@@ -240,7 +240,47 @@
             </ComboBox>-->
             <ComboBox x:Name="comboBoxHours" Header="Antal Timer" HorizontalAlignment="Left" Margin="50,360,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" ItemsSource="{Binding HourList, Mode=TwoWay}" SelectedItem="{Binding TaskHour, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Height="68"/>
             <ComboBox x:Name="comboBoxMinute" Header="Antal minutter" HorizontalAlignment="Left" Margin="250,360,0,0" VerticalAlignment="Top" Width="130" ItemsSource="{Binding MinuteList, Mode=TwoWay}" SelectedItem="{Binding TaskMinutes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Height="68" />
-            <ListView x:Name="listView" Header="Dato og tid brugt på udførte opgaver" HorizontalAlignment="Left" Height="550" Margin="460,90,0,0" VerticalAlignment="Top" Width="374" ItemsSource="{Binding GreenkeeperInfoCollection, Mode=TwoWay}" SelectedItem="{Binding GreenkeeperInfoToDelete, Mode=TwoWay}" FontSize="18"/>
+
+            <ListView x:Name="listView" Header="Dato og tid brugt på udførte opgaver" HorizontalAlignment="Left" Height="550" Margin="460,90,0,0" VerticalAlignment="Top" Width="507" ItemsSource="{Binding GreenkeeperInfoCollection, Mode=TwoWay}" SelectedItem="{Binding GreenkeeperInfoToDelete, Mode=TwoWay}" FontSize="18">
+                
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid BorderThickness="0,0,0,2" BorderBrush="#FF15803E"  ScrollViewer.HorizontalScrollBarVisibility="Visible" Padding="0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="120"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock FontSize="20" Text="{Binding GreenkeeperName}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="0" Foreground="Green"/>
+
+                            <TextBlock FontSize="16" Text="{Binding AreaTitle}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" />
+
+                            <TextBlock FontSize="16" Text="{Binding Hours}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="2" Padding="10,0,0,0"/>
+
+                            <TextBlock FontSize="16" Text="{Binding Notes}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="3" FontStyle="Italic"/>
+
+                            <TextBlock FontSize="16" Text="{Binding Date}" TextWrapping="WrapWholeWords" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1"/>
+
+                            <TextBlock FontSize="16" Text="{Binding GreenTaskTitle}" TextWrapping="WrapWholeWords" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1"/>
+
+                            <TextBlock  FontSize="16" Text="{Binding Minutes}" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1" Padding="10,0,0,0"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <AppBarButton x:Name="deleteTask_appBarButton" HorizontalAlignment="Left" Icon="Delete" Label="Slet opgave" Margin="573,651,0,0" VerticalAlignment="Top" Style="{StaticResource AppBarButtonStyle_Keptit}" Width="Auto" BorderBrush="Red" Command="{Binding DeleteFinishedTask}"/>
             <!--<Button x:Name="Btn_delete" Content="Slet valgt opgave" Grid.Column="1" HorizontalAlignment="Left" Margin="484,779,0,-209" Grid.Row="1" VerticalAlignment="Top" Width="175" Height="40" Command="{Binding DeleteFinishedTask}" FontSize="18" Background="#FFC81616" Foreground="White"/>
             <Button x:Name="buttonGem" Content="Gem udførte opgave" Grid.Column="1" HorizontalAlignment="Left" Margin="401,714,0,-151" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Height="47" Width="258" Command="{Binding AddTaskCommand}"/>-->
