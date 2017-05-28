@@ -23,19 +23,19 @@
                     </StackPanel>
                     <StackPanel x:Name="AdminPanel" Visibility="Collapsed">
                         <StackPanel Orientation="Horizontal">
-                            <FontIcon Glyph="&#xE121;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
+                            <FontIcon Glyph="&#xE7EF;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
                             <Button x:Name="AdminSeTimerButton" Margin="0,0,0,0" Click="AdminSeTimerButton_Click" Content="Admin" HorizontalAlignment="Left" VerticalAlignment="Stretch" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <FontIcon Glyph="&#xE16E;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
+                            <FontIcon Glyph="&#xE121;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
                             <Button x:Name="AdminDoneTasksButton" Margin="0,0,0,0" Click="AdminDoneTasksButton_Click" Content="Opgaver" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <FontIcon Glyph="&#xE16E;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
+                            <FontIcon Glyph="&#xE121;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
                             <Button x:Name="AdminAreasButton" Margin="0,0,0,0" Click="AdminAreasButton_Click" Content="Områder" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <FontIcon Glyph="&#xE16E;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
+                            <FontIcon Glyph="&#xE121;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
                             <Button x:Name="AdminAnsatteButton" Margin="0,0,0,0" Click="AdminAnsatteButton_Click" Content="Ansatte" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>
                         </StackPanel>
                         <!--#region weather button-->
