@@ -48,7 +48,7 @@ namespace KeptitClient.Handlers
                       Minutter = dagene.Sum(x => x.GivTotalMinutNormal() % 60)
                   };
 
-            var testnyliste1 =
+            var timerprdagprmandformat =
                 from e1 in deldageop
                 select new Models.TimerPrDagPrMand() { GreenkeeperName = e1.D.GreenkeeperName, Date = e1.D.Date, Timer = e1.Timer, Minutter = e1.Minutter,TimerOver = e1.TOver,MinutterOver = e1.MOver};
 
@@ -77,6 +77,7 @@ namespace KeptitClient.Handlers
 
             var AlleOpgaverPaaGreenkeeper =
                 from t2 in deldageop
+                where t2.D.GreenkeeperName != ""
                 orderby t2.Timer descending
                 group t2 by t2.D.GreenkeeperName
                   into dagene2
@@ -87,10 +88,17 @@ namespace KeptitClient.Handlers
                     Minutter = dagene2.Sum(x => x.Timer * 60 + x.Minutter) % 60,
                     n = Environment.NewLine,
                     TOver2 = dagene2.Sum(x => x.TOver),
-                    MOver2 = dagene2.Sum(x => x.MOver)
+                    MOver2 = dagene2.Sum(x => x.MOver),
+                    navn = dagene2.Min(x => x.D.GreenkeeperName)
                 };
-            Mwm.ListViewSamlet.DataContext = AlleOpgaverPaaGreenkeeper;
-            Mwm.ListViewOpgaverPrDag.DataContext = testnyliste1;
+
+            var timerialtprmandformat =
+                from b1 in AlleOpgaverPaaGreenkeeper
+                select new Models.TimerIalt() {GreenkeeperName = b1.navn, Timer = b1.Timer, Minutter = b1.Minutter, TimerOver = b1.TOver2, MinutterOver = b1.MOver2 };
+
+
+            Mwm.ListViewSamlet.DataContext = timerialtprmandformat;
+            Mwm.ListViewOpgaverPrDag.DataContext = timerprdagprmandformat;
 
         }
     }

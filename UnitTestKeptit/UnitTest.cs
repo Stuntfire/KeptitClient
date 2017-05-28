@@ -29,13 +29,13 @@ namespace UnitTestKeptIt
             Assert.AreNotEqual(0, ac.Result.Count);
         }
 
-        [TestMethod]
-        public void TestSubAreaCollection()
-        {
-            var sac = PersistencyService.LoadSubAreasAsync();
-            Assert.AreNotEqual(null, sac.Result);
-            Assert.AreNotEqual(0, sac.Result.Count);
-        }
+        //[TestMethod]
+        //public void TestSubAreaCollection()
+        //{
+        //    var sac = PersistencyService.LoadSubAreasAsync();
+        //    Assert.AreNotEqual(null, sac.Result);
+        //    Assert.AreNotEqual(0, sac.Result.Count);
+        //}
 
         [TestMethod]
         public void TestGreenTaskCollection()
