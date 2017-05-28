@@ -10,39 +10,49 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <!--venstre menu start-->
-        <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="True" 
-               OpenPaneLength="200" Margin="0,48,0,0" CompactPaneLength="200" >
+        <SplitView x:Name="MySplitView" DisplayMode="Inline"  IsPaneOpen="True" 
+               OpenPaneLength="250" Margin="0,48,0,0" CompactPaneLength="200" >
             <SplitView.Pane>
 
 
                 <StackPanel Background="#00412e">
 
-                    <StackPanel Orientation="Horizontal">
-                        <Button x:Name="GreenKeeperButton" Margin="0,0,0,0"  Click="GreenKeeperButton_Click" Content="Greenkeeper" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559"/>
+                    <StackPanel Orientation="Horizontal" >
+                        <FontIcon Glyph="&#xE13D;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
+                        <Button x:Name="GreenKeeperButton" Margin="0,0,0,0"  Click="GreenKeeperButton_Click" Content="Greenkeeper" HorizontalAlignment="Left" VerticalAlignment="Stretch" Background="#00000000" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>
                     </StackPanel>
                     <StackPanel x:Name="AdminPanel" Visibility="Collapsed">
                         <StackPanel Orientation="Horizontal">
-                            <Button x:Name="AdminSeTimerButton"    Margin="0,0,0,0"  Click="AdminSeTimerButton_Click" Content="Admin" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
+                            <FontIcon Glyph="&#xE121;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
+                            <Button x:Name="AdminSeTimerButton" Margin="0,0,0,0" Click="AdminSeTimerButton_Click" Content="Admin" HorizontalAlignment="Left" VerticalAlignment="Stretch" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Button x:Name="AdminDoneTasksButton"    Margin="0,0,0,0"  Click="AdminDoneTasksButton_Click" Content="Opgaver" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
+                            <FontIcon Glyph="&#xE16E;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
+                            <Button x:Name="AdminDoneTasksButton" Margin="0,0,0,0" Click="AdminDoneTasksButton_Click" Content="Opgaver" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Button x:Name="AdminAreasButton"    Margin="0,0,0,0"  Click="AdminAreasButton_Click" Content="Områder" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
+                            <FontIcon Glyph="&#xE16E;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
+                            <Button x:Name="AdminAreasButton" Margin="0,0,0,0" Click="AdminAreasButton_Click" Content="Områder" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Button x:Name="AdminAnsatteButton"    Margin="0,0,0,0"  Click="AdminAnsatteButton_Click" Content="Ansatte" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
+                            <FontIcon Glyph="&#xE16E;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
+                            <Button x:Name="AdminAnsatteButton" Margin="0,0,0,0" Click="AdminAnsatteButton_Click" Content="Ansatte" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>
                         </StackPanel>
+                        <!--#region weather button-->
                         <StackPanel Orientation="Horizontal">
-                            <Button x:Name="AdminwhetherButton"    Margin="0,0,0,0"  Click="AdminwhetherButton_Click" Content="Vejret" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
+                            <FontIcon Glyph="&#xE753;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
+                            <Button x:Name="AdminwhetherButton" Margin="0,0,0,0" Click="AdminwhetherButton_Click" Content="Vejret" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>
                         </StackPanel>
+                        <!--#endregion-->
                         <StackPanel Orientation="Horizontal">
-                            <Button x:Name="AdminlogudButton"    Margin="0,0,0,0"  Click="AdminlogudButton_Click" Content="Log ud" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="White"/>
+                            <FontIcon Glyph="&#xE1F7;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
+                            <Button x:Name="AdminlogudButton" Margin="0,0,0,0" Click="AdminlogudButton_Click" Content="Log ud" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>
                         </StackPanel>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" x:Name="LogudPanel">
-                        <Button x:Name="AdminloginButton"    Margin="0,0,0,0"  Click="AdminloginButton_Click" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559"/>
+                        <FontIcon Glyph="&#xE1F6;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
+                        <Button x:Name="AdminloginButton" Margin="0,0,0,0" Click="AdminloginButton_Click" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>
                     </StackPanel>
 
 
