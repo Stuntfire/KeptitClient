@@ -43,7 +43,13 @@ namespace KeptitClient.Handlers
                     Minutter = omraaederne.Sum(x => x.AreaMinutterIalt) % 60
                 };
 
-            Mwm.ListViewOmraader.DataContext = areasdone;
+            // Viser listen uden {} = og andre unødvændige variabel navne.
+            var timerialtarea =
+                from o1 in areasdone
+                select new Models.TimerIaltArea() { AreaTitle = o1.D, Hours = o1.Timer, Minutes = o1.Minutter };
+
+
+            Mwm.ListViewOmraader.DataContext = timerialtarea;
         }
         
     }

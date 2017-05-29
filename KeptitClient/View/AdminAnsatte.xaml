@@ -26,7 +26,7 @@
                 </Grid>
             </StackPanel>
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="33,511,0,0" TextWrapping="Wrap" Text="{Binding Greenname, Mode=TwoWay}" VerticalAlignment="Top" Width="128"/>
-            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="186,511,0,0" TextWrapping="Wrap" Text="{Binding Greennumber, Mode=TwoWay}" VerticalAlignment="Top" Width="133"/>
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="186,511,0,0" TextWrapping="Wrap" Text="{Binding Greennumber, Mode=TwoWay}" VerticalAlignment="Top" Width="133" InputScope="Default" MaxLength="8"/>
             <Button x:Name="button" Content="Opret GreenKeeper" HorizontalAlignment="Left" Margin="33,568,0,0" VerticalAlignment="Top" Command="{Binding AddGreenkeeperCommand}" Width="286" Height="48" FontSize="20"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="33,478,0,0" TextWrapping="Wrap" Text="Navn:" VerticalAlignment="Top"/>
             <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="186,478,0,0" TextWrapping="Wrap" Text="Telefon:" VerticalAlignment="Top"/>

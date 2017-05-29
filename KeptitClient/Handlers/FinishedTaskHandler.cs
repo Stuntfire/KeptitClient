@@ -59,12 +59,12 @@ namespace KeptitClient.Handlers
                 }
                 PersistencyService.DeleteFinishedTask(Mwm.GreenkeeperInfoToDelete.FinishedTasksID);
                 Mwm.GreenkeeperInfoCollection.Clear();
-                Mwm.GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
+                await Mwm.GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
 
                 ContentDialog cd = new ContentDialog();
                 cd.Content = "Din opgave er slettet";
                 cd.PrimaryButtonText = "OK";
-                cd.ShowAsync();
+                await cd.ShowAsync();
 
             }
             catch (Exception)
@@ -72,7 +72,7 @@ namespace KeptitClient.Handlers
                 ContentDialog cd = new ContentDialog();
                 cd.Content = "Vælg venligst en opgave";
                 cd.PrimaryButtonText = "OK";
-                cd.ShowAsync();
+                await cd.ShowAsync();
                 
             }
         } 
