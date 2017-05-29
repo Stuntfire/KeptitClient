@@ -59,7 +59,7 @@ namespace KeptitClient.Handlers
                 ContentDialog cd = new ContentDialog();
                 cd.Content = "Du har nu fjernet en greenkeeper";
                 cd.PrimaryButtonText = "OK";
-                cd.ShowAsync();
+                await cd.ShowAsync();
 
             }
             catch (Exception)
@@ -67,7 +67,7 @@ namespace KeptitClient.Handlers
                 ContentDialog cd = new ContentDialog();
                 cd.Content = "Vælg venligst en greenkeeper";
                 cd.PrimaryButtonText = "OK";
-                cd.ShowAsync();
+                await cd.ShowAsync();
             }
         }
     }

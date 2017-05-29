@@ -8,8 +8,6 @@ namespace KeptitClient.Models
 {
     public class TimerPrDagPrMand : GreenkeeperInfo
     {
-        public string GreenkeeperName { get; set; }
-        public DateTime Date { get; set; }
         public int TimerOver { get; set; }
         public int MinutterOver { get; set; }
         public int Timer { get; set; }

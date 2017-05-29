@@ -59,7 +59,7 @@ namespace KeptitClient.Handlers
                 where t2.D.GreenkeeperName != ""
                 orderby t2.Timer descending
                 group t2 by t2.D.GreenkeeperName
-                  into dagene2
+                into dagene2
                 select new
                 {
                     D = dagene2.Key,

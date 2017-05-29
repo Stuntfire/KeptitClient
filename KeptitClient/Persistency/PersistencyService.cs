@@ -16,7 +16,7 @@ namespace KeptitClient.Persistency
 {
     public class PersistencyService
     {
-        //const string til serverenx
+        //const string til serveren (Webservice)
         const string serverUrl = "http://keptit.azurewebsites.net";
 
         // Henter alle Greenkeeper fra tabellen Greenkeepers
@@ -115,7 +115,7 @@ namespace KeptitClient.Persistency
                 return null;
             }
         }
-        
+
         /// <summary>
         /// Henter alle Greenkeepers Info fra DB-View GreenkeeperInfo
         /// </summary>
@@ -243,16 +243,15 @@ namespace KeptitClient.Persistency
                         ContentDialog cd = new ContentDialog();
                         cd.Content = "Din opgave er gemt";
                         cd.PrimaryButtonText = "OK";
-                        cd.ShowAsync();
-
+                        cd.ShowAsync().AsTask();
                     }
                 }
 
                 catch (Exception e)
                 {
-                    MessageDialog Error = new MessageDialog("Error : " + e);
-                    Error.Commands.Add(new UICommand { Label = "Ok" });
-                    Error.ShowAsync().AsTask();
+                    MessageDialog error = new MessageDialog("Error : " + e);
+                    error.Commands.Add(new UICommand { Label = "Ok" });
+                    error.ShowAsync().AsTask();
                 }
 
             }
@@ -297,7 +296,7 @@ namespace KeptitClient.Persistency
                         ContentDialog cd = new ContentDialog();
                         cd.Content = "Greenkeeper er oprettet";
                         cd.PrimaryButtonText = "OK";
-                        cd.ShowAsync();
+                        cd.ShowAsync().AsTask();
                     }
                 }
 

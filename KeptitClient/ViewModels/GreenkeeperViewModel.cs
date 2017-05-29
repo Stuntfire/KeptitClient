@@ -199,7 +199,7 @@ namespace KeptitClient.ViewModels
             {
                 _selectedGreenKeeper = value;
                 OnPropertyChanged(nameof(SelectedGreenKeeper));
-                loadlist();
+                Loadlist();
             }
         }
 
@@ -412,7 +412,7 @@ namespace KeptitClient.ViewModels
 
         #region Methods
 
-        void loadlist()
+        public void Loadlist()
         {
             GreenkeeperInfoHandler = new GreenkeeperInfoHandler(this);
             GreenkeeperInfoHandler.LoadUpdatedList();
@@ -446,7 +446,7 @@ namespace KeptitClient.ViewModels
             return false;
         }
 
-        private void LoadAllCollections()
+        private  void LoadAllCollections()
         {
             WeatherHandler = new WeatherHandler(this);
             //WeatherHandler.GetWeatherData();
@@ -467,7 +467,6 @@ namespace KeptitClient.ViewModels
 
             FinishedTaskCollection = new ObservableCollection<FinishedTask>();
             FinishedTaskHandler = new FinishedTaskHandler(this);
-            //FinishedTaskHandler.GetFinishedTaskCollection();
 
             GreenTaskCollection = new ObservableCollection<GreenTask>();
             GreenTaskHandler = new GreenTaskHandler(this);
