@@ -31,12 +31,13 @@ namespace KeptitClient.Handlers
             }
         }
 
+        // Post greenkeeper
         public async void PostGreenkeeper()
         {
             try
             {
                 Greenkeeper temp_green = new Greenkeeper(Mwm.Greennumber, Mwm.Greenname);
-                if (Mwm.Greenname == "" && Mwm.Greennumber < 9999999)
+                if (Mwm.Greenname == "" || Mwm.Greennumber < 9999999 || Mwm.Greennumber > 1000000000)
                 {
                     throw new Exception();
                 }
@@ -46,10 +47,11 @@ namespace KeptitClient.Handlers
             }
             catch (Exception)
             {
-                MessageDialogHelper.Show("Alle felterne skal udfyldes", "Fejl: ");
+                MessageDialogHelper.Show("Felterne skal udfyldes ordentligt", "Fejl: ");
             }
         }
 
+        // Slet Greenkeeper
         public async void DeleteGreenkeeper()
         {
             try
