@@ -26,9 +26,6 @@ namespace KeptitClient.Models
             return string.Format("Navn: {0} tfl: {1}", GreenkeeperName, GreenkeeperID);
         }
 
-        public static implicit operator Greenkeeper(RelayCommand v)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
