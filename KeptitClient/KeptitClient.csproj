@@ -99,6 +99,8 @@
     <Compile Include="Models\SumTaskDateView.cs" />
     <Compile Include="Models\SumTaskView.cs" />
     <Compile Include="Models\TimerIalt.cs" />
+    <Compile Include="Models\TimerIaltArea.cs" />
+    <Compile Include="Models\TimerIaltOpgaver.cs" />
     <Compile Include="Models\TimerPrDagPrMand.cs" />
     <Compile Include="Models\Weather.cs" />
     <Compile Include="View\Adminansatte.xaml.cs">
