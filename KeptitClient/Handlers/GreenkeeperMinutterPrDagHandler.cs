@@ -17,7 +17,7 @@ namespace KeptitClient.Handlers
         {
             this.Mwm = mwm;
         }
-        //Gets all Tasks from Database via PersistencyService
+        // Henter alle færdige opgaver for en dag pr Greenkeeper, med navn alle minutter og dato.
         public async Task GetGreenkeeperMinutterPrDagCollection()
         {
             //Brug foreach hvis LoadSubAreaAsync() i PersistencyService kodes som async:
@@ -50,9 +50,9 @@ namespace KeptitClient.Handlers
 
             var timerprdagprmandformat =
                 from e1 in deldageop
-                select new Models.TimerPrDagPrMand() { GreenkeeperName = e1.D.GreenkeeperName, Date = e1.D.Date, Timer = e1.Timer, Minutter = e1.Minutter,TimerOver = e1.TOver,MinutterOver = e1.MOver};
+                select new Models.TimerPrDagPrMand() { GreenkeeperName = e1.D.GreenkeeperName, Date = e1.D.Date, Timer = e1.Timer, Minutter = e1.Minutter, TimerOver = e1.TOver, MinutterOver = e1.MOver };
 
-          
+
             // Beregner samlet timer for en greenkeeper, kan filtreres ud fra dato.
             var AlleOpgaverPaaGreenkeeper =
                 from t2 in deldageop
@@ -74,7 +74,7 @@ namespace KeptitClient.Handlers
             // Viser listen uden {} = og andre unødvændige variabel navne.
             var timerialtprmandformat =
                 from b1 in AlleOpgaverPaaGreenkeeper
-                select new Models.TimerIalt() {GreenkeeperName = b1.navn, Timer = b1.Timer, Minutter = b1.Minutter, TimerOver = b1.TOver2, MinutterOver = b1.MOver2 };
+                select new Models.TimerIalt() { GreenkeeperName = b1.navn, Timer = b1.Timer, Minutter = b1.Minutter, TimerOver = b1.TOver2, MinutterOver = b1.MOver2 };
 
 
             Mwm.ListViewSamlet.DataContext = timerialtprmandformat;
