@@ -52,29 +52,8 @@ namespace KeptitClient.Handlers
                 from e1 in deldageop
                 select new Models.TimerPrDagPrMand() { GreenkeeperName = e1.D.GreenkeeperName, Date = e1.D.Date, Timer = e1.Timer, Minutter = e1.Minutter,TimerOver = e1.TOver,MinutterOver = e1.MOver};
 
-            //var testnyliste =
-            //    from e1 in deldageop
-            //    group e1 by e1.D
-            //    into testen
-            //    select new
-            //    {
-            //        Navn = testen.Min(x => x.D.GreenkeeperName),
-            //        Dag = testen.Min(x => x.D.Date.Day),
-            //        Måned = testen.Min(x => x.D.Date.Month),
-            //        År = testen.Min(x => x.D.Date.Year),
-            //        n = Environment.NewLine,
-            //        Timer = testen.Min(x => x.Timer),
-            //        Minutter = testen.Min(x => x.Minutter),
-            //        TimerO = testen.Min(x => x.TOver),
-            //        MinutterO = testen.Min(x => x.MOver),
-            //        n2 = Environment.NewLine,
-            //    };
-
-            //foreach (var t in testnyliste)
-            //{
-            //    t.Navn + t.Dag + t.Måned + t.År
-            //} 
-
+          
+            // Beregner samlet timer for en greenkeeper, kan filtreres ud fra dato.
             var AlleOpgaverPaaGreenkeeper =
                 from t2 in deldageop
                 where t2.D.GreenkeeperName != ""
@@ -92,6 +71,7 @@ namespace KeptitClient.Handlers
                     navn = dagene2.Min(x => x.D.GreenkeeperName)
                 };
 
+            // Viser listen uden {} = og andre unødvændige variabel navne.
             var timerialtprmandformat =
                 from b1 in AlleOpgaverPaaGreenkeeper
                 select new Models.TimerIalt() {GreenkeeperName = b1.navn, Timer = b1.Timer, Minutter = b1.Minutter, TimerOver = b1.TOver2, MinutterOver = b1.MOver2 };
