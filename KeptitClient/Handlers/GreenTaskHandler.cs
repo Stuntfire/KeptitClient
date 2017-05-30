@@ -28,6 +28,7 @@ namespace KeptitClient.Handlers
             }
         }
 
+        // Samlet timer på opgaver, uafhængig af Greenkeeper.
         public async Task GetSumGreenTaskCollection()
         {
             var SumAllTasks =
@@ -41,9 +42,15 @@ namespace KeptitClient.Handlers
                     Timer = AllTasks.Sum(x => x.TaskMinutesTotal) / 60,
                     Minutter = AllTasks.Sum(x => x.TaskMinutesTotal) % 60
                 };
-           
-            //Todo Hvad går der galt her? Forkert liste?
-           Mwm.ListViewOpgaver.DataContext = SumAllTasks;
+
+            // Viser listen uden {} = og andre unødvændige variabel navne.
+            var timerialtopgaver =
+                from o1 in SumAllTasks
+                select new Models.TimerIaltOpgaver() { GreenTaskTitle = o1.D, Hours = o1.Timer, Minutes = o1.Minutter};
+
+
+            // Viser listen i xaml opgaver siden. 
+            Mwm.ListViewOpgaver.DataContext = timerialtopgaver;
         }
 
     }

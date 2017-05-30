@@ -42,7 +42,9 @@ namespace KeptitClient.Models
 
         public override string ToString()
         {
-            return $"Nr.: {FinishedTasksID}. {AreaID}. {GreenTaskID}. {GreenkeeperID}. {Date:dd-MM-yy}. {Hours} timer. {Minutes} minutter. {Notes}";
+            //return $"Nr.: {FinishedTasksID}. {AreaID}. {GreenTaskID}. {GreenkeeperID}. {Date:dd-MM-yy}. {Hours} timer. {Minutes} minutter. {Notes}\n";
+
+            return String.Format("Nr.: {0}. {1}. {2}. {3}. {4}. {5} timer og {6} minutter. {7}\n", FinishedTasksID, AreaID, GreenTaskID, GreenkeeperID, Date, Hours, Minutes, Notes);
         }
     }
 }

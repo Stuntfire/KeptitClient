@@ -117,11 +117,11 @@ namespace KeptitClient.ViewModels
             set { _taskMinutes = value; OnPropertyChanged(nameof(TaskMinutes)); }
         }
 
-        private string _taskNotes;
-        public string TaskNotes
+        private string _notes;
+        public string Notes
         {
-            get { return _taskNotes; }
-            set { _taskNotes = value; OnPropertyChanged(nameof(TaskNotes)); }
+            get { return _notes; }
+            set { _notes = value; OnPropertyChanged(nameof(Notes)); }
         }
 
         private ObservableCollection<Greenkeeper> _greenKeeperCollection;
