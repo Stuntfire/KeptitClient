@@ -59,24 +59,7 @@ namespace KeptitClient.Persistency
             }
         }
 
-        // Henter alle SubArea fra tabellen SubAreas
-        public static async Task<ObservableCollection<SubArea>> LoadSubAreasAsync()
-        {
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(serverUrl);
-                client.DefaultRequestHeaders.Clear();
-                string urlString = "api/subareas";
-
-                HttpResponseMessage response = await client.GetAsync(urlString);
-                if (response.IsSuccessStatusCode)
-                {
-                    var subarealiste = response.Content.ReadAsAsync<ObservableCollection<SubArea>>().Result;
-                    return subarealiste;
-                }
-                return null;
-            }
-        }
+  
 
         // Henter alle task fra tabellen task
         public static async Task<ObservableCollection<GreenTask>> LoadGreenTaskAsync()

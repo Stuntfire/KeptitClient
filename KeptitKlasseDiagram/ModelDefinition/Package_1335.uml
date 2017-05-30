@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="977b82f9-ea35-46ad-8910-026a5b861885"
+  name="ViewModel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="cf98ff2f-6af4-42ce-b0fa-c0bed5f2b39f"
+        name="MainViewModel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="adcfd276-5010-453a-bb29-13752bcb7fd7"
+            name="public string Greenname"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="beb63806-947f-4d45-801c-484f737b6e3e"
+            name="public int Greennumber"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="25a6edd3-be58-4197-a32e-7aa635476e58"
+            name="public int TaskHour"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="e677e042-5397-4fd3-ab2f-b19c5aceb469"
+            name="public int TaskMinutes"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="178e75e6-5d0d-4b65-9e70-a26093226725"
+            name="public string Notes"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="9173f0c7-9034-4f9e-8489-78e0f072c2f1"
+            name="public ObservableCollection&lt;Greenkeeper&gt; GreenKeeperCollection"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="423ff8d6-bd14-48ef-9a15-6f644b535af4"
+            name="public ObservableCollection&lt;Area&gt; AreaCollection"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="9cef5eb9-d697-459b-a883-e937c2d65de1"
+            name="public ObservableCollection&lt;SubArea&gt; SubAreaCollection"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="a9ee64a0-e0c8-4ee6-8d99-5e6a693d589f"
+            name="public ObservableCollection&lt;GreenTask&gt; GreenTaskCollection"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="0aaf1a4e-ad08-443e-83b9-40c94c1668d8"
+            name="public ObservableCollection&lt;FinishedTask&gt; FinishedTaskCollection"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="5ff6ce0c-661a-4b9d-8653-3a3767dd6ad1"
+            name="public DateTimeOffset SelectedDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="7ce3232e-33bc-4b2e-85c8-1c66caa5d4cc"
+            name="public Area SelectedArea"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="d2afd381-e9a8-4b55-8313-fb55a0c21e14"
+            name="public SubArea SelectedSubArea"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c3c3648e-a781-49ba-a271-abc84e3abaf4"
+            name="public Greenkeeper SelectedWorker"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="725675d0-60d1-4a36-ae25-a8537c9b9e5b"
+            name="public Greenkeeper SelectedGreenKeeper"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="a31f5a47-d169-4312-ac00-7ee16c6c115b"
+            name="public GreenTask SelectedGreenTask"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="888a0680-8f83-4f75-bfc3-775425461cd6"
+            name="public Greenkeeper DeleteGreenkeeper"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="e40c5ea1-76f2-490c-8c46-a64cf7200231"
+            name="public GreenkeeperInfo GreenkeeperInfoToDelete"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="e3170f6c-270f-410f-bdfa-09b3cfcaa2a7"
+            name="public ObservableCollection&lt;GreenkeeperInfo&gt; GreenkeeperInfoCollection"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="0a4bcd37-c658-4d57-b578-1e5ff1cbffc0"
+            name="public ObservableCollection&lt;GreenkeeperMinutterPrDag&gt; GreenkeeperMinutterPrDagCollection"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="3cfcc084-3cb2-4742-82e9-ddead66c5b1c"
+            name="public ObservableCollection&lt;GreenkeeperInfo&gt; GetGreenkeeperNavnSortedList"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="05780da3-813c-484a-b267-45a8b05d2acc"
+            name="public ObservableCollection&lt;GreenkeeperInfo&gt; AlleTimerOgMinutterCollection"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="508ca473-7e72-4215-903b-44f7a245403b"
+            name="public ListView ListViewSamlet"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="4bc322e7-f62e-4ca6-b70f-55d1c1c8ad0e"
+            name="public ListView ListViewAnsat"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="4569c4ae-1c4c-41b6-b819-fbc8317b5746"
+            name="public ListView ListViewAnsat"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="793d81a9-7eb5-403e-9844-4a830fcd223b"
+            name="public ListView ListViewSamlet2"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="4c8770b9-f477-41ea-abb4-71cbf4cc30ec"
+            name="public ListView ListViewOpgaver"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="bd527318-a844-4b86-8e3c-4de7a5def43d"
+            name="public ListView ListViewOmraader"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="4d5d84ca-7f4a-4296-85bc-0bff1e509fa7"
+            name="public ListView ListViewOpgaverPrDag"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="9c5e8f8e-9cca-4842-ba30-60e3abcc5db2"
+            name="public ListView ListViewOpgaverPrDag"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="63363178-eae0-45eb-adf8-d0aa9b5bc904"
+            name="public List&lt;int&gt; HourList"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="569d3eca-b706-43b6-bfb8-97f4d0efa792"
+            name="public List&lt;int&gt; MinuteList"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="bcf7d257-0758-48e4-9f37-b5b5631eb61e"
+            name="public void SetHourIndex"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="9a03d21b-95bf-44a0-9e13-0fe8f5a6075f"
+            name="public void SetMinuteIndex"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="fb7c101a-f3b9-47dd-bf04-87eb2bd6248e"
+            name="public void Loadlist"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="485dfd60-339d-4c5e-8d1d-d9e7ae04ed49"
+            name="public bool IsEmpty"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="55754e8f-25ac-430e-bbbb-2cbc706d8598"
+            name="public bool IsFinishedTaskSelected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="1d4d84e7-bc7c-4726-b620-3b9b491fe3da"
+            name="private  void LoadAllCollections"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
