@@ -270,10 +270,12 @@
 
                             <TextBlock FontSize="16" Text="{Binding Notes}" TextWrapping="WrapWholeWords" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="3" Grid.Row="1" FontStyle="Italic"/>
 
-                            <TextBlock FontSize="16" Text="{Binding Date}" TextWrapping="WrapWholeWords" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1"/>
+                            <TextBlock FontSize="16" Text="{Binding Date.Day}" TextWrapping="WrapWholeWords" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1"/>
+                            <TextBlock FontSize="16" Text="{Binding Date.Month}" TextWrapping="WrapWholeWords" Margin="30,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1"/>
+                            <TextBlock FontSize="16" Text="{Binding Date.Year}" TextWrapping="WrapWholeWords" Margin="60,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1"/>
 
                             <TextBlock FontSize="16" Text="{Binding GreenTaskTitle}" TextWrapping="WrapWholeWords" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1"/>
-
+                            
                             <TextBlock  FontSize="16" Text="{Binding Minutes}" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1" Padding="10,0,0,0"/>
 
                         </Grid>

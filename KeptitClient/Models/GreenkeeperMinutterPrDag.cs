@@ -35,7 +35,6 @@ namespace KeptitClient.Models
                  Date.DayOfWeek == DayOfWeek.Friday && totalminutover >= 445)
             {
                 totalminutover = totalminutover - 444M;
-                //totalminutover = totalminutover * 1.5M;
             }
             else
             {
@@ -76,7 +75,7 @@ namespace KeptitClient.Models
 
         public override string ToString()
         {
-            return string.Format("{0}. {1}. {2}.", GreenkeeperName, Minutterialt, Date);
+            return String.Format("{0}.\nMinutter ialt: {1}. \nDato: {2:dd-MM-yy}.", GreenkeeperName, Minutterialt, Date);
         }
 
     }
