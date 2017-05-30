@@ -28,7 +28,6 @@ namespace KeptitClient.ViewModels
         public GreenkeeperMinutterPrDagHandler GreenkeeperMinutterPrDagHandler { get; set; }
         public SubAreaHandler SubAreaHandler { get; set; }
         public GreenkeeperHandler GreenkeeperHandler { get; set; }
-        public WeatherHandler WeatherHandler { get; set; }
         #endregion
 
         #region RelayCommands
@@ -49,7 +48,6 @@ namespace KeptitClient.ViewModels
         }
 
         private ICommand _deleteGreenkeeperCommand;
-
         public ICommand DeleteGreenkeeperCommand
         {
             get { return _deleteGreenkeeperCommand; }
@@ -118,11 +116,11 @@ namespace KeptitClient.ViewModels
             set { _taskMinutes = value; OnPropertyChanged(nameof(TaskMinutes)); }
         }
 
-        private string _taskNotes;
-        public string TaskNotes
+        private string _notes;
+        public string Notes
         {
-            get { return _taskNotes; }
-            set { _taskNotes = value; OnPropertyChanged(nameof(TaskNotes)); }
+            get { return _notes; }
+            set { _notes = value; OnPropertyChanged(nameof(Notes)); }
         }
 
         private ObservableCollection<Greenkeeper> _greenKeeperCollection;
@@ -191,6 +189,12 @@ namespace KeptitClient.ViewModels
             }
         }
 
+        private Greenkeeper _selectedWorker;
+        public Greenkeeper SelectedWorker {
+            get { return _selectedWorker; }
+            set { _selectedWorker = value; }
+        }
+
         private Greenkeeper _selectedGreenKeeper;
         public Greenkeeper SelectedGreenKeeper
         {
@@ -203,20 +207,6 @@ namespace KeptitClient.ViewModels
             }
         }
 
-        private DateTimeOffset selectedDateAdmin;
-
-        public DateTimeOffset SelectedDateAdmin
-        {
-            get { return selectedDateAdmin; }
-            set
-            {
-                selectedDateAdmin = value;
-                OnPropertyChanged(nameof(SelectedDateAdmin));
-                LoadAltListe();
-            }
-        }
-
-
         private GreenTask _selectedGreenTask;
         public GreenTask SelectedGreenTask
         {
@@ -225,7 +215,7 @@ namespace KeptitClient.ViewModels
             {
                 _selectedGreenTask = value;
                 OnPropertyChanged(nameof(SelectedGreenTask));
-
+        
             }
         }
 
@@ -407,7 +397,7 @@ namespace KeptitClient.ViewModels
             
             DateTime dt = DateTime.Today;
             SelectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
-            SelectedDateAdmin = DateTimeOffset.Now;
+
             LoadAllCollections();
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
             AddGreenkeeperCommand = new RelayCommand(GreenkeeperHandler.PostGreenkeeper, null);
@@ -430,14 +420,11 @@ namespace KeptitClient.ViewModels
         {
             GreenkeeperInfoHandler = new GreenkeeperInfoHandler(this);
             GreenkeeperInfoHandler.LoadUpdatedList();
-
         }
 
-        public void LoadAltListe()
-        {
-            GreenkeeperMinutterPrDagHandler = new GreenkeeperMinutterPrDagHandler(this);
-            GreenkeeperMinutterPrDagHandler.LoadUpdatedListAllAdmin();
-        }
+
+
+
 
         public bool IsEmpty()
         {
@@ -468,8 +455,7 @@ namespace KeptitClient.ViewModels
 
         private  void LoadAllCollections()
         {
-            WeatherHandler = new WeatherHandler(this);
-            //WeatherHandler.GetWeatherData();
+
 
             GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
             GreenkeeperHandler = new GreenkeeperHandler(this);
@@ -498,7 +484,6 @@ namespace KeptitClient.ViewModels
 
             GreenkeeperMinutterPrDagHandler = new GreenkeeperMinutterPrDagHandler(this);
             GreenkeeperMinutterPrDagHandler.GetGreenkeeperMinutterPrDagSortedList();
-            
         }
         #endregion
 

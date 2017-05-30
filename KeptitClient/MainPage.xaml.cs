@@ -57,11 +57,6 @@ namespace KeptitClient
             Mainframe.Navigate(typeof(AdminAnsatte));
         }
 
-        private void AdminwhetherButton_Click(object sender, RoutedEventArgs e)
-        {
-            Mainframe.Navigate(typeof(Adminwhether));
-        }
-
         private void AdminloginButton_Click(object sender, RoutedEventArgs e)
         {
             Mainframe.Navigate(typeof(Adminlogin));

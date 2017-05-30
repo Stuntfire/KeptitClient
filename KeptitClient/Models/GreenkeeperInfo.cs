@@ -86,9 +86,17 @@ namespace KeptitClient.Models
             }
         }
 
+        /// <summary>
+        /// Det er denne override ToString som ListView'et på Greenkeeper siden benytter
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
-            return $"{GreenkeeperName}\n{AreaTitle}, {GreenTaskTitle}\n{Hours} timer og {Minutes} minutter\n{Date:dd-MM-yy}\nNote: {Notes}\n";
+            //return $"{GreenkeeperName}\n{AreaTitle}, {GreenTaskTitle}\n{Hours} timer og {Minutes} minutter\n{Date:dd-MM-yy}\nNote: {Notes}";
+
+            return String.Format("{0}. {1}. {2}. {3}. {4} timer. {5} minutter. {6}", GreenkeeperName, AreaTitle, GreenTaskTitle, Hours, Minutes, Date, Notes);
+
+            //return String.Format("{0}. Note: {1}", GreenkeeperName, Notes);
         }
 
         //public string Summary {
