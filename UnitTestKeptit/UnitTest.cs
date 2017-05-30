@@ -2,6 +2,8 @@
 using KeptitClient.Models;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using KeptitClient.Persistency;
+using KeptitClient.Models;
+using KeptitClient.ViewModels;
 
 namespace UnitTestKeptIt
 {
@@ -62,7 +64,35 @@ namespace UnitTestKeptIt
             Assert.AreEqual(150,antalminut);
         }
 
+
+        //[TestMethod]
+        //[ExpectedException]
+        //public void TestPostFinishedTask()
+        //{
+        //    try
+        //    {
+        //        FinishedTask ggg = null;
+        //        PersistencyService.PostFinishedtask(ggg);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        Assert.Fail();
+        //    }
+        //}
+        #endregion 
+
+
+        [TestMethod]
+        public void TestGivTotalMinutOverarbejde() // 
+        {
+            // arrange
+            GreenkeeperInfo overArbejde = new GreenkeeperInfo(14, 48); // 888 minutter ialt
+
+            // act
+            int actualValue = overArbejde.GivTotalMinutOverarbejde();
         
-        #endregion
+            // assert
+            Assert.AreEqual(666, actualValue);
+        }
     }
 }

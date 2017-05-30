@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="d61e79de-75c0-444f-976d-a9052c5f8eab"
+  name="Persistency Service" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="8a8b1d9f-173b-4a35-804f-5775d958dabe"
+        name="PersistencyService"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="8da24ab3-7cfa-4b78-86b4-8695740b31dc"
+            name="public static async Task&lt;ObservableCollection&lt;Greenkeeper&gt;&gt; LoadGreenkeeperAsync"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="84c1fd45-3921-4d08-8c24-a24a4b54f5ff"
+            name="public static async Task&lt;ObservableCollection&lt;Area&gt;&gt; LoadAreasAsync"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="a5423cac-b8a9-49f1-96b7-885fcd5433a6"
+            name="public static async Task&lt;ObservableCollection&lt;GreenTask&gt;&gt; LoadGreenTaskAsync"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7ff8e614-4766-44cd-a017-18975d2ecde7"
+            name="public static async Task&lt;ObservableCollection&lt;FinishedTask&gt;&gt; LoadFinishedtaskAsync"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ed479971-dc98-4abe-ab1a-e77c2b2c397d"
+            name="public static async Task&lt;ObservableCollection&lt;GreenkeeperInfo&gt;&gt; LoadGreenkeeperInfoAsync"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="770b832f-5e8c-4f41-a7cf-960ba08b3185"
+            name="public static async Task&lt;ObservableCollection&lt;SumAreaView&gt;&gt; LoadSumAreaViewAsync"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="57219eee-0aa9-4bcd-b5e2-126c4f20d28d"
+            name="public static async Task&lt;ObservableCollection&lt;SumTaskDateView&gt;&gt; LoadSumTaskDateViewAsync"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="5d3b6f36-41c4-43fb-9a68-22f1307af02d"
+            name="public static async Task&lt;ObservableCollection&lt;SumTaskView&gt;&gt; LoadSumTaskViewAsync"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="4ac24e0d-fcbb-4bf6-80cc-df56219e7624"
+            name="public static async Task&lt;ObservableCollection&lt;GreenkeeperMinutterPrDag&gt;&gt; LoadGreenkeeperMinutterPrDagAsync"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="01849516-49ad-49fa-adc7-03a786a58c2c"
+            name="public static void PostFinishedtask"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="761a0441-708b-4d06-85fb-6f0de2ed069f"
+                  name="FinishedTask finishedtask"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="84136cf5-06f5-469d-b754-7e4fcd60a6ce"
+            name="public static void DeleteFinishedTask"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="605b87ca-a3d3-453f-a550-9c2b47d41ea0"
+                  name="int FinishedTaskIdToDelete"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="4d43b6cd-b58f-4921-b20a-0275e6de7f11"
+            name="public static void PostGreenkeeper"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d19c24b8-4697-4ec7-a071-480f4a88ddb0"
+                  name="Greenkeeper greenkeeper"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="dac10352-7e29-4824-9170-e189ce7d8680"
+            name="public static void DeleteGreenkeeper"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2a9b81de-8709-4002-98bb-cd0a27861e08"
+                  name="int GreenkeeperIdToDelete"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
