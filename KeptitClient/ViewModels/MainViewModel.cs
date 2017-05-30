@@ -439,8 +439,8 @@ namespace KeptitClient.ViewModels
 
         public void LoadAltListe()
         {
-            GreenkeeperMinutterPrDagHandler = new GreenkeeperMinutterPrDagHandler(this);
-            GreenkeeperMinutterPrDagHandler.LoadUpdatedListAllAdmin();
+            //GreenkeeperMinutterPrDagHandler = new GreenkeeperMinutterPrDagHandler(this);
+            //GreenkeeperMinutterPrDagHandler.LoadUpdatedListAllAdmin();
         }
 
 
