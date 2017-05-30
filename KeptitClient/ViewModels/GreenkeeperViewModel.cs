@@ -66,27 +66,27 @@ namespace KeptitClient.ViewModels
         #endregion
 
         #region Properties
-        private BitmapImage _icon;
-        public BitmapImage Icon
-        {
-            get { return _icon; }
-            set
-            {
-                _icon = value;
-                OnPropertyChanged(nameof(Icon));
-            }
-        }
+        //private BitmapImage _icon;
+        //public BitmapImage Icon
+        //{
+        //    get { return _icon; }
+        //    set
+        //    {
+        //        _icon = value;
+        //        OnPropertyChanged(nameof(Icon));
+        //    }
+        //}
 
-        private float temp;
-        public float Temp
-        {
-            get { return temp; }
-            set
-            {
-                temp = value;
-                OnPropertyChanged(nameof(Temp));
-            }
-        }
+        //private float temp;
+        //public float Temp
+        //{
+        //    get { return temp; }
+        //    set
+        //    {
+        //        temp = value;
+        //        OnPropertyChanged(nameof(Temp));
+        //    }
+        //}
 
         private string _greenname;
         public string Greenname
@@ -453,7 +453,7 @@ namespace KeptitClient.ViewModels
             return false;
         }
 
-        private  void LoadAllCollections()
+        private void LoadAllCollections()
         {
 
 

@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="e92c2208-b225-429e-9bd9-3f343df21cbe" name="KeptitKlasseDiagram" linkedPackageId="7cfb6595-5ea1-42b6-9466-4d795dcaaaf9" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="c2e00dce-8c15-4d79-8134-69a8c21de9d7">
+      <profileInstance Id="aead8964-853a-469f-a20b-a70b5c1e47a6" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="064038e0-3e3c-46bd-8433-13ed0aa5acda">
+      <profileInstance Id="b5e5a66e-8d8c-425a-9946-8c3efcfc98f5" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ff5ae3cf-8e6b-410a-918b-381e481105ca" name="MainViewModel" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cf98ff2f-6af4-42ce-b0fa-c0bed5f2b39f" />
+        <ownedAttributesInternal>
+          <property Id="b6aa9391-c823-4071-abb4-c3cee7091b94" name="public string Greenname" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="adcfd276-5010-453a-bb29-13752bcb7fd7" />
+          </property>
+          <property Id="3e2daf3b-3030-48a0-a7a0-94f39f505c1d" name="public int Greennumber" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="beb63806-947f-4d45-801c-484f737b6e3e" />
+          </property>
+          <property Id="da8e9b3f-483e-4a91-b3fe-9c2d16c12d0b" name="public int TaskHour" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="25a6edd3-be58-4197-a32e-7aa635476e58" />
+          </property>
+          <property Id="2dee9ae4-4462-4321-8fe0-b248f59bf40a" name="public int TaskMinutes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e677e042-5397-4fd3-ab2f-b19c5aceb469" />
+          </property>
+          <property Id="3f640eec-72a3-4fc9-9a9f-81e27cb95fcc" name="public string Notes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="178e75e6-5d0d-4b65-9e70-a26093226725" />
+          </property>
+          <property Id="41829453-82f4-49ed-8fc5-5028a3f41aa7" name="public ObservableCollection&lt;Greenkeeper&gt; GreenKeeperCollection" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9173f0c7-9034-4f9e-8489-78e0f072c2f1" />
+          </property>
+          <property Id="da7d1038-0089-4ca5-81fc-3fbe954eba21" name="public ObservableCollection&lt;Area&gt; AreaCollection" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="423ff8d6-bd14-48ef-9a15-6f644b535af4" />
+          </property>
+          <property Id="caf0b2e5-3899-4a3a-b910-b24a73a921c6" name="public ObservableCollection&lt;SubArea&gt; SubAreaCollection" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9cef5eb9-d697-459b-a883-e937c2d65de1" />
+          </property>
+          <property Id="a17286fc-4fa0-4538-ba7e-376507985225" name="public ObservableCollection&lt;GreenTask&gt; GreenTaskCollection" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a9ee64a0-e0c8-4ee6-8d99-5e6a693d589f" />
+          </property>
+          <property Id="7fc4f28a-dec5-41e3-86be-690be9ecaa03" name="public ObservableCollection&lt;FinishedTask&gt; FinishedTaskCollection" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0aaf1a4e-ad08-443e-83b9-40c94c1668d8" />
+          </property>
+          <property Id="a5402858-b673-4ef5-9f63-cfc66e9930d4" name="public DateTimeOffset SelectedDate" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5ff6ce0c-661a-4b9d-8653-3a3767dd6ad1" />
+          </property>
+          <property Id="0678ff02-2464-4d8b-ac53-ac17344027f4" name="public Area SelectedArea" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7ce3232e-33bc-4b2e-85c8-1c66caa5d4cc" />
+          </property>
+          <property Id="9e175596-cd41-4dab-ab04-2d9eb427b53b" name="public SubArea SelectedSubArea" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d2afd381-e9a8-4b55-8313-fb55a0c21e14" />
+          </property>
+          <property Id="f6fc9526-efe3-4d35-942c-f26c68e9b300" name="public Greenkeeper SelectedWorker" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c3c3648e-a781-49ba-a271-abc84e3abaf4" />
+          </property>
+          <property Id="fc6179e4-2e03-4c4e-85a0-76d5e5932f97" name="public Greenkeeper SelectedGreenKeeper" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="725675d0-60d1-4a36-ae25-a8537c9b9e5b" />
+          </property>
+          <property Id="c179e482-ec4b-4f3d-9170-c3b4e305d3c5" name="public GreenTask SelectedGreenTask" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a31f5a47-d169-4312-ac00-7ee16c6c115b" />
+          </property>
+          <property Id="3e7581d3-c7e0-4df9-b908-58ffb4a0b4d2" name="public Greenkeeper DeleteGreenkeeper" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="888a0680-8f83-4f75-bfc3-775425461cd6" />
+          </property>
+          <property Id="186a90f7-8c0b-4bd0-b3cf-2738bfacd87e" name="public GreenkeeperInfo GreenkeeperInfoToDelete" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e40c5ea1-76f2-490c-8c46-a64cf7200231" />
+          </property>
+          <property Id="b8480426-fad7-4f5f-a853-58dd8fb6f812" name="public ObservableCollection&lt;GreenkeeperInfo&gt; GreenkeeperInfoCollection" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e3170f6c-270f-410f-bdfa-09b3cfcaa2a7" />
+          </property>
+          <property Id="b4cac867-ee3a-4584-a2a0-08530a16f050" name="public ObservableCollection&lt;GreenkeeperMinutterPrDag&gt; GreenkeeperMinutterPrDagCollection" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0a4bcd37-c658-4d57-b578-1e5ff1cbffc0" />
+          </property>
+          <property Id="432ea80e-bc81-4437-a9c1-dfc3b5d169c8" name="public ObservableCollection&lt;GreenkeeperInfo&gt; GetGreenkeeperNavnSortedList" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3cfcc084-3cb2-4742-82e9-ddead66c5b1c" />
+          </property>
+          <property Id="0f80d416-08b1-4a5c-8a2f-439ba6aa7232" name="public ObservableCollection&lt;GreenkeeperInfo&gt; AlleTimerOgMinutterCollection" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="05780da3-813c-484a-b267-45a8b05d2acc" />
+          </property>
+          <property Id="964889ad-7cb3-4441-a4b3-4df1196f2059" name="public ListView ListViewSamlet" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="508ca473-7e72-4215-903b-44f7a245403b" />
+          </property>
+          <property Id="c89c4f6b-90c6-42cd-87fc-c31cce574185" name="public ListView ListViewAnsat" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4bc322e7-f62e-4ca6-b70f-55d1c1c8ad0e" />
+          </property>
+          <property Id="e736cc12-f816-46e8-8a99-17e36011fb0d" name="public ListView ListViewAnsat" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4569c4ae-1c4c-41b6-b819-fbc8317b5746" />
+          </property>
+          <property Id="e49157ab-95c2-4d9d-b9c0-e6585fbd2aee" name="public ListView ListViewSamlet2" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="793d81a9-7eb5-403e-9844-4a830fcd223b" />
+          </property>
+          <property Id="609c3e39-792a-425c-9256-4603cfa8915f" name="public ListView ListViewOpgaver" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4c8770b9-f477-41ea-abb4-71cbf4cc30ec" />
+          </property>
+          <property Id="2f2ce83f-29ad-4df6-91ee-6e355922809d" name="public ListView ListViewOmraader" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bd527318-a844-4b86-8e3c-4de7a5def43d" />
+          </property>
+          <property Id="c5844bbe-6987-4509-9388-5dbd79d116c7" name="public ListView ListViewOpgaverPrDag" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4d5d84ca-7f4a-4296-85bc-0bff1e509fa7" />
+          </property>
+          <property Id="fb63ced2-930e-4cf6-b1a3-0b309f31dae6" name="public ListView ListViewOpgaverPrDag" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9c5e8f8e-9cca-4842-ba30-60e3abcc5db2" />
+          </property>
+          <property Id="9942a676-9aa5-4a75-91fc-f0b2f39bc4e1" name="public List&lt;int&gt; HourList" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="63363178-eae0-45eb-adf8-d0aa9b5bc904" />
+          </property>
+          <property Id="fd85e6e5-cd3c-43d6-a896-1d9bd83082b2" name="public List&lt;int&gt; MinuteList" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="569d3eca-b706-43b6-bfb8-97f4d0efa792" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="483288f5-206d-438f-a6e8-14941a44c9b4" name="public void SetHourIndex" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bcf7d257-0758-48e4-9f37-b5b5631eb61e" />
+          </operation>
+          <operation Id="0099ba59-100b-4fbe-a4c7-9fe29b9aa52b" name="public void SetMinuteIndex" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9a03d21b-95bf-44a0-9e13-0fe8f5a6075f" />
+          </operation>
+          <operation Id="50a79b28-c92b-45e2-a4e5-d7f273329e04" name="public void Loadlist" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fb7c101a-f3b9-47dd-bf04-87eb2bd6248e" />
+          </operation>
+          <operation Id="333a856c-2c39-4b04-9a9d-b14e3c9150f7" name="public bool IsEmpty" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="485dfd60-339d-4c5e-8d1d-d9e7ae04ed49" />
+          </operation>
+          <operation Id="93914116-26b7-4110-91cc-6fc9f0cb1dce" name="public bool IsFinishedTaskSelected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="55754e8f-25ac-430e-bbbb-2cbc706d8598" />
+          </operation>
+          <operation Id="016754b7-5d3f-42fd-b3c2-8ada58b496b7" name="private  void LoadAllCollections" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1d4d84e7-bc7c-4726-b620-3b9b491fe3da" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fae8312b-d734-4313-8d19-7bf56c255daa" name="FinishedTaskHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3f98f2c7-6fd4-4258-9781-ac924493e0a2" />
+        <ownedAttributesInternal>
+          <property Id="d8f9efc7-66b5-4f5f-9c6d-b3e4a9c138ea" name="private GreenkeeperViewModel Mwm" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fe6f6068-18df-4286-9804-54419c578478" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="761b5cf1-9671-4669-a8b9-ede5379cc3b6" name="public async Task GetFinishedTaskCollection" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7251499a-c0a9-4fbb-b218-42e4e9455d40" />
+          </operation>
+          <operation Id="3a9b3263-efa9-4c56-a007-d6e80a6bd408" name="public async void PostFinishedTask" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cf2ac3ec-5d09-40ae-acc5-2d91187df298" />
+          </operation>
+          <operation Id="e993ce62-d216-4274-ad6b-91f017de309c" name="public async void DeleteFinishedTask" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fc1e4658-2706-4c8f-a36a-d0ce5a7985c5" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8a29ef88-767c-49e2-a78c-855f43916f83" name="GreenkeeperHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c4769b43-f38c-41d6-8520-2e56eacfc7c6" />
+        <ownedAttributesInternal>
+          <property Id="4fdd9553-9817-4e1b-a30e-1400cd7398ba" name="private GreenkeeperViewModel Mwm" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c00ffd4e-70ba-45c7-b4fc-0f51968661b0" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="33ab86f2-e5cf-4893-b407-ed1e938502b8" name="public GreenkeeperHandler" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="66208027-1d5c-4416-b1b4-378a0535a022" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="742f3e05-a0c5-4911-852d-bfef51ef4b43" name="GreenkeeperViewModel mwm" direction="In" isUnique="false">
+                  <elementDefinition Id="37f43829-f4e6-4689-96a6-ad3772fed909" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="750d45e0-f1df-45a4-b034-deb16be0d374" name="public async void PostGreenkeeper" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="50109caf-f08a-46f7-8435-5769499eb9f2" />
+          </operation>
+          <operation Id="ea41e66c-7a0e-4732-8d1d-e4eb4f8a00bb" name="public async void DeleteGreenkeeper" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c23d18b9-8b80-4db9-827e-6b614bb1427d" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="988a0d93-7cb9-4681-a080-1be3a510b524" name="GreenkeeperInfo" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c09f25c1-0e92-430c-9423-c878cca08984" />
+        <ownedAttributesInternal>
+          <property Id="8da275cb-ac6d-4571-9fb0-ba82ba12a77f" name="public int FinishedTasksID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bdd6a488-5d71-4260-9e70-2e8ef5b976c3" />
+          </property>
+          <property Id="772455d5-e73d-459a-b121-edf41e8c44f7" name="public int GreenkeeperID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d6b86f35-befe-4824-be7f-ce60c61ffb72" />
+          </property>
+          <property Id="81ac8802-26e1-41c0-ae8a-17bb463cc163" name="public string GreenkeeperName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fbbdec4b-1760-482a-812c-9a8efd6a798c" />
+          </property>
+          <property Id="5546882c-fbc6-47b0-a0f3-82bbe6eafbe5" name="public string AreaTitle" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="266049b8-ead8-4ac7-897c-878655706283" />
+          </property>
+          <property Id="311cc4bb-e55d-4f39-b059-a10790040711" name="public string GreenTaskTitle" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b10356b9-76cf-4fd0-bb85-149781b528a2" />
+          </property>
+          <property Id="3668f086-3abd-4ff4-8798-ffe5d0202bf5" name="public int Hours" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d4f1bb91-7e91-47ab-a46b-ad776502cd3c" />
+          </property>
+          <property Id="75368f45-dc6a-46ff-98ac-3dee9121d1e4" name="public int Minutes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="14fde1a1-2f57-480a-8d7f-f2e189cd5d7b" />
+          </property>
+          <property Id="00e1259f-e100-4361-91e5-ff26f0d9b1bf" name="public DateTime Date" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6fc33460-dd52-4d00-b18c-df5e6683300d" />
+          </property>
+          <property Id="82570eac-22c5-4e5a-9c99-12a46d4de05a" name="public string Notes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d642fc5d-58a2-47fa-8a6c-ca4828e36b11" />
+          </property>
+          <property Id="634ae50e-bc63-490f-9cb7-3fb47c9e96a2" name="public decimal totalminutover" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b6a952dc-259c-4497-b393-b2afc8d98562" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="36d0d9b5-243c-421b-894d-1f8ae9cfdd99" name="public int GivTotalMinutOverarbejde" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="74971400-b6d5-42ec-83e0-217c9b6b8854" />
+          </operation>
+          <operation Id="84ab82b3-1ba0-46f7-9591-8678c46722db" name="public int GivTotalMinutNormal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="df6e631d-3725-4745-8229-a5ac870d4076" />
+          </operation>
+          <operation Id="47ae5f98-a9e9-480b-9211-e99dc95b8894" name="public override string ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d5bb42ed-2952-4326-a5d0-37c749c31357" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4dcd023e-14ab-42d0-bb37-77150fe5cfe0" name="Area" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3f078b3d-e0bd-47d2-98d9-93d83f075e61" />
+        <ownedAttributesInternal>
+          <property Id="fcf27bc1-318c-4de5-9e85-a72f1865f8b4" name="public int AreaID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f04ebcfa-841d-4099-a390-a9d9986a603b" />
+          </property>
+          <property Id="74e71c6e-29c3-4779-bd91-c9e36b16d811" name="public string AreaTitle" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2e2defd1-8d08-458e-8253-7810ec97f2fa" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="8279cc23-912b-4746-94be-3bd8942cc38d" name="public Area" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="643023c7-95b2-4f65-a555-b7463e79f1a2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f9ff0bfa-b70e-468e-b8d0-0a7aa7fadc75" name="int in_areaid" direction="In" isUnique="false">
+                  <elementDefinition Id="abfc5059-9a5d-4386-93a4-900cd2e77181" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d77e978c-d9f7-4f59-b136-4ac597269354" name="string in_areatitle" direction="In" isUnique="false">
+                  <elementDefinition Id="8cdb5add-01ed-47a6-af9f-9ba55aac674c" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="348801a7-7ca1-4236-ae89-8b73523a7929" name="public override string ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="14c7d122-1bff-498f-bffa-67c8f5dded23" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="95af5ee6-18d9-47e7-a740-2d856133416b" name="FinishedTask" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3211d748-4885-4a8b-90de-2211b3b8b406" />
+        <ownedAttributesInternal>
+          <property Id="63c7c152-1d0e-4079-b6e2-2ee1a51bd77d" name="public int FinishedTasksID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1bed56c5-8d2d-4c6c-8999-cc96eef98097" />
+          </property>
+          <property Id="b99deaf0-95d7-48d0-80fe-f6b2a8592406" name="public int AreaID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b86240b9-a76d-4004-94dd-8dc37d72f288" />
+          </property>
+          <property Id="43b164d7-1e28-4c8d-8907-5a7b7a745f70" name="public int GreenTaskID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="49586351-9b0f-43ed-8f3d-e4fc7a5ec480" />
+          </property>
+          <property Id="d472d310-1307-42e6-bbc8-e48d09a6a4e5" name="public int SubAreaID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="28069b03-a949-4991-bae7-d5bd3be71c79" />
+          </property>
+          <property Id="87bd4945-3247-4359-aa48-e4a4a77f5978" name="public int GreenkeeperID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="29f8b3a4-39da-4e1a-b8db-c99740b1168b" />
+          </property>
+          <property Id="83d4aee2-0cd9-43e0-83e1-a0907b265703" name="public DateTime Date" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8469012f-721c-404c-bbed-b29dbde41db4" />
+          </property>
+          <property Id="6de4ff9a-173f-4978-acd4-2caab70a00b1" name="public int Hours" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5de0fd31-fd05-4d1a-967b-d9aadc138b15" />
+          </property>
+          <property Id="b88bf342-6821-4720-ae18-717e267e5e6d" name="public int Minutes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="007cdf47-dacd-4881-a79e-172e407f9eb5" />
+          </property>
+          <property Id="d969ab37-3fee-4814-b89e-3f79e5c44a15" name="public string Notes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="60647419-78b7-4125-9533-a005036b2168" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="1e94a4a6-1dff-4ec0-9bad-083843273b88" name="public override string ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1ad1f65c-b0e3-461c-b290-c5ba3da69c4b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="02c10733-7517-420b-a869-f04450d77f7f" name="Greenkeeper" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e8ee91a2-ed8b-45a7-8f4e-180ddb3daaa8" />
+        <ownedAttributesInternal>
+          <property Id="f4d97910-8d7d-436d-9342-a83ac3d9f4e5" name="public int GreenkeeperID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="61262c8f-0084-4705-9c7b-f1766fb2586d" />
+          </property>
+          <property Id="03979aea-6fa6-405a-8c99-9b140f70edaf" name="public string GreenkeeperName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="251bd3c0-4690-4eb9-ac6f-77ebb9bc8c9f" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="e1cd6ff3-6fc5-4deb-b7a7-2ca9d14a0614" name="public override string ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e524a99d-4643-49fc-9ce9-946baf1e0a50" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5cfcd2c7-8c5d-467d-98e3-e1ac846351e3" name="GreenkeeperMinutterPrDag" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="753be186-b3ae-4c5e-b3e7-d1c9b3975f66" />
+        <ownedAttributesInternal>
+          <property Id="72b3fc98-4406-4685-8e37-fed52e424311" name="public string GreenkeeperName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d5be28fa-8730-458b-b542-957d36b71ead" />
+          </property>
+          <property Id="72665509-1bc3-4705-8a31-686f56badfe1" name="public int Minutterialt" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f509f45d-a677-495a-817d-26f06333f692" />
+          </property>
+          <property Id="1024c60a-e122-4500-916a-e24165872ca7" name="public DateTime Date" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="57f1371b-8bee-4aeb-b8ea-b5a5539e5537" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="d268f8bb-7043-474f-b3c8-61bce428da0b" name="public int GivTotalMinutNormal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fa9ef41e-5c10-417a-b851-3c1073e0dd8f" />
+          </operation>
+          <operation Id="df316206-6991-4fc1-b46c-9163a004a5a5" name="public override string ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a484ddb7-6ea5-408f-bfdf-1bbbb865f027" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6230c95c-c546-451d-8af7-e28322912ed6" name="GreenTask" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0420e698-0983-450c-a4e1-b4d9b44ee562" />
+        <ownedAttributesInternal>
+          <property Id="42c3708d-5f97-4c21-ad44-35e975e8b0a6" name="public int GreenTaskID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e3be01af-74a7-4df7-95da-f9d679e38398" />
+          </property>
+          <property Id="9e4fa988-5feb-48d7-aaec-15f529de55e8" name="public string GreenTaskTitle" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="57969ce0-7b8f-40c6-a222-180647c110ef" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="886c17b6-2794-426e-be76-d91daa109856" name="public override string ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="43429a7c-d9ff-4a59-9493-d60f1ce61205" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="85dcf394-dec7-4195-9312-c2ebf6d74817" name="SumAreaView" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="438df454-2519-43c0-9630-8516a1d5a9e0" />
+        <ownedAttributesInternal>
+          <property Id="98979656-786e-41bf-adf4-ccb6e8def318" name="public int AreaMinutterIalt" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7ab77b13-36e0-4a74-88bf-f09ccac9909d" />
+          </property>
+          <property Id="b7f2033e-a710-4fd1-bf2f-cd61bba91981" name="public DateTime Date" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ed3ef4fd-256c-447c-8863-1e359ced4f44" />
+          </property>
+          <property Id="1d8e416a-d2ca-42b8-9f37-4553f061ec32" name="public string AreaTitle" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="91a6d4aa-e638-4df9-baee-d4bc5f0ede33" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="253b81e4-ecb8-46cd-a333-877c790bc42d" name="public override string ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e7f0acd6-ca7e-4519-b931-306c99cc8db3" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fed8329f-fbb5-49df-a741-7f67a53961dd" name="SumTaskDateView" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7fda2ea5-2d0b-415a-aaf0-e654ded1562d" />
+        <ownedAttributesInternal>
+          <property Id="e9e1bef2-0b12-48d3-a06e-e80d10f14c28" name="public int TaskMinutesTotal" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bdbdfb4f-e14c-4433-a478-e4bfd87a5273" />
+          </property>
+          <property Id="2a410d4f-711b-4dd6-9112-653e0223a70c" name="public DateTime Date" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7c4b509e-0387-410f-bd55-47a47f2a66f4" />
+          </property>
+          <property Id="df9ff042-b068-4f3b-8267-753702f1b041" name="public string GreenTaskTitle" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b7d32e75-2d81-44b4-8382-7a2c86ca30dd" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2f19568f-d6f0-4a15-83cb-018d3c8dac3d" name="SumTaskView" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="462c0e7c-901e-4d4b-b39a-750923c151fc" />
+        <ownedAttributesInternal>
+          <property Id="52e480f5-7624-42b1-b587-b9d783deb41e" name="public int TaskMinutesTotal" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3b1acc02-422b-4cdc-8824-dc0133f714bd" />
+          </property>
+          <property Id="0bf05848-6741-4b70-a291-cecc75449b4f" name="public string GreenTaskTitle" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9cd88337-4161-459c-afe9-f55adc514f74" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="aad2ef72-03f9-4968-949d-085a542d48ed" name="public override string ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="92e4766b-05fe-4766-84be-8733a710424f" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="acbf5605-7ffc-4f3b-8389-d004d93a8f06" name="TimerIalt" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6fca19af-080d-49fa-b793-898c33787ae2" />
+        <ownedAttributesInternal>
+          <property Id="54905e17-588a-4d68-a428-d5fd61a6529b" name="public string GreenkeeperName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="582c4201-9f57-4390-831e-6916ad4052cb" />
+          </property>
+          <property Id="2073cc64-d24d-4d6e-bcaf-0e78bf93b8f0" name="public int TimerOver" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6075fad9-b392-4772-8a59-c5c3b27ab2c9" />
+          </property>
+          <property Id="51e7ee23-0548-4fbf-85d4-7f6bd8bb6607" name="public int MinutterOver" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0b990637-5c1e-4bb4-a553-f23ccfd057b8" />
+          </property>
+          <property Id="cbc30af7-dcda-407d-89b1-c4ac8eb9c4ce" name="public int Timer" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d93c0a2a-ecd6-4544-a2b3-e0727d3f5556" />
+          </property>
+          <property Id="dff9ea8d-f351-41e0-9f6c-62f773dd39c0" name="public int Minutter" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0bf306ac-df30-4291-8d58-e330b2c7562c" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="bf2ea27d-bf1f-4ffd-b088-f8298bb57c22" name="public override string ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="602dbdd2-bd5b-4f95-9a82-2204e0963100" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f4b1012b-7adf-44b5-82b3-3744da25b870" name="TimerIaltArea" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="788390ff-96ba-4cea-94e5-fae4002360b8" />
+        <ownedOperationsInternal>
+          <operation Id="621146e9-b934-4a1e-876d-d35e045db660" name="public override string ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c6b2e4f1-f679-466b-a8ca-6d057520602b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1668c4be-a10f-4531-8140-6eac3c928a95" name="public class TimerIaltOpgaver" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e50ced31-94e8-4303-aae1-947e29cd07ce" />
+        <ownedOperationsInternal>
+          <operation Id="3828f959-b416-46a3-a526-f73f773472b7" name="public override string ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="819241e4-6fa0-43f9-8756-33c9cc0ee7e6" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3cca5062-8a2e-4770-9410-7894db2d5331" name="TimerPrDagPrMand" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="60eb6d48-dc61-419c-9569-c650f8b6fc80" />
+        <ownedAttributesInternal>
+          <property Id="1c4e282b-1663-4124-a060-9ae8ae8fe429" name="public int TimerOver" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e7f68cef-4895-4bda-81a0-7c545786d033" />
+          </property>
+          <property Id="8e5c7e1a-bd2e-4305-8622-2c2212802f57" name="public int MinutterOver" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bc232b7b-73c8-4b0b-b9f5-4beccbbede36" />
+          </property>
+          <property Id="f98cfbf3-3453-4511-afa6-b6dea9e3ec76" name="public int Timer" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bec9a030-8c3b-452c-95a6-9495bdffd72d" />
+          </property>
+          <property Id="95383d85-d1cf-4683-acf2-67e6485a017f" name="public int Minutter" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="673ef108-f739-4c26-aadf-2caa14bb6528" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="aa24d44f-5704-484b-a211-5b3c21e06b61" name="public override string ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bac2e34d-49a3-4892-abb0-25a9b380fbd6" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="7cfb6595-5ea1-42b6-9466-4d795dcaaaf9" name="KeptitKlasseDiagram">
+    <elementDefinition Id="b636c278-c66e-4dd0-81a4-3e4ae8b55645" />
+  </package>
+</logicalClassDesignerModel>

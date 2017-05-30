@@ -36,7 +36,7 @@ namespace KeptitClient.Handlers
         {
             try
             {
-                if (Mwm.Greenname == "" || Mwm.Greennumber < 9999999 || Mwm.Greennumber > 1000000000)
+                if (Mwm.Greenname == "" || Mwm.Greennumber < 9999999 || Mwm.Greennumber > 100000000)
                 {
                     throw new Exception();
                 }
@@ -49,12 +49,6 @@ namespace KeptitClient.Handlers
             {
                 MessageDialogHelper.Show("felterne skal udfyldes ordentligt", "Fejl: ");
             }
-        }
-
-        // Put Greenkeeper
-        public async void PutGreenkeeper()
-        {
-
         }
 
         // Slet Greenkeeper

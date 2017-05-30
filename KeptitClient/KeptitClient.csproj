@@ -101,7 +101,6 @@
     <Compile Include="Models\TimerIaltArea.cs" />
     <Compile Include="Models\TimerIaltOpgaver.cs" />
     <Compile Include="Models\TimerPrDagPrMand.cs" />
-    <Compile Include="Models\Weather.cs" />
     <Compile Include="View\Adminansatte.xaml.cs">
       <DependentUpon>Adminansatte.xaml</DependentUpon>
     </Compile>
@@ -128,7 +127,6 @@
     <Compile Include="Models\Greenkeeper.cs" />
     <Compile Include="Models\GreenkeeperInfo.cs" />
     <Compile Include="Models\GreenTask.cs" />
-    <Compile Include="Models\SubArea.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\GreenkeeperViewModel.cs" />
