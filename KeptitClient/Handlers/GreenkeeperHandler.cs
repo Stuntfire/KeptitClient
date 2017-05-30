@@ -47,7 +47,7 @@ namespace KeptitClient.Handlers
             }
             catch (Exception)
             {
-                MessageDialogHelper.Show("Felterne skal udfyldes ordentligt", "Fejl: ");
+                MessageDialogHelper.Show("felterne skal udfyldes ordentligt", "Fejl: ");
             }
         }
 
@@ -56,20 +56,25 @@ namespace KeptitClient.Handlers
         {
             try
             {
-                PersistencyService.DeleteGreenkeeper(Mwm.DeleteGreenkeeper.GreenkeeperID);
-
-                ContentDialog cd = new ContentDialog();
-                cd.Content = "Du har nu fjernet en greenkeeper";
-                cd.PrimaryButtonText = "OK";
-                await cd.ShowAsync();
-
+                if (Mwm.SelectedWorker == null)
+                {
+                    throw new Exception();
+                }
+                PersistencyService.DeleteGreenkeeper(Mwm.SelectedWorker.GreenkeeperID);
+                Mwm.GreenkeeperInfoCollection.Clear();
+                await Mwm.GreenkeeperHandler.GetGreenkeeperCollection();
+                
+                ContentDialog Gcd = new ContentDialog();
+                Gcd.Content = "Greenkeeper er slettet";
+                Gcd.PrimaryButtonText = "OK";
+                await Gcd.ShowAsync();
             }
             catch (Exception)
             {
-                ContentDialog cd = new ContentDialog();
-                cd.Content = "Vælg venligst en greenkeeper";
-                cd.PrimaryButtonText = "OK";
-                await cd.ShowAsync();
+                ContentDialog Gcd = new ContentDialog();
+                Gcd.Content = "Vælg venligst en greenkeeper";
+                Gcd.PrimaryButtonText = "OK";
+                await Gcd.ShowAsync();
             }
         }
     }

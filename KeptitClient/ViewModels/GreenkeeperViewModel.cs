@@ -49,7 +49,6 @@ namespace KeptitClient.ViewModels
         }
 
         private ICommand _deleteGreenkeeperCommand;
-
         public ICommand DeleteGreenkeeperCommand
         {
             get { return _deleteGreenkeeperCommand; }
@@ -191,6 +190,12 @@ namespace KeptitClient.ViewModels
             }
         }
 
+        private Greenkeeper _selectedWorker;
+        public Greenkeeper SelectedWorker {
+            get { return _selectedWorker; }
+            set { _selectedWorker = value; }
+        }
+
         private Greenkeeper _selectedGreenKeeper;
         public Greenkeeper SelectedGreenKeeper
         {
@@ -211,7 +216,7 @@ namespace KeptitClient.ViewModels
             {
                 _selectedGreenTask = value;
                 OnPropertyChanged(nameof(SelectedGreenTask));
-
+        
             }
         }
 
