@@ -28,7 +28,6 @@ namespace KeptitClient.ViewModels
         public GreenkeeperMinutterPrDagHandler GreenkeeperMinutterPrDagHandler { get; set; }
         public SubAreaHandler SubAreaHandler { get; set; }
         public GreenkeeperHandler GreenkeeperHandler { get; set; }
-        public WeatherHandler WeatherHandler { get; set; }
         #endregion
 
         #region RelayCommands
@@ -421,8 +420,11 @@ namespace KeptitClient.ViewModels
         {
             GreenkeeperInfoHandler = new GreenkeeperInfoHandler(this);
             GreenkeeperInfoHandler.LoadUpdatedList();
-
         }
+
+
+
+
 
         public bool IsEmpty()
         {
@@ -453,8 +455,7 @@ namespace KeptitClient.ViewModels
 
         private  void LoadAllCollections()
         {
-            WeatherHandler = new WeatherHandler(this);
-            //WeatherHandler.GetWeatherData();
+
 
             GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
             GreenkeeperHandler = new GreenkeeperHandler(this);

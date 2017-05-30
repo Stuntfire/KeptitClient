@@ -38,12 +38,6 @@
                             <FontIcon Glyph="&#xE121;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
                             <Button x:Name="AdminAnsatteButton" Margin="0,0,0,0" Click="AdminAnsatteButton_Click" Content="Ansatte" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>
                         </StackPanel>
-                        <!--#region weather button-->
-                        <StackPanel Orientation="Horizontal">
-                            <FontIcon Glyph="&#xE753;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
-                            <Button x:Name="AdminwhetherButton" Margin="0,0,0,0" Click="AdminwhetherButton_Click" Content="Vejret" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>
-                        </StackPanel>
-                        <!--#endregion-->
                         <StackPanel Orientation="Horizontal">
                             <FontIcon Glyph="&#xE1F7;" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="#FFE3B559" Margin="16,0,4,0"/>
                             <Button x:Name="AdminlogudButton" Margin="0,0,0,0" Click="AdminlogudButton_Click" Content="Log ud" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#00000000" Width="200" Height="60" FontSize="30" Foreground="#FFE3B559" HorizontalContentAlignment="Left"/>

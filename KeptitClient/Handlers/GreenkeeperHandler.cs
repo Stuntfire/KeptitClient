@@ -36,11 +36,11 @@ namespace KeptitClient.Handlers
         {
             try
             {
-                Greenkeeper temp_green = new Greenkeeper(Mwm.Greennumber, Mwm.Greenname);
                 if (Mwm.Greenname == "" || Mwm.Greennumber < 9999999 || Mwm.Greennumber > 1000000000)
                 {
                     throw new Exception();
                 }
+                Greenkeeper temp_green = new Greenkeeper(Mwm.Greennumber, Mwm.Greenname);
                 PersistencyService.PostGreenkeeper(temp_green);
                 Mwm.GreenkeeperInfoCollection.Clear();
                 await Mwm.GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
@@ -49,6 +49,12 @@ namespace KeptitClient.Handlers
             {
                 MessageDialogHelper.Show("felterne skal udfyldes ordentligt", "Fejl: ");
             }
+        }
+
+        // Put Greenkeeper
+        public async void PutGreenkeeper()
+        {
+
         }
 
         // Slet Greenkeeper
@@ -68,6 +74,7 @@ namespace KeptitClient.Handlers
                 Gcd.Content = "Greenkeeper er slettet";
                 Gcd.PrimaryButtonText = "OK";
                 await Gcd.ShowAsync();
+
             }
             catch (Exception)
             {

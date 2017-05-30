@@ -93,7 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handlers\GreenkeeperMinutterPrDagHandler.cs" />
-    <Compile Include="Handlers\WeatherHandler.cs" />
     <Compile Include="Models\GreenkeeperMinutterPrDag.cs" />
     <Compile Include="Models\SumAreaView.cs" />
     <Compile Include="Models\SumTaskDateView.cs" />
@@ -141,9 +140,6 @@
     </Compile>
     <Compile Include="View\Adminlogin.xaml.cs">
       <DependentUpon>Adminlogin.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Adminweather.xaml.cs">
-      <DependentUpon>Adminweather.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Greenkeeper.xaml.cs">
       <DependentUpon>Greenkeeper.xaml</DependentUpon>
@@ -194,10 +190,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Adminlogin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Adminweather.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
