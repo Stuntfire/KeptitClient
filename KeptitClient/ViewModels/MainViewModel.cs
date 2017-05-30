@@ -26,7 +26,7 @@ namespace KeptitClient.ViewModels
         public AreaHandler AreaHandler { get; set; }
         public GreenTaskHandler GreenTaskHandler { get; set; }
         public GreenkeeperMinutterPrDagHandler GreenkeeperMinutterPrDagHandler { get; set; }
-        public SubAreaHandler SubAreaHandler { get; set; }
+       
         public GreenkeeperHandler GreenkeeperHandler { get; set; }
         #endregion
 
@@ -66,27 +66,6 @@ namespace KeptitClient.ViewModels
         #endregion
 
         #region Properties
-        //private BitmapImage _icon;
-        //public BitmapImage Icon
-        //{
-        //    get { return _icon; }
-        //    set
-        //    {
-        //        _icon = value;
-        //        OnPropertyChanged(nameof(Icon));
-        //    }
-        //}
-
-        //private float temp;
-        //public float Temp
-        //{
-        //    get { return temp; }
-        //    set
-        //    {
-        //        temp = value;
-        //        OnPropertyChanged(nameof(Temp));
-        //    }
-        //}
 
         private string _greenname;
         public string Greenname
@@ -137,12 +116,7 @@ namespace KeptitClient.ViewModels
             set { _areaCollection = value; }
         }
 
-        private ObservableCollection<SubArea> _subAreaCollection;
-        public ObservableCollection<SubArea> SubAreaCollection
-        {
-            get { return _subAreaCollection; }
-            set { _subAreaCollection = value; }
-        }
+        
 
         private ObservableCollection<GreenTask> _greenTaskCollektion;
         public ObservableCollection<GreenTask> GreenTaskCollection
@@ -178,16 +152,7 @@ namespace KeptitClient.ViewModels
             }
         }
 
-        private SubArea _selectedSubArea;
-        public SubArea SelectedSubArea
-        {
-            get { return _selectedSubArea; }
-            set
-            {
-                _selectedSubArea = value;
-                OnPropertyChanged(nameof(SelectedSubArea));
-            }
-        }
+       
 
         private Greenkeeper _selectedWorker;
         public Greenkeeper SelectedWorker {
@@ -486,9 +451,8 @@ namespace KeptitClient.ViewModels
             AreaHandler.GetAreaCollection();
             AreaHandler.VisOmraader();
 
-            SubAreaCollection = new ObservableCollection<SubArea>();
-            SubAreaHandler = new SubAreaHandler(this);
-            SubAreaHandler.GetSubAreaCollection();
+           
+           
 
             FinishedTaskCollection = new ObservableCollection<FinishedTask>();
             FinishedTaskHandler = new FinishedTaskHandler(this);

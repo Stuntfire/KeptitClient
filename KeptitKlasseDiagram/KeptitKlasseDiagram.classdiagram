@@ -452,6 +452,344 @@
           <packageHasNamedElement>
             <class Id="ff5ae3cf-8e6b-410a-918b-381e481105ca" name="MainViewModel" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="cf98ff2f-6af4-42ce-b0fa-c0bed5f2b39f" />
+              <targetEnds>
+                <association Id="99f3d2b1-6563-4b2d-8218-087c2b7554dd" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="GreenkeeperHandler" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="8a29ef88-767c-49e2-a78c-855f43916f83" LastKnownName="GreenkeeperHandler" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="390e6c48-4d84-4b6f-b02a-7686f777a6de" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="3eee2a97-cd53-44b7-816c-fb6952dc2007" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="9f8231e3-b315-4e2d-9aab-784327b4ed29" name="GreenkeeperHandler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="907c11ba-c547-4293-b43e-7829d5de5319" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="e8a99dfa-5bd5-41c3-8ed9-d4c743a7e92c" />
+                </association>
+                <association Id="a5964baa-6839-4370-b516-8a1df4a118f5" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="GreenTaskHandler" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="125b731c-3529-4824-90fa-544bee5bd8f5" LastKnownName="GreenTaskHandler" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="a1289e18-db01-43f8-82e3-0d5fb466aff8" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="2d149ee9-d019-4719-a4b5-0ba9d3724e9c" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="2dab0173-4024-4910-b797-eca94608e8ad" name="GreenTaskHandler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="7747797e-962a-482c-889a-0b40c7d8a454" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="9dc4fe32-e575-49b5-877a-f6acfda2a9fe" />
+                </association>
+                <association Id="36f0a805-dff8-49ab-abba-b817d7f74b8d" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="GreenkeeperInfoHandler" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="21c30933-49fb-4f8e-9149-f06d6798b250" LastKnownName="GreenkeeperInfoHandler" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="2fdf432b-9b7b-4ff2-9841-9de5f09a9f64" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="e9046a62-4f6d-4118-bdf5-701694f5b804" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="befa0dc9-8a91-48ea-a7bf-032922823339" name="GreenkeeperInfoHandler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="96d75ce0-e460-4a2b-ba05-dded36ba5254" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="40d9927b-8587-4859-a06c-a9c917c42aaa" />
+                </association>
+                <association Id="4f16ec9b-f97c-4734-b1d9-ced06a52902f" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="FinishedTaskHandler" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="fae8312b-d734-4313-8d19-7bf56c255daa" LastKnownName="FinishedTaskHandler" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="6a5aef76-7357-46ed-aa17-ef94501b539a" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="90b1cf09-6721-4e7d-8c56-9b9e3cc1a86d" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="e59b1806-83c2-4beb-bb2d-b2ea99a9004d" name="FinishedTaskHandler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="365070ab-b3fa-447a-bfc7-6029107cbef9" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="f17f87b4-459d-48f7-9aa0-0bb111a5f66b" />
+                </association>
+                <association Id="a0b3a602-5510-499f-b841-9dfb0f3eb0d0" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="GreenkeeperMinutterPrDagHandler" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="9b6cbf7b-1e49-43a2-8899-e6fb82126f5c" LastKnownName="GreenkeeperMinutterPrDagHandler" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="f14508bf-2d20-412e-a7c9-43148e66f496" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="20a55b22-9a50-46d3-9c68-beb3bbae06d1" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="150f5665-bdd6-4865-a139-563df4151fbe" name="GreenkeeperMinutterPrDagHandler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="5dea1aa4-66e1-434a-b49e-43816cea0095" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="a6d82616-bcee-4308-8a9b-0669c891ac74" />
+                </association>
+                <association Id="34a17d0d-ce87-4a0e-b058-6106659c994c" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="AreaHandler" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="dc5ab929-8098-418c-b934-a64a0c3014ff" LastKnownName="AreaHandler" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="05336f1d-bb31-4190-b7f6-4c9c284389e4" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="a498a249-9320-4547-a10a-b5617932b094" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="23190c25-99b1-42cc-b828-1db5bb608a9c" name="AreaHandler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="19622a03-d018-461a-8e59-e98e2e11f7ab" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="5de275f2-3a61-4857-b940-41ac1d2b37aa" />
+                </association>
+                <association Id="4f8ab23c-02ab-4a93-8445-25d08f60ed40" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="PersistencyService" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="7cb960f5-b1cf-4c34-9142-b63766237fe9" LastKnownName="PersistencyService" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="6f62ec3c-b0d0-480c-b701-9ca43c46b7ff" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="1947f558-ab78-41ff-a79b-c7678c49006f" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="3ef6c932-3ac7-4677-98cb-1ff868eb41bd" name="PersistencyService" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="73e4da1d-9626-4de3-8aa3-6e497d99dda6" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="45f6b9fd-5a5f-47f5-81dc-f965822f3ae4" />
+                </association>
+                <association Id="674de68b-48ff-4f61-ae88-fa18fc9ee0bb" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="Area" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="4dcd023e-14ab-42d0-bb37-77150fe5cfe0" LastKnownName="Area" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="ac8dd0b7-a824-46ed-ae3e-4decf72f41c8" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="1f6eabe5-c4d7-4001-a8b5-f7d275d47015" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="f96d5baa-7d48-4ae7-b9e2-759bd52176b8" name="Area" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="f6b9f14d-79cd-4619-a6d4-596e741fc6ae" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="bd183916-a9db-4629-a671-6e7754c9ec6f" />
+                </association>
+                <association Id="fd57c16c-99be-4ead-92cd-042de708961d" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="FinishedTask" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="95af5ee6-18d9-47e7-a740-2d856133416b" LastKnownName="FinishedTask" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="fc1673e4-0d32-4b39-a1dd-a6de5e4db49d" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="c9ff1f0e-4561-4a29-864b-c59c357fffee" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="baf05fa9-cea1-4ac5-b748-8538c4943f0b" name="FinishedTask" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="acb97fbf-360f-4fb3-871a-dc528863f727" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="539c93b4-b184-4edd-a90f-3c3b4605b6e8" />
+                </association>
+                <association Id="bf22f601-f557-4aec-be1a-aff78a5ecf39" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="Greenkeeper" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="02c10733-7517-420b-a869-f04450d77f7f" LastKnownName="Greenkeeper" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="ac2dafc8-e873-4a1d-9d49-33af30ef1a21" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="1b979082-e606-4d34-8d87-1d9cc8622ef2" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="ab750078-b539-4188-8de2-715f41936c8f" name="Greenkeeper" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="73e0c5a6-6791-4542-aa81-34e698159a63" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="7af20251-f4c2-4189-872e-dd6fae804dd2" />
+                </association>
+                <association Id="005549eb-66ae-4072-a648-e6121ad130c5" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="TimerIalt" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="acbf5605-7ffc-4f3b-8389-d004d93a8f06" LastKnownName="TimerIalt" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="7067d335-7022-4267-9b71-e265a9ed2a4a" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="1a12032e-0e12-4ece-bee3-c237904cead3" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="283bba30-e251-4071-937d-fe036a56d688" name="TimerIalt" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="c47b036c-6d7b-4710-bb84-f220ab6419b4" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="2c35b146-f5fb-43b8-8756-42e6f7c05f64" />
+                </association>
+                <association Id="6c5e0007-c0cf-4d96-b239-62266d25502a" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="SumAreaView" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="85dcf394-dec7-4195-9312-c2ebf6d74817" LastKnownName="SumAreaView" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="7de1cdc7-0014-4c0c-8fb9-f510b75ead43" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="30dc366a-7d40-40f2-9b68-eb9f0f3e19bb" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="1c7f1553-08f5-4c07-96cc-1c72aef43c6c" name="SumAreaView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="f7ad95fc-426c-4028-87c2-766a05aeb2b7" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="b99704d8-47a1-424c-8d52-5b6288c2641d" />
+                </association>
+                <association Id="c8dbbb76-209b-422f-90d8-8e4734dd020b" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="RelayCommand" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="049e07bc-7b20-4805-95d6-dc1306633d31" LastKnownName="RelayCommand" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="13f68621-eac1-44f5-94bd-177e1f467d30" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="d8a8c28c-e7ab-408f-99ac-f58283b9eff9" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="d2fe3ded-7e2b-4a01-81ab-1252d362f09c" name="RelayCommand" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="20254ebd-7baa-4156-9b6b-892923175dae" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="39f85313-90a4-4874-bb58-79e2a3849d52" />
+                </association>
+                <association Id="cbe6a07b-a976-41d4-ad43-609ff5e470fb" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="GreenkeeperInfo" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="988a0d93-7cb9-4681-a080-1be3a510b524" LastKnownName="GreenkeeperInfo" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="ff61a434-1904-463c-bd05-0928c4cdaf3c" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="5b74427a-7683-4302-9f6f-28d88010172b" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="febaf3c1-1fda-43ec-9249-7bffe9560d9d" name="GreenkeeperInfo" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="94a1ddd9-a188-490c-8eb9-b55fe02fbbb9" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="0fcee4a2-4bc8-4b15-8f84-ec2307c5b22e" />
+                </association>
+                <association Id="3da3edd5-f04a-4fd2-a9fc-4f5d948cd137" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="GreenkeeperMinutterPrDag" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="5cfcd2c7-8c5d-467d-98e3-e1ac846351e3" LastKnownName="GreenkeeperMinutterPrDag" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="6106e69a-a2e1-4cc9-921e-9e61b310d455" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="4ed09333-e0b2-4239-a393-c3325078d7f2" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="ec93519d-01fc-42e4-aba5-f80c12bdeee2" name="GreenkeeperMinutterPrDag" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="8a0ce5a6-fd46-4556-a2f5-0aaf71baf6a3" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="d4b9fb17-0fd5-428e-bd3e-a7c9195793fe" />
+                </association>
+                <association Id="ca73734c-dac4-4c67-afc5-1ee28487eda5" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="SumTaskDateView" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="fed8329f-fbb5-49df-a741-7f67a53961dd" LastKnownName="SumTaskDateView" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="87490bc7-5b27-44b1-91c8-c5bbd3e75466" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="858f6980-f5fe-46c6-9b5c-e5032f7218ba" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="34b2246e-8545-45aa-a28c-d4fe14ab404c" name="SumTaskDateView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="fb641f25-ec16-44d5-859d-507daf5a3f3f" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="e86cfc1d-a329-4463-b5af-2945d7c90228" />
+                </association>
+                <association Id="ec7aad60-25ad-4460-8788-1b634ced6d82" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="TimerIaltArea" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="f4b1012b-7adf-44b5-82b3-3744da25b870" LastKnownName="TimerIaltArea" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="38f01989-4447-4d0e-af56-f6e4d5683ccf" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="bd1cd3e2-6ea4-40e5-9bd1-be64a7e71b73" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="8d941f21-e713-4374-a27b-e51cfee1d51c" name="TimerIaltArea" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="5c6885ee-0af1-4bd1-91cc-e5af922c4a9a" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="c5028bfc-2728-4fda-b26b-8ef20042f442" />
+                </association>
+                <association Id="d15b56e5-b50d-4ede-a3e7-b73435e7d351" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="SumTaskView" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="2f19568f-d6f0-4a15-83cb-018d3c8dac3d" LastKnownName="SumTaskView" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="c0da2674-f9e9-4a96-ae44-2c2fd2f5109c" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="fdfb3d3a-971d-4283-96ce-2e24bc308b46" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="c7cab5ee-5732-4567-83d3-605400807793" name="SumTaskView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="32b4ec15-6d8f-4cf9-bb71-c46df3a2d140" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="a380eea4-de75-4951-a097-23bf298bbb70" />
+                </association>
+                <association Id="f198d74f-6283-4ec5-9e58-e78c373c342b" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="TimerIaltOpgaver" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="1668c4be-a10f-4531-8140-6eac3c928a95" LastKnownName="TimerIaltOpgaver" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="08bd9529-2cd7-4778-86b2-0e29260ae676" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="2aeb21f8-1526-4abc-9cf7-6e7287deb147" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="6cdf0ace-6914-499c-b2f0-b510e3aa313c" name="TimerIaltOpgaver" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="346cce83-7583-4715-bfc1-6bc765313622" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="b8105921-3822-4b60-b242-da3557f5798e" />
+                </association>
+                <association Id="df455efc-3e12-43f1-9a9c-d2dd6ec5fc07" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="TimerPrDagPrMand" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="3cca5062-8a2e-4770-9410-7894db2d5331" LastKnownName="TimerPrDagPrMand" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="496748b6-0576-469d-827b-82cf7096519b" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="f5b80378-302d-44ee-a67c-ce53be0f1a10" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="a9e21271-d457-4390-8af0-ab6353b5f743" name="TimerPrDagPrMand" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="b409d530-171f-414b-919d-604f4125aa6c" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="80cca70d-4b2b-425d-ba0b-6861586f3c70" />
+                </association>
+                <association Id="f939944d-02e5-41ad-80ef-91460571acbb" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="GreenTask" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="6230c95c-c546-451d-8af7-e28322912ed6" LastKnownName="GreenTask" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="1dc1e749-c7f6-4411-b1b1-c5b7cecced39" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="eeee7962-3c46-4ece-9629-7bbf4254a60e" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="ff5a623e-0159-4239-8d8d-c5ba8a8e13d8" name="GreenTask" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="871a372e-6d85-4269-8935-1a4adc1783c5" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="fc059ec8-a14f-4408-a5d8-346f47d1b26c" />
+                </association>
+              </targetEnds>
               <ownedAttributesInternal>
                 <property Id="b6aa9391-c823-4071-abb4-c3cee7091b94" name="public string Greenname" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="adcfd276-5010-453a-bb29-13752bcb7fd7" />
