@@ -11,9 +11,9 @@ namespace KeptitClient.Handlers
 {
     public class GreenTaskHandler
     {
-        private GreenkeeperViewModel Mwm { get; set; }
+        private MainViewModel Mwm { get; set; }
 
-        public GreenTaskHandler(GreenkeeperViewModel mwm)
+        public GreenTaskHandler(MainViewModel mwm)
         {
             this.Mwm = mwm;
         }

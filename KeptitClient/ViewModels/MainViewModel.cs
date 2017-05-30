@@ -18,7 +18,7 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace KeptitClient.ViewModels
 {
-    public class GreenkeeperViewModel
+    public class MainViewModel
     {
         #region Handlers
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
@@ -28,7 +28,6 @@ namespace KeptitClient.ViewModels
         public GreenkeeperMinutterPrDagHandler GreenkeeperMinutterPrDagHandler { get; set; }
         public SubAreaHandler SubAreaHandler { get; set; }
         public GreenkeeperHandler GreenkeeperHandler { get; set; }
-        public WeatherHandler WeatherHandler { get; set; }
         #endregion
 
         #region RelayCommands
@@ -49,7 +48,6 @@ namespace KeptitClient.ViewModels
         }
 
         private ICommand _deleteGreenkeeperCommand;
-
         public ICommand DeleteGreenkeeperCommand
         {
             get { return _deleteGreenkeeperCommand; }
@@ -191,6 +189,12 @@ namespace KeptitClient.ViewModels
             }
         }
 
+        private Greenkeeper _selectedWorker;
+        public Greenkeeper SelectedWorker {
+            get { return _selectedWorker; }
+            set { _selectedWorker = value; }
+        }
+
         private Greenkeeper _selectedGreenKeeper;
         public Greenkeeper SelectedGreenKeeper
         {
@@ -203,6 +207,20 @@ namespace KeptitClient.ViewModels
             }
         }
 
+        private DateTimeOffset selectedDateAdmin;
+
+        public DateTimeOffset SelectedDateAdmin
+        {
+            get { return selectedDateAdmin; }
+            set
+            {
+                selectedDateAdmin = value;
+                OnPropertyChanged(nameof(SelectedDateAdmin));
+                LoadAltListe();
+            }
+        }
+
+
         private GreenTask _selectedGreenTask;
         public GreenTask SelectedGreenTask
         {
@@ -211,7 +229,7 @@ namespace KeptitClient.ViewModels
             {
                 _selectedGreenTask = value;
                 OnPropertyChanged(nameof(SelectedGreenTask));
-
+        
             }
         }
 
@@ -381,7 +399,7 @@ namespace KeptitClient.ViewModels
         #endregion
 
 
-        public GreenkeeperViewModel()
+        public MainViewModel()
         {
             SetHourIndex();
             SetMinuteIndex();
@@ -393,6 +411,7 @@ namespace KeptitClient.ViewModels
             
             DateTime dt = DateTime.Today;
             SelectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+            SelectedDateAdmin = DateTimeOffset.Now;
 
             LoadAllCollections();
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
@@ -416,8 +435,15 @@ namespace KeptitClient.ViewModels
         {
             GreenkeeperInfoHandler = new GreenkeeperInfoHandler(this);
             GreenkeeperInfoHandler.LoadUpdatedList();
-
         }
+
+        public void LoadAltListe()
+        {
+            GreenkeeperMinutterPrDagHandler = new GreenkeeperMinutterPrDagHandler(this);
+            GreenkeeperMinutterPrDagHandler.LoadUpdatedListAllAdmin();
+        }
+
+
 
         public bool IsEmpty()
         {
@@ -448,8 +474,7 @@ namespace KeptitClient.ViewModels
 
         private  void LoadAllCollections()
         {
-            WeatherHandler = new WeatherHandler(this);
-            //WeatherHandler.GetWeatherData();
+
 
             GreenKeeperCollection = new ObservableCollection<Greenkeeper>();
             GreenkeeperHandler = new GreenkeeperHandler(this);

@@ -11,9 +11,9 @@ namespace KeptitClient.Handlers
 {
     public class GreenkeeperMinutterPrDagHandler
     {
-        private GreenkeeperViewModel Mwm { get; set; }
+        private MainViewModel Mwm { get; set; }
 
-        public GreenkeeperMinutterPrDagHandler(GreenkeeperViewModel mwm)
+        public GreenkeeperMinutterPrDagHandler(MainViewModel mwm)
         {
             this.Mwm = mwm;
         }
@@ -27,6 +27,19 @@ namespace KeptitClient.Handlers
             }
         }
 
+        // tester en opdateret liste på admin side, så datepicker opdatere lïsten.
+        public async Task LoadUpdatedListAllAdmin()
+        {
+            Mwm.GreenkeeperInfoCollection.Clear();
+
+            foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
+            {
+                if (item.Date.Month == Mwm.SelectedDateAdmin.Date.Month && item.Date.Year == Mwm.SelectedDateAdmin.Date.Year)
+                {
+                    Mwm.GreenkeeperInfoCollection.Add(item);
+                }
+            }
+        }
 
         // Beregner for hver greenkeeper der viser navn,timer og antal minutter. Flest timer øverst.
         public async Task GetGreenkeeperMinutterPrDagSortedList()

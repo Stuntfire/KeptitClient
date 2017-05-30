@@ -93,7 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handlers\GreenkeeperMinutterPrDagHandler.cs" />
-    <Compile Include="Handlers\WeatherHandler.cs" />
     <Compile Include="Models\GreenkeeperMinutterPrDag.cs" />
     <Compile Include="Models\SumAreaView.cs" />
     <Compile Include="Models\SumTaskDateView.cs" />
@@ -132,7 +131,7 @@
     <Compile Include="Models\SubArea.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\GreenkeeperViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="View\Admin.xaml.cs">
       <DependentUpon>Admin.xaml</DependentUpon>
     </Compile>
@@ -141,9 +140,6 @@
     </Compile>
     <Compile Include="View\Adminlogin.xaml.cs">
       <DependentUpon>Adminlogin.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Adminweather.xaml.cs">
-      <DependentUpon>Adminweather.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Greenkeeper.xaml.cs">
       <DependentUpon>Greenkeeper.xaml</DependentUpon>
@@ -156,7 +152,6 @@
     <None Include="KeptitClient_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\ledreborg_logo.png" />
     <Content Include="Icons\Logo.png" />
     <Content Include="Images\ledreborg_logo.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -194,10 +189,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Adminlogin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Adminweather.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

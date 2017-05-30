@@ -14,10 +14,10 @@ namespace KeptitClient.Handlers
 {
     public class GreenkeeperHandler
     {
-        private GreenkeeperViewModel Mwm { get; set; }
+        private MainViewModel Mwm { get; set; }
 
         //Constructor
-        public GreenkeeperHandler(GreenkeeperViewModel mwm)
+        public GreenkeeperHandler(MainViewModel mwm)
         {
             this.Mwm = mwm;
         }
@@ -36,19 +36,25 @@ namespace KeptitClient.Handlers
         {
             try
             {
-                Greenkeeper temp_green = new Greenkeeper(Mwm.Greennumber, Mwm.Greenname);
                 if (Mwm.Greenname == "" || Mwm.Greennumber < 9999999 || Mwm.Greennumber > 1000000000)
                 {
                     throw new Exception();
                 }
+                Greenkeeper temp_green = new Greenkeeper(Mwm.Greennumber, Mwm.Greenname);
                 PersistencyService.PostGreenkeeper(temp_green);
                 Mwm.GreenkeeperInfoCollection.Clear();
                 await Mwm.GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
             }
             catch (Exception)
             {
-                MessageDialogHelper.Show("Felterne skal udfyldes ordentligt", "Fejl: ");
+                MessageDialogHelper.Show("felterne skal udfyldes ordentligt", "Fejl: ");
             }
+        }
+
+        // Put Greenkeeper
+        public async void PutGreenkeeper()
+        {
+
         }
 
         // Slet Greenkeeper
@@ -56,20 +62,26 @@ namespace KeptitClient.Handlers
         {
             try
             {
-                PersistencyService.DeleteGreenkeeper(Mwm.DeleteGreenkeeper.GreenkeeperID);
-
-                ContentDialog cd = new ContentDialog();
-                cd.Content = "Du har nu fjernet en greenkeeper";
-                cd.PrimaryButtonText = "OK";
-                await cd.ShowAsync();
+                if (Mwm.SelectedWorker == null)
+                {
+                    throw new Exception();
+                }
+                PersistencyService.DeleteGreenkeeper(Mwm.SelectedWorker.GreenkeeperID);
+                Mwm.GreenkeeperInfoCollection.Clear();
+                await Mwm.GreenkeeperHandler.GetGreenkeeperCollection();
+                
+                ContentDialog Gcd = new ContentDialog();
+                Gcd.Content = "Greenkeeper er slettet";
+                Gcd.PrimaryButtonText = "OK";
+                await Gcd.ShowAsync();
 
             }
             catch (Exception)
             {
-                ContentDialog cd = new ContentDialog();
-                cd.Content = "Vælg venligst en greenkeeper";
-                cd.PrimaryButtonText = "OK";
-                await cd.ShowAsync();
+                ContentDialog Gcd = new ContentDialog();
+                Gcd.Content = "Vælg venligst en greenkeeper";
+                Gcd.PrimaryButtonText = "OK";
+                await Gcd.ShowAsync();
             }
         }
     }
