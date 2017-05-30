@@ -1,4 +1,5 @@
 ﻿using System;
+using KeptitClient.Models;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using KeptitClient.Persistency;
 
@@ -51,6 +52,22 @@ namespace UnitTestKeptIt
             var ftc = PersistencyService.LoadFinishedtaskAsync();
             Assert.AreNotEqual(null, ftc.Result);
             Assert.AreNotEqual(0, ftc.Result.Count);
+        }
+
+        [TestMethod]
+        public void TestGreenkeeperMinutterPrDagMetode()
+        {
+            //Arrange
+            GreenkeeperMinutterPrDag greenkeeperMinutterPrDag = new GreenkeeperMinutterPrDag();
+
+            greenkeeperMinutterPrDag.Minutterialt = 100;
+            greenkeeperMinutterPrDag.Date = new DateTime(2017,5,28);
+
+            //act
+          int antalminut =  greenkeeperMinutterPrDag.GivTotalMinutOverarbejde();
+
+            //Assert
+            Assert.AreEqual(150,antalminut);
         }
 
 

@@ -15,6 +15,11 @@ namespace KeptitClient.Models
 
         public DateTime Date { get; set; }
 
+        public GreenkeeperMinutterPrDag()
+        {
+            DateTime Date = new DateTime();
+        }
+
         // Beregner til overarbejde. Den tager højde for weekend og når man passere 7,4 timer i hverdagen. en dag er 444 minutter i normal timer.
         public int GivTotalMinutOverarbejde()
         {

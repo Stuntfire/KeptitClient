@@ -203,6 +203,20 @@ namespace KeptitClient.ViewModels
             }
         }
 
+        private DateTimeOffset selectedDateAdmin;
+
+        public DateTimeOffset SelectedDateAdmin
+        {
+            get { return selectedDateAdmin; }
+            set
+            {
+                selectedDateAdmin = value;
+                OnPropertyChanged(nameof(SelectedDateAdmin));
+                LoadAltListe();
+            }
+        }
+
+
         private GreenTask _selectedGreenTask;
         public GreenTask SelectedGreenTask
         {
@@ -393,7 +407,7 @@ namespace KeptitClient.ViewModels
             
             DateTime dt = DateTime.Today;
             SelectedDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
-
+            SelectedDateAdmin = DateTimeOffset.Now;
             LoadAllCollections();
             AddTaskCommand = new RelayCommand(FinishedTaskHandler.PostFinishedTask, IsEmpty);
             AddGreenkeeperCommand = new RelayCommand(GreenkeeperHandler.PostGreenkeeper, null);
@@ -417,6 +431,12 @@ namespace KeptitClient.ViewModels
             GreenkeeperInfoHandler = new GreenkeeperInfoHandler(this);
             GreenkeeperInfoHandler.LoadUpdatedList();
 
+        }
+
+        public void LoadAltListe()
+        {
+            GreenkeeperMinutterPrDagHandler = new GreenkeeperMinutterPrDagHandler(this);
+            GreenkeeperMinutterPrDagHandler.LoadUpdatedListAllAdmin();
         }
 
         public bool IsEmpty()
@@ -478,6 +498,7 @@ namespace KeptitClient.ViewModels
 
             GreenkeeperMinutterPrDagHandler = new GreenkeeperMinutterPrDagHandler(this);
             GreenkeeperMinutterPrDagHandler.GetGreenkeeperMinutterPrDagSortedList();
+            
         }
         #endregion
 
