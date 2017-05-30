@@ -11,9 +11,9 @@ namespace KeptitClient.Handlers
 {
     public class GreenkeeperMinutterPrDagHandler
     {
-        private GreenkeeperViewModel Mwm { get; set; }
+        private MainViewModel Mwm { get; set; }
 
-        public GreenkeeperMinutterPrDagHandler(GreenkeeperViewModel mwm)
+        public GreenkeeperMinutterPrDagHandler(MainViewModel mwm)
         {
             this.Mwm = mwm;
         }

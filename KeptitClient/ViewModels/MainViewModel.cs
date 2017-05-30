@@ -18,7 +18,7 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace KeptitClient.ViewModels
 {
-    public class GreenkeeperViewModel
+    public class MainViewModel
     {
         #region Handlers
         public FinishedTaskHandler FinishedTaskHandler { get; set; }
@@ -399,7 +399,7 @@ namespace KeptitClient.ViewModels
         #endregion
 
 
-        public GreenkeeperViewModel()
+        public MainViewModel()
         {
             SetHourIndex();
             SetMinuteIndex();

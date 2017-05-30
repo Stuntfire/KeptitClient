@@ -197,7 +197,7 @@
     </Page.Resources>
 
     <Page.DataContext>
-        <ViewModels:GreenkeeperViewModel/>
+        <ViewModels:MainViewModel/>
     </Page.DataContext>
     <SplitView>
 

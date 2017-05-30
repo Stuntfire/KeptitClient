@@ -131,7 +131,7 @@
     <Compile Include="Models\SubArea.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\GreenkeeperViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="View\Admin.xaml.cs">
       <DependentUpon>Admin.xaml</DependentUpon>
     </Compile>
