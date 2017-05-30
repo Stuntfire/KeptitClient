@@ -30,14 +30,6 @@ namespace UnitTestKeptIt
             Assert.AreNotEqual(0, ac.Result.Count);
         }
 
-        //[TestMethod]
-        //public void TestSubAreaCollection()
-        //{
-        //    var sac = PersistencyService.LoadSubAreasAsync();
-        //    Assert.AreNotEqual(null, sac.Result);
-        //    Assert.AreNotEqual(0, sac.Result.Count);
-        //}
-
         [TestMethod]
         public void TestGreenTaskCollection()
         {
@@ -57,35 +49,20 @@ namespace UnitTestKeptIt
         [TestMethod]
         public void TestGreenkeeperMinutterPrDagMetode()
         {
-            //Arrange
+            // Arrange
             GreenkeeperMinutterPrDag greenkeeperMinutterPrDag = new GreenkeeperMinutterPrDag();
 
             greenkeeperMinutterPrDag.Minutterialt = 100;
             greenkeeperMinutterPrDag.Date = new DateTime(2017,5,28);
 
-            //act
-          int antalminut =  greenkeeperMinutterPrDag.GivTotalMinutOverarbejde();
+            // Act
+            int antalminut =  greenkeeperMinutterPrDag.GivTotalMinutOverarbejde();
 
-            //Assert
+            // Assert
             Assert.AreEqual(150,antalminut);
         }
 
-
-
-        //[TestMethod]
-        //[ExpectedException]
-        //public void TestPostFinishedTask()
-        //{
-        //    try
-        //    {
-        //        FinishedTask ggg = null;
-        //        PersistencyService.PostFinishedtask(ggg);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        Assert.Fail();
-        //    }
-        //}
+        
         #endregion
     }
 }
