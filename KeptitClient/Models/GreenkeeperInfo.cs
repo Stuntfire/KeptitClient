@@ -33,7 +33,16 @@ namespace KeptitClient.Models
         public decimal totalminutover { get; set; }
 
         #endregion
+        public GreenkeeperInfo()
+        {
 
+        }
+
+        public GreenkeeperInfo(int hours, int minutes)
+        {
+            this.Hours = hours;
+            this.Minutes = minutes;
+        }
         // Beregner til overarbejde. Den tager højde for weekend og når man passere 7,4 timer i hverdagen. en dag er 444 minutter i normal timer.
         public int GivTotalMinutOverarbejde()
         {

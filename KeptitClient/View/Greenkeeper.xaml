@@ -197,7 +197,7 @@
     </Page.Resources>
 
     <Page.DataContext>
-        <ViewModels:GreenkeeperViewModel/>
+        <ViewModels:MainViewModel/>
     </Page.DataContext>
     <SplitView>
 
@@ -237,11 +237,11 @@
                 <ComboBoxItem Content="0"/>
                 <ComboBoxItem Content="15"/>
             </ComboBox>-->
-            <ComboBox x:Name="comboBoxHours" Header="Antal Timer" HorizontalAlignment="Left" Margin="50,360,0,0" Grid.Row="1" VerticalAlignment="Top" Width="150" ItemsSource="{Binding HourList, Mode=TwoWay}" SelectedItem="{Binding TaskHour, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Height="68"/>
-            <ComboBox x:Name="comboBoxMinute" Header="Antal minutter" HorizontalAlignment="Left" Margin="230,360,0,0" VerticalAlignment="Top" Width="150" ItemsSource="{Binding MinuteList, Mode=TwoWay}" SelectedItem="{Binding TaskMinutes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Height="68" />
+            <ComboBox x:Name="comboBoxHours" Header="Timer" HorizontalAlignment="Left" Margin="50,360,0,0" Grid.Row="1" VerticalAlignment="Top" Width="150" ItemsSource="{Binding HourList, Mode=TwoWay}" SelectedItem="{Binding TaskHour, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Height="68"/>
+            <ComboBox x:Name="comboBoxMinute" Header="Minutter" HorizontalAlignment="Left" Margin="230,360,0,0" VerticalAlignment="Top" Width="150" ItemsSource="{Binding MinuteList, Mode=TwoWay}" SelectedItem="{Binding TaskMinutes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Height="68" />
 
-            <ListView x:Name="listView" Header="Dato og tid brugt på udførte opgaver" HorizontalAlignment="Left" Height="550" Margin="460,90,0,0" VerticalAlignment="Top" Width="686" ItemsSource="{Binding GreenkeeperInfoCollection, Mode=TwoWay}" SelectedItem="{Binding GreenkeeperInfoToDelete, Mode=TwoWay}" FontSize="18" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
-
+            <ListView x:Name="listView" Header="Dato og tid brugt på udførte opgaver" HorizontalAlignment="Left" Height="550" Margin="460,90,0,0" VerticalAlignment="Top" Width="574" ItemsSource="{Binding GreenkeeperInfoCollection, Mode=TwoWay}" SelectedItem="{Binding GreenkeeperInfoToDelete, Mode=TwoWay}" FontSize="18" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -279,6 +279,7 @@
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                
             </ListView>
          
             <AppBarButton x:Name="deleteTask_appBarButton" HorizontalAlignment="Left" Icon="Delete" Label="Slet opgave" Margin="573,650,0,0" VerticalAlignment="Top" Style="{StaticResource AppBarButtonStyle_Keptit}" Width="Auto" BorderBrush="Red" Command="{Binding DeleteFinishedTask}"/>

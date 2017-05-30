@@ -129,7 +129,7 @@
     <Compile Include="Models\GreenTask.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\GreenkeeperViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="View\Admin.xaml.cs">
       <DependentUpon>Admin.xaml</DependentUpon>
     </Compile>
@@ -150,7 +150,6 @@
     <None Include="KeptitClient_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\ledreborg_logo.png" />
     <Content Include="Icons\Logo.png" />
     <Content Include="Images\ledreborg_logo.png" />
     <Content Include="Properties\Default.rd.xml" />

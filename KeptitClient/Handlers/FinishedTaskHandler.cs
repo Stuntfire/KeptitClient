@@ -13,9 +13,9 @@ namespace KeptitClient.Handlers
 {
     public class FinishedTaskHandler
     {
-        private GreenkeeperViewModel Mwm { get; set; }
+        private MainViewModel Mwm { get; set; }
 
-        public FinishedTaskHandler(GreenkeeperViewModel mvm)
+        public FinishedTaskHandler(MainViewModel mvm)
         {
             this.Mwm = mvm;
         }
@@ -34,10 +34,10 @@ namespace KeptitClient.Handlers
             try
             {
                 FinishedTask temp_task = new FinishedTask(Mwm.SelectedArea.AreaID, Mwm.SelectedGreenTask.GreenTaskID, Mwm.SelectedGreenKeeper.GreenkeeperID, Mwm.SelectedDate.Date, Mwm.TaskHour, Mwm.TaskMinutes, Mwm.Notes);
-                //if (Mwm.TaskHour == 0 && Mwm.TaskMinutes == 0)
-                //{
-                //    throw new Exception();
-                //}
+                if (Mwm.TaskHour == 0 && Mwm.TaskMinutes == 0)
+                {
+                    throw new Exception();
+                }
                 PersistencyService.PostFinishedtask(temp_task);
                 Mwm.GreenkeeperInfoCollection.Clear();
                 await Mwm.GreenkeeperInfoHandler.GetGreenTaskInfoCollection();
