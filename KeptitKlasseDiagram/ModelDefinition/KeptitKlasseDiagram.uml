@@ -54,6 +54,12 @@
         LastKnownName="Common"
         LastKnownLocation="Package_1339.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="b7d1cb89-2dfd-4381-b897-076fc3432767"
+        LastKnownName="Veiws"
+        LastKnownLocation="Package_0917.uml" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
