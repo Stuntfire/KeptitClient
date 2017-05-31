@@ -47,40 +47,27 @@ namespace UnitTestKeptIt
             Assert.AreNotEqual(null, ftc.Result);
             Assert.AreNotEqual(0, ftc.Result.Count);
         }
+        
+
+        #endregion
+
+        #region GreenkeeperMinutterPrDagTests
 
         [TestMethod]
-        public void TestGreenkeeperMinutterPrDagMetode()
+        public void TestGreenkeeperMinutterPrDagMetode_100_Minutter()
         {
             // Arrange
             GreenkeeperMinutterPrDag greenkeeperMinutterPrDag = new GreenkeeperMinutterPrDag();
 
             greenkeeperMinutterPrDag.Minutterialt = 100;
-            greenkeeperMinutterPrDag.Date = new DateTime(2017,5,28);
+            greenkeeperMinutterPrDag.Date = new DateTime(2017, 5, 28);
 
             // Act
-            int antalminut =  greenkeeperMinutterPrDag.GivTotalMinutOverarbejde();
+            int antalminut = greenkeeperMinutterPrDag.GivTotalMinutOverarbejde();
 
             // Assert
-            Assert.AreEqual(150,antalminut);
+            Assert.AreEqual(150, antalminut);
         }
-
-
-        //[TestMethod]
-        //[ExpectedException]
-        //public void TestPostFinishedTask()
-        //{
-        //    try
-        //    {
-        //        FinishedTask ggg = null;
-        //        PersistencyService.PostFinishedtask(ggg);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        Assert.Fail();
-        //    }
-        //}
-        #endregion 
-
 
         [TestMethod]
         public void TestGivTotalMinutOverarbejde() // 
@@ -94,5 +81,7 @@ namespace UnitTestKeptIt
             // assert
             Assert.AreEqual(666, actualValue);
         }
+
+        #endregion
     }
 }

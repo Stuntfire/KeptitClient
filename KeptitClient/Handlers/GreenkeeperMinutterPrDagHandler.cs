@@ -30,13 +30,13 @@ namespace KeptitClient.Handlers
         // tester en opdateret liste på admin side, så datepicker opdatere lïsten.
         public async Task LoadUpdatedListAllAdmin()
         {
-            Mwm.GreenkeeperInfoCollection.Clear();
+            Mwm.GreenkeeperInfoCollection2.Clear();
 
-            foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
+            foreach (var item in await PersistencyService.LoadGreenkeeperMinutterPrDagAsync())
             {
-                if (item.Date.Month == Mwm.SelectedDateAdmin.Date.Month && item.Date.Year == Mwm.SelectedDateAdmin.Date.Year)
+                if (item.Date.Month == Mwm.SelectedDateAdmin.Date.Month && item.Date.Year == Mwm.SelectedDateAdmin.Year)
                 {
-                    Mwm.GreenkeeperInfoCollection.Add(item);
+                    Mwm.GreenkeeperInfoCollection2.Add(item);
                 }
             }
         }
