@@ -229,14 +229,14 @@ namespace KeptitClient.ViewModels
             }
         }
 
-        private ObservableCollection<GreenkeeperMinutterPrDag> _greenkeeperInfoCollection2;
-        public ObservableCollection<GreenkeeperMinutterPrDag> GreenkeeperInfoCollection2
+        private ObservableCollection<TimerIalt> _timerIaltCollection;
+        public ObservableCollection<TimerIalt> TimerIaltCollection
         {
-            get { return _greenkeeperInfoCollection2; }
+            get { return _timerIaltCollection; }
             set
             {
-                _greenkeeperInfoCollection2 = value;
-                OnPropertyChanged(nameof(GreenkeeperInfoCollection2));
+                _timerIaltCollection = value;
+                OnPropertyChanged(nameof(TimerIaltCollection));
             }
         }
 
@@ -380,7 +380,7 @@ namespace KeptitClient.ViewModels
             SetHourIndex();
             SetMinuteIndex();
             GreenkeeperInfoCollection = new ObservableCollection<GreenkeeperInfo>();
-            GreenkeeperInfoCollection2 = new ObservableCollection<GreenkeeperMinutterPrDag>();
+            TimerIaltCollection = new ObservableCollection<TimerIalt>();
 
             GreenkeeperMinutterPrDagCollection = new ObservableCollection<GreenkeeperMinutterPrDag>();
             GetGreenkeeperNavnSortedList = new ObservableCollection<GreenkeeperInfo>();

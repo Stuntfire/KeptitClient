@@ -22,10 +22,10 @@
 
 
             <Grid Height="562" Margin="40,0,0,0">
-                <TextBlock TextWrapping="Wrap" Text="Timer ialt." HorizontalAlignment="Left" Width="552" Height="80" Margin="0,20,0,0" FontSize="35" VerticalAlignment="Top"/>
+                <TextBlock TextWrapping="Wrap" Text="Timer ialt pr måned." HorizontalAlignment="Left" Width="552" Height="80" Margin="0,20,0,0" FontSize="35" VerticalAlignment="Top"/>
 
 
-                <ListView Width="591" Margin="0,176,0,-340" HorizontalAlignment="Left" ItemsSource="{Binding GreenkeeperInfoCollection2, Mode=TwoWay}" />
+                <ListView Width="591" Margin="0,176,0,-340" HorizontalAlignment="Left" ItemsSource="{Binding TimerIaltCollection, Mode=TwoWay}" />
                 <DatePicker HorizontalAlignment="Left" Margin="0,129,0,0" VerticalAlignment="Top" Width="287" DayVisible="False" Date="{Binding SelectedDateAdmin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   />
                 <TextBlock HorizontalAlignment="Left" Margin="0,79,0,0" TextWrapping="Wrap" Text="Vælg måned." VerticalAlignment="Top" Height="33" Width="231" FontSize="20"/>
                 <Button Content="Export to excel" HorizontalAlignment="Left" Margin="140,80,0,0" VerticalAlignment="Top" Width="156"/>

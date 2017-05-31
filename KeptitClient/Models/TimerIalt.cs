@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace KeptitClient.Models
 {
-    public class TimerIalt
+    public class TimerIalt : GreenkeeperInfo
     {
-        public string GreenkeeperName { get; set; }
         public int TimerOver { get; set; }
         public int MinutterOver { get; set; }
         public int Timer { get; set; }
