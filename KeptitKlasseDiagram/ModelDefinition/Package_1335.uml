@@ -15,8 +15,8 @@
           <association
             Id="e8a99dfa-5bd5-41c3-8ed9-d4c743a7e92c"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="GreenkeeperHandler"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -27,7 +27,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="3eee2a97-cd53-44b7-816c-fb6952dc2007"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -40,7 +39,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="907c11ba-c547-4293-b43e-7829d5de5319"
-                  name="GreenkeeperHandler"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -54,8 +52,8 @@
           <association
             Id="9dc4fe32-e575-49b5-877a-f6acfda2a9fe"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="GreenTaskHandler"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -66,7 +64,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="2d149ee9-d019-4719-a4b5-0ba9d3724e9c"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -79,7 +76,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="7747797e-962a-482c-889a-0b40c7d8a454"
-                  name="GreenTaskHandler"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -93,8 +89,8 @@
           <association
             Id="40d9927b-8587-4859-a06c-a9c917c42aaa"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="GreenkeeperInfoHandler"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -105,7 +101,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="e9046a62-4f6d-4118-bdf5-701694f5b804"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -118,7 +113,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="96d75ce0-e460-4a2b-ba05-dded36ba5254"
-                  name="GreenkeeperInfoHandler"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -132,8 +126,8 @@
           <association
             Id="f17f87b4-459d-48f7-9aa0-0bb111a5f66b"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="FinishedTaskHandler"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -144,7 +138,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="90b1cf09-6721-4e7d-8c56-9b9e3cc1a86d"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -157,7 +150,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="365070ab-b3fa-447a-bfc7-6029107cbef9"
-                  name="FinishedTaskHandler"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -171,8 +163,8 @@
           <association
             Id="a6d82616-bcee-4308-8a9b-0669c891ac74"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="GreenkeeperMinutterPrDagHandler"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -183,7 +175,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="20a55b22-9a50-46d3-9c68-beb3bbae06d1"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -196,7 +187,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="5dea1aa4-66e1-434a-b49e-43816cea0095"
-                  name="GreenkeeperMinutterPrDagHandler"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -210,8 +200,8 @@
           <association
             Id="5de275f2-3a61-4857-b940-41ac1d2b37aa"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="AreaHandler"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -222,7 +212,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="a498a249-9320-4547-a10a-b5617932b094"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -235,46 +224,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="19622a03-d018-461a-8e59-e98e2e11f7ab"
-                  name="AreaHandler"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="45f6b9fd-5a5f-47f5-81dc-f965822f3ae4"
-            isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="PersistencyService"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="8a8b1d9f-173b-4a35-804f-5775d958dabe"
-              LastKnownName="PersistencyService"
-              LastKnownLocation="Package1_1335.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="1947f558-ab78-41ff-a79b-c7678c49006f"
-                  name="MainViewModel"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="73e4da1d-9626-4de3-8aa3-6e497d99dda6"
-                  name="PersistencyService"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -288,8 +237,8 @@
           <association
             Id="bd183916-a9db-4629-a671-6e7754c9ec6f"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="Area"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -300,7 +249,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="1f6eabe5-c4d7-4001-a8b5-f7d275d47015"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -313,7 +261,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="f6b9f14d-79cd-4619-a6d4-596e741fc6ae"
-                  name="Area"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -327,8 +274,8 @@
           <association
             Id="539c93b4-b184-4edd-a90f-3c3b4605b6e8"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="FinishedTask"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -339,7 +286,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="c9ff1f0e-4561-4a29-864b-c59c357fffee"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -352,7 +298,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="acb97fbf-360f-4fb3-871a-dc528863f727"
-                  name="FinishedTask"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -366,8 +311,8 @@
           <association
             Id="7af20251-f4c2-4189-872e-dd6fae804dd2"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="Greenkeeper"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -378,7 +323,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="1b979082-e606-4d34-8d87-1d9cc8622ef2"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -391,7 +335,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="73e0c5a6-6791-4542-aa81-34e698159a63"
-                  name="Greenkeeper"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -405,8 +348,8 @@
           <association
             Id="2c35b146-f5fb-43b8-8756-42e6f7c05f64"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="TimerIalt"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -417,7 +360,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="1a12032e-0e12-4ece-bee3-c237904cead3"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -430,7 +372,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="c47b036c-6d7b-4710-bb84-f220ab6419b4"
-                  name="TimerIalt"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -444,8 +385,8 @@
           <association
             Id="b99704d8-47a1-424c-8d52-5b6288c2641d"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="SumAreaView"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -456,7 +397,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="30dc366a-7d40-40f2-9b68-eb9f0f3e19bb"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -469,7 +409,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="f7ad95fc-426c-4028-87c2-766a05aeb2b7"
-                  name="SumAreaView"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -483,8 +422,8 @@
           <association
             Id="39f85313-90a4-4874-bb58-79e2a3849d52"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="RelayCommand"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -495,7 +434,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="d8a8c28c-e7ab-408f-99ac-f58283b9eff9"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -508,7 +446,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="20254ebd-7baa-4156-9b6b-892923175dae"
-                  name="RelayCommand"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -522,8 +459,8 @@
           <association
             Id="0fcee4a2-4bc8-4b15-8f84-ec2307c5b22e"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="GreenkeeperInfo"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -534,7 +471,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="5b74427a-7683-4302-9f6f-28d88010172b"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -547,7 +483,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="94a1ddd9-a188-490c-8eb9-b55fe02fbbb9"
-                  name="GreenkeeperInfo"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -561,8 +496,8 @@
           <association
             Id="d4b9fb17-0fd5-428e-bd3e-a7c9195793fe"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="GreenkeeperMinutterPrDag"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -573,7 +508,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="4ed09333-e0b2-4239-a393-c3325078d7f2"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -586,7 +520,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="8a0ce5a6-fd46-4556-a2f5-0aaf71baf6a3"
-                  name="GreenkeeperMinutterPrDag"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -600,8 +533,8 @@
           <association
             Id="e86cfc1d-a329-4463-b5af-2945d7c90228"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="SumTaskDateView"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -612,7 +545,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="858f6980-f5fe-46c6-9b5c-e5032f7218ba"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -625,7 +557,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="fb641f25-ec16-44d5-859d-507daf5a3f3f"
-                  name="SumTaskDateView"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -639,8 +570,8 @@
           <association
             Id="c5028bfc-2728-4fda-b26b-8ef20042f442"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="TimerIaltArea"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -651,7 +582,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="bd1cd3e2-6ea4-40e5-9bd1-be64a7e71b73"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -664,7 +594,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="5c6885ee-0af1-4bd1-91cc-e5af922c4a9a"
-                  name="TimerIaltArea"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -678,8 +607,8 @@
           <association
             Id="a380eea4-de75-4951-a097-23bf298bbb70"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="SumTaskView"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -690,7 +619,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="fdfb3d3a-971d-4283-96ce-2e24bc308b46"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -703,7 +631,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="32b4ec15-6d8f-4cf9-bb71-c46df3a2d140"
-                  name="SumTaskView"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -717,8 +644,8 @@
           <association
             Id="b8105921-3822-4b60-b242-da3557f5798e"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="TimerIaltOpgaver"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -729,7 +656,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="2aeb21f8-1526-4abc-9cf7-6e7287deb147"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -742,7 +668,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="346cce83-7583-4715-bfc1-6bc765313622"
-                  name="TimerIaltOpgaver"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -756,8 +681,8 @@
           <association
             Id="80cca70d-4b2b-425d-ba0b-6861586f3c70"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="TimerPrDagPrMand"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -768,7 +693,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="f5b80378-302d-44ee-a67c-ce53be0f1a10"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -781,7 +705,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="b409d530-171f-414b-919d-604f4125aa6c"
-                  name="TimerPrDagPrMand"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -795,8 +718,8 @@
           <association
             Id="fc059ec8-a14f-4408-a5d8-346f47d1b26c"
             isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="GreenTask"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -807,7 +730,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="eeee7962-3c46-4ece-9629-7bbf4254a60e"
-                  name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -820,7 +742,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="871a372e-6d85-4269-8935-1a4adc1783c5"
-                  name="GreenTask"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
