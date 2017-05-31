@@ -59,14 +59,14 @@ namespace KeptitClient
 
         private void AdminloginButton_Click(object sender, RoutedEventArgs e)
         {
-            Mainframe.Navigate(typeof(Adminlogin));
+            Mainframe.Navigate(typeof(Admin));
             AdminPanel.Visibility = Visibility.Visible;
             LogudPanel.Visibility = Visibility.Collapsed;
         }
 
              private void AdminlogudButton_Click(object sender, RoutedEventArgs e)
         {
-            Mainframe.Navigate(typeof(Adminlogin));
+            Mainframe.Navigate(typeof(Greenkeeper));
             AdminPanel.Visibility = Visibility.Collapsed;
             LogudPanel.Visibility = Visibility.Visible;
         }
