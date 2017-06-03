@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using KeptitClient.Models;
 using KeptitClient.ViewModels;
 using KeptitClient.Persistency;
 
@@ -48,10 +49,6 @@ namespace KeptitClient.Handlers
                       Minutter = dagene.Sum(x => x.GivTotalMinutNormal() % 60)
                   };
 
-            var timerprdagprmandformat =
-                from e1 in deldageop
-                select new Models.TimerPrDagPrMand() { GreenkeeperName = e1.D.GreenkeeperName, Date = e1.D.Date, Timer = e1.Timer, Minutter = e1.Minutter, TimerOver = e1.TOver, MinutterOver = e1.MOver };
-
 
             // Beregner samlet timer for en greenkeeper, kan filtreres ud fra dato.
             var AlleOpgaverPaaGreenkeeper =
@@ -74,6 +71,7 @@ namespace KeptitClient.Handlers
             // Viser listen uden {} = og andre unødvændige variabel navne.
             var timerialtprmandformat =
                 from b1 in AlleOpgaverPaaGreenkeeper
+                orderby b1.D.Date descending 
                 select new Models.TimerIalt() { GreenkeeperName = b1.navn, Timer = b1.Timer, Minutter = b1.Minutter, TimerOver = b1.TOver2, MinutterOver = b1.MOver2, Date = b1.D.Date };
           
 
@@ -89,14 +87,14 @@ namespace KeptitClient.Handlers
 
         }
 
-        // Beregner for hver greenkeeper der viser navn,timer og antal minutter. Flest timer øverst.
+        // Beregner for hver greenkeeper der viser navn,timer og antal minutter på normaal timer og overarbejde. Sortere på dato, nyeste øverst.
         public async Task GetGreenkeeperMinutterPrDagSortedList()
         {
 
             var deldageop =
                   from t1 in await PersistencyService.LoadGreenkeeperMinutterPrDagAsync()
                   where t1.GreenkeeperName != ""
-                  orderby t1.Date descending
+                  orderby t1.Date descending 
                   group t1 by new { t1.Date, t1.GreenkeeperName }
                   into dagene
                   select new
@@ -112,7 +110,7 @@ namespace KeptitClient.Handlers
             var timerprdagprmandformat =
                 from e1 in deldageop
                 select new Models.TimerPrDagPrMand() { GreenkeeperName = e1.D.GreenkeeperName, Date = e1.D.Date, Timer = e1.Timer, Minutter = e1.Minutter, TimerOver = e1.TOver, MinutterOver = e1.MOver };
-            
+
             Mwm.ListViewOpgaverPrDag.DataContext = timerprdagprmandformat;
 
         }

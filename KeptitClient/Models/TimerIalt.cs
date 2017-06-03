@@ -16,8 +16,8 @@ namespace KeptitClient.Models
 
         public override string ToString()
         {
-            return string.Format("{0} {1} {2}Normal Timer:{3}Timer: {4}  Minutter: {5}{6}Overarbejdstimer: {7}Timer: {8} Minutter: {9}  {10}-------------------------------"
-                , GreenkeeperName, Environment.NewLine, Environment.NewLine, Environment.NewLine, Timer, Minutter, Environment.NewLine, Environment.NewLine, TimerOver, MinutterOver, Environment.NewLine);
+            return string.Format("{0} {1} {2}Normal Timer:{3}Timer: {4}  Minutter: {5}{6}Overarbejdstimer: {7}Timer: {8} Minutter: {9} {10}{11:dd-MM-yy} {12}-------------------------------"
+                , GreenkeeperName, Environment.NewLine, Environment.NewLine, Environment.NewLine, Timer, Minutter, Environment.NewLine, Environment.NewLine, TimerOver, MinutterOver, Environment.NewLine, Date, Environment.NewLine);
         }
     }
 }

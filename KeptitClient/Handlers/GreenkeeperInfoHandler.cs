@@ -20,11 +20,15 @@ namespace KeptitClient.Handlers
         //Gets all Tasks from Database via PersistencyService
         public async Task GetGreenTaskInfoCollection()
         {
+            Mwm.GreenkeeperInfoCollection.Clear();
+
             //Brug foreach hvis LoadSubAreaAsync() i PersistencyService kodes som async:
             foreach (var item in await PersistencyService.LoadGreenkeeperInfoAsync())
             {
                 Mwm.GreenkeeperInfoCollection.Add(item);
             }
+
+            
         }
 
         public async Task LoadUpdatedList()

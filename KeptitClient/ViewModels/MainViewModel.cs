@@ -381,6 +381,7 @@ namespace KeptitClient.ViewModels
             SetMinuteIndex();
             GreenkeeperInfoCollection = new ObservableCollection<GreenkeeperInfo>();
             TimerIaltCollection = new ObservableCollection<TimerIalt>();
+           
 
             GreenkeeperMinutterPrDagCollection = new ObservableCollection<GreenkeeperMinutterPrDag>();
             GetGreenkeeperNavnSortedList = new ObservableCollection<GreenkeeperInfo>();

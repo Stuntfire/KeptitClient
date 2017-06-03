@@ -29,11 +29,12 @@ namespace KeptitClient.Handlers
             }
         }
 
-        // Viser i hvilke område der er brugt flest timer på siden Adminareas. Flest timer øverst.
+        // Samlet timer på områder, uafhængig af Greenkeeper.. Flest timer øverst.
         public async Task VisOmraader()
         {
             var areasdone =
                 from a in await PersistencyService.LoadSumAreaViewAsync()
+                orderby a.AreaMinutterIalt descending
                 group a by a.AreaTitle
                 into omraaederne
                 select new
