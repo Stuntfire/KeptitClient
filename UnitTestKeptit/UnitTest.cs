@@ -47,20 +47,21 @@ namespace UnitTestKeptIt
             Assert.AreNotEqual(null, ftc.Result);
             Assert.AreNotEqual(0, ftc.Result.Count);
         }
-        
+
 
         #endregion
 
         #region GreenkeeperMinutterPrDagTests
+        // Instantiere klassen GreenkeeperMinutterPrDag så den ikke skal skrives i hver testmetode.
+        GreenkeeperMinutterPrDag greenkeeperMinutterPrDag = new GreenkeeperMinutterPrDag();
 
+        // test 100 minutter lørdag i metoden GivTotalMinutOverarbejde
         [TestMethod]
-        public void TestGreenkeeperMinutterPrDagMetode_100_Minutter()
+        public void TestGreenkeeperMinutterPrDag_Overarbejde_Metode_Loerdag()
         {
             // Arrange
-            GreenkeeperMinutterPrDag greenkeeperMinutterPrDag = new GreenkeeperMinutterPrDag();
-
             greenkeeperMinutterPrDag.Minutterialt = 100;
-            greenkeeperMinutterPrDag.Date = new DateTime(2017, 5, 28);
+            greenkeeperMinutterPrDag.Date = new DateTime(2017, 5, 27);
 
             // Act
             int antalminut = greenkeeperMinutterPrDag.GivTotalMinutOverarbejde();
@@ -68,6 +69,99 @@ namespace UnitTestKeptIt
             // Assert
             Assert.AreEqual(150, antalminut);
         }
+
+        // test 100 minutter søndag i metoden GivTotalMinutOverarbejde
+        [TestMethod]
+        public void TestGreenkeeperMinutterPrDag_Overarbejde_Soendag()
+        {
+            // Arrange
+            greenkeeperMinutterPrDag.Minutterialt = 444;
+            greenkeeperMinutterPrDag.Date = new DateTime(2017, 5, 28);
+
+            // Act
+            int antalminut = greenkeeperMinutterPrDag.GivTotalMinutOverarbejde();
+
+            // Assert
+            Assert.AreEqual(666, antalminut);
+        }
+
+        // test 444 minutter mandag i metoden GivTotalMinutOverarbejde. Giver 0 fordi 444 er 7.4 timer og ikke overarbejde.
+        [TestMethod]
+        public void TestGreenkeeperMinutterPrDag_Overarbejde_Mandag()
+        {
+            // Arrange
+            greenkeeperMinutterPrDag.Minutterialt = 444;
+            greenkeeperMinutterPrDag.Date = new DateTime(2017, 5, 29);
+
+            // Act
+            int antalminut = greenkeeperMinutterPrDag.GivTotalMinutOverarbejde();
+
+            // Assert
+            Assert.AreEqual(0, antalminut);
+        }
+
+        // test 445 minutter mandag i metoden GivTotalMinutOverarbejde. Giver 1 fordi 445 er 7.416 timer og giver 1 minut i overarbejde.
+        [TestMethod]
+        public void TestGreenkeeperMinutterPrDag_Overarbejde_Mandag2()
+        {
+            // Arrange
+            greenkeeperMinutterPrDag.Minutterialt = 445;
+            greenkeeperMinutterPrDag.Date = new DateTime(2017, 5, 29);
+
+            // Act
+            int antalminut = greenkeeperMinutterPrDag.GivTotalMinutOverarbejde();
+
+            // Assert
+            Assert.AreEqual(1, antalminut);
+        }
+
+        // test 444 minutter mandag i metoden GivTotalMinutNormal. Giver det samme antal minutter.
+        [TestMethod]
+        public void TestGreenkeeperMinutterPrDag_Normal_Mandag()
+        {
+            // Arrange
+            greenkeeperMinutterPrDag.Minutterialt = 444;
+            greenkeeperMinutterPrDag.Date = new DateTime(2017, 5, 29);
+
+            // Act
+            int antalminut = greenkeeperMinutterPrDag.GivTotalMinutNormal();
+
+            // Assert
+            Assert.AreEqual(444, antalminut);
+        }
+
+        // test 445 minutter mandag i metoden GivTotalMinutNormal. Giver max 444 minutter ellers er det overarbejde og ryger ind i den anden metode først.
+        [TestMethod]
+        public void TestGreenkeeperMinutterPrDag_Normal_Mandag2()
+        {
+            // Arrange
+            greenkeeperMinutterPrDag.Minutterialt = 445;
+            greenkeeperMinutterPrDag.Date = new DateTime(2017, 5, 29);
+
+            // Act
+            int antalminut = greenkeeperMinutterPrDag.GivTotalMinutNormal();
+
+            // Assert
+            Assert.AreEqual(444, antalminut);
+        }
+
+        // test 0 minutter mandag i metoden GivTotalMinutNormal.
+        [TestMethod]
+        public void TestGreenkeeperMinutterPrDag_Normal_Mandag3()
+        {
+            // Arrange
+            greenkeeperMinutterPrDag.Minutterialt = 0;
+            greenkeeperMinutterPrDag.Date = new DateTime(2017, 5, 29);
+
+            // Act
+            int antalminut = greenkeeperMinutterPrDag.GivTotalMinutNormal();
+
+            // Assert
+            Assert.AreEqual(0, antalminut);
+        }
+
+
+
 
         [TestMethod]
         public void TestGivTotalMinutOverarbejde() // 
