@@ -160,21 +160,7 @@ namespace UnitTestKeptIt
             Assert.AreEqual(0, antalminut);
         }
 
-
         
-        [TestMethod]
-        public void TestGivTotalMinutOverarbejde() // 
-        {
-            // arrange
-            GreenkeeperInfo overArbejde = new GreenkeeperInfo(14, 48); // 888 minutter ialt
-
-            // act
-            int actualValue = overArbejde.GivTotalMinutOverarbejde();
-        
-            // assert
-            Assert.AreEqual(666, actualValue);
-        }
-
         #endregion
     }
 }
