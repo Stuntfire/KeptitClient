@@ -240,7 +240,7 @@
             <ComboBox x:Name="comboBoxHours" Header="Timer" HorizontalAlignment="Left" Margin="50,360,0,0" Grid.Row="1" VerticalAlignment="Top" Width="150" ItemsSource="{Binding HourList, Mode=TwoWay}" SelectedItem="{Binding TaskHour, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Height="68"/>
             <ComboBox x:Name="comboBoxMinute" Header="Minutter" HorizontalAlignment="Left" Margin="230,360,0,0" VerticalAlignment="Top" Width="150" ItemsSource="{Binding MinuteList, Mode=TwoWay}" SelectedItem="{Binding TaskMinutes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Height="68" />
 
-            <ListView x:Name="listView" Header="Dato og tid brugt på udførte opgaver" HorizontalAlignment="Left" Height="550" Margin="460,120,0,0" VerticalAlignment="Top" Width="680" ItemsSource="{Binding GreenkeeperInfoCollection, Mode=TwoWay}" SelectedItem="{Binding GreenkeeperInfoToDelete, Mode=TwoWay}" FontSize="18" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <ListView x:Name="listView" Header="Dato og tid brugt på udførte opgaver" HorizontalAlignment="Left" Height="550" Margin="460,90,0,0" VerticalAlignment="Top" Width="680" ItemsSource="{Binding GreenkeeperInfoCollection, Mode=TwoWay}" SelectedItem="{Binding GreenkeeperInfoToDelete, Mode=TwoWay}" FontSize="18" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
                 
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
