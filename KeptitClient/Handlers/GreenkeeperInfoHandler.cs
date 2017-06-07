@@ -17,7 +17,7 @@ namespace KeptitClient.Handlers
             this.Mwm = mwm;
         }
 
-        //Gets all Tasks from Database via PersistencyService
+        //Henter alle opgave-informationer om hver Greenkeeper fra FinishedTask-tabellen, via PersistencyService.
         public async Task GetGreenTaskInfoCollection()
         {
             Mwm.GreenkeeperInfoCollection.Clear();
@@ -33,16 +33,17 @@ namespace KeptitClient.Handlers
             }
         }
 
+        //Sorterer GreenkeeperInfoCollection, så man kun får opgaver vist der er udført af den greenkeeper man vælger i combobox'en
         public async Task LoadUpdatedList()
         {
             Mwm.GreenkeeperInfoCollection.Clear();
 
-            var OrderTasksByDate =
-                from o in await PersistencyService.LoadGreenkeeperInfoAsync()
-                orderby o.Date descending
-                select o;
+            var OrderTasksByDateForSelectedGreenkeeper =
+                from obd in await PersistencyService.LoadGreenkeeperInfoAsync()
+                orderby obd.Date descending
+                select obd;
 
-            foreach (var item in OrderTasksByDate)
+            foreach (var item in OrderTasksByDateForSelectedGreenkeeper)
             {
                 if (item.GreenkeeperName == Mwm.SelectedGreenKeeper.GreenkeeperName)
                 {
